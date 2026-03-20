@@ -1,0 +1,6 @@
+module SkyTailwind.Internal.Classes exposing (cls)
+
+
+cls : String -> (String, String)
+cls name =
+    ("class", name)

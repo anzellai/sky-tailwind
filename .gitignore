@@ -1,0 +1,15 @@
+# Sky build artifacts
+dist/
+.skycache/
+.skydeps/
+sky.lock
+go.mod
+go.sum
+
+# Databases
+*.db
+*.db-shm
+*.db-wal
+
+# Environment
+.env

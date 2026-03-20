@@ -1,0 +1,291 @@
+module SkyTailwind.Typography exposing (..)
+
+import SkyTailwind.Internal.Classes exposing (cls)
+
+
+-- Font Size
+
+textXs : (String, String)
+textXs = cls "text-xs"
+
+textSm : (String, String)
+textSm = cls "text-sm"
+
+textBase : (String, String)
+textBase = cls "text-base"
+
+textLg : (String, String)
+textLg = cls "text-lg"
+
+textXl : (String, String)
+textXl = cls "text-xl"
+
+text2xl : (String, String)
+text2xl = cls "text-2xl"
+
+text3xl : (String, String)
+text3xl = cls "text-3xl"
+
+text4xl : (String, String)
+text4xl = cls "text-4xl"
+
+text5xl : (String, String)
+text5xl = cls "text-5xl"
+
+text6xl : (String, String)
+text6xl = cls "text-6xl"
+
+text7xl : (String, String)
+text7xl = cls "text-7xl"
+
+text8xl : (String, String)
+text8xl = cls "text-8xl"
+
+text9xl : (String, String)
+text9xl = cls "text-9xl"
+
+
+-- Font Weight
+
+fontThin : (String, String)
+fontThin = cls "font-thin"
+
+fontExtralight : (String, String)
+fontExtralight = cls "font-extralight"
+
+fontLight : (String, String)
+fontLight = cls "font-light"
+
+fontNormal : (String, String)
+fontNormal = cls "font-normal"
+
+fontMedium : (String, String)
+fontMedium = cls "font-medium"
+
+fontSemibold : (String, String)
+fontSemibold = cls "font-semibold"
+
+fontBold : (String, String)
+fontBold = cls "font-bold"
+
+fontExtrabold : (String, String)
+fontExtrabold = cls "font-extrabold"
+
+fontBlack : (String, String)
+fontBlack = cls "font-black"
+
+
+-- Font Family
+
+fontSans : (String, String)
+fontSans = cls "font-sans"
+
+fontSerif : (String, String)
+fontSerif = cls "font-serif"
+
+fontMono : (String, String)
+fontMono = cls "font-mono"
+
+
+-- Text Align
+
+textLeft : (String, String)
+textLeft = cls "text-left"
+
+textCenter : (String, String)
+textCenter = cls "text-center"
+
+textRight : (String, String)
+textRight = cls "text-right"
+
+textJustify : (String, String)
+textJustify = cls "text-justify"
+
+
+-- Text Color
+
+textTransparent : (String, String)
+textTransparent = cls "text-transparent"
+
+textBlack : (String, String)
+textBlack = cls "text-black"
+
+textWhite : (String, String)
+textWhite = cls "text-white"
+
+textGray50 : (String, String)
+textGray50 = cls "text-gray-50"
+
+textGray100 : (String, String)
+textGray100 = cls "text-gray-100"
+
+textGray200 : (String, String)
+textGray200 = cls "text-gray-200"
+
+textGray300 : (String, String)
+textGray300 = cls "text-gray-300"
+
+textGray400 : (String, String)
+textGray400 = cls "text-gray-400"
+
+textGray500 : (String, String)
+textGray500 = cls "text-gray-500"
+
+textGray600 : (String, String)
+textGray600 = cls "text-gray-600"
+
+textGray700 : (String, String)
+textGray700 = cls "text-gray-700"
+
+textGray800 : (String, String)
+textGray800 = cls "text-gray-800"
+
+textGray900 : (String, String)
+textGray900 = cls "text-gray-900"
+
+textRed500 : (String, String)
+textRed500 = cls "text-red-500"
+
+textRed600 : (String, String)
+textRed600 = cls "text-red-600"
+
+textRed700 : (String, String)
+textRed700 = cls "text-red-700"
+
+textOrange500 : (String, String)
+textOrange500 = cls "text-orange-500"
+
+textYellow500 : (String, String)
+textYellow500 = cls "text-yellow-500"
+
+textGreen500 : (String, String)
+textGreen500 = cls "text-green-500"
+
+textGreen600 : (String, String)
+textGreen600 = cls "text-green-600"
+
+textGreen700 : (String, String)
+textGreen700 = cls "text-green-700"
+
+textBlue100 : (String, String)
+textBlue100 = cls "text-blue-100"
+
+textBlue500 : (String, String)
+textBlue500 = cls "text-blue-500"
+
+textBlue600 : (String, String)
+textBlue600 = cls "text-blue-600"
+
+textBlue700 : (String, String)
+textBlue700 = cls "text-blue-700"
+
+textIndigo500 : (String, String)
+textIndigo500 = cls "text-indigo-500"
+
+textIndigo600 : (String, String)
+textIndigo600 = cls "text-indigo-600"
+
+textPurple500 : (String, String)
+textPurple500 = cls "text-purple-500"
+
+textPurple600 : (String, String)
+textPurple600 = cls "text-purple-600"
+
+textPink500 : (String, String)
+textPink500 = cls "text-pink-500"
+
+
+-- Text Decoration
+
+underline : (String, String)
+underline = cls "underline"
+
+overline : (String, String)
+overline = cls "overline"
+
+lineThrough : (String, String)
+lineThrough = cls "line-through"
+
+noUnderline : (String, String)
+noUnderline = cls "no-underline"
+
+
+-- Text Transform
+
+uppercase : (String, String)
+uppercase = cls "uppercase"
+
+lowercase : (String, String)
+lowercase = cls "lowercase"
+
+capitalize : (String, String)
+capitalize = cls "capitalize"
+
+normalCase : (String, String)
+normalCase = cls "normal-case"
+
+
+-- Line Height
+
+leadingNone : (String, String)
+leadingNone = cls "leading-none"
+
+leadingTight : (String, String)
+leadingTight = cls "leading-tight"
+
+leadingSnug : (String, String)
+leadingSnug = cls "leading-snug"
+
+leadingNormal : (String, String)
+leadingNormal = cls "leading-normal"
+
+leadingRelaxed : (String, String)
+leadingRelaxed = cls "leading-relaxed"
+
+leadingLoose : (String, String)
+leadingLoose = cls "leading-loose"
+
+
+-- Letter Spacing
+
+trackingTighter : (String, String)
+trackingTighter = cls "tracking-tighter"
+
+trackingTight : (String, String)
+trackingTight = cls "tracking-tight"
+
+trackingNormal : (String, String)
+trackingNormal = cls "tracking-normal"
+
+trackingWide : (String, String)
+trackingWide = cls "tracking-wide"
+
+trackingWider : (String, String)
+trackingWider = cls "tracking-wider"
+
+trackingWidest : (String, String)
+trackingWidest = cls "tracking-widest"
+
+
+-- Whitespace
+
+whitespaceNormal : (String, String)
+whitespaceNormal = cls "whitespace-normal"
+
+whitespaceNowrap : (String, String)
+whitespaceNowrap = cls "whitespace-nowrap"
+
+whitespacePre : (String, String)
+whitespacePre = cls "whitespace-pre"
+
+whitespacePreLine : (String, String)
+whitespacePreLine = cls "whitespace-pre-line"
+
+whitespacePreWrap : (String, String)
+whitespacePreWrap = cls "whitespace-pre-wrap"
+
+
+-- Truncate
+
+truncate : (String, String)
+truncate = cls "truncate"

@@ -1,0 +1,261 @@
+module SkyTailwind.Effects exposing (..)
+
+import SkyTailwind.Internal.Classes exposing (cls)
+
+
+-- Shadow
+
+shadowSm : (String, String)
+shadowSm = cls "shadow-sm"
+
+shadow : (String, String)
+shadow = cls "shadow"
+
+shadowMd : (String, String)
+shadowMd = cls "shadow-md"
+
+shadowLg : (String, String)
+shadowLg = cls "shadow-lg"
+
+shadowXl : (String, String)
+shadowXl = cls "shadow-xl"
+
+shadow2xl : (String, String)
+shadow2xl = cls "shadow-2xl"
+
+shadowInner : (String, String)
+shadowInner = cls "shadow-inner"
+
+shadowNone : (String, String)
+shadowNone = cls "shadow-none"
+
+
+-- Opacity
+
+opacity0 : (String, String)
+opacity0 = cls "opacity-0"
+
+opacity5 : (String, String)
+opacity5 = cls "opacity-5"
+
+opacity10 : (String, String)
+opacity10 = cls "opacity-10"
+
+opacity20 : (String, String)
+opacity20 = cls "opacity-20"
+
+opacity25 : (String, String)
+opacity25 = cls "opacity-25"
+
+opacity30 : (String, String)
+opacity30 = cls "opacity-30"
+
+opacity40 : (String, String)
+opacity40 = cls "opacity-40"
+
+opacity50 : (String, String)
+opacity50 = cls "opacity-50"
+
+opacity60 : (String, String)
+opacity60 = cls "opacity-60"
+
+opacity70 : (String, String)
+opacity70 = cls "opacity-70"
+
+opacity75 : (String, String)
+opacity75 = cls "opacity-75"
+
+opacity80 : (String, String)
+opacity80 = cls "opacity-80"
+
+opacity90 : (String, String)
+opacity90 = cls "opacity-90"
+
+opacity95 : (String, String)
+opacity95 = cls "opacity-95"
+
+opacity100 : (String, String)
+opacity100 = cls "opacity-100"
+
+
+-- Transition
+
+transitionAll : (String, String)
+transitionAll = cls "transition-all"
+
+transition : (String, String)
+transition = cls "transition"
+
+transitionColors : (String, String)
+transitionColors = cls "transition-colors"
+
+transitionOpacity : (String, String)
+transitionOpacity = cls "transition-opacity"
+
+transitionShadow : (String, String)
+transitionShadow = cls "transition-shadow"
+
+transitionTransform : (String, String)
+transitionTransform = cls "transition-transform"
+
+transitionNone : (String, String)
+transitionNone = cls "transition-none"
+
+
+-- Duration
+
+duration75 : (String, String)
+duration75 = cls "duration-75"
+
+duration100 : (String, String)
+duration100 = cls "duration-100"
+
+duration150 : (String, String)
+duration150 = cls "duration-150"
+
+duration200 : (String, String)
+duration200 = cls "duration-200"
+
+duration300 : (String, String)
+duration300 = cls "duration-300"
+
+duration500 : (String, String)
+duration500 = cls "duration-500"
+
+duration700 : (String, String)
+duration700 = cls "duration-700"
+
+duration1000 : (String, String)
+duration1000 = cls "duration-1000"
+
+
+-- Ease
+
+easeLinear : (String, String)
+easeLinear = cls "ease-linear"
+
+easeIn : (String, String)
+easeIn = cls "ease-in"
+
+easeOut : (String, String)
+easeOut = cls "ease-out"
+
+easeInOut : (String, String)
+easeInOut = cls "ease-in-out"
+
+
+-- Transform / Scale
+
+scale0 : (String, String)
+scale0 = cls "scale-0"
+
+scale50 : (String, String)
+scale50 = cls "scale-50"
+
+scale75 : (String, String)
+scale75 = cls "scale-75"
+
+scale90 : (String, String)
+scale90 = cls "scale-90"
+
+scale95 : (String, String)
+scale95 = cls "scale-95"
+
+scale100 : (String, String)
+scale100 = cls "scale-100"
+
+scale105 : (String, String)
+scale105 = cls "scale-105"
+
+scale110 : (String, String)
+scale110 = cls "scale-110"
+
+scale125 : (String, String)
+scale125 = cls "scale-125"
+
+scale150 : (String, String)
+scale150 = cls "scale-150"
+
+
+-- Transform / Rotate
+
+rotate0 : (String, String)
+rotate0 = cls "rotate-0"
+
+rotate1 : (String, String)
+rotate1 = cls "rotate-1"
+
+rotate2 : (String, String)
+rotate2 = cls "rotate-2"
+
+rotate3 : (String, String)
+rotate3 = cls "rotate-3"
+
+rotate6 : (String, String)
+rotate6 = cls "rotate-6"
+
+rotate12 : (String, String)
+rotate12 = cls "rotate-12"
+
+rotate45 : (String, String)
+rotate45 = cls "rotate-45"
+
+rotate90 : (String, String)
+rotate90 = cls "rotate-90"
+
+rotate180 : (String, String)
+rotate180 = cls "rotate-180"
+
+
+-- Cursor
+
+cursorAuto : (String, String)
+cursorAuto = cls "cursor-auto"
+
+cursorDefault : (String, String)
+cursorDefault = cls "cursor-default"
+
+cursorPointer : (String, String)
+cursorPointer = cls "cursor-pointer"
+
+cursorWait : (String, String)
+cursorWait = cls "cursor-wait"
+
+cursorText : (String, String)
+cursorText = cls "cursor-text"
+
+cursorMove : (String, String)
+cursorMove = cls "cursor-move"
+
+cursorNotAllowed : (String, String)
+cursorNotAllowed = cls "cursor-not-allowed"
+
+cursorGrab : (String, String)
+cursorGrab = cls "cursor-grab"
+
+cursorGrabbing : (String, String)
+cursorGrabbing = cls "cursor-grabbing"
+
+
+-- Pointer Events
+
+pointerEventsNone : (String, String)
+pointerEventsNone = cls "pointer-events-none"
+
+pointerEventsAuto : (String, String)
+pointerEventsAuto = cls "pointer-events-auto"
+
+
+-- User Select
+
+selectNone : (String, String)
+selectNone = cls "select-none"
+
+selectText : (String, String)
+selectText = cls "select-text"
+
+selectAll : (String, String)
+selectAll = cls "select-all"
+
+selectAuto : (String, String)
+selectAuto = cls "select-auto"
