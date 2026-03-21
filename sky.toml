@@ -7,15 +7,15 @@ root = "src"
 
 [lib]
 exposing = [
-    "SkyTailwind",
-    "SkyTailwind.Spacing",
-    "SkyTailwind.Typography",
-    "SkyTailwind.Layout",
-    "SkyTailwind.Flex",
-    "SkyTailwind.Grid",
-    "SkyTailwind.Background",
-    "SkyTailwind.Border",
-    "SkyTailwind.Effects",
-    "SkyTailwind.Responsive",
-    "SkyTailwind.State",
+  "Tailwind",
+  "Tailwind.Spacing",
+  "Tailwind.Typography",
+  "Tailwind.Layout",
+  "Tailwind.Flex",
+  "Tailwind.Grid",
+  "Tailwind.Background",
+  "Tailwind.Border",
+  "Tailwind.Effects",
+  "Tailwind.Responsive",
+  "Tailwind.State",
 ]
