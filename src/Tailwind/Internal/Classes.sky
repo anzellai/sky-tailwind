@@ -1,0 +1,7 @@
+module Tailwind.Internal.Classes exposing (cls)
+
+import Sky.Core.Prelude exposing (..)
+
+cls : String -> ( String, String )
+cls name =
+    ( "class" , name )

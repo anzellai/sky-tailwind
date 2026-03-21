@@ -1,0 +1,238 @@
+module Tailwind.Grid exposing (..)
+
+import Sky.Core.Prelude exposing (..)
+import Tailwind.Internal.Classes exposing (cls)
+
+-- Grid Template Columns
+gridCols1 : ( String, String )
+gridCols1 =
+    cls "grid-cols-1"
+
+gridCols2 : ( String, String )
+gridCols2 =
+    cls "grid-cols-2"
+
+gridCols3 : ( String, String )
+gridCols3 =
+    cls "grid-cols-3"
+
+gridCols4 : ( String, String )
+gridCols4 =
+    cls "grid-cols-4"
+
+gridCols5 : ( String, String )
+gridCols5 =
+    cls "grid-cols-5"
+
+gridCols6 : ( String, String )
+gridCols6 =
+    cls "grid-cols-6"
+
+gridCols7 : ( String, String )
+gridCols7 =
+    cls "grid-cols-7"
+
+gridCols8 : ( String, String )
+gridCols8 =
+    cls "grid-cols-8"
+
+gridCols9 : ( String, String )
+gridCols9 =
+    cls "grid-cols-9"
+
+gridCols10 : ( String, String )
+gridCols10 =
+    cls "grid-cols-10"
+
+gridCols11 : ( String, String )
+gridCols11 =
+    cls "grid-cols-11"
+
+gridCols12 : ( String, String )
+gridCols12 =
+    cls "grid-cols-12"
+
+gridColsNone : ( String, String )
+gridColsNone =
+    cls "grid-cols-none"
+
+-- Grid Template Rows
+gridRows1 : ( String, String )
+gridRows1 =
+    cls "grid-rows-1"
+
+gridRows2 : ( String, String )
+gridRows2 =
+    cls "grid-rows-2"
+
+gridRows3 : ( String, String )
+gridRows3 =
+    cls "grid-rows-3"
+
+gridRows4 : ( String, String )
+gridRows4 =
+    cls "grid-rows-4"
+
+gridRows5 : ( String, String )
+gridRows5 =
+    cls "grid-rows-5"
+
+gridRows6 : ( String, String )
+gridRows6 =
+    cls "grid-rows-6"
+
+gridRowsNone : ( String, String )
+gridRowsNone =
+    cls "grid-rows-none"
+
+-- Grid Column Span
+colSpan1 : ( String, String )
+colSpan1 =
+    cls "col-span-1"
+
+colSpan2 : ( String, String )
+colSpan2 =
+    cls "col-span-2"
+
+colSpan3 : ( String, String )
+colSpan3 =
+    cls "col-span-3"
+
+colSpan4 : ( String, String )
+colSpan4 =
+    cls "col-span-4"
+
+colSpan5 : ( String, String )
+colSpan5 =
+    cls "col-span-5"
+
+colSpan6 : ( String, String )
+colSpan6 =
+    cls "col-span-6"
+
+colSpan7 : ( String, String )
+colSpan7 =
+    cls "col-span-7"
+
+colSpan8 : ( String, String )
+colSpan8 =
+    cls "col-span-8"
+
+colSpan9 : ( String, String )
+colSpan9 =
+    cls "col-span-9"
+
+colSpan10 : ( String, String )
+colSpan10 =
+    cls "col-span-10"
+
+colSpan11 : ( String, String )
+colSpan11 =
+    cls "col-span-11"
+
+colSpan12 : ( String, String )
+colSpan12 =
+    cls "col-span-12"
+
+colSpanFull : ( String, String )
+colSpanFull =
+    cls "col-span-full"
+
+-- Grid Row Span
+rowSpan1 : ( String, String )
+rowSpan1 =
+    cls "row-span-1"
+
+rowSpan2 : ( String, String )
+rowSpan2 =
+    cls "row-span-2"
+
+rowSpan3 : ( String, String )
+rowSpan3 =
+    cls "row-span-3"
+
+rowSpan4 : ( String, String )
+rowSpan4 =
+    cls "row-span-4"
+
+rowSpan5 : ( String, String )
+rowSpan5 =
+    cls "row-span-5"
+
+rowSpan6 : ( String, String )
+rowSpan6 =
+    cls "row-span-6"
+
+rowSpanFull : ( String, String )
+rowSpanFull =
+    cls "row-span-full"
+
+-- Grid Auto Flow
+gridFlowRow : ( String, String )
+gridFlowRow =
+    cls "grid-flow-row"
+
+gridFlowCol : ( String, String )
+gridFlowCol =
+    cls "grid-flow-col"
+
+gridFlowDense : ( String, String )
+gridFlowDense =
+    cls "grid-flow-dense"
+
+gridFlowRowDense : ( String, String )
+gridFlowRowDense =
+    cls "grid-flow-row-dense"
+
+gridFlowColDense : ( String, String )
+gridFlowColDense =
+    cls "grid-flow-col-dense"
+
+-- Place
+placeContentCenter : ( String, String )
+placeContentCenter =
+    cls "place-content-center"
+
+placeContentStart : ( String, String )
+placeContentStart =
+    cls "place-content-start"
+
+placeContentEnd : ( String, String )
+placeContentEnd =
+    cls "place-content-end"
+
+placeContentBetween : ( String, String )
+placeContentBetween =
+    cls "place-content-between"
+
+placeItemsCenter : ( String, String )
+placeItemsCenter =
+    cls "place-items-center"
+
+placeItemsStart : ( String, String )
+placeItemsStart =
+    cls "place-items-start"
+
+placeItemsEnd : ( String, String )
+placeItemsEnd =
+    cls "place-items-end"
+
+placeItemsStretch : ( String, String )
+placeItemsStretch =
+    cls "place-items-stretch"
+
+placeSelfCenter : ( String, String )
+placeSelfCenter =
+    cls "place-self-center"
+
+placeSelfStart : ( String, String )
+placeSelfStart =
+    cls "place-self-start"
+
+placeSelfEnd : ( String, String )
+placeSelfEnd =
+    cls "place-self-end"
+
+placeSelfAuto : ( String, String )
+placeSelfAuto =
+    cls "place-self-auto"

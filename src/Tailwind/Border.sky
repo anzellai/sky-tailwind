@@ -1,0 +1,225 @@
+module Tailwind.Border exposing (..)
+
+import Sky.Core.Prelude exposing (..)
+import Tailwind.Internal.Classes exposing (cls)
+
+-- Border Width
+border : ( String, String )
+border =
+    cls "border"
+
+border0 : ( String, String )
+border0 =
+    cls "border-0"
+
+border2 : ( String, String )
+border2 =
+    cls "border-2"
+
+border4 : ( String, String )
+border4 =
+    cls "border-4"
+
+border8 : ( String, String )
+border8 =
+    cls "border-8"
+
+borderT : ( String, String )
+borderT =
+    cls "border-t"
+
+borderR : ( String, String )
+borderR =
+    cls "border-r"
+
+borderB : ( String, String )
+borderB =
+    cls "border-b"
+
+borderL : ( String, String )
+borderL =
+    cls "border-l"
+
+borderT0 : ( String, String )
+borderT0 =
+    cls "border-t-0"
+
+borderT2 : ( String, String )
+borderT2 =
+    cls "border-t-2"
+
+borderB0 : ( String, String )
+borderB0 =
+    cls "border-b-0"
+
+borderB2 : ( String, String )
+borderB2 =
+    cls "border-b-2"
+
+-- Border Color
+borderTransparent : ( String, String )
+borderTransparent =
+    cls "border-transparent"
+
+borderBlack : ( String, String )
+borderBlack =
+    cls "border-black"
+
+borderWhite : ( String, String )
+borderWhite =
+    cls "border-white"
+
+borderGray100 : ( String, String )
+borderGray100 =
+    cls "border-gray-100"
+
+borderGray200 : ( String, String )
+borderGray200 =
+    cls "border-gray-200"
+
+borderGray300 : ( String, String )
+borderGray300 =
+    cls "border-gray-300"
+
+borderGray400 : ( String, String )
+borderGray400 =
+    cls "border-gray-400"
+
+borderGray500 : ( String, String )
+borderGray500 =
+    cls "border-gray-500"
+
+borderGray600 : ( String, String )
+borderGray600 =
+    cls "border-gray-600"
+
+borderGray700 : ( String, String )
+borderGray700 =
+    cls "border-gray-700"
+
+borderGray800 : ( String, String )
+borderGray800 =
+    cls "border-gray-800"
+
+borderRed500 : ( String, String )
+borderRed500 =
+    cls "border-red-500"
+
+borderBlue500 : ( String, String )
+borderBlue500 =
+    cls "border-blue-500"
+
+borderGreen500 : ( String, String )
+borderGreen500 =
+    cls "border-green-500"
+
+-- Border Style
+borderSolid : ( String, String )
+borderSolid =
+    cls "border-solid"
+
+borderDashed : ( String, String )
+borderDashed =
+    cls "border-dashed"
+
+borderDotted : ( String, String )
+borderDotted =
+    cls "border-dotted"
+
+borderDouble : ( String, String )
+borderDouble =
+    cls "border-double"
+
+borderNone_ : ( String, String )
+borderNone_ =
+    cls "border-none"
+
+-- Border Radius
+roundedNone : ( String, String )
+roundedNone =
+    cls "rounded-none"
+
+roundedSm : ( String, String )
+roundedSm =
+    cls "rounded-sm"
+
+rounded : ( String, String )
+rounded =
+    cls "rounded"
+
+roundedMd : ( String, String )
+roundedMd =
+    cls "rounded-md"
+
+roundedLg : ( String, String )
+roundedLg =
+    cls "rounded-lg"
+
+roundedXl : ( String, String )
+roundedXl =
+    cls "rounded-xl"
+
+rounded2xl : ( String, String )
+rounded2xl =
+    cls "rounded-2xl"
+
+rounded3xl : ( String, String )
+rounded3xl =
+    cls "rounded-3xl"
+
+roundedFull : ( String, String )
+roundedFull =
+    cls "rounded-full"
+
+roundedT : ( String, String )
+roundedT =
+    cls "rounded-t"
+
+roundedR : ( String, String )
+roundedR =
+    cls "rounded-r"
+
+roundedB : ( String, String )
+roundedB =
+    cls "rounded-b"
+
+roundedL : ( String, String )
+roundedL =
+    cls "rounded-l"
+
+roundedTLg : ( String, String )
+roundedTLg =
+    cls "rounded-t-lg"
+
+roundedBLg : ( String, String )
+roundedBLg =
+    cls "rounded-b-lg"
+
+roundedTXl : ( String, String )
+roundedTXl =
+    cls "rounded-t-xl"
+
+roundedBXl : ( String, String )
+roundedBXl =
+    cls "rounded-b-xl"
+
+-- Ring
+ring : ( String, String )
+ring =
+    cls "ring"
+
+ring0 : ( String, String )
+ring0 =
+    cls "ring-0"
+
+ring1 : ( String, String )
+ring1 =
+    cls "ring-1"
+
+ring2 : ( String, String )
+ring2 =
+    cls "ring-2"
+
+ring4 : ( String, String )
+ring4 =
+    cls "ring-4"

@@ -68,6 +68,20 @@ main =
 
 Literals, constructors (`Just x`, `Ok v`, `Err e`), tuples `(a, b)`, lists `[]`, `[x]`, `x :: xs`, wildcards `_`, as-patterns `Just x as original`, nested `Ok (Just x)`
 
+### Record Patterns
+
+```elm
+-- Record patterns (destructuring)
+case user of
+    { name, age } -> name ++ " is " ++ String.fromInt age
+
+-- In function params
+greet { name } = "Hello, " ++ name
+
+-- In let bindings
+let { x, y } = point in x + y
+```
+
 ## Go Interop (FFI)
 
 Sky can import any Go package. The compiler auto-generates type-safe bindings at build time:
@@ -119,6 +133,11 @@ type Maybe a = Just a | Nothing    -- (defined in Sky.Core.Maybe)
 
 -- Functions
 identity : a -> a
+always : a -> b -> a
+fst : (a, b) -> a
+snd : (a, b) -> b
+clamp : comparable -> comparable -> comparable -> comparable
+modBy : Int -> Int -> Int
 errorToString : a -> String        -- converts Go error to String
 ```
 
@@ -129,7 +148,21 @@ type Maybe a = Just a | Nothing
 
 withDefault : a -> Maybe a -> a
 map : (a -> b) -> Maybe a -> Maybe b
+map2 : (a -> b -> c) -> Maybe a -> Maybe b -> Maybe c
+map3 : (a -> b -> c -> d) -> Maybe a -> Maybe b -> Maybe c -> Maybe d
 andThen : (a -> Maybe b) -> Maybe a -> Maybe b
+```
+
+### Sky.Core.Result
+
+```elm
+map : (a -> b) -> Result e a -> Result e b
+map2 : (a -> b -> c) -> Result e a -> Result e b -> Result e c
+map3 : (a -> b -> c -> d) -> Result e a -> Result e b -> Result e c -> Result e d
+andThen : (a -> Result e b) -> Result e a -> Result e b
+withDefault : a -> Result e a -> a
+fromMaybe : e -> Maybe a -> Result e a
+mapError : (e -> f) -> Result e a -> Result f a
 ```
 
 ### Sky.Core.List
@@ -154,6 +187,20 @@ intersperse : a -> List a -> List a
 concat : List (List a) -> List a
 concatMap : (a -> List b) -> List a -> List b
 indexedMap : (Int -> a -> b) -> List a -> List b
+singleton : a -> List a
+all : (a -> Bool) -> List a -> Bool
+any : (a -> Bool) -> List a -> Bool
+sum : List Int -> Int
+product : List Int -> Int
+maximum : List comparable -> Maybe comparable
+minimum : List comparable -> Maybe comparable
+partition : (a -> Bool) -> List a -> (List a, List a)
+find : (a -> Bool) -> List a -> Maybe a
+filterMap : (a -> Maybe b) -> List a -> List b
+sortBy : (a -> comparable) -> List a -> List a
+zip : List a -> List b -> List (a, b)
+unzip : List (a, b) -> (List a, List b)
+map2 : (a -> b -> c) -> List a -> List b -> List c
 ```
 
 ### Sky.Core.String
@@ -184,6 +231,8 @@ left : Int -> String -> String
 right : Int -> String -> String
 reverse : String -> String
 indexes : String -> String -> List Int
+concat : List String -> String
+fromChar : Char -> String
 ```
 
 ### Sky.Core.Dict
@@ -204,6 +253,108 @@ isEmpty : Dict k v -> Bool
 size : Dict k v -> Int
 member : k -> Dict k v -> Bool
 update : k -> (Maybe v -> Maybe v) -> Dict k v -> Dict k v
+filter : (k -> v -> Bool) -> Dict k v -> Dict k v
+union : Dict k v -> Dict k v -> Dict k v
+intersect : Dict k v -> Dict k v -> Dict k v
+diff : Dict k v -> Dict k v -> Dict k v
+partition : (k -> v -> Bool) -> Dict k v -> (Dict k v, Dict k v)
+foldr : (k -> v -> b -> b) -> b -> Dict k v -> b
+```
+
+### Sky.Core.Char
+
+```elm
+isUpper : Char -> Bool
+isLower : Char -> Bool
+isAlpha : Char -> Bool
+isDigit : Char -> Bool
+isAlphaNum : Char -> Bool
+toUpper : Char -> Char
+toLower : Char -> Char
+toCode : Char -> Int
+fromCode : Int -> Char
+```
+
+### Sky.Core.Tuple
+
+```elm
+first : (a, b) -> a
+second : (a, b) -> b
+mapFirst : (a -> c) -> (a, b) -> (c, b)
+mapSecond : (b -> c) -> (a, b) -> (a, c)
+mapBoth : (a -> c) -> (b -> d) -> (a, b) -> (c, d)
+pair : a -> b -> (a, b)
+```
+
+### Sky.Core.Bitwise
+
+```elm
+and : Int -> Int -> Int
+or : Int -> Int -> Int
+xor : Int -> Int -> Int
+complement : Int -> Int
+shiftLeftBy : Int -> Int -> Int
+shiftRightBy : Int -> Int -> Int
+shiftRightZfBy : Int -> Int -> Int
+```
+
+### Sky.Core.Set
+
+```elm
+empty : Set a
+singleton : a -> Set a
+insert : a -> Set a -> Set a
+remove : a -> Set a -> Set a
+member : a -> Set a -> Bool
+size : Set a -> Int
+isEmpty : Set a -> Bool
+toList : Set a -> List a
+fromList : List a -> Set a
+union : Set a -> Set a -> Set a
+intersect : Set a -> Set a -> Set a
+diff : Set a -> Set a -> Set a
+map : (a -> b) -> Set a -> Set b
+filter : (a -> Bool) -> Set a -> Set a
+foldl : (a -> b -> b) -> b -> Set a -> b
+```
+
+### Sky.Core.Array
+
+```elm
+empty : Array a
+fromList : List a -> Array a
+toList : Array a -> List a
+get : Int -> Array a -> Maybe a
+set : Int -> a -> Array a -> Array a
+push : a -> Array a -> Array a
+length : Array a -> Int
+slice : Int -> Int -> Array a -> Array a
+map : (a -> b) -> Array a -> Array b
+foldl : (a -> b -> b) -> b -> Array a -> b
+foldr : (a -> b -> b) -> b -> Array a -> b
+append : Array a -> Array a -> Array a
+indexedMap : (Int -> a -> b) -> Array a -> Array b
+```
+
+### Sky.Core.File
+
+```elm
+readFile : String -> Result Error String
+writeFile : String -> String -> Result Error Unit
+exists : String -> Bool
+remove : String -> Result Error Unit
+mkdirAll : String -> Result Error Unit
+readDir : String -> Result Error (List String)
+isDir : String -> Bool
+```
+
+### Sky.Core.Process
+
+```elm
+run : String -> List String -> Result Error String
+exit : Int -> Unit
+getEnv : String -> Maybe String
+getCwd : Result Error String
 ```
 
 ### Sky.Core.Debug
@@ -388,13 +539,30 @@ route : String -> page -> (String, page)   -- route "/" MyPage (supports :param)
 All return `(String, String)` attribute tuples.
 
 ```elm
-onClick : String -> (String, String)      -- "MsgName" or "MsgName arg"
-onInput : String -> (String, String)      -- sends input value with msg
-onSubmit : String -> (String, String)     -- sends form data with msg
-onChange : String -> (String, String)      -- for select, checkbox
-onDblClick : String -> (String, String)
-onFocus : String -> (String, String)
-onBlur : String -> (String, String)
+onClick : msg -> (String, String)          -- typed Msg constructor
+onInput : (String -> msg) -> (String, String)  -- sends input value with msg
+onSubmit : msg -> (String, String)         -- sends form data with msg
+onChange : (String -> msg) -> (String, String)  -- for select, checkbox
+onDblClick : msg -> (String, String)
+onFocus : msg -> (String, String)
+onBlur : msg -> (String, String)
+
+-- Usage:
+--     button [ onClick Increment ] [ text "+" ]
+--     input [ onInput UpdateDraft, value model.draft ] []
+--     form [ onSubmit AddTodo ] [ ... ]
+```
+
+### Escape Hatch & View Types
+
+```elm
+-- `js` is a Prelude function for embedding raw JS/Go expressions (use sparingly)
+js : String -> a
+
+-- View functions should annotate their return type as VNode:
+view : Model -> VNode
+view model =
+    div [] [ text "hello" ]
 ```
 
 ## Sky.Live — Server-Driven UI
@@ -432,7 +600,7 @@ view model =
     div []
         [ styleNode [] (stylesheet [ rule "body" [ fontFamily "sans-serif" ] ])
         , h1 [] [ text (String.fromInt model.count) ]
-        , button [ onClick "Increment" ] [ text "+" ]
+        , button [ onClick Increment ] [ text "+" ]
         ]
 
 main =
@@ -485,14 +653,127 @@ store = "memory"                # memory | sqlite | redis | postgresql
 
 ## Coding Conventions
 
-- **4-space indentation**, leading commas in lists/records
 - **Module names** are PascalCase, match file paths: `Lib.Utils` → `src/Lib/Utils.sky`
-- **`let`/`in`** always multiline when formatted
 - **No semicolons**, no curly braces — indentation-sensitive like Elm/Haskell
 - Use **`Std.Css`** for styling (not inline style strings)
 - Use **`errorToString`** to convert Go errors to strings
 - Pattern match on **`Result`** (`Ok val` / `Err e`) for Go functions returning errors
 - Pattern match on **`Maybe`** (`Just val` / `Nothing`) for Go `*primitive` pointer returns
+
+## Code Formatting
+
+**Always run `sky fmt <file>.sky` (or `sky fmt <file>.skyi`) after any changes to `.sky` or `.skyi` files.** The formatter is opinionated and canonical — all Sky code must be formatted before committing.
+
+### Rules
+
+- **Line width**: 80 characters max
+- **Indentation**: 4 spaces (no tabs)
+- **Leading commas**: multi-line lists, records, tuples, and type variants use leading comma/pipe style
+
+### Declarations
+
+```elm
+-- Type annotation on its own line, function body indented 4 spaces
+greet : String -> String
+greet name =
+    "Hello, " ++ name
+
+
+-- Two blank lines between top-level declarations
+add : Int -> Int -> Int
+add a b =
+    a + b
+```
+
+### Let-In (always multiline)
+
+```elm
+main =
+    let
+        a = 10
+        b = 20
+    in
+    println (a + b)
+```
+
+`let` and `in` are aligned; bindings indented 4 spaces under `let`; body indented 4 spaces under `in`.
+
+### Case Expressions
+
+```elm
+case msg of
+    Navigate page ->
+        ( { model | page = page }, Cmd.none )
+
+    Increment ->
+        ( { model | count = model.count + 1 }, Cmd.none )
+```
+
+Branches indented 4 spaces under `case`; branch body indented 4 spaces under the arrow. Blank line between branches.
+
+### If-Then-Else
+
+```elm
+if condition then
+    trueValue
+else
+    falseValue
+```
+
+### ADT Variants (leading pipe)
+
+```elm
+type Shape
+    = Circle Float
+    | Rectangle Float Float
+```
+
+First variant prefixed with `= `, subsequent with `| `, all indented 4 spaces.
+
+### Records & Lists (leading comma when multi-line)
+
+```elm
+-- Short form stays on one line
+{ name = "Alice", age = 30 }
+[ 1, 2, 3 ]
+
+-- Multi-line uses leading commas
+{ name = "Alice"
+, age = 30
+, email = "alice@example.com"
+}
+
+[ firstItem
+, secondItem
+, thirdItem
+]
+```
+
+### Record Updates
+
+```elm
+{ model | count = model.count + 1 }
+```
+
+### Pipeline Operators (always break to new lines)
+
+```elm
+items
+    |> List.map (\x -> x * 2)
+    |> List.filter (\x -> x > 3)
+```
+
+### Module Header & Imports
+
+```elm
+module Main exposing (main)
+
+
+import Std.Log exposing (println)
+import Sky.Core.String as String
+```
+
+Two blank lines between module declaration and imports. One blank line after imports before declarations.
 
 ## Common Patterns
 

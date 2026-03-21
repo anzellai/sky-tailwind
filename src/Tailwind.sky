@@ -1,0 +1,2220 @@
+module Tailwind exposing (..)
+
+import Sky.Core.Prelude exposing (..)
+import Sky.Core.String as String
+import Sky.Core.List as List
+import Std.Html exposing (styleNode)
+import Tailwind.Internal.Css as Css
+import Tailwind.Spacing as Spacing
+import Tailwind.Typography as Typography
+import Tailwind.Layout as Layout
+import Tailwind.Flex as Flex_
+import Tailwind.Grid as Grid_
+import Tailwind.Background as Background
+import Tailwind.Border as Border_
+import Tailwind.Effects as Effects
+import Tailwind.State as State
+import Tailwind.Responsive as Responsive
+
+styles : VNode
+styles =
+    styleNode [] Css.allRules
+
+tw : List (( String, String )) -> ( String, String )
+tw attrs =
+    let
+        classes =
+            attrs
+                |> List.map (\( _, v ) -> v)
+                |> String.join " "
+    in
+        ( "class" , classes )
+
+twWith : String -> List (( String, String )) -> ( String, String )
+twWith extra attrs =
+    let
+        classes =
+            attrs
+                |> List.map (\( _, v ) -> v)
+                |> String.join " "
+    in
+        ( "class" , classes ++ " " ++ extra )
+
+-- Spacing: Padding
+p0 =
+    Spacing.p0
+
+p1 =
+    Spacing.p1
+
+p2 =
+    Spacing.p2
+
+p3 =
+    Spacing.p3
+
+p4 =
+    Spacing.p4
+
+p5 =
+    Spacing.p5
+
+p6 =
+    Spacing.p6
+
+p8 =
+    Spacing.p8
+
+p10 =
+    Spacing.p10
+
+p12 =
+    Spacing.p12
+
+p16 =
+    Spacing.p16
+
+p20 =
+    Spacing.p20
+
+p24 =
+    Spacing.p24
+
+px0 =
+    Spacing.px0
+
+px1 =
+    Spacing.px1
+
+px2 =
+    Spacing.px2
+
+px3 =
+    Spacing.px3
+
+px4 =
+    Spacing.px4
+
+px5 =
+    Spacing.px5
+
+px6 =
+    Spacing.px6
+
+px8 =
+    Spacing.px8
+
+px10 =
+    Spacing.px10
+
+px12 =
+    Spacing.px12
+
+px16 =
+    Spacing.px16
+
+px20 =
+    Spacing.px20
+
+px24 =
+    Spacing.px24
+
+py0 =
+    Spacing.py0
+
+py1 =
+    Spacing.py1
+
+py2 =
+    Spacing.py2
+
+py3 =
+    Spacing.py3
+
+py4 =
+    Spacing.py4
+
+py5 =
+    Spacing.py5
+
+py6 =
+    Spacing.py6
+
+py8 =
+    Spacing.py8
+
+py10 =
+    Spacing.py10
+
+py12 =
+    Spacing.py12
+
+py16 =
+    Spacing.py16
+
+py20 =
+    Spacing.py20
+
+py24 =
+    Spacing.py24
+
+pt0 =
+    Spacing.pt0
+
+pt1 =
+    Spacing.pt1
+
+pt2 =
+    Spacing.pt2
+
+pt3 =
+    Spacing.pt3
+
+pt4 =
+    Spacing.pt4
+
+pt5 =
+    Spacing.pt5
+
+pt6 =
+    Spacing.pt6
+
+pt8 =
+    Spacing.pt8
+
+pt10 =
+    Spacing.pt10
+
+pt12 =
+    Spacing.pt12
+
+pt16 =
+    Spacing.pt16
+
+pt20 =
+    Spacing.pt20
+
+pt24 =
+    Spacing.pt24
+
+pr0 =
+    Spacing.pr0
+
+pr1 =
+    Spacing.pr1
+
+pr2 =
+    Spacing.pr2
+
+pr3 =
+    Spacing.pr3
+
+pr4 =
+    Spacing.pr4
+
+pr5 =
+    Spacing.pr5
+
+pr6 =
+    Spacing.pr6
+
+pr8 =
+    Spacing.pr8
+
+pb0 =
+    Spacing.pb0
+
+pb1 =
+    Spacing.pb1
+
+pb2 =
+    Spacing.pb2
+
+pb3 =
+    Spacing.pb3
+
+pb4 =
+    Spacing.pb4
+
+pb5 =
+    Spacing.pb5
+
+pb6 =
+    Spacing.pb6
+
+pb8 =
+    Spacing.pb8
+
+pl0 =
+    Spacing.pl0
+
+pl1 =
+    Spacing.pl1
+
+pl2 =
+    Spacing.pl2
+
+pl3 =
+    Spacing.pl3
+
+pl4 =
+    Spacing.pl4
+
+pl5 =
+    Spacing.pl5
+
+pl6 =
+    Spacing.pl6
+
+pl8 =
+    Spacing.pl8
+
+-- Spacing: Margin
+m0 =
+    Spacing.m0
+
+m1 =
+    Spacing.m1
+
+m2 =
+    Spacing.m2
+
+m3 =
+    Spacing.m3
+
+m4 =
+    Spacing.m4
+
+m5 =
+    Spacing.m5
+
+m6 =
+    Spacing.m6
+
+m8 =
+    Spacing.m8
+
+m10 =
+    Spacing.m10
+
+m12 =
+    Spacing.m12
+
+m16 =
+    Spacing.m16
+
+m20 =
+    Spacing.m20
+
+m24 =
+    Spacing.m24
+
+mAuto =
+    Spacing.mAuto
+
+mx0 =
+    Spacing.mx0
+
+mx1 =
+    Spacing.mx1
+
+mx2 =
+    Spacing.mx2
+
+mx3 =
+    Spacing.mx3
+
+mx4 =
+    Spacing.mx4
+
+mx6 =
+    Spacing.mx6
+
+mx8 =
+    Spacing.mx8
+
+mxAuto =
+    Spacing.mxAuto
+
+my0 =
+    Spacing.my0
+
+my1 =
+    Spacing.my1
+
+my2 =
+    Spacing.my2
+
+my3 =
+    Spacing.my3
+
+my4 =
+    Spacing.my4
+
+my6 =
+    Spacing.my6
+
+my8 =
+    Spacing.my8
+
+mt0 =
+    Spacing.mt0
+
+mt1 =
+    Spacing.mt1
+
+mt2 =
+    Spacing.mt2
+
+mt3 =
+    Spacing.mt3
+
+mt4 =
+    Spacing.mt4
+
+mt5 =
+    Spacing.mt5
+
+mt6 =
+    Spacing.mt6
+
+mt8 =
+    Spacing.mt8
+
+mt10 =
+    Spacing.mt10
+
+mt12 =
+    Spacing.mt12
+
+mt16 =
+    Spacing.mt16
+
+mt20 =
+    Spacing.mt20
+
+mr0 =
+    Spacing.mr0
+
+mr1 =
+    Spacing.mr1
+
+mr2 =
+    Spacing.mr2
+
+mr3 =
+    Spacing.mr3
+
+mr4 =
+    Spacing.mr4
+
+mr6 =
+    Spacing.mr6
+
+mr8 =
+    Spacing.mr8
+
+mrAuto =
+    Spacing.mrAuto
+
+mb0 =
+    Spacing.mb0
+
+mb1 =
+    Spacing.mb1
+
+mb2 =
+    Spacing.mb2
+
+mb3 =
+    Spacing.mb3
+
+mb4 =
+    Spacing.mb4
+
+mb5 =
+    Spacing.mb5
+
+mb6 =
+    Spacing.mb6
+
+mb8 =
+    Spacing.mb8
+
+mb10 =
+    Spacing.mb10
+
+mb12 =
+    Spacing.mb12
+
+mb16 =
+    Spacing.mb16
+
+mb20 =
+    Spacing.mb20
+
+ml0 =
+    Spacing.ml0
+
+ml1 =
+    Spacing.ml1
+
+ml2 =
+    Spacing.ml2
+
+ml3 =
+    Spacing.ml3
+
+ml4 =
+    Spacing.ml4
+
+ml6 =
+    Spacing.ml6
+
+ml8 =
+    Spacing.ml8
+
+mlAuto =
+    Spacing.mlAuto
+
+-- Spacing: Gap
+gap0 =
+    Spacing.gap0
+
+gap1 =
+    Spacing.gap1
+
+gap2 =
+    Spacing.gap2
+
+gap3 =
+    Spacing.gap3
+
+gap4 =
+    Spacing.gap4
+
+gap5 =
+    Spacing.gap5
+
+gap6 =
+    Spacing.gap6
+
+gap8 =
+    Spacing.gap8
+
+gap10 =
+    Spacing.gap10
+
+gap12 =
+    Spacing.gap12
+
+-- Typography: Font Size
+textXs =
+    Typography.textXs
+
+textSm =
+    Typography.textSm
+
+textBase =
+    Typography.textBase
+
+textLg =
+    Typography.textLg
+
+textXl =
+    Typography.textXl
+
+text2xl =
+    Typography.text2xl
+
+text3xl =
+    Typography.text3xl
+
+text4xl =
+    Typography.text4xl
+
+text5xl =
+    Typography.text5xl
+
+text6xl =
+    Typography.text6xl
+
+text7xl =
+    Typography.text7xl
+
+text8xl =
+    Typography.text8xl
+
+text9xl =
+    Typography.text9xl
+
+-- Typography: Font Weight
+fontThin =
+    Typography.fontThin
+
+fontExtralight =
+    Typography.fontExtralight
+
+fontLight =
+    Typography.fontLight
+
+fontNormal =
+    Typography.fontNormal
+
+fontMedium =
+    Typography.fontMedium
+
+fontSemibold =
+    Typography.fontSemibold
+
+fontBold =
+    Typography.fontBold
+
+fontExtrabold =
+    Typography.fontExtrabold
+
+fontBlack =
+    Typography.fontBlack
+
+-- Typography: Font Family
+fontSans =
+    Typography.fontSans
+
+fontSerif =
+    Typography.fontSerif
+
+fontMono =
+    Typography.fontMono
+
+-- Typography: Text Align
+textLeft =
+    Typography.textLeft
+
+textCenter =
+    Typography.textCenter
+
+textRight =
+    Typography.textRight
+
+textJustify =
+    Typography.textJustify
+
+-- Typography: Text Color
+textTransparent =
+    Typography.textTransparent
+
+textBlack =
+    Typography.textBlack
+
+textWhite =
+    Typography.textWhite
+
+textGray50 =
+    Typography.textGray50
+
+textGray100 =
+    Typography.textGray100
+
+textGray200 =
+    Typography.textGray200
+
+textGray300 =
+    Typography.textGray300
+
+textGray400 =
+    Typography.textGray400
+
+textGray500 =
+    Typography.textGray500
+
+textGray600 =
+    Typography.textGray600
+
+textGray700 =
+    Typography.textGray700
+
+textGray800 =
+    Typography.textGray800
+
+textGray900 =
+    Typography.textGray900
+
+textRed500 =
+    Typography.textRed500
+
+textRed600 =
+    Typography.textRed600
+
+textRed700 =
+    Typography.textRed700
+
+textOrange500 =
+    Typography.textOrange500
+
+textYellow500 =
+    Typography.textYellow500
+
+textGreen500 =
+    Typography.textGreen500
+
+textGreen600 =
+    Typography.textGreen600
+
+textGreen700 =
+    Typography.textGreen700
+
+textBlue100 =
+    Typography.textBlue100
+
+textBlue500 =
+    Typography.textBlue500
+
+textBlue600 =
+    Typography.textBlue600
+
+textBlue700 =
+    Typography.textBlue700
+
+textIndigo500 =
+    Typography.textIndigo500
+
+textIndigo600 =
+    Typography.textIndigo600
+
+textPurple500 =
+    Typography.textPurple500
+
+textPurple600 =
+    Typography.textPurple600
+
+textPink500 =
+    Typography.textPink500
+
+-- Typography: Text Decoration
+underline =
+    Typography.underline
+
+overline =
+    Typography.overline
+
+lineThrough =
+    Typography.lineThrough
+
+noUnderline =
+    Typography.noUnderline
+
+-- Typography: Text Transform
+uppercase =
+    Typography.uppercase
+
+lowercase =
+    Typography.lowercase
+
+capitalize =
+    Typography.capitalize
+
+normalCase =
+    Typography.normalCase
+
+-- Typography: Line Height
+leadingNone =
+    Typography.leadingNone
+
+leadingTight =
+    Typography.leadingTight
+
+leadingSnug =
+    Typography.leadingSnug
+
+leadingNormal =
+    Typography.leadingNormal
+
+leadingRelaxed =
+    Typography.leadingRelaxed
+
+leadingLoose =
+    Typography.leadingLoose
+
+-- Typography: Letter Spacing
+trackingTighter =
+    Typography.trackingTighter
+
+trackingTight =
+    Typography.trackingTight
+
+trackingNormal =
+    Typography.trackingNormal
+
+trackingWide =
+    Typography.trackingWide
+
+trackingWider =
+    Typography.trackingWider
+
+trackingWidest =
+    Typography.trackingWidest
+
+-- Typography: Whitespace
+whitespaceNormal =
+    Typography.whitespaceNormal
+
+whitespaceNowrap =
+    Typography.whitespaceNowrap
+
+whitespacePre =
+    Typography.whitespacePre
+
+whitespacePreLine =
+    Typography.whitespacePreLine
+
+whitespacePreWrap =
+    Typography.whitespacePreWrap
+
+-- Typography: Truncate
+truncate =
+    Typography.truncate
+
+-- Layout: Display
+block =
+    Layout.block
+
+inlineBlock =
+    Layout.inlineBlock
+
+inline =
+    Layout.inline
+
+flex =
+    Layout.flex
+
+inlineFlex =
+    Layout.inlineFlex
+
+grid =
+    Layout.grid
+
+inlineGrid =
+    Layout.inlineGrid
+
+hidden_ =
+    Layout.hidden_
+
+table_ =
+    Layout.table_
+
+tableRow =
+    Layout.tableRow
+
+tableCell =
+    Layout.tableCell
+
+-- Layout: Position
+static_ =
+    Layout.static_
+
+relative =
+    Layout.relative
+
+absolute =
+    Layout.absolute
+
+fixed =
+    Layout.fixed
+
+sticky =
+    Layout.sticky
+
+-- Layout: Inset
+inset0 =
+    Layout.inset0
+
+insetX0 =
+    Layout.insetX0
+
+insetY0 =
+    Layout.insetY0
+
+top0 =
+    Layout.top0
+
+top1 =
+    Layout.top1
+
+top2 =
+    Layout.top2
+
+top4 =
+    Layout.top4
+
+right0 =
+    Layout.right0
+
+bottom0 =
+    Layout.bottom0
+
+left0 =
+    Layout.left0
+
+-- Layout: Z-Index
+z0 =
+    Layout.z0
+
+z10 =
+    Layout.z10
+
+z20 =
+    Layout.z20
+
+z30 =
+    Layout.z30
+
+z40 =
+    Layout.z40
+
+z50 =
+    Layout.z50
+
+zAuto =
+    Layout.zAuto
+
+-- Layout: Overflow
+overflowAuto =
+    Layout.overflowAuto
+
+overflowHidden =
+    Layout.overflowHidden
+
+overflowScroll =
+    Layout.overflowScroll
+
+overflowVisible =
+    Layout.overflowVisible
+
+overflowXAuto =
+    Layout.overflowXAuto
+
+overflowXHidden =
+    Layout.overflowXHidden
+
+overflowYAuto =
+    Layout.overflowYAuto
+
+overflowYHidden =
+    Layout.overflowYHidden
+
+-- Layout: Width
+w0 =
+    Layout.w0
+
+w1 =
+    Layout.w1
+
+w2 =
+    Layout.w2
+
+w4 =
+    Layout.w4
+
+w8 =
+    Layout.w8
+
+w12 =
+    Layout.w12
+
+w16 =
+    Layout.w16
+
+w20 =
+    Layout.w20
+
+w24 =
+    Layout.w24
+
+w32 =
+    Layout.w32
+
+w40 =
+    Layout.w40
+
+w48 =
+    Layout.w48
+
+w56 =
+    Layout.w56
+
+w64 =
+    Layout.w64
+
+wAuto =
+    Layout.wAuto
+
+wFull =
+    Layout.wFull
+
+wScreen =
+    Layout.wScreen
+
+wFit =
+    Layout.wFit
+
+wMin =
+    Layout.wMin
+
+wMax =
+    Layout.wMax
+
+wHalf =
+    Layout.wHalf
+
+wThird =
+    Layout.wThird
+
+w2Third =
+    Layout.w2Third
+
+wQuarter =
+    Layout.wQuarter
+
+w3Quarter =
+    Layout.w3Quarter
+
+-- Layout: Height
+h0 =
+    Layout.h0
+
+h1 =
+    Layout.h1
+
+h2 =
+    Layout.h2
+
+h4 =
+    Layout.h4
+
+h8 =
+    Layout.h8
+
+h12 =
+    Layout.h12
+
+h16 =
+    Layout.h16
+
+h24 =
+    Layout.h24
+
+h32 =
+    Layout.h32
+
+h48 =
+    Layout.h48
+
+h64 =
+    Layout.h64
+
+hAuto =
+    Layout.hAuto
+
+hFull =
+    Layout.hFull
+
+hScreen =
+    Layout.hScreen
+
+hFit =
+    Layout.hFit
+
+hMin =
+    Layout.hMin
+
+hMax =
+    Layout.hMax
+
+-- Layout: Min/Max Width
+minW0 =
+    Layout.minW0
+
+minWFull =
+    Layout.minWFull
+
+maxWNone =
+    Layout.maxWNone
+
+maxWXs =
+    Layout.maxWXs
+
+maxWSm =
+    Layout.maxWSm
+
+maxWMd =
+    Layout.maxWMd
+
+maxWLg =
+    Layout.maxWLg
+
+maxWXl =
+    Layout.maxWXl
+
+maxW2xl =
+    Layout.maxW2xl
+
+maxW3xl =
+    Layout.maxW3xl
+
+maxW4xl =
+    Layout.maxW4xl
+
+maxW5xl =
+    Layout.maxW5xl
+
+maxW6xl =
+    Layout.maxW6xl
+
+maxW7xl =
+    Layout.maxW7xl
+
+maxWFull =
+    Layout.maxWFull
+
+maxWScreenSm =
+    Layout.maxWScreenSm
+
+maxWScreenMd =
+    Layout.maxWScreenMd
+
+maxWScreenLg =
+    Layout.maxWScreenLg
+
+maxWScreenXl =
+    Layout.maxWScreenXl
+
+-- Layout: Min/Max Height
+minH0 =
+    Layout.minH0
+
+minHFull =
+    Layout.minHFull
+
+minHScreen =
+    Layout.minHScreen
+
+maxHNone =
+    Layout.maxHNone
+
+maxHFull =
+    Layout.maxHFull
+
+maxHScreen =
+    Layout.maxHScreen
+
+-- Flex: Direction
+flexRow =
+    Flex_.flexRow
+
+flexRowReverse =
+    Flex_.flexRowReverse
+
+flexCol =
+    Flex_.flexCol
+
+flexColReverse =
+    Flex_.flexColReverse
+
+-- Flex: Wrap
+flexWrap =
+    Flex_.flexWrap
+
+flexWrapReverse =
+    Flex_.flexWrapReverse
+
+flexNowrap =
+    Flex_.flexNowrap
+
+-- Flex: Justify Content
+justifyStart =
+    Flex_.justifyStart
+
+justifyEnd =
+    Flex_.justifyEnd
+
+justifyCenter =
+    Flex_.justifyCenter
+
+justifyBetween =
+    Flex_.justifyBetween
+
+justifyAround =
+    Flex_.justifyAround
+
+justifyEvenly =
+    Flex_.justifyEvenly
+
+-- Flex: Align Items
+itemsStart =
+    Flex_.itemsStart
+
+itemsEnd =
+    Flex_.itemsEnd
+
+itemsCenter =
+    Flex_.itemsCenter
+
+itemsBaseline =
+    Flex_.itemsBaseline
+
+itemsStretch =
+    Flex_.itemsStretch
+
+-- Flex: Align Self
+selfAuto =
+    Flex_.selfAuto
+
+selfStart =
+    Flex_.selfStart
+
+selfEnd =
+    Flex_.selfEnd
+
+selfCenter =
+    Flex_.selfCenter
+
+selfStretch =
+    Flex_.selfStretch
+
+-- Flex: Align Content
+contentStart =
+    Flex_.contentStart
+
+contentEnd =
+    Flex_.contentEnd
+
+contentCenter =
+    Flex_.contentCenter
+
+contentBetween =
+    Flex_.contentBetween
+
+contentAround =
+    Flex_.contentAround
+
+-- Flex: Flex
+flex1 =
+    Flex_.flex1
+
+flexAuto =
+    Flex_.flexAuto
+
+flexInitial =
+    Flex_.flexInitial
+
+flexNone =
+    Flex_.flexNone
+
+-- Flex: Grow / Shrink
+grow =
+    Flex_.grow
+
+grow0 =
+    Flex_.grow0
+
+shrink =
+    Flex_.shrink
+
+shrink0 =
+    Flex_.shrink0
+
+-- Flex: Order
+order1 =
+    Flex_.order1
+
+order2 =
+    Flex_.order2
+
+order3 =
+    Flex_.order3
+
+order4 =
+    Flex_.order4
+
+order5 =
+    Flex_.order5
+
+order6 =
+    Flex_.order6
+
+order7 =
+    Flex_.order7
+
+order8 =
+    Flex_.order8
+
+order9 =
+    Flex_.order9
+
+order10 =
+    Flex_.order10
+
+order11 =
+    Flex_.order11
+
+order12 =
+    Flex_.order12
+
+orderFirst =
+    Flex_.orderFirst
+
+orderLast =
+    Flex_.orderLast
+
+orderNone =
+    Flex_.orderNone
+
+-- Grid: Template Columns
+gridCols1 =
+    Grid_.gridCols1
+
+gridCols2 =
+    Grid_.gridCols2
+
+gridCols3 =
+    Grid_.gridCols3
+
+gridCols4 =
+    Grid_.gridCols4
+
+gridCols5 =
+    Grid_.gridCols5
+
+gridCols6 =
+    Grid_.gridCols6
+
+gridCols7 =
+    Grid_.gridCols7
+
+gridCols8 =
+    Grid_.gridCols8
+
+gridCols9 =
+    Grid_.gridCols9
+
+gridCols10 =
+    Grid_.gridCols10
+
+gridCols11 =
+    Grid_.gridCols11
+
+gridCols12 =
+    Grid_.gridCols12
+
+gridColsNone =
+    Grid_.gridColsNone
+
+-- Grid: Template Rows
+gridRows1 =
+    Grid_.gridRows1
+
+gridRows2 =
+    Grid_.gridRows2
+
+gridRows3 =
+    Grid_.gridRows3
+
+gridRows4 =
+    Grid_.gridRows4
+
+gridRows5 =
+    Grid_.gridRows5
+
+gridRows6 =
+    Grid_.gridRows6
+
+gridRowsNone =
+    Grid_.gridRowsNone
+
+-- Grid: Column Span
+colSpan1 =
+    Grid_.colSpan1
+
+colSpan2 =
+    Grid_.colSpan2
+
+colSpan3 =
+    Grid_.colSpan3
+
+colSpan4 =
+    Grid_.colSpan4
+
+colSpan5 =
+    Grid_.colSpan5
+
+colSpan6 =
+    Grid_.colSpan6
+
+colSpan7 =
+    Grid_.colSpan7
+
+colSpan8 =
+    Grid_.colSpan8
+
+colSpan9 =
+    Grid_.colSpan9
+
+colSpan10 =
+    Grid_.colSpan10
+
+colSpan11 =
+    Grid_.colSpan11
+
+colSpan12 =
+    Grid_.colSpan12
+
+colSpanFull =
+    Grid_.colSpanFull
+
+-- Grid: Row Span
+rowSpan1 =
+    Grid_.rowSpan1
+
+rowSpan2 =
+    Grid_.rowSpan2
+
+rowSpan3 =
+    Grid_.rowSpan3
+
+rowSpan4 =
+    Grid_.rowSpan4
+
+rowSpan5 =
+    Grid_.rowSpan5
+
+rowSpan6 =
+    Grid_.rowSpan6
+
+rowSpanFull =
+    Grid_.rowSpanFull
+
+-- Grid: Auto Flow
+gridFlowRow =
+    Grid_.gridFlowRow
+
+gridFlowCol =
+    Grid_.gridFlowCol
+
+gridFlowDense =
+    Grid_.gridFlowDense
+
+gridFlowRowDense =
+    Grid_.gridFlowRowDense
+
+gridFlowColDense =
+    Grid_.gridFlowColDense
+
+-- Grid: Place
+placeContentCenter =
+    Grid_.placeContentCenter
+
+placeContentStart =
+    Grid_.placeContentStart
+
+placeContentEnd =
+    Grid_.placeContentEnd
+
+placeContentBetween =
+    Grid_.placeContentBetween
+
+placeItemsCenter =
+    Grid_.placeItemsCenter
+
+placeItemsStart =
+    Grid_.placeItemsStart
+
+placeItemsEnd =
+    Grid_.placeItemsEnd
+
+placeItemsStretch =
+    Grid_.placeItemsStretch
+
+placeSelfCenter =
+    Grid_.placeSelfCenter
+
+placeSelfStart =
+    Grid_.placeSelfStart
+
+placeSelfEnd =
+    Grid_.placeSelfEnd
+
+placeSelfAuto =
+    Grid_.placeSelfAuto
+
+-- Background: Color
+bgTransparent =
+    Background.bgTransparent
+
+bgBlack =
+    Background.bgBlack
+
+bgWhite =
+    Background.bgWhite
+
+bgGray50 =
+    Background.bgGray50
+
+bgGray100 =
+    Background.bgGray100
+
+bgGray200 =
+    Background.bgGray200
+
+bgGray300 =
+    Background.bgGray300
+
+bgGray400 =
+    Background.bgGray400
+
+bgGray500 =
+    Background.bgGray500
+
+bgGray600 =
+    Background.bgGray600
+
+bgGray700 =
+    Background.bgGray700
+
+bgGray800 =
+    Background.bgGray800
+
+bgGray900 =
+    Background.bgGray900
+
+bgGray950 =
+    Background.bgGray950
+
+bgSlate50 =
+    Background.bgSlate50
+
+bgSlate100 =
+    Background.bgSlate100
+
+bgSlate200 =
+    Background.bgSlate200
+
+bgSlate300 =
+    Background.bgSlate300
+
+bgSlate400 =
+    Background.bgSlate400
+
+bgSlate500 =
+    Background.bgSlate500
+
+bgSlate600 =
+    Background.bgSlate600
+
+bgSlate700 =
+    Background.bgSlate700
+
+bgSlate800 =
+    Background.bgSlate800
+
+bgSlate900 =
+    Background.bgSlate900
+
+bgRed50 =
+    Background.bgRed50
+
+bgRed100 =
+    Background.bgRed100
+
+bgRed200 =
+    Background.bgRed200
+
+bgRed300 =
+    Background.bgRed300
+
+bgRed400 =
+    Background.bgRed400
+
+bgRed500 =
+    Background.bgRed500
+
+bgRed600 =
+    Background.bgRed600
+
+bgRed700 =
+    Background.bgRed700
+
+bgRed800 =
+    Background.bgRed800
+
+bgRed900 =
+    Background.bgRed900
+
+bgOrange50 =
+    Background.bgOrange50
+
+bgOrange100 =
+    Background.bgOrange100
+
+bgOrange200 =
+    Background.bgOrange200
+
+bgOrange300 =
+    Background.bgOrange300
+
+bgOrange400 =
+    Background.bgOrange400
+
+bgOrange500 =
+    Background.bgOrange500
+
+bgOrange600 =
+    Background.bgOrange600
+
+bgOrange700 =
+    Background.bgOrange700
+
+bgYellow50 =
+    Background.bgYellow50
+
+bgYellow100 =
+    Background.bgYellow100
+
+bgYellow200 =
+    Background.bgYellow200
+
+bgYellow300 =
+    Background.bgYellow300
+
+bgYellow400 =
+    Background.bgYellow400
+
+bgYellow500 =
+    Background.bgYellow500
+
+bgGreen50 =
+    Background.bgGreen50
+
+bgGreen100 =
+    Background.bgGreen100
+
+bgGreen200 =
+    Background.bgGreen200
+
+bgGreen300 =
+    Background.bgGreen300
+
+bgGreen400 =
+    Background.bgGreen400
+
+bgGreen500 =
+    Background.bgGreen500
+
+bgGreen600 =
+    Background.bgGreen600
+
+bgGreen700 =
+    Background.bgGreen700
+
+bgGreen800 =
+    Background.bgGreen800
+
+bgGreen900 =
+    Background.bgGreen900
+
+bgBlue50 =
+    Background.bgBlue50
+
+bgBlue100 =
+    Background.bgBlue100
+
+bgBlue200 =
+    Background.bgBlue200
+
+bgBlue300 =
+    Background.bgBlue300
+
+bgBlue400 =
+    Background.bgBlue400
+
+bgBlue500 =
+    Background.bgBlue500
+
+bgBlue600 =
+    Background.bgBlue600
+
+bgBlue700 =
+    Background.bgBlue700
+
+bgBlue800 =
+    Background.bgBlue800
+
+bgBlue900 =
+    Background.bgBlue900
+
+bgIndigo50 =
+    Background.bgIndigo50
+
+bgIndigo100 =
+    Background.bgIndigo100
+
+bgIndigo200 =
+    Background.bgIndigo200
+
+bgIndigo300 =
+    Background.bgIndigo300
+
+bgIndigo400 =
+    Background.bgIndigo400
+
+bgIndigo500 =
+    Background.bgIndigo500
+
+bgIndigo600 =
+    Background.bgIndigo600
+
+bgIndigo700 =
+    Background.bgIndigo700
+
+bgPurple50 =
+    Background.bgPurple50
+
+bgPurple100 =
+    Background.bgPurple100
+
+bgPurple200 =
+    Background.bgPurple200
+
+bgPurple300 =
+    Background.bgPurple300
+
+bgPurple400 =
+    Background.bgPurple400
+
+bgPurple500 =
+    Background.bgPurple500
+
+bgPurple600 =
+    Background.bgPurple600
+
+bgPurple700 =
+    Background.bgPurple700
+
+bgPink50 =
+    Background.bgPink50
+
+bgPink100 =
+    Background.bgPink100
+
+bgPink200 =
+    Background.bgPink200
+
+bgPink300 =
+    Background.bgPink300
+
+bgPink400 =
+    Background.bgPink400
+
+bgPink500 =
+    Background.bgPink500
+
+bgPink600 =
+    Background.bgPink600
+
+bgPink700 =
+    Background.bgPink700
+
+-- Background: Size / Position / Repeat
+bgAuto =
+    Background.bgAuto
+
+bgCover =
+    Background.bgCover
+
+bgContain =
+    Background.bgContain
+
+bgCenter =
+    Background.bgCenter
+
+bgTop =
+    Background.bgTop
+
+bgBottom =
+    Background.bgBottom
+
+bgLeft =
+    Background.bgLeft
+
+bgRight =
+    Background.bgRight
+
+bgRepeat =
+    Background.bgRepeat
+
+bgNoRepeat =
+    Background.bgNoRepeat
+
+bgRepeatX =
+    Background.bgRepeatX
+
+bgRepeatY =
+    Background.bgRepeatY
+
+-- Border: Width
+border =
+    Border_.border
+
+border0 =
+    Border_.border0
+
+border2 =
+    Border_.border2
+
+border4 =
+    Border_.border4
+
+border8 =
+    Border_.border8
+
+borderT =
+    Border_.borderT
+
+borderR =
+    Border_.borderR
+
+borderB =
+    Border_.borderB
+
+borderL =
+    Border_.borderL
+
+borderT0 =
+    Border_.borderT0
+
+borderT2 =
+    Border_.borderT2
+
+borderB0 =
+    Border_.borderB0
+
+borderB2 =
+    Border_.borderB2
+
+-- Border: Color
+borderTransparent =
+    Border_.borderTransparent
+
+borderBlack =
+    Border_.borderBlack
+
+borderWhite =
+    Border_.borderWhite
+
+borderGray100 =
+    Border_.borderGray100
+
+borderGray200 =
+    Border_.borderGray200
+
+borderGray300 =
+    Border_.borderGray300
+
+borderGray400 =
+    Border_.borderGray400
+
+borderGray500 =
+    Border_.borderGray500
+
+borderGray600 =
+    Border_.borderGray600
+
+borderGray700 =
+    Border_.borderGray700
+
+borderGray800 =
+    Border_.borderGray800
+
+borderRed500 =
+    Border_.borderRed500
+
+borderBlue500 =
+    Border_.borderBlue500
+
+borderGreen500 =
+    Border_.borderGreen500
+
+-- Border: Style
+borderSolid =
+    Border_.borderSolid
+
+borderDashed =
+    Border_.borderDashed
+
+borderDotted =
+    Border_.borderDotted
+
+borderDouble =
+    Border_.borderDouble
+
+borderNone_ =
+    Border_.borderNone_
+
+-- Border: Radius
+roundedNone =
+    Border_.roundedNone
+
+roundedSm =
+    Border_.roundedSm
+
+rounded =
+    Border_.rounded
+
+roundedMd =
+    Border_.roundedMd
+
+roundedLg =
+    Border_.roundedLg
+
+roundedXl =
+    Border_.roundedXl
+
+rounded2xl =
+    Border_.rounded2xl
+
+rounded3xl =
+    Border_.rounded3xl
+
+roundedFull =
+    Border_.roundedFull
+
+roundedT =
+    Border_.roundedT
+
+roundedR =
+    Border_.roundedR
+
+roundedB =
+    Border_.roundedB
+
+roundedL =
+    Border_.roundedL
+
+roundedTLg =
+    Border_.roundedTLg
+
+roundedBLg =
+    Border_.roundedBLg
+
+roundedTXl =
+    Border_.roundedTXl
+
+roundedBXl =
+    Border_.roundedBXl
+
+-- Border: Ring
+ring =
+    Border_.ring
+
+ring0 =
+    Border_.ring0
+
+ring1 =
+    Border_.ring1
+
+ring2 =
+    Border_.ring2
+
+ring4 =
+    Border_.ring4
+
+-- Effects: Shadow
+shadowSm =
+    Effects.shadowSm
+
+shadow =
+    Effects.shadow
+
+shadowMd =
+    Effects.shadowMd
+
+shadowLg =
+    Effects.shadowLg
+
+shadowXl =
+    Effects.shadowXl
+
+shadow2xl =
+    Effects.shadow2xl
+
+shadowInner =
+    Effects.shadowInner
+
+shadowNone =
+    Effects.shadowNone
+
+-- Effects: Opacity
+opacity0 =
+    Effects.opacity0
+
+opacity5 =
+    Effects.opacity5
+
+opacity10 =
+    Effects.opacity10
+
+opacity20 =
+    Effects.opacity20
+
+opacity25 =
+    Effects.opacity25
+
+opacity30 =
+    Effects.opacity30
+
+opacity40 =
+    Effects.opacity40
+
+opacity50 =
+    Effects.opacity50
+
+opacity60 =
+    Effects.opacity60
+
+opacity70 =
+    Effects.opacity70
+
+opacity75 =
+    Effects.opacity75
+
+opacity80 =
+    Effects.opacity80
+
+opacity90 =
+    Effects.opacity90
+
+opacity95 =
+    Effects.opacity95
+
+opacity100 =
+    Effects.opacity100
+
+-- Effects: Transition
+transitionAll =
+    Effects.transitionAll
+
+transition =
+    Effects.transition
+
+transitionColors =
+    Effects.transitionColors
+
+transitionOpacity =
+    Effects.transitionOpacity
+
+transitionShadow =
+    Effects.transitionShadow
+
+transitionTransform =
+    Effects.transitionTransform
+
+transitionNone =
+    Effects.transitionNone
+
+-- Effects: Duration
+duration75 =
+    Effects.duration75
+
+duration100 =
+    Effects.duration100
+
+duration150 =
+    Effects.duration150
+
+duration200 =
+    Effects.duration200
+
+duration300 =
+    Effects.duration300
+
+duration500 =
+    Effects.duration500
+
+duration700 =
+    Effects.duration700
+
+duration1000 =
+    Effects.duration1000
+
+-- Effects: Ease
+easeLinear =
+    Effects.easeLinear
+
+easeIn =
+    Effects.easeIn
+
+easeOut =
+    Effects.easeOut
+
+easeInOut =
+    Effects.easeInOut
+
+-- Effects: Scale
+scale0 =
+    Effects.scale0
+
+scale50 =
+    Effects.scale50
+
+scale75 =
+    Effects.scale75
+
+scale90 =
+    Effects.scale90
+
+scale95 =
+    Effects.scale95
+
+scale100 =
+    Effects.scale100
+
+scale105 =
+    Effects.scale105
+
+scale110 =
+    Effects.scale110
+
+scale125 =
+    Effects.scale125
+
+scale150 =
+    Effects.scale150
+
+-- Effects: Rotate
+rotate0 =
+    Effects.rotate0
+
+rotate1 =
+    Effects.rotate1
+
+rotate2 =
+    Effects.rotate2
+
+rotate3 =
+    Effects.rotate3
+
+rotate6 =
+    Effects.rotate6
+
+rotate12 =
+    Effects.rotate12
+
+rotate45 =
+    Effects.rotate45
+
+rotate90 =
+    Effects.rotate90
+
+rotate180 =
+    Effects.rotate180
+
+-- Effects: Cursor
+cursorAuto =
+    Effects.cursorAuto
+
+cursorDefault =
+    Effects.cursorDefault
+
+cursorPointer =
+    Effects.cursorPointer
+
+cursorWait =
+    Effects.cursorWait
+
+cursorText =
+    Effects.cursorText
+
+cursorMove =
+    Effects.cursorMove
+
+cursorNotAllowed =
+    Effects.cursorNotAllowed
+
+cursorGrab =
+    Effects.cursorGrab
+
+cursorGrabbing =
+    Effects.cursorGrabbing
+
+-- Effects: Pointer Events
+pointerEventsNone =
+    Effects.pointerEventsNone
+
+pointerEventsAuto =
+    Effects.pointerEventsAuto
+
+-- Effects: User Select
+selectNone =
+    Effects.selectNone
+
+selectText =
+    Effects.selectText
+
+selectAll =
+    Effects.selectAll
+
+selectAuto =
+    Effects.selectAuto
+
+-- State
+hover : ( String, String ) -> ( String, String )
+hover attr =
+    State.hover attr
+
+focus : ( String, String ) -> ( String, String )
+focus attr =
+    State.focus attr
+
+active : ( String, String ) -> ( String, String )
+active attr =
+    State.active attr
+
+disabled : ( String, String ) -> ( String, String )
+disabled attr =
+    State.disabled attr
+
+firstChild : ( String, String ) -> ( String, String )
+firstChild attr =
+    State.firstChild attr
+
+lastChild : ( String, String ) -> ( String, String )
+lastChild attr =
+    State.lastChild attr
+
+odd : ( String, String ) -> ( String, String )
+odd attr =
+    State.odd attr
+
+even : ( String, String ) -> ( String, String )
+even attr =
+    State.even attr
+
+-- Responsive
+sm : ( String, String ) -> ( String, String )
+sm attr =
+    Responsive.sm attr
+
+md : ( String, String ) -> ( String, String )
+md attr =
+    Responsive.md attr
+
+lg : ( String, String ) -> ( String, String )
+lg attr =
+    Responsive.lg attr
+
+xl : ( String, String ) -> ( String, String )
+xl attr =
+    Responsive.xl attr
+
+xxl : ( String, String ) -> ( String, String )
+xxl attr =
+    Responsive.xxl attr

@@ -1,225 +1,255 @@
-module SkyTailwind.Internal.Css exposing (allRules)
+module Tailwind.Internal.Css exposing (allRules)
 
+import Sky.Core.Prelude exposing (..)
 import Std.Css exposing (..)
-
 
 allRules : String
 allRules =
     stylesheet
-        [ -- Reset
-          rule "*, *::before, *::after" [ property "box-sizing" "border-box" ]
-        , rule "body" [ margin zero, padding zero ]
-
-        -- =====================
-        -- SPACING
-        -- =====================
+        [ rule "*, *::before, *::after" [ property "box-sizing" "border-box" ]
 
         -- Padding
-        , rule ".p-0" [ padding zero ]
-        , rule ".p-1" [ padding (rem 0.25) ]
-        , rule ".p-2" [ padding (rem 0.5) ]
-        , rule ".p-3" [ padding (rem 0.75) ]
-        , rule ".p-4" [ padding (rem 1) ]
-        , rule ".p-5" [ padding (rem 1.25) ]
-        , rule ".p-6" [ padding (rem 1.5) ]
-        , rule ".p-8" [ padding (rem 2) ]
-        , rule ".p-10" [ padding (rem 2.5) ]
-        , rule ".p-12" [ padding (rem 3) ]
-        , rule ".p-16" [ padding (rem 4) ]
-        , rule ".p-20" [ padding (rem 5) ]
-        , rule ".p-24" [ padding (rem 6) ]
+        , rule "body" [ margin "0" , padding "0" ]
 
         -- Padding X
-        , rule ".px-0" [ paddingLeft zero, paddingRight zero ]
-        , rule ".px-1" [ paddingLeft (rem 0.25), paddingRight (rem 0.25) ]
-        , rule ".px-2" [ paddingLeft (rem 0.5), paddingRight (rem 0.5) ]
-        , rule ".px-3" [ paddingLeft (rem 0.75), paddingRight (rem 0.75) ]
-        , rule ".px-4" [ paddingLeft (rem 1), paddingRight (rem 1) ]
-        , rule ".px-5" [ paddingLeft (rem 1.25), paddingRight (rem 1.25) ]
-        , rule ".px-6" [ paddingLeft (rem 1.5), paddingRight (rem 1.5) ]
-        , rule ".px-8" [ paddingLeft (rem 2), paddingRight (rem 2) ]
-        , rule ".px-10" [ paddingLeft (rem 2.5), paddingRight (rem 2.5) ]
-        , rule ".px-12" [ paddingLeft (rem 3), paddingRight (rem 3) ]
-        , rule ".px-16" [ paddingLeft (rem 4), paddingRight (rem 4) ]
-        , rule ".px-20" [ paddingLeft (rem 5), paddingRight (rem 5) ]
-        , rule ".px-24" [ paddingLeft (rem 6), paddingRight (rem 6) ]
+        , rule ".p-0" [ padding "0" ]
 
         -- Padding Y
-        , rule ".py-0" [ paddingTop zero, paddingBottom zero ]
-        , rule ".py-1" [ paddingTop (rem 0.25), paddingBottom (rem 0.25) ]
-        , rule ".py-2" [ paddingTop (rem 0.5), paddingBottom (rem 0.5) ]
-        , rule ".py-3" [ paddingTop (rem 0.75), paddingBottom (rem 0.75) ]
-        , rule ".py-4" [ paddingTop (rem 1), paddingBottom (rem 1) ]
-        , rule ".py-5" [ paddingTop (rem 1.25), paddingBottom (rem 1.25) ]
-        , rule ".py-6" [ paddingTop (rem 1.5), paddingBottom (rem 1.5) ]
-        , rule ".py-8" [ paddingTop (rem 2), paddingBottom (rem 2) ]
-        , rule ".py-10" [ paddingTop (rem 2.5), paddingBottom (rem 2.5) ]
-        , rule ".py-12" [ paddingTop (rem 3), paddingBottom (rem 3) ]
-        , rule ".py-16" [ paddingTop (rem 4), paddingBottom (rem 4) ]
-        , rule ".py-20" [ paddingTop (rem 5), paddingBottom (rem 5) ]
-        , rule ".py-24" [ paddingTop (rem 6), paddingBottom (rem 6) ]
+        , rule ".p-1" [ padding (rem 0.25) ]
 
         -- Padding Top
-        , rule ".pt-0" [ paddingTop zero ]
+        , rule ".p-2" [ padding (rem 0.5) ]
+
+        -- Padding Right
+        , rule ".p-3" [ padding (rem 0.75) ]
+
+        -- Padding Bottom
+        , rule ".p-4" [ padding "1rem" ]
+
+        -- Padding Left
+        , rule ".p-5" [ padding (rem 1.25) ]
+
+        -- Margin
+        , rule ".p-6" [ padding (rem 1.5) ]
+
+        -- Typography
+        , rule ".p-8" [ padding "2rem" ]
+
+        -- Text Align
+        , rule ".p-10" [ padding (rem 2.5) ]
+
+        -- Text Color
+        , rule ".p-12" [ padding "3rem" ]
+
+        -- Text Decoration
+        , rule ".p-16" [ padding "4rem" ]
+
+        -- Text Transform
+        , rule ".p-20" [ padding "5rem" ]
+
+        -- Line Height
+        , rule ".p-24" [ padding "6rem" ]
+
+        -- Letter Spacing
+        , rule ".px-0" [ paddingLeft "0" , paddingRight "0" ]
+
+        -- Whitespace
+        , rule ".px-1" [ paddingLeft (rem 0.25) , paddingRight (rem 0.25) ]
+
+        -- Display
+        , rule ".px-2" [ paddingLeft (rem 0.5) , paddingRight (rem 0.5) ]
+
+        -- Position
+        , rule ".px-3" [ paddingLeft (rem 0.75) , paddingRight (rem 0.75) ]
+
+        -- Z-Index
+        , rule ".px-4" [ paddingLeft "1rem" , paddingRight "1rem" ]
+
+        -- Overflow
+        , rule ".px-5" [ paddingLeft (rem 1.25) , paddingRight (rem 1.25) ]
+
+        -- Width
+        , rule ".px-6" [ paddingLeft (rem 1.5) , paddingRight (rem 1.5) ]
+
+        -- Height
+        , rule ".px-8" [ paddingLeft "2rem" , paddingRight "2rem" ]
+
+        -- Min/Max Width & Height
+        , rule ".px-10" [ paddingLeft (rem 2.5) , paddingRight (rem 2.5) ]
+
+        -- Flexbox
+        , rule ".px-12" [ paddingLeft "3rem" , paddingRight "3rem" ]
+
+        -- Grid
+        , rule ".px-16" [ paddingLeft "4rem" , paddingRight "4rem" ]
+
+        -- Background
+        , rule ".px-20" [ paddingLeft "5rem" , paddingRight "5rem" ]
+
+        -- Border
+        , rule ".px-24" [ paddingLeft "6rem" , paddingRight "6rem" ]
+
+        -- Effects
+        , rule ".py-0" [ paddingTop "0" , paddingBottom "0" ]
+
+        -- Hover States
+        , rule ".py-1" [ paddingTop (rem 0.25) , paddingBottom (rem 0.25) ]
+
+        -- Focus States
+        , rule ".py-2" [ paddingTop (rem 0.5) , paddingBottom (rem 0.5) ]
+
+        -- Active States
+        , rule ".py-3" [ paddingTop (rem 0.75) , paddingBottom (rem 0.75) ]
+
+        -- Disabled States
+        , rule ".py-4" [ paddingTop "1rem" , paddingBottom "1rem" ]
+
+        -- Responsive: sm (640px)
+        , rule ".py-5" [ paddingTop (rem 1.25) , paddingBottom (rem 1.25) ]
+
+        -- Responsive: md (768px)
+        , rule ".py-6" [ paddingTop (rem 1.5) , paddingBottom (rem 1.5) ]
+
+        -- Responsive: lg (1024px)
+        , rule ".py-8" [ paddingTop "2rem" , paddingBottom "2rem" ]
+
+        -- Responsive: xl (1280px)
+        , rule ".py-10" [ paddingTop (rem 2.5) , paddingBottom (rem 2.5) ]
+
+        -- Responsive: 2xl (1536px)
+        , rule ".py-12" [ paddingTop "3rem" , paddingBottom "3rem" ]
+        , rule ".py-16" [ paddingTop "4rem" , paddingBottom "4rem" ]
+        , rule ".py-20" [ paddingTop "5rem" , paddingBottom "5rem" ]
+        , rule ".py-24" [ paddingTop "6rem" , paddingBottom "6rem" ]
+        , rule ".pt-0" [ paddingTop "0" ]
         , rule ".pt-1" [ paddingTop (rem 0.25) ]
         , rule ".pt-2" [ paddingTop (rem 0.5) ]
         , rule ".pt-3" [ paddingTop (rem 0.75) ]
-        , rule ".pt-4" [ paddingTop (rem 1) ]
+        , rule ".pt-4" [ paddingTop "1rem" ]
         , rule ".pt-5" [ paddingTop (rem 1.25) ]
         , rule ".pt-6" [ paddingTop (rem 1.5) ]
-        , rule ".pt-8" [ paddingTop (rem 2) ]
+        , rule ".pt-8" [ paddingTop "2rem" ]
         , rule ".pt-10" [ paddingTop (rem 2.5) ]
-        , rule ".pt-12" [ paddingTop (rem 3) ]
-        , rule ".pt-16" [ paddingTop (rem 4) ]
-        , rule ".pt-20" [ paddingTop (rem 5) ]
-        , rule ".pt-24" [ paddingTop (rem 6) ]
-
-        -- Padding Right
-        , rule ".pr-0" [ paddingRight zero ]
+        , rule ".pt-12" [ paddingTop "3rem" ]
+        , rule ".pt-16" [ paddingTop "4rem" ]
+        , rule ".pt-20" [ paddingTop "5rem" ]
+        , rule ".pt-24" [ paddingTop "6rem" ]
+        , rule ".pr-0" [ paddingRight "0" ]
         , rule ".pr-1" [ paddingRight (rem 0.25) ]
         , rule ".pr-2" [ paddingRight (rem 0.5) ]
         , rule ".pr-3" [ paddingRight (rem 0.75) ]
-        , rule ".pr-4" [ paddingRight (rem 1) ]
+        , rule ".pr-4" [ paddingRight "1rem" ]
         , rule ".pr-5" [ paddingRight (rem 1.25) ]
         , rule ".pr-6" [ paddingRight (rem 1.5) ]
-        , rule ".pr-8" [ paddingRight (rem 2) ]
-
-        -- Padding Bottom
-        , rule ".pb-0" [ paddingBottom zero ]
+        , rule ".pr-8" [ paddingRight "2rem" ]
+        , rule ".pb-0" [ paddingBottom "0" ]
         , rule ".pb-1" [ paddingBottom (rem 0.25) ]
         , rule ".pb-2" [ paddingBottom (rem 0.5) ]
         , rule ".pb-3" [ paddingBottom (rem 0.75) ]
-        , rule ".pb-4" [ paddingBottom (rem 1) ]
+        , rule ".pb-4" [ paddingBottom "1rem" ]
         , rule ".pb-5" [ paddingBottom (rem 1.25) ]
         , rule ".pb-6" [ paddingBottom (rem 1.5) ]
-        , rule ".pb-8" [ paddingBottom (rem 2) ]
-
-        -- Padding Left
-        , rule ".pl-0" [ paddingLeft zero ]
+        , rule ".pb-8" [ paddingBottom "2rem" ]
+        , rule ".pl-0" [ paddingLeft "0" ]
         , rule ".pl-1" [ paddingLeft (rem 0.25) ]
         , rule ".pl-2" [ paddingLeft (rem 0.5) ]
         , rule ".pl-3" [ paddingLeft (rem 0.75) ]
-        , rule ".pl-4" [ paddingLeft (rem 1) ]
+        , rule ".pl-4" [ paddingLeft "1rem" ]
         , rule ".pl-5" [ paddingLeft (rem 1.25) ]
         , rule ".pl-6" [ paddingLeft (rem 1.5) ]
-        , rule ".pl-8" [ paddingLeft (rem 2) ]
-
-        -- Margin
-        , rule ".m-0" [ margin zero ]
+        , rule ".pl-8" [ paddingLeft "2rem" ]
+        , rule ".m-0" [ margin "0" ]
         , rule ".m-1" [ margin (rem 0.25) ]
         , rule ".m-2" [ margin (rem 0.5) ]
         , rule ".m-3" [ margin (rem 0.75) ]
-        , rule ".m-4" [ margin (rem 1) ]
+        , rule ".m-4" [ margin "1rem" ]
         , rule ".m-5" [ margin (rem 1.25) ]
         , rule ".m-6" [ margin (rem 1.5) ]
-        , rule ".m-8" [ margin (rem 2) ]
+        , rule ".m-8" [ margin "2rem" ]
         , rule ".m-10" [ margin (rem 2.5) ]
-        , rule ".m-12" [ margin (rem 3) ]
-        , rule ".m-16" [ margin (rem 4) ]
-        , rule ".m-20" [ margin (rem 5) ]
-        , rule ".m-24" [ margin (rem 6) ]
-        , rule ".m-auto" [ margin auto ]
-
-        -- Margin X
-        , rule ".mx-0" [ marginLeft zero, marginRight zero ]
-        , rule ".mx-1" [ marginLeft (rem 0.25), marginRight (rem 0.25) ]
-        , rule ".mx-2" [ marginLeft (rem 0.5), marginRight (rem 0.5) ]
-        , rule ".mx-3" [ marginLeft (rem 0.75), marginRight (rem 0.75) ]
-        , rule ".mx-4" [ marginLeft (rem 1), marginRight (rem 1) ]
-        , rule ".mx-6" [ marginLeft (rem 1.5), marginRight (rem 1.5) ]
-        , rule ".mx-8" [ marginLeft (rem 2), marginRight (rem 2) ]
-        , rule ".mx-auto" [ marginLeft auto, marginRight auto ]
-
-        -- Margin Y
-        , rule ".my-0" [ marginTop zero, marginBottom zero ]
-        , rule ".my-1" [ marginTop (rem 0.25), marginBottom (rem 0.25) ]
-        , rule ".my-2" [ marginTop (rem 0.5), marginBottom (rem 0.5) ]
-        , rule ".my-3" [ marginTop (rem 0.75), marginBottom (rem 0.75) ]
-        , rule ".my-4" [ marginTop (rem 1), marginBottom (rem 1) ]
-        , rule ".my-6" [ marginTop (rem 1.5), marginBottom (rem 1.5) ]
-        , rule ".my-8" [ marginTop (rem 2), marginBottom (rem 2) ]
-
-        -- Margin Top
-        , rule ".mt-0" [ marginTop zero ]
+        , rule ".m-12" [ margin "3rem" ]
+        , rule ".m-16" [ margin "4rem" ]
+        , rule ".m-20" [ margin "5rem" ]
+        , rule ".m-24" [ margin "6rem" ]
+        , rule ".m-auto" [ margin "auto" ]
+        , rule ".mx-0" [ marginLeft "0" , marginRight "0" ]
+        , rule ".mx-1" [ marginLeft (rem 0.25) , marginRight (rem 0.25) ]
+        , rule ".mx-2" [ marginLeft (rem 0.5) , marginRight (rem 0.5) ]
+        , rule ".mx-3" [ marginLeft (rem 0.75) , marginRight (rem 0.75) ]
+        , rule ".mx-4" [ marginLeft "1rem" , marginRight "1rem" ]
+        , rule ".mx-6" [ marginLeft (rem 1.5) , marginRight (rem 1.5) ]
+        , rule ".mx-8" [ marginLeft "2rem" , marginRight "2rem" ]
+        , rule ".mx-auto" [ marginLeft "auto" , marginRight "auto" ]
+        , rule ".my-0" [ marginTop "0" , marginBottom "0" ]
+        , rule ".my-1" [ marginTop (rem 0.25) , marginBottom (rem 0.25) ]
+        , rule ".my-2" [ marginTop (rem 0.5) , marginBottom (rem 0.5) ]
+        , rule ".my-3" [ marginTop (rem 0.75) , marginBottom (rem 0.75) ]
+        , rule ".my-4" [ marginTop "1rem" , marginBottom "1rem" ]
+        , rule ".my-6" [ marginTop (rem 1.5) , marginBottom (rem 1.5) ]
+        , rule ".my-8" [ marginTop "2rem" , marginBottom "2rem" ]
+        , rule ".mt-0" [ marginTop "0" ]
         , rule ".mt-1" [ marginTop (rem 0.25) ]
         , rule ".mt-2" [ marginTop (rem 0.5) ]
         , rule ".mt-3" [ marginTop (rem 0.75) ]
-        , rule ".mt-4" [ marginTop (rem 1) ]
+        , rule ".mt-4" [ marginTop "1rem" ]
         , rule ".mt-5" [ marginTop (rem 1.25) ]
         , rule ".mt-6" [ marginTop (rem 1.5) ]
-        , rule ".mt-8" [ marginTop (rem 2) ]
+        , rule ".mt-8" [ marginTop "2rem" ]
         , rule ".mt-10" [ marginTop (rem 2.5) ]
-        , rule ".mt-12" [ marginTop (rem 3) ]
-        , rule ".mt-16" [ marginTop (rem 4) ]
-        , rule ".mt-20" [ marginTop (rem 5) ]
-
-        -- Margin Right
-        , rule ".mr-0" [ marginRight zero ]
+        , rule ".mt-12" [ marginTop "3rem" ]
+        , rule ".mt-16" [ marginTop "4rem" ]
+        , rule ".mt-20" [ marginTop "5rem" ]
+        , rule ".mr-0" [ marginRight "0" ]
         , rule ".mr-1" [ marginRight (rem 0.25) ]
         , rule ".mr-2" [ marginRight (rem 0.5) ]
         , rule ".mr-3" [ marginRight (rem 0.75) ]
-        , rule ".mr-4" [ marginRight (rem 1) ]
+        , rule ".mr-4" [ marginRight "1rem" ]
         , rule ".mr-6" [ marginRight (rem 1.5) ]
-        , rule ".mr-8" [ marginRight (rem 2) ]
-        , rule ".mr-auto" [ marginRight auto ]
-
-        -- Margin Bottom
-        , rule ".mb-0" [ marginBottom zero ]
+        , rule ".mr-8" [ marginRight "2rem" ]
+        , rule ".mr-auto" [ marginRight "auto" ]
+        , rule ".mb-0" [ marginBottom "0" ]
         , rule ".mb-1" [ marginBottom (rem 0.25) ]
         , rule ".mb-2" [ marginBottom (rem 0.5) ]
         , rule ".mb-3" [ marginBottom (rem 0.75) ]
-        , rule ".mb-4" [ marginBottom (rem 1) ]
+        , rule ".mb-4" [ marginBottom "1rem" ]
         , rule ".mb-5" [ marginBottom (rem 1.25) ]
         , rule ".mb-6" [ marginBottom (rem 1.5) ]
-        , rule ".mb-8" [ marginBottom (rem 2) ]
+        , rule ".mb-8" [ marginBottom "2rem" ]
         , rule ".mb-10" [ marginBottom (rem 2.5) ]
-        , rule ".mb-12" [ marginBottom (rem 3) ]
-
-        , rule ".mb-16" [ marginBottom (rem 4) ]
-        , rule ".mb-20" [ marginBottom (rem 5) ]
-
-        -- Margin Left
-        , rule ".ml-0" [ marginLeft zero ]
+        , rule ".mb-12" [ marginBottom "3rem" ]
+        , rule ".mb-16" [ marginBottom "4rem" ]
+        , rule ".mb-20" [ marginBottom "5rem" ]
+        , rule ".ml-0" [ marginLeft "0" ]
         , rule ".ml-1" [ marginLeft (rem 0.25) ]
         , rule ".ml-2" [ marginLeft (rem 0.5) ]
         , rule ".ml-3" [ marginLeft (rem 0.75) ]
-        , rule ".ml-4" [ marginLeft (rem 1) ]
+        , rule ".ml-4" [ marginLeft "1rem" ]
         , rule ".ml-6" [ marginLeft (rem 1.5) ]
-        , rule ".ml-8" [ marginLeft (rem 2) ]
-        , rule ".ml-auto" [ marginLeft auto ]
-
-        -- Gap
-        , rule ".gap-0" [ gap zero ]
+        , rule ".ml-8" [ marginLeft "2rem" ]
+        , rule ".ml-auto" [ marginLeft "auto" ]
+        , rule ".gap-0" [ gap "0" ]
         , rule ".gap-1" [ gap (rem 0.25) ]
         , rule ".gap-2" [ gap (rem 0.5) ]
         , rule ".gap-3" [ gap (rem 0.75) ]
-        , rule ".gap-4" [ gap (rem 1) ]
+        , rule ".gap-4" [ gap "1rem" ]
         , rule ".gap-5" [ gap (rem 1.25) ]
         , rule ".gap-6" [ gap (rem 1.5) ]
-        , rule ".gap-8" [ gap (rem 2) ]
+        , rule ".gap-8" [ gap "2rem" ]
         , rule ".gap-10" [ gap (rem 2.5) ]
-        , rule ".gap-12" [ gap (rem 3) ]
-
-        -- =====================
-        -- TYPOGRAPHY
-        -- =====================
-
-        -- Font Size
-        , rule ".text-xs" [ fontSize (rem 0.75), lineHeight (rem 1) ]
-        , rule ".text-sm" [ fontSize (rem 0.875), lineHeight (rem 1.25) ]
-        , rule ".text-base" [ fontSize (rem 1), lineHeight (rem 1.5) ]
-        , rule ".text-lg" [ fontSize (rem 1.125), lineHeight (rem 1.75) ]
-        , rule ".text-xl" [ fontSize (rem 1.25), lineHeight (rem 1.75) ]
-        , rule ".text-2xl" [ fontSize (rem 1.5), lineHeight (rem 2) ]
-        , rule ".text-3xl" [ fontSize (rem 1.875), lineHeight (rem 2.25) ]
-        , rule ".text-4xl" [ fontSize (rem 2.25), lineHeight (rem 2.5) ]
-        , rule ".text-5xl" [ fontSize (rem 3), lineHeight "1" ]
-        , rule ".text-6xl" [ fontSize (rem 3.75), lineHeight "1" ]
-        , rule ".text-7xl" [ fontSize (rem 4.5), lineHeight "1" ]
-        , rule ".text-8xl" [ fontSize (rem 6), lineHeight "1" ]
-        , rule ".text-9xl" [ fontSize (rem 8), lineHeight "1" ]
-
-        -- Font Weight
+        , rule ".gap-12" [ gap "3rem" ]
+        , rule ".text-xs" [ fontSize (rem 0.75) , lineHeight "1rem" ]
+        , rule ".text-sm" [ fontSize (rem 0.875) , lineHeight (rem 1.25) ]
+        , rule ".text-base" [ fontSize "1rem" , lineHeight (rem 1.5) ]
+        , rule ".text-lg" [ fontSize (rem 1.125) , lineHeight (rem 1.75) ]
+        , rule ".text-xl" [ fontSize (rem 1.25) , lineHeight (rem 1.75) ]
+        , rule ".text-2xl" [ fontSize (rem 1.5) , lineHeight "2rem" ]
+        , rule ".text-3xl" [ fontSize (rem 1.875) , lineHeight (rem 2.25) ]
+        , rule ".text-4xl" [ fontSize (rem 2.25) , lineHeight (rem 2.5) ]
+        , rule ".text-5xl" [ fontSize "3rem" , lineHeight "1" ]
+        , rule ".text-6xl" [ fontSize (rem 3.75) , lineHeight "1" ]
+        , rule ".text-7xl" [ fontSize (rem 4.5) , lineHeight "1" ]
+        , rule ".text-8xl" [ fontSize "6rem" , lineHeight "1" ]
+        , rule ".text-9xl" [ fontSize "8rem" , lineHeight "1" ]
         , rule ".font-thin" [ fontWeight "100" ]
         , rule ".font-extralight" [ fontWeight "200" ]
         , rule ".font-light" [ fontWeight "300" ]
@@ -229,20 +259,23 @@ allRules =
         , rule ".font-bold" [ fontWeight "700" ]
         , rule ".font-extrabold" [ fontWeight "800" ]
         , rule ".font-black" [ fontWeight "900" ]
-
-        -- Font Family
-        , rule ".font-sans" [ fontFamily "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"" ]
-        , rule ".font-serif" [ fontFamily "ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif" ]
-        , rule ".font-mono" [ fontFamily "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" ]
-
-        -- Text Align
+        , rule ".font-sans"
+            [ fontFamily
+                "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\""
+            ]
+        , rule ".font-serif"
+            [ fontFamily
+                "ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif"
+            ]
+        , rule ".font-mono"
+            [ fontFamily
+                "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+            ]
         , rule ".text-left" [ textAlign "left" ]
         , rule ".text-center" [ textAlign "center" ]
         , rule ".text-right" [ textAlign "right" ]
         , rule ".text-justify" [ textAlign "justify" ]
-
-        -- Text Color
-        , rule ".text-transparent" [ color transparent ]
+        , rule ".text-transparent" [ color "transparent" ]
         , rule ".text-black" [ color (hex "000000") ]
         , rule ".text-white" [ color (hex "ffffff") ]
         , rule ".text-gray-50" [ color (hex "f9fafb") ]
@@ -272,50 +305,36 @@ allRules =
         , rule ".text-purple-500" [ color (hex "a855f7") ]
         , rule ".text-purple-600" [ color (hex "9333ea") ]
         , rule ".text-pink-500" [ color (hex "ec4899") ]
-
-        -- Text Decoration
         , rule ".underline" [ textDecoration "underline" ]
         , rule ".overline" [ textDecoration "overline" ]
         , rule ".line-through" [ textDecoration "line-through" ]
         , rule ".no-underline" [ textDecoration "none" ]
-
-        -- Text Transform
         , rule ".uppercase" [ textTransform "uppercase" ]
         , rule ".lowercase" [ textTransform "lowercase" ]
         , rule ".capitalize" [ textTransform "capitalize" ]
         , rule ".normal-case" [ textTransform "none" ]
-
-        -- Line Height
         , rule ".leading-none" [ lineHeight "1" ]
         , rule ".leading-tight" [ lineHeight "1.25" ]
         , rule ".leading-snug" [ lineHeight "1.375" ]
         , rule ".leading-normal" [ lineHeight "1.5" ]
         , rule ".leading-relaxed" [ lineHeight "1.625" ]
         , rule ".leading-loose" [ lineHeight "2" ]
-
-        -- Letter Spacing
-        , rule ".tracking-tighter" [ letterSpacing (em -0.05) ]
-        , rule ".tracking-tight" [ letterSpacing (em -0.025) ]
-        , rule ".tracking-normal" [ letterSpacing (em 0) ]
+        , rule ".tracking-tighter" [ letterSpacing "-0.05em" ]
+        , rule ".tracking-tight" [ letterSpacing "-0.025em" ]
+        , rule ".tracking-normal" [ letterSpacing "0em" ]
         , rule ".tracking-wide" [ letterSpacing (em 0.025) ]
         , rule ".tracking-wider" [ letterSpacing (em 0.05) ]
         , rule ".tracking-widest" [ letterSpacing (em 0.1) ]
-
-        -- Whitespace
         , rule ".whitespace-normal" [ property "white-space" "normal" ]
         , rule ".whitespace-nowrap" [ property "white-space" "nowrap" ]
         , rule ".whitespace-pre" [ property "white-space" "pre" ]
         , rule ".whitespace-pre-line" [ property "white-space" "pre-line" ]
         , rule ".whitespace-pre-wrap" [ property "white-space" "pre-wrap" ]
-
-        -- Truncate
-        , rule ".truncate" [ property "overflow" "hidden", property "text-overflow" "ellipsis", property "white-space" "nowrap" ]
-
-        -- =====================
-        -- LAYOUT
-        -- =====================
-
-        -- Display
+        , rule ".truncate"
+            [ property "overflow" "hidden"
+            , property "text-overflow" "ellipsis"
+            , property "white-space" "nowrap"
+            ]
         , rule ".block" [ display "block" ]
         , rule ".inline-block" [ display "inline-block" ]
         , rule ".inline" [ display "inline" ]
@@ -327,27 +346,21 @@ allRules =
         , rule ".table" [ display "table" ]
         , rule ".table-row" [ display "table-row" ]
         , rule ".table-cell" [ display "table-cell" ]
-
-        -- Position
         , rule ".static" [ position "static" ]
         , rule ".relative" [ position "relative" ]
         , rule ".absolute" [ position "absolute" ]
         , rule ".fixed" [ position "fixed" ]
         , rule ".sticky" [ position "sticky" ]
-
-        -- Inset
-        , rule ".inset-0" [ top zero, right_ zero, bottom zero, left zero ]
-        , rule ".inset-x-0" [ left zero, right_ zero ]
-        , rule ".inset-y-0" [ top zero, bottom zero ]
-        , rule ".top-0" [ top zero ]
+        , rule ".inset-0" [ top "0" , right_ "0" , bottom "0" , left "0" ]
+        , rule ".inset-x-0" [ left "0" , right_ "0" ]
+        , rule ".inset-y-0" [ top "0" , bottom "0" ]
+        , rule ".top-0" [ top "0" ]
         , rule ".top-1" [ top (rem 0.25) ]
         , rule ".top-2" [ top (rem 0.5) ]
-        , rule ".top-4" [ top (rem 1) ]
-        , rule ".right-0" [ right_ zero ]
-        , rule ".bottom-0" [ bottom zero ]
-        , rule ".left-0" [ left zero ]
-
-        -- Z-Index
+        , rule ".top-4" [ top "1rem" ]
+        , rule ".right-0" [ right_ "0" ]
+        , rule ".bottom-0" [ bottom "0" ]
+        , rule ".left-0" [ left "0" ]
         , rule ".z-0" [ zIndex "0" ]
         , rule ".z-10" [ zIndex "10" ]
         , rule ".z-20" [ zIndex "20" ]
@@ -355,8 +368,6 @@ allRules =
         , rule ".z-40" [ zIndex "40" ]
         , rule ".z-50" [ zIndex "50" ]
         , rule ".z-auto" [ zIndex "auto" ]
-
-        -- Overflow
         , rule ".overflow-auto" [ overflow "auto" ]
         , rule ".overflow-hidden" [ overflow "hidden" ]
         , rule ".overflow-scroll" [ overflow "scroll" ]
@@ -365,57 +376,51 @@ allRules =
         , rule ".overflow-x-hidden" [ property "overflow-x" "hidden" ]
         , rule ".overflow-y-auto" [ property "overflow-y" "auto" ]
         , rule ".overflow-y-hidden" [ property "overflow-y" "hidden" ]
-
-        -- Width
-        , rule ".w-0" [ width zero ]
+        , rule ".w-0" [ width "0" ]
         , rule ".w-1" [ width (rem 0.25) ]
         , rule ".w-2" [ width (rem 0.5) ]
-        , rule ".w-4" [ width (rem 1) ]
-        , rule ".w-8" [ width (rem 2) ]
-        , rule ".w-12" [ width (rem 3) ]
-        , rule ".w-16" [ width (rem 4) ]
-        , rule ".w-20" [ width (rem 5) ]
-        , rule ".w-24" [ width (rem 6) ]
-        , rule ".w-32" [ width (rem 8) ]
-        , rule ".w-40" [ width (rem 10) ]
-        , rule ".w-48" [ width (rem 12) ]
-        , rule ".w-56" [ width (rem 14) ]
-        , rule ".w-64" [ width (rem 16) ]
-        , rule ".w-auto" [ width auto ]
-        , rule ".w-full" [ width (pct 100) ]
-        , rule ".w-screen" [ width (vw 100) ]
+        , rule ".w-4" [ width "1rem" ]
+        , rule ".w-8" [ width "2rem" ]
+        , rule ".w-12" [ width "3rem" ]
+        , rule ".w-16" [ width "4rem" ]
+        , rule ".w-20" [ width "5rem" ]
+        , rule ".w-24" [ width "6rem" ]
+        , rule ".w-32" [ width "8rem" ]
+        , rule ".w-40" [ width "10rem" ]
+        , rule ".w-48" [ width "12rem" ]
+        , rule ".w-56" [ width "14rem" ]
+        , rule ".w-64" [ width "16rem" ]
+        , rule ".w-auto" [ width "auto" ]
+        , rule ".w-full" [ width "100%" ]
+        , rule ".w-screen" [ width "100vw" ]
         , rule ".w-fit" [ width "fit-content" ]
         , rule ".w-min" [ width "min-content" ]
         , rule ".w-max" [ width "max-content" ]
-        , rule ".w-1\\/2" [ width (pct 50) ]
+        , rule ".w-1\\/2" [ width "50%" ]
         , rule ".w-1\\/3" [ width (pct 33.333333) ]
         , rule ".w-2\\/3" [ width (pct 66.666667) ]
-        , rule ".w-1\\/4" [ width (pct 25) ]
-        , rule ".w-3\\/4" [ width (pct 75) ]
-
-        -- Height
-        , rule ".h-0" [ height zero ]
+        , rule ".w-1\\/4" [ width "25%" ]
+        , rule ".w-3\\/4" [ width "75%" ]
+        , rule ".h-0" [ height "0" ]
         , rule ".h-1" [ height (rem 0.25) ]
         , rule ".h-2" [ height (rem 0.5) ]
-        , rule ".h-4" [ height (rem 1) ]
-        , rule ".h-8" [ height (rem 2) ]
-        , rule ".h-12" [ height (rem 3) ]
-        , rule ".h-16" [ height (rem 4) ]
-        , rule ".h-24" [ height (rem 6) ]
-        , rule ".h-32" [ height (rem 8) ]
-        , rule ".h-48" [ height (rem 12) ]
-        , rule ".h-64" [ height (rem 16) ]
-        , rule ".h-auto" [ height auto ]
-        , rule ".h-full" [ height (pct 100) ]
-        , rule ".h-screen" [ height (vh 100) ]
+        , rule ".h-4" [ height "1rem" ]
+        , rule ".h-8" [ height "2rem" ]
+        , rule ".h-12" [ height "3rem" ]
+        , rule ".h-16" [ height "4rem" ]
+        , rule ".h-24" [ height "6rem" ]
+        , rule ".h-32" [ height "8rem" ]
+        , rule ".h-48" [ height "12rem" ]
+        , rule ".h-64" [ height "16rem" ]
+        , rule ".h-auto" [ height "auto" ]
+        , rule ".h-full" [ height "100%" ]
+        , rule ".h-screen" [ height "100vh" ]
         , rule ".h-fit" [ height "fit-content" ]
         , rule ".h-min" [ height "min-content" ]
         , rule ".h-max" [ height "max-content" ]
-
-        -- Min/Max Width
-        , rule ".min-w-0" [ minWidth zero ]
-        , rule ".min-w-full" [ minWidth (pct 100) ]
-        , rule ".max-w-none" [ maxWidth none ]
+        , rule ".min-w-0" [ minWidth "0" ]
+        , rule ".min-w-full" [ minWidth "100%" ]
+        , rule ".max-w-none" [ maxWidth "none" ]
         , rule ".max-w-xs" [ maxWidth (rem 20) ]
         , rule ".max-w-sm" [ maxWidth (rem 24) ]
         , rule ".max-w-md" [ maxWidth (rem 28) ]
@@ -427,77 +432,53 @@ allRules =
         , rule ".max-w-5xl" [ maxWidth (rem 64) ]
         , rule ".max-w-6xl" [ maxWidth (rem 72) ]
         , rule ".max-w-7xl" [ maxWidth (rem 80) ]
-        , rule ".max-w-full" [ maxWidth (pct 100) ]
-        , rule ".max-w-screen-sm" [ maxWidth (px 640) ]
-        , rule ".max-w-screen-md" [ maxWidth (px 768) ]
-        , rule ".max-w-screen-lg" [ maxWidth (px 1024) ]
-        , rule ".max-w-screen-xl" [ maxWidth (px 1280) ]
-
-        -- Min/Max Height
-        , rule ".min-h-0" [ minHeight zero ]
-        , rule ".min-h-full" [ minHeight (pct 100) ]
-        , rule ".min-h-screen" [ minHeight (vh 100) ]
-        , rule ".max-h-none" [ maxHeight none ]
-        , rule ".max-h-full" [ maxHeight (pct 100) ]
-        , rule ".max-h-screen" [ maxHeight (vh 100) ]
-
-        -- =====================
-        -- FLEXBOX
-        -- =====================
-
-        -- Direction
+        , rule ".max-w-full" [ maxWidth "100%" ]
+        , rule ".max-w-screen-sm" [ maxWidth "640px" ]
+        , rule ".max-w-screen-md" [ maxWidth "768px" ]
+        , rule ".max-w-screen-lg" [ maxWidth "1024px" ]
+        , rule ".max-w-screen-xl" [ maxWidth "1280px" ]
+        , rule ".min-h-0" [ minHeight "0" ]
+        , rule ".min-h-full" [ minHeight "100%" ]
+        , rule ".min-h-screen" [ minHeight "100vh" ]
+        , rule ".max-h-none" [ maxHeight "none" ]
+        , rule ".max-h-full" [ maxHeight "100%" ]
+        , rule ".max-h-screen" [ maxHeight "100vh" ]
         , rule ".flex-row" [ flexDirection "row" ]
         , rule ".flex-row-reverse" [ flexDirection "row-reverse" ]
         , rule ".flex-col" [ flexDirection "column" ]
         , rule ".flex-col-reverse" [ flexDirection "column-reverse" ]
-
-        -- Wrap
         , rule ".flex-wrap" [ flexWrap "wrap" ]
         , rule ".flex-wrap-reverse" [ flexWrap "wrap-reverse" ]
         , rule ".flex-nowrap" [ flexWrap "nowrap" ]
-
-        -- Justify Content
         , rule ".justify-start" [ justifyContent "flex-start" ]
         , rule ".justify-end" [ justifyContent "flex-end" ]
         , rule ".justify-center" [ justifyContent "center" ]
         , rule ".justify-between" [ justifyContent "space-between" ]
         , rule ".justify-around" [ justifyContent "space-around" ]
         , rule ".justify-evenly" [ justifyContent "space-evenly" ]
-
-        -- Align Items
         , rule ".items-start" [ alignItems "flex-start" ]
         , rule ".items-end" [ alignItems "flex-end" ]
         , rule ".items-center" [ alignItems "center" ]
         , rule ".items-baseline" [ alignItems "baseline" ]
         , rule ".items-stretch" [ alignItems "stretch" ]
-
-        -- Align Self
         , rule ".self-auto" [ property "align-self" "auto" ]
         , rule ".self-start" [ property "align-self" "flex-start" ]
         , rule ".self-end" [ property "align-self" "flex-end" ]
         , rule ".self-center" [ property "align-self" "center" ]
         , rule ".self-stretch" [ property "align-self" "stretch" ]
-
-        -- Align Content
         , rule ".content-start" [ alignContent "flex-start" ]
         , rule ".content-end" [ alignContent "flex-end" ]
         , rule ".content-center" [ alignContent "center" ]
         , rule ".content-between" [ alignContent "space-between" ]
         , rule ".content-around" [ alignContent "space-around" ]
-
-        -- Flex
         , rule ".flex-1" [ flex "1 1 0%" ]
         , rule ".flex-auto" [ flex "1 1 auto" ]
         , rule ".flex-initial" [ flex "0 1 auto" ]
         , rule ".flex-none" [ flex "none" ]
-
-        -- Grow / Shrink
         , rule ".grow" [ property "flex-grow" "1" ]
         , rule ".grow-0" [ property "flex-grow" "0" ]
         , rule ".shrink" [ property "flex-shrink" "1" ]
         , rule ".shrink-0" [ property "flex-shrink" "0" ]
-
-        -- Order
         , rule ".order-1" [ property "order" "1" ]
         , rule ".order-2" [ property "order" "2" ]
         , rule ".order-3" [ property "order" "3" ]
@@ -513,27 +494,31 @@ allRules =
         , rule ".order-first" [ property "order" "-9999" ]
         , rule ".order-last" [ property "order" "9999" ]
         , rule ".order-none" [ property "order" "0" ]
-
-        -- =====================
-        -- GRID
-        -- =====================
-
-        -- Grid Template Columns
-        , rule ".grid-cols-1" [ gridTemplateColumns "repeat(1, minmax(0, 1fr))" ]
-        , rule ".grid-cols-2" [ gridTemplateColumns "repeat(2, minmax(0, 1fr))" ]
-        , rule ".grid-cols-3" [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
-        , rule ".grid-cols-4" [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
-        , rule ".grid-cols-5" [ gridTemplateColumns "repeat(5, minmax(0, 1fr))" ]
-        , rule ".grid-cols-6" [ gridTemplateColumns "repeat(6, minmax(0, 1fr))" ]
-        , rule ".grid-cols-7" [ gridTemplateColumns "repeat(7, minmax(0, 1fr))" ]
-        , rule ".grid-cols-8" [ gridTemplateColumns "repeat(8, minmax(0, 1fr))" ]
-        , rule ".grid-cols-9" [ gridTemplateColumns "repeat(9, minmax(0, 1fr))" ]
-        , rule ".grid-cols-10" [ gridTemplateColumns "repeat(10, minmax(0, 1fr))" ]
-        , rule ".grid-cols-11" [ gridTemplateColumns "repeat(11, minmax(0, 1fr))" ]
-        , rule ".grid-cols-12" [ gridTemplateColumns "repeat(12, minmax(0, 1fr))" ]
+        , rule ".grid-cols-1"
+            [ gridTemplateColumns "repeat(1, minmax(0, 1fr))" ]
+        , rule ".grid-cols-2"
+            [ gridTemplateColumns "repeat(2, minmax(0, 1fr))" ]
+        , rule ".grid-cols-3"
+            [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
+        , rule ".grid-cols-4"
+            [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
+        , rule ".grid-cols-5"
+            [ gridTemplateColumns "repeat(5, minmax(0, 1fr))" ]
+        , rule ".grid-cols-6"
+            [ gridTemplateColumns "repeat(6, minmax(0, 1fr))" ]
+        , rule ".grid-cols-7"
+            [ gridTemplateColumns "repeat(7, minmax(0, 1fr))" ]
+        , rule ".grid-cols-8"
+            [ gridTemplateColumns "repeat(8, minmax(0, 1fr))" ]
+        , rule ".grid-cols-9"
+            [ gridTemplateColumns "repeat(9, minmax(0, 1fr))" ]
+        , rule ".grid-cols-10"
+            [ gridTemplateColumns "repeat(10, minmax(0, 1fr))" ]
+        , rule ".grid-cols-11"
+            [ gridTemplateColumns "repeat(11, minmax(0, 1fr))" ]
+        , rule ".grid-cols-12"
+            [ gridTemplateColumns "repeat(12, minmax(0, 1fr))" ]
         , rule ".grid-cols-none" [ gridTemplateColumns "none" ]
-
-        -- Grid Template Rows
         , rule ".grid-rows-1" [ gridTemplateRows "repeat(1, minmax(0, 1fr))" ]
         , rule ".grid-rows-2" [ gridTemplateRows "repeat(2, minmax(0, 1fr))" ]
         , rule ".grid-rows-3" [ gridTemplateRows "repeat(3, minmax(0, 1fr))" ]
@@ -541,8 +526,6 @@ allRules =
         , rule ".grid-rows-5" [ gridTemplateRows "repeat(5, minmax(0, 1fr))" ]
         , rule ".grid-rows-6" [ gridTemplateRows "repeat(6, minmax(0, 1fr))" ]
         , rule ".grid-rows-none" [ gridTemplateRows "none" ]
-
-        -- Grid Column Span
         , rule ".col-span-1" [ gridColumn "span 1 / span 1" ]
         , rule ".col-span-2" [ gridColumn "span 2 / span 2" ]
         , rule ".col-span-3" [ gridColumn "span 3 / span 3" ]
@@ -556,8 +539,6 @@ allRules =
         , rule ".col-span-11" [ gridColumn "span 11 / span 11" ]
         , rule ".col-span-12" [ gridColumn "span 12 / span 12" ]
         , rule ".col-span-full" [ gridColumn "1 / -1" ]
-
-        -- Grid Row Span
         , rule ".row-span-1" [ gridRow "span 1 / span 1" ]
         , rule ".row-span-2" [ gridRow "span 2 / span 2" ]
         , rule ".row-span-3" [ gridRow "span 3 / span 3" ]
@@ -565,19 +546,17 @@ allRules =
         , rule ".row-span-5" [ gridRow "span 5 / span 5" ]
         , rule ".row-span-6" [ gridRow "span 6 / span 6" ]
         , rule ".row-span-full" [ gridRow "1 / -1" ]
-
-        -- Grid Auto Flow
         , rule ".grid-flow-row" [ property "grid-auto-flow" "row" ]
         , rule ".grid-flow-col" [ property "grid-auto-flow" "column" ]
         , rule ".grid-flow-dense" [ property "grid-auto-flow" "dense" ]
         , rule ".grid-flow-row-dense" [ property "grid-auto-flow" "row dense" ]
-        , rule ".grid-flow-col-dense" [ property "grid-auto-flow" "column dense" ]
-
-        -- Place Content / Items / Self
+        , rule ".grid-flow-col-dense"
+            [ property "grid-auto-flow" "column dense" ]
         , rule ".place-content-center" [ property "place-content" "center" ]
         , rule ".place-content-start" [ property "place-content" "start" ]
         , rule ".place-content-end" [ property "place-content" "end" ]
-        , rule ".place-content-between" [ property "place-content" "space-between" ]
+        , rule ".place-content-between"
+            [ property "place-content" "space-between" ]
         , rule ".place-items-center" [ property "place-items" "center" ]
         , rule ".place-items-start" [ property "place-items" "start" ]
         , rule ".place-items-end" [ property "place-items" "end" ]
@@ -586,16 +565,9 @@ allRules =
         , rule ".place-self-start" [ property "place-self" "start" ]
         , rule ".place-self-end" [ property "place-self" "end" ]
         , rule ".place-self-auto" [ property "place-self" "auto" ]
-
-        -- =====================
-        -- BACKGROUND
-        -- =====================
-
-        , rule ".bg-transparent" [ backgroundColor transparent ]
+        , rule ".bg-transparent" [ backgroundColor "transparent" ]
         , rule ".bg-black" [ backgroundColor (hex "000000") ]
         , rule ".bg-white" [ backgroundColor (hex "ffffff") ]
-
-        -- Gray
         , rule ".bg-gray-50" [ backgroundColor (hex "f9fafb") ]
         , rule ".bg-gray-100" [ backgroundColor (hex "f3f4f6") ]
         , rule ".bg-gray-200" [ backgroundColor (hex "e5e7eb") ]
@@ -607,8 +579,6 @@ allRules =
         , rule ".bg-gray-800" [ backgroundColor (hex "1f2937") ]
         , rule ".bg-gray-900" [ backgroundColor (hex "111827") ]
         , rule ".bg-gray-950" [ backgroundColor (hex "030712") ]
-
-        -- Slate
         , rule ".bg-slate-50" [ backgroundColor (hex "f8fafc") ]
         , rule ".bg-slate-100" [ backgroundColor (hex "f1f5f9") ]
         , rule ".bg-slate-200" [ backgroundColor (hex "e2e8f0") ]
@@ -619,8 +589,6 @@ allRules =
         , rule ".bg-slate-700" [ backgroundColor (hex "334155") ]
         , rule ".bg-slate-800" [ backgroundColor (hex "1e293b") ]
         , rule ".bg-slate-900" [ backgroundColor (hex "0f172a") ]
-
-        -- Red
         , rule ".bg-red-50" [ backgroundColor (hex "fef2f2") ]
         , rule ".bg-red-100" [ backgroundColor (hex "fee2e2") ]
         , rule ".bg-red-200" [ backgroundColor (hex "fecaca") ]
@@ -631,8 +599,6 @@ allRules =
         , rule ".bg-red-700" [ backgroundColor (hex "b91c1c") ]
         , rule ".bg-red-800" [ backgroundColor (hex "991b1b") ]
         , rule ".bg-red-900" [ backgroundColor (hex "7f1d1d") ]
-
-        -- Orange
         , rule ".bg-orange-50" [ backgroundColor (hex "fff7ed") ]
         , rule ".bg-orange-100" [ backgroundColor (hex "ffedd5") ]
         , rule ".bg-orange-200" [ backgroundColor (hex "fed7aa") ]
@@ -641,16 +607,12 @@ allRules =
         , rule ".bg-orange-500" [ backgroundColor (hex "f97316") ]
         , rule ".bg-orange-600" [ backgroundColor (hex "ea580c") ]
         , rule ".bg-orange-700" [ backgroundColor (hex "c2410c") ]
-
-        -- Yellow
         , rule ".bg-yellow-50" [ backgroundColor (hex "fefce8") ]
         , rule ".bg-yellow-100" [ backgroundColor (hex "fef9c3") ]
         , rule ".bg-yellow-200" [ backgroundColor (hex "fef08a") ]
         , rule ".bg-yellow-300" [ backgroundColor (hex "fde047") ]
         , rule ".bg-yellow-400" [ backgroundColor (hex "facc15") ]
         , rule ".bg-yellow-500" [ backgroundColor (hex "eab308") ]
-
-        -- Green
         , rule ".bg-green-50" [ backgroundColor (hex "f0fdf4") ]
         , rule ".bg-green-100" [ backgroundColor (hex "dcfce7") ]
         , rule ".bg-green-200" [ backgroundColor (hex "bbf7d0") ]
@@ -661,8 +623,6 @@ allRules =
         , rule ".bg-green-700" [ backgroundColor (hex "15803d") ]
         , rule ".bg-green-800" [ backgroundColor (hex "166534") ]
         , rule ".bg-green-900" [ backgroundColor (hex "14532d") ]
-
-        -- Blue
         , rule ".bg-blue-50" [ backgroundColor (hex "eff6ff") ]
         , rule ".bg-blue-100" [ backgroundColor (hex "dbeafe") ]
         , rule ".bg-blue-200" [ backgroundColor (hex "bfdbfe") ]
@@ -673,8 +633,6 @@ allRules =
         , rule ".bg-blue-700" [ backgroundColor (hex "1d4ed8") ]
         , rule ".bg-blue-800" [ backgroundColor (hex "1e40af") ]
         , rule ".bg-blue-900" [ backgroundColor (hex "1e3a8a") ]
-
-        -- Indigo
         , rule ".bg-indigo-50" [ backgroundColor (hex "eef2ff") ]
         , rule ".bg-indigo-100" [ backgroundColor (hex "e0e7ff") ]
         , rule ".bg-indigo-200" [ backgroundColor (hex "c7d2fe") ]
@@ -683,8 +641,6 @@ allRules =
         , rule ".bg-indigo-500" [ backgroundColor (hex "6366f1") ]
         , rule ".bg-indigo-600" [ backgroundColor (hex "4f46e5") ]
         , rule ".bg-indigo-700" [ backgroundColor (hex "4338ca") ]
-
-        -- Purple
         , rule ".bg-purple-50" [ backgroundColor (hex "faf5ff") ]
         , rule ".bg-purple-100" [ backgroundColor (hex "f3e8ff") ]
         , rule ".bg-purple-200" [ backgroundColor (hex "e9d5ff") ]
@@ -693,8 +649,6 @@ allRules =
         , rule ".bg-purple-500" [ backgroundColor (hex "a855f7") ]
         , rule ".bg-purple-600" [ backgroundColor (hex "9333ea") ]
         , rule ".bg-purple-700" [ backgroundColor (hex "7e22ce") ]
-
-        -- Pink
         , rule ".bg-pink-50" [ backgroundColor (hex "fdf2f8") ]
         , rule ".bg-pink-100" [ backgroundColor (hex "fce7f3") ]
         , rule ".bg-pink-200" [ backgroundColor (hex "fbcfe8") ]
@@ -703,8 +657,6 @@ allRules =
         , rule ".bg-pink-500" [ backgroundColor (hex "ec4899") ]
         , rule ".bg-pink-600" [ backgroundColor (hex "db2777") ]
         , rule ".bg-pink-700" [ backgroundColor (hex "be185d") ]
-
-        -- Background Size / Position / Repeat
         , rule ".bg-auto" [ backgroundSize "auto" ]
         , rule ".bg-cover" [ backgroundSize "cover" ]
         , rule ".bg-contain" [ backgroundSize "contain" ]
@@ -717,12 +669,6 @@ allRules =
         , rule ".bg-no-repeat" [ property "background-repeat" "no-repeat" ]
         , rule ".bg-repeat-x" [ property "background-repeat" "repeat-x" ]
         , rule ".bg-repeat-y" [ property "background-repeat" "repeat-y" ]
-
-        -- =====================
-        -- BORDER
-        -- =====================
-
-        -- Border Width
         , rule ".border" [ border "1px solid" ]
         , rule ".border-0" [ borderWidth "0px" ]
         , rule ".border-2" [ borderWidth "2px" ]
@@ -736,9 +682,7 @@ allRules =
         , rule ".border-t-2" [ property "border-top-width" "2px" ]
         , rule ".border-b-0" [ property "border-bottom-width" "0px" ]
         , rule ".border-b-2" [ property "border-bottom-width" "2px" ]
-
-        -- Border Color
-        , rule ".border-transparent" [ borderColor transparent ]
+        , rule ".border-transparent" [ borderColor "transparent" ]
         , rule ".border-black" [ borderColor (hex "000000") ]
         , rule ".border-white" [ borderColor (hex "ffffff") ]
         , rule ".border-gray-100" [ borderColor (hex "f3f4f6") ]
@@ -752,55 +696,84 @@ allRules =
         , rule ".border-red-500" [ borderColor (hex "ef4444") ]
         , rule ".border-blue-500" [ borderColor (hex "3b82f6") ]
         , rule ".border-green-500" [ borderColor (hex "22c55e") ]
-
-        -- Border Style
         , rule ".border-solid" [ borderStyle "solid" ]
         , rule ".border-dashed" [ borderStyle "dashed" ]
         , rule ".border-dotted" [ borderStyle "dotted" ]
         , rule ".border-double" [ borderStyle "double" ]
         , rule ".border-none" [ borderStyle "none" ]
-
-        -- Border Radius
-        , rule ".rounded-none" [ borderRadius zero ]
+        , rule ".rounded-none" [ borderRadius "0" ]
         , rule ".rounded-sm" [ borderRadius (rem 0.125) ]
         , rule ".rounded" [ borderRadius (rem 0.25) ]
         , rule ".rounded-md" [ borderRadius (rem 0.375) ]
         , rule ".rounded-lg" [ borderRadius (rem 0.5) ]
         , rule ".rounded-xl" [ borderRadius (rem 0.75) ]
-        , rule ".rounded-2xl" [ borderRadius (rem 1) ]
+        , rule ".rounded-2xl" [ borderRadius "1rem" ]
         , rule ".rounded-3xl" [ borderRadius (rem 1.5) ]
         , rule ".rounded-full" [ borderRadius "9999px" ]
-        , rule ".rounded-t" [ property "border-top-left-radius" "0.25rem", property "border-top-right-radius" "0.25rem" ]
-        , rule ".rounded-r" [ property "border-top-right-radius" "0.25rem", property "border-bottom-right-radius" "0.25rem" ]
-        , rule ".rounded-b" [ property "border-bottom-left-radius" "0.25rem", property "border-bottom-right-radius" "0.25rem" ]
-        , rule ".rounded-l" [ property "border-top-left-radius" "0.25rem", property "border-bottom-left-radius" "0.25rem" ]
-        , rule ".rounded-t-lg" [ property "border-top-left-radius" "0.5rem", property "border-top-right-radius" "0.5rem" ]
-        , rule ".rounded-b-lg" [ property "border-bottom-left-radius" "0.5rem", property "border-bottom-right-radius" "0.5rem" ]
-        , rule ".rounded-t-xl" [ property "border-top-left-radius" "0.75rem", property "border-top-right-radius" "0.75rem" ]
-        , rule ".rounded-b-xl" [ property "border-bottom-left-radius" "0.75rem", property "border-bottom-right-radius" "0.75rem" ]
-
-        -- Ring
-        , rule ".ring" [ property "box-shadow" "0 0 0 3px rgba(59, 130, 246, 0.5)" ]
-        , rule ".ring-0" [ property "box-shadow" "0 0 0 0px rgba(59, 130, 246, 0.5)" ]
-        , rule ".ring-1" [ property "box-shadow" "0 0 0 1px rgba(59, 130, 246, 0.5)" ]
-        , rule ".ring-2" [ property "box-shadow" "0 0 0 2px rgba(59, 130, 246, 0.5)" ]
-        , rule ".ring-4" [ property "box-shadow" "0 0 0 4px rgba(59, 130, 246, 0.5)" ]
-
-        -- =====================
-        -- EFFECTS
-        -- =====================
-
-        -- Shadow
+        , rule ".rounded-t"
+            [ property "border-top-left-radius" "0.25rem"
+            , property "border-top-right-radius" "0.25rem"
+            ]
+        , rule ".rounded-r"
+            [ property "border-top-right-radius" "0.25rem"
+            , property "border-bottom-right-radius" "0.25rem"
+            ]
+        , rule ".rounded-b"
+            [ property "border-bottom-left-radius" "0.25rem"
+            , property "border-bottom-right-radius" "0.25rem"
+            ]
+        , rule ".rounded-l"
+            [ property "border-top-left-radius" "0.25rem"
+            , property "border-bottom-left-radius" "0.25rem"
+            ]
+        , rule ".rounded-t-lg"
+            [ property "border-top-left-radius" "0.5rem"
+            , property "border-top-right-radius" "0.5rem"
+            ]
+        , rule ".rounded-b-lg"
+            [ property "border-bottom-left-radius" "0.5rem"
+            , property "border-bottom-right-radius" "0.5rem"
+            ]
+        , rule ".rounded-t-xl"
+            [ property "border-top-left-radius" "0.75rem"
+            , property "border-top-right-radius" "0.75rem"
+            ]
+        , rule ".rounded-b-xl"
+            [ property "border-bottom-left-radius" "0.75rem"
+            , property "border-bottom-right-radius" "0.75rem"
+            ]
+        , rule ".ring"
+            [ property "box-shadow" "0 0 0 3px rgba(59, 130, 246, 0.5)" ]
+        , rule ".ring-0"
+            [ property "box-shadow" "0 0 0 0px rgba(59, 130, 246, 0.5)" ]
+        , rule ".ring-1"
+            [ property "box-shadow" "0 0 0 1px rgba(59, 130, 246, 0.5)" ]
+        , rule ".ring-2"
+            [ property "box-shadow" "0 0 0 2px rgba(59, 130, 246, 0.5)" ]
+        , rule ".ring-4"
+            [ property "box-shadow" "0 0 0 4px rgba(59, 130, 246, 0.5)" ]
         , rule ".shadow-sm" [ boxShadow "0 1px 2px 0 rgba(0, 0, 0, 0.05)" ]
-        , rule ".shadow" [ boxShadow "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)" ]
-        , rule ".shadow-md" [ boxShadow "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)" ]
-        , rule ".shadow-lg" [ boxShadow "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)" ]
-        , rule ".shadow-xl" [ boxShadow "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)" ]
-        , rule ".shadow-2xl" [ boxShadow "0 25px 50px -12px rgba(0, 0, 0, 0.25)" ]
-        , rule ".shadow-inner" [ boxShadow "inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)" ]
+        , rule ".shadow"
+            [ boxShadow
+                "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)"
+            ]
+        , rule ".shadow-md"
+            [ boxShadow
+                "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)"
+            ]
+        , rule ".shadow-lg"
+            [ boxShadow
+                "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)"
+            ]
+        , rule ".shadow-xl"
+            [ boxShadow
+                "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)"
+            ]
+        , rule ".shadow-2xl"
+            [ boxShadow "0 25px 50px -12px rgba(0, 0, 0, 0.25)" ]
+        , rule ".shadow-inner"
+            [ boxShadow "inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)" ]
         , rule ".shadow-none" [ boxShadow "none" ]
-
-        -- Opacity
         , rule ".opacity-0" [ opacity "0" ]
         , rule ".opacity-5" [ opacity "0.05" ]
         , rule ".opacity-10" [ opacity "0.1" ]
@@ -816,17 +789,23 @@ allRules =
         , rule ".opacity-90" [ opacity "0.9" ]
         , rule ".opacity-95" [ opacity "0.95" ]
         , rule ".opacity-100" [ opacity "1" ]
-
-        -- Transition
-        , rule ".transition-all" [ transition "all 150ms cubic-bezier(0.4, 0, 0.2, 1)" ]
-        , rule ".transition" [ transition "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 150ms cubic-bezier(0.4, 0, 0.2, 1)" ]
-        , rule ".transition-colors" [ transition "color, background-color, border-color, text-decoration-color, fill, stroke 150ms cubic-bezier(0.4, 0, 0.2, 1)" ]
-        , rule ".transition-opacity" [ transition "opacity 150ms cubic-bezier(0.4, 0, 0.2, 1)" ]
-        , rule ".transition-shadow" [ transition "box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1)" ]
-        , rule ".transition-transform" [ transition "transform 150ms cubic-bezier(0.4, 0, 0.2, 1)" ]
+        , rule ".transition-all"
+            [ transition "all 150ms cubic-bezier(0.4, 0, 0.2, 1)" ]
+        , rule ".transition"
+            [ transition
+                "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 150ms cubic-bezier(0.4, 0, 0.2, 1)"
+            ]
+        , rule ".transition-colors"
+            [ transition
+                "color, background-color, border-color, text-decoration-color, fill, stroke 150ms cubic-bezier(0.4, 0, 0.2, 1)"
+            ]
+        , rule ".transition-opacity"
+            [ transition "opacity 150ms cubic-bezier(0.4, 0, 0.2, 1)" ]
+        , rule ".transition-shadow"
+            [ transition "box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1)" ]
+        , rule ".transition-transform"
+            [ transition "transform 150ms cubic-bezier(0.4, 0, 0.2, 1)" ]
         , rule ".transition-none" [ transition "none" ]
-
-        -- Duration
         , rule ".duration-75" [ property "transition-duration" "75ms" ]
         , rule ".duration-100" [ property "transition-duration" "100ms" ]
         , rule ".duration-150" [ property "transition-duration" "150ms" ]
@@ -835,14 +814,17 @@ allRules =
         , rule ".duration-500" [ property "transition-duration" "500ms" ]
         , rule ".duration-700" [ property "transition-duration" "700ms" ]
         , rule ".duration-1000" [ property "transition-duration" "1000ms" ]
-
-        -- Ease
         , rule ".ease-linear" [ property "transition-timing-function" "linear" ]
-        , rule ".ease-in" [ property "transition-timing-function" "cubic-bezier(0.4, 0, 1, 1)" ]
-        , rule ".ease-out" [ property "transition-timing-function" "cubic-bezier(0, 0, 0.2, 1)" ]
-        , rule ".ease-in-out" [ property "transition-timing-function" "cubic-bezier(0.4, 0, 0.2, 1)" ]
-
-        -- Transform
+        , rule ".ease-in"
+            [ property "transition-timing-function" "cubic-bezier(0.4, 0, 1, 1)"
+            ]
+        , rule ".ease-out"
+            [ property "transition-timing-function" "cubic-bezier(0, 0, 0.2, 1)"
+            ]
+        , rule ".ease-in-out"
+            [ property "transition-timing-function"
+                "cubic-bezier(0.4, 0, 0.2, 1)"
+            ]
         , rule ".scale-0" [ transform "scale(0)" ]
         , rule ".scale-50" [ transform "scale(.5)" ]
         , rule ".scale-75" [ transform "scale(.75)" ]
@@ -862,8 +844,6 @@ allRules =
         , rule ".rotate-45" [ transform "rotate(45deg)" ]
         , rule ".rotate-90" [ transform "rotate(90deg)" ]
         , rule ".rotate-180" [ transform "rotate(180deg)" ]
-
-        -- Cursor
         , rule ".cursor-auto" [ cursor "auto" ]
         , rule ".cursor-default" [ cursor "default" ]
         , rule ".cursor-pointer" [ cursor "pointer" ]
@@ -873,20 +853,12 @@ allRules =
         , rule ".cursor-not-allowed" [ cursor "not-allowed" ]
         , rule ".cursor-grab" [ cursor "grab" ]
         , rule ".cursor-grabbing" [ cursor "grabbing" ]
-
-        -- Pointer Events
         , rule ".pointer-events-none" [ property "pointer-events" "none" ]
         , rule ".pointer-events-auto" [ property "pointer-events" "auto" ]
-
-        -- User Select
         , rule ".select-none" [ property "user-select" "none" ]
         , rule ".select-text" [ property "user-select" "text" ]
         , rule ".select-all" [ property "user-select" "all" ]
         , rule ".select-auto" [ property "user-select" "auto" ]
-
-        -- =====================
-        -- HOVER STATES
-        -- =====================
         , rule ".hover\\:bg-gray-50:hover" [ backgroundColor (hex "f9fafb") ]
         , rule ".hover\\:bg-gray-100:hover" [ backgroundColor (hex "f3f4f6") ]
         , rule ".hover\\:bg-gray-200:hover" [ backgroundColor (hex "e5e7eb") ]
@@ -912,34 +884,36 @@ allRules =
         , rule ".hover\\:opacity-75:hover" [ opacity "0.75" ]
         , rule ".hover\\:opacity-80:hover" [ opacity "0.8" ]
         , rule ".hover\\:opacity-90:hover" [ opacity "0.9" ]
-        , rule ".hover\\:shadow-lg:hover" [ boxShadow "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)" ]
-        , rule ".hover\\:shadow-xl:hover" [ boxShadow "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)" ]
+        , rule ".hover\\:shadow-lg:hover"
+            [ boxShadow
+                "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)"
+            ]
+        , rule ".hover\\:shadow-xl:hover"
+            [ boxShadow
+                "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)"
+            ]
         , rule ".hover\\:scale-105:hover" [ transform "scale(1.05)" ]
         , rule ".hover\\:scale-110:hover" [ transform "scale(1.1)" ]
-
-        -- Focus States
-        , rule ".focus\\:outline-none:focus" [ property "outline" "2px solid transparent", property "outline-offset" "2px" ]
-        , rule ".focus\\:ring:focus" [ property "box-shadow" "0 0 0 3px rgba(59, 130, 246, 0.5)" ]
-        , rule ".focus\\:ring-2:focus" [ property "box-shadow" "0 0 0 2px rgba(59, 130, 246, 0.5)" ]
-        , rule ".focus\\:ring-blue-500:focus" [ property "box-shadow" "0 0 0 3px rgba(59, 130, 246, 0.5)" ]
-        , rule ".focus\\:ring-indigo-500:focus" [ property "box-shadow" "0 0 0 3px rgba(99, 102, 241, 0.5)" ]
+        , rule ".focus\\:outline-none:focus"
+            [ property "outline" "2px solid transparent"
+            , property "outline-offset" "2px"
+            ]
+        , rule ".focus\\:ring:focus"
+            [ property "box-shadow" "0 0 0 3px rgba(59, 130, 246, 0.5)" ]
+        , rule ".focus\\:ring-2:focus"
+            [ property "box-shadow" "0 0 0 2px rgba(59, 130, 246, 0.5)" ]
+        , rule ".focus\\:ring-blue-500:focus"
+            [ property "box-shadow" "0 0 0 3px rgba(59, 130, 246, 0.5)" ]
+        , rule ".focus\\:ring-indigo-500:focus"
+            [ property "box-shadow" "0 0 0 3px rgba(99, 102, 241, 0.5)" ]
         , rule ".focus\\:border-blue-500:focus" [ borderColor (hex "3b82f6") ]
         , rule ".focus\\:border-indigo-500:focus" [ borderColor (hex "6366f1") ]
-
-        -- Active States
         , rule ".active\\:bg-gray-200:active" [ backgroundColor (hex "e5e7eb") ]
         , rule ".active\\:bg-blue-800:active" [ backgroundColor (hex "1e40af") ]
         , rule ".active\\:scale-95:active" [ transform "scale(.95)" ]
-
-        -- Disabled States
         , rule ".disabled\\:opacity-50:disabled" [ opacity "0.5" ]
-        , rule ".disabled\\:cursor-not-allowed:disabled" [ cursor "not-allowed" ]
-
-        -- =====================
-        -- RESPONSIVE
-        -- =====================
-
-        -- sm (640px)
+        , rule ".disabled\\:cursor-not-allowed:disabled"
+            [ cursor "not-allowed" ]
         , media "(min-width: 640px)"
             [ rule ".sm\\:block" [ display "block" ]
             , rule ".sm\\:hidden" [ display "none" ]
@@ -949,30 +923,32 @@ allRules =
             , rule ".sm\\:inline-block" [ display "inline-block" ]
             , rule ".sm\\:flex-row" [ flexDirection "row" ]
             , rule ".sm\\:flex-col" [ flexDirection "column" ]
-            , rule ".sm\\:grid-cols-1" [ gridTemplateColumns "repeat(1, minmax(0, 1fr))" ]
-            , rule ".sm\\:grid-cols-2" [ gridTemplateColumns "repeat(2, minmax(0, 1fr))" ]
-            , rule ".sm\\:grid-cols-3" [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
-            , rule ".sm\\:p-0" [ padding zero ]
+            , rule ".sm\\:grid-cols-1"
+                [ gridTemplateColumns "repeat(1, minmax(0, 1fr))" ]
+            , rule ".sm\\:grid-cols-2"
+                [ gridTemplateColumns "repeat(2, minmax(0, 1fr))" ]
+            , rule ".sm\\:grid-cols-3"
+                [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
+            , rule ".sm\\:p-0" [ padding "0" ]
             , rule ".sm\\:p-2" [ padding (rem 0.5) ]
-            , rule ".sm\\:p-4" [ padding (rem 1) ]
+            , rule ".sm\\:p-4" [ padding "1rem" ]
             , rule ".sm\\:p-6" [ padding (rem 1.5) ]
-            , rule ".sm\\:p-8" [ padding (rem 2) ]
-            , rule ".sm\\:px-4" [ paddingLeft (rem 1), paddingRight (rem 1) ]
-            , rule ".sm\\:px-6" [ paddingLeft (rem 1.5), paddingRight (rem 1.5) ]
-            , rule ".sm\\:py-4" [ paddingTop (rem 1), paddingBottom (rem 1) ]
+            , rule ".sm\\:p-8" [ padding "2rem" ]
+            , rule ".sm\\:px-4" [ paddingLeft "1rem" , paddingRight "1rem" ]
+            , rule ".sm\\:px-6"
+                [ paddingLeft (rem 1.5) , paddingRight (rem 1.5) ]
+            , rule ".sm\\:py-4" [ paddingTop "1rem" , paddingBottom "1rem" ]
             , rule ".sm\\:text-sm" [ fontSize (rem 0.875) ]
-            , rule ".sm\\:text-base" [ fontSize (rem 1) ]
+            , rule ".sm\\:text-base" [ fontSize "1rem" ]
             , rule ".sm\\:text-lg" [ fontSize (rem 1.125) ]
             , rule ".sm\\:text-xl" [ fontSize (rem 1.25) ]
             , rule ".sm\\:text-2xl" [ fontSize (rem 1.5) ]
-            , rule ".sm\\:w-auto" [ width auto ]
-            , rule ".sm\\:w-full" [ width (pct 100) ]
-            , rule ".sm\\:w-1\\/2" [ width (pct 50) ]
-            , rule ".sm\\:gap-4" [ gap (rem 1) ]
+            , rule ".sm\\:w-auto" [ width "auto" ]
+            , rule ".sm\\:w-full" [ width "100%" ]
+            , rule ".sm\\:w-1\\/2" [ width "50%" ]
+            , rule ".sm\\:gap-4" [ gap "1rem" ]
             , rule ".sm\\:gap-6" [ gap (rem 1.5) ]
             ]
-
-        -- md (768px)
         , media "(min-width: 768px)"
             [ rule ".md\\:block" [ display "block" ]
             , rule ".md\\:hidden" [ display "none" ]
@@ -982,94 +958,105 @@ allRules =
             , rule ".md\\:inline-block" [ display "inline-block" ]
             , rule ".md\\:flex-row" [ flexDirection "row" ]
             , rule ".md\\:flex-col" [ flexDirection "column" ]
-            , rule ".md\\:grid-cols-1" [ gridTemplateColumns "repeat(1, minmax(0, 1fr))" ]
-            , rule ".md\\:grid-cols-2" [ gridTemplateColumns "repeat(2, minmax(0, 1fr))" ]
-            , rule ".md\\:grid-cols-3" [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
-            , rule ".md\\:grid-cols-4" [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
-            , rule ".md\\:p-0" [ padding zero ]
-            , rule ".md\\:p-4" [ padding (rem 1) ]
+            , rule ".md\\:grid-cols-1"
+                [ gridTemplateColumns "repeat(1, minmax(0, 1fr))" ]
+            , rule ".md\\:grid-cols-2"
+                [ gridTemplateColumns "repeat(2, minmax(0, 1fr))" ]
+            , rule ".md\\:grid-cols-3"
+                [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
+            , rule ".md\\:grid-cols-4"
+                [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
+            , rule ".md\\:p-0" [ padding "0" ]
+            , rule ".md\\:p-4" [ padding "1rem" ]
             , rule ".md\\:p-6" [ padding (rem 1.5) ]
-            , rule ".md\\:p-8" [ padding (rem 2) ]
-            , rule ".md\\:p-12" [ padding (rem 3) ]
-            , rule ".md\\:px-6" [ paddingLeft (rem 1.5), paddingRight (rem 1.5) ]
-            , rule ".md\\:px-8" [ paddingLeft (rem 2), paddingRight (rem 2) ]
-            , rule ".md\\:py-6" [ paddingTop (rem 1.5), paddingBottom (rem 1.5) ]
-            , rule ".md\\:py-8" [ paddingTop (rem 2), paddingBottom (rem 2) ]
-            , rule ".md\\:text-base" [ fontSize (rem 1) ]
+            , rule ".md\\:p-8" [ padding "2rem" ]
+            , rule ".md\\:p-12" [ padding "3rem" ]
+            , rule ".md\\:px-6"
+                [ paddingLeft (rem 1.5) , paddingRight (rem 1.5) ]
+            , rule ".md\\:px-8" [ paddingLeft "2rem" , paddingRight "2rem" ]
+            , rule ".md\\:py-6"
+                [ paddingTop (rem 1.5) , paddingBottom (rem 1.5) ]
+            , rule ".md\\:py-8" [ paddingTop "2rem" , paddingBottom "2rem" ]
+            , rule ".md\\:text-base" [ fontSize "1rem" ]
             , rule ".md\\:text-lg" [ fontSize (rem 1.125) ]
             , rule ".md\\:text-xl" [ fontSize (rem 1.25) ]
             , rule ".md\\:text-2xl" [ fontSize (rem 1.5) ]
             , rule ".md\\:text-3xl" [ fontSize (rem 1.875) ]
             , rule ".md\\:text-4xl" [ fontSize (rem 2.25) ]
-            , rule ".md\\:w-auto" [ width auto ]
-            , rule ".md\\:w-full" [ width (pct 100) ]
-            , rule ".md\\:w-1\\/2" [ width (pct 50) ]
+            , rule ".md\\:w-auto" [ width "auto" ]
+            , rule ".md\\:w-full" [ width "100%" ]
+            , rule ".md\\:w-1\\/2" [ width "50%" ]
             , rule ".md\\:w-1\\/3" [ width (pct 33.333333) ]
-            , rule ".md\\:gap-4" [ gap (rem 1) ]
+            , rule ".md\\:gap-4" [ gap "1rem" ]
             , rule ".md\\:gap-6" [ gap (rem 1.5) ]
-            , rule ".md\\:gap-8" [ gap (rem 2) ]
+            , rule ".md\\:gap-8" [ gap "2rem" ]
             , rule ".md\\:items-center" [ alignItems "center" ]
             , rule ".md\\:justify-between" [ justifyContent "space-between" ]
             ]
-
-        -- lg (1024px)
         , media "(min-width: 1024px)"
             [ rule ".lg\\:block" [ display "block" ]
             , rule ".lg\\:hidden" [ display "none" ]
             , rule ".lg\\:flex" [ display "flex" ]
             , rule ".lg\\:grid" [ display "grid" ]
             , rule ".lg\\:flex-row" [ flexDirection "row" ]
-            , rule ".lg\\:grid-cols-2" [ gridTemplateColumns "repeat(2, minmax(0, 1fr))" ]
-            , rule ".lg\\:grid-cols-3" [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
-            , rule ".lg\\:grid-cols-4" [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
-            , rule ".lg\\:grid-cols-5" [ gridTemplateColumns "repeat(5, minmax(0, 1fr))" ]
-            , rule ".lg\\:grid-cols-6" [ gridTemplateColumns "repeat(6, minmax(0, 1fr))" ]
+            , rule ".lg\\:grid-cols-2"
+                [ gridTemplateColumns "repeat(2, minmax(0, 1fr))" ]
+            , rule ".lg\\:grid-cols-3"
+                [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
+            , rule ".lg\\:grid-cols-4"
+                [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
+            , rule ".lg\\:grid-cols-5"
+                [ gridTemplateColumns "repeat(5, minmax(0, 1fr))" ]
+            , rule ".lg\\:grid-cols-6"
+                [ gridTemplateColumns "repeat(6, minmax(0, 1fr))" ]
             , rule ".lg\\:p-6" [ padding (rem 1.5) ]
-            , rule ".lg\\:p-8" [ padding (rem 2) ]
-            , rule ".lg\\:p-12" [ padding (rem 3) ]
-            , rule ".lg\\:p-16" [ padding (rem 4) ]
-            , rule ".lg\\:px-8" [ paddingLeft (rem 2), paddingRight (rem 2) ]
-            , rule ".lg\\:px-12" [ paddingLeft (rem 3), paddingRight (rem 3) ]
+            , rule ".lg\\:p-8" [ padding "2rem" ]
+            , rule ".lg\\:p-12" [ padding "3rem" ]
+            , rule ".lg\\:p-16" [ padding "4rem" ]
+            , rule ".lg\\:px-8" [ paddingLeft "2rem" , paddingRight "2rem" ]
+            , rule ".lg\\:px-12" [ paddingLeft "3rem" , paddingRight "3rem" ]
             , rule ".lg\\:text-xl" [ fontSize (rem 1.25) ]
             , rule ".lg\\:text-2xl" [ fontSize (rem 1.5) ]
             , rule ".lg\\:text-3xl" [ fontSize (rem 1.875) ]
             , rule ".lg\\:text-4xl" [ fontSize (rem 2.25) ]
-            , rule ".lg\\:text-5xl" [ fontSize (rem 3) ]
-            , rule ".lg\\:w-auto" [ width auto ]
-            , rule ".lg\\:w-full" [ width (pct 100) ]
-            , rule ".lg\\:w-1\\/2" [ width (pct 50) ]
+            , rule ".lg\\:text-5xl" [ fontSize "3rem" ]
+            , rule ".lg\\:w-auto" [ width "auto" ]
+            , rule ".lg\\:w-full" [ width "100%" ]
+            , rule ".lg\\:w-1\\/2" [ width "50%" ]
             , rule ".lg\\:w-1\\/3" [ width (pct 33.333333) ]
-            , rule ".lg\\:w-1\\/4" [ width (pct 25) ]
+            , rule ".lg\\:w-1\\/4" [ width "25%" ]
             , rule ".lg\\:gap-6" [ gap (rem 1.5) ]
-            , rule ".lg\\:gap-8" [ gap (rem 2) ]
+            , rule ".lg\\:gap-8" [ gap "2rem" ]
             ]
-
-        -- xl (1280px)
         , media "(min-width: 1280px)"
             [ rule ".xl\\:block" [ display "block" ]
             , rule ".xl\\:hidden" [ display "none" ]
             , rule ".xl\\:flex" [ display "flex" ]
             , rule ".xl\\:grid" [ display "grid" ]
-            , rule ".xl\\:grid-cols-3" [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
-            , rule ".xl\\:grid-cols-4" [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
-            , rule ".xl\\:grid-cols-5" [ gridTemplateColumns "repeat(5, minmax(0, 1fr))" ]
-            , rule ".xl\\:grid-cols-6" [ gridTemplateColumns "repeat(6, minmax(0, 1fr))" ]
-            , rule ".xl\\:p-8" [ padding (rem 2) ]
-            , rule ".xl\\:p-12" [ padding (rem 3) ]
-            , rule ".xl\\:p-16" [ padding (rem 4) ]
-            , rule ".xl\\:px-12" [ paddingLeft (rem 3), paddingRight (rem 3) ]
+            , rule ".xl\\:grid-cols-3"
+                [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
+            , rule ".xl\\:grid-cols-4"
+                [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
+            , rule ".xl\\:grid-cols-5"
+                [ gridTemplateColumns "repeat(5, minmax(0, 1fr))" ]
+            , rule ".xl\\:grid-cols-6"
+                [ gridTemplateColumns "repeat(6, minmax(0, 1fr))" ]
+            , rule ".xl\\:p-8" [ padding "2rem" ]
+            , rule ".xl\\:p-12" [ padding "3rem" ]
+            , rule ".xl\\:p-16" [ padding "4rem" ]
+            , rule ".xl\\:px-12" [ paddingLeft "3rem" , paddingRight "3rem" ]
             , rule ".xl\\:text-2xl" [ fontSize (rem 1.5) ]
             , rule ".xl\\:text-4xl" [ fontSize (rem 2.25) ]
-            , rule ".xl\\:text-5xl" [ fontSize (rem 3) ]
+            , rule ".xl\\:text-5xl" [ fontSize "3rem" ]
             ]
-
-        -- 2xl (1536px)
         , media "(min-width: 1536px)"
             [ rule ".\\32xl\\:block" [ display "block" ]
             , rule ".\\32xl\\:hidden" [ display "none" ]
-            , rule ".\\32xl\\:grid-cols-4" [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
-            , rule ".\\32xl\\:grid-cols-6" [ gridTemplateColumns "repeat(6, minmax(0, 1fr))" ]
-            , rule ".\\32xl\\:p-12" [ padding (rem 3) ]
-            , rule ".\\32xl\\:p-16" [ padding (rem 4) ]
+            , rule ".\\32xl\\:grid-cols-4"
+                [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
+            , rule ".\\32xl\\:grid-cols-6"
+                [ gridTemplateColumns "repeat(6, minmax(0, 1fr))" ]
+            , rule ".\\32xl\\:p-12" [ padding "3rem" ]
+            , rule ".\\32xl\\:p-16" [ padding "4rem" ]
             ]
         ]

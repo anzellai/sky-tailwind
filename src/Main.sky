@@ -1,5 +1,6 @@
 module Main exposing (main)
 
+import Sky.Core.Prelude exposing (..)
 import Sky.Core.List as List
 import Sky.Core.String as String
 import Std.Html exposing (..)
@@ -8,31 +9,15 @@ import Std.Live exposing (app, route)
 import Std.Live.Events exposing (onClick)
 import Std.Cmd as Cmd
 import Std.Sub as Sub
-import SkyTailwind exposing (styles, tw)
-import SkyTailwind.Spacing exposing (..)
-import SkyTailwind.Typography exposing (..)
-import SkyTailwind.Layout exposing (..)
-import SkyTailwind.Flex exposing (..)
-import SkyTailwind.Grid exposing (..)
-import SkyTailwind.Background exposing (..)
-import SkyTailwind.Border exposing (..)
-import SkyTailwind.Effects exposing (..)
-import SkyTailwind.State exposing (hover, focus, active)
-import SkyTailwind.Responsive exposing (sm, md, lg)
-
+import Tailwind as Tw exposing (styles, tw)
 
 type Page
     = HomePage
     | GettingStartedPage
     | ComponentsPage
 
-
 type alias Model =
-    { page : Page
-    , count : Int
-    , navOpen : Bool
-    }
-
+    { page : Page , count : Int , navOpen : Bool }
 
 type Msg
     = Navigate Page
@@ -40,236 +25,320 @@ type Msg
     | Decrement
     | ToggleNav
 
-
 init _ =
-    ({ page = HomePage, count = 0, navOpen = False }, Cmd.none)
-
+    ( { page = HomePage , count = 0 , navOpen = False } , Cmd.none )
 
 update msg model =
     case msg of
         Navigate p ->
-            ({ model | page = p, navOpen = False }, Cmd.none)
-
+            ( { model | page = p , navOpen = False } , Cmd.none )
+        
         Increment ->
-            ({ model | count = model.count + 1 }, Cmd.none)
-
+            ( { model | count = model.count + 1 } , Cmd.none )
+        
         Decrement ->
-            ({ model | count = model.count - 1 }, Cmd.none)
-
+            ( { model | count = model.count - 1 } , Cmd.none )
+        
         ToggleNav ->
-            ({ model | navOpen = not model.navOpen }, Cmd.none)
-
+            ( { model | navOpen = not model.navOpen } , Cmd.none )
 
 subscriptions _ =
     Sub.none
 
-
--- ============================================================
--- VIEWS
--- ============================================================
+viewPage model =
+    case model.page of
+        HomePage ->
+            homeView model
+        
+        GettingStartedPage ->
+            gettingStartedView
+        
+        ComponentsPage ->
+            componentsView model
 
 view model =
-    div [ tw [ minHScreen, bgGray50, fontSans ] ]
-        [ styles
-        , navbar model
-        , case model.page of
-            HomePage ->
-                homePage model
-
-            GettingStartedPage ->
-                gettingStartedPage
-
-            ComponentsPage ->
-                componentsPage model
-        , footer_
-        ]
-
-
--- ============================================================
--- NAVBAR
--- ============================================================
+    div [ tw [ Tw.minHScreen , Tw.bgGray50 , Tw.fontSans ] ]
+        [ styles , navbar model , viewPage model , footer_ ]
 
 navbar model =
-    nav [ tw [ bgWhite, shadowSm, sticky, top0, z50 ] ]
-        [ div [ tw [ maxW6xl, mxAuto, px4, sm px6, lg px8 ] ]
-            [ div [ tw [ flex, justifyBetween, itemsCenter, h16 ] ]
-                [ a [ href "/", attribute "sky-nav" "" ]
-                    [ span [ tw [ text2xl, fontBold, textBlue600 ] ]
+    nav [ tw [ Tw.bgWhite , Tw.shadowSm , Tw.sticky , Tw.top0 , Tw.z50 ] ]
+        [ div [ tw [ Tw.maxW6xl , Tw.mxAuto , Tw.px4 ] ]
+            [ div
+                [ tw [ Tw.flex , Tw.justifyBetween , Tw.itemsCenter , Tw.h16 ] ]
+                [ a [ href "/" , attribute "sky-nav" "" ]
+                    [ span [ tw [ Tw.text2xl , Tw.fontBold , Tw.textBlue600 ] ]
                         [ text "Sky" ]
-                    , span [ tw [ text2xl, fontLight, textGray400 ] ]
+                    , span [ tw [ Tw.text2xl , Tw.fontLight , Tw.textGray400 ] ]
                         [ text "Tailwind" ]
                     ]
-                , div [ tw [ hidden_, md flex, gap6 ] ]
+                , div [ tw [ Tw.flex , Tw.gap6 ] ]
                     [ navLink "/" "Home"
                     , navLink "/getting-started" "Getting Started"
                     , navLink "/components" "Components"
                     ]
-                , button
-                    [ tw [ md hidden_, p2, roundedMd, textGray600, hover bgGray100
-                         , transitionColors
-                         ]
-                    , onClick "ToggleNav"
-                    ]
-                    [ text "Menu" ]
                 ]
             ]
         ]
 
-
 navLink url label =
-    a [ href url
-      , attribute "sky-nav" ""
-      , tw [ textSm, fontMedium, textGray600, hover textBlue600
-           , transitionColors, duration200
-           ]
-      ]
+    a
+        [ href url
+        , attribute "sky-nav" ""
+        , tw
+            [ Tw.textSm
+            , Tw.fontMedium
+            , Tw.textGray600
+            , Tw.hover Tw.textBlue600
+            , Tw.transitionColors
+            , Tw.duration200
+            ]
+        ]
         [ text label ]
 
-
--- ============================================================
--- HOME PAGE
--- ============================================================
-
-homePage model =
-    div []
-        [ heroSection
-        , featuresSection
-        , liveDemo model
-        , quickRefSection
-        ]
-
+homeView model =
+    div [] [ heroSection , featuresSection , liveDemo model , quickRefSection ]
 
 heroSection =
-    div [ tw [ bgWhite ] ]
-        [ div [ tw [ maxW4xl, mxAuto, px6, py24, textCenter ] ]
-            [ h1 [ tw [ text5xl, md text6xl, fontExtrabold, textGray900, leadingTight ] ]
+    div [ tw [ Tw.bgWhite ] ]
+        [ div
+            [ tw [ Tw.maxW4xl , Tw.mxAuto , Tw.px6 , Tw.py24 , Tw.textCenter ] ]
+            [ h1
+                [ tw
+                    [ Tw.text5xl
+                    , Tw.fontExtrabold
+                    , Tw.textGray900
+                    , Tw.leadingTight
+                    ]
+                ]
                 [ text "Type-safe styling" ]
-            , h1 [ tw [ text5xl, md text6xl, fontExtrabold, textBlue600, leadingTight, mt2 ] ]
+            , h1
+                [ tw
+                    [ Tw.text5xl
+                    , Tw.fontExtrabold
+                    , Tw.textBlue600
+                    , Tw.leadingTight
+                    , Tw.mt2
+                    ]
+                ]
                 [ text "for Sky apps" ]
-            , p [ tw [ mt6, textXl, textGray500, maxW2xl, mxAuto, leadingRelaxed ] ]
-                [ text "Tailwind-inspired utility functions that compile to type-checked Sky code. Autocomplete-friendly, composable, and zero runtime cost." ]
-            , div [ tw [ mt8, flex, justifyCenter, gap4, flexCol, sm flexRow ] ]
-                [ a [ href "/getting-started"
+            , p
+                [ tw
+                    [ Tw.mt6
+                    , Tw.textXl
+                    , Tw.textGray500
+                    , Tw.maxW2xl
+                    , Tw.mxAuto
+                    , Tw.leadingRelaxed
+                    ]
+                ]
+                [ text
+                    "Tailwind-inspired utility functions that compile to type-checked Sky code. Autocomplete-friendly, composable, and zero runtime cost."
+                ]
+            , div [ tw [ Tw.mt8 , Tw.flex , Tw.justifyCenter , Tw.gap4 ] ]
+                [ a
+                    [ href "/getting-started"
                     , attribute "sky-nav" ""
-                    , tw [ bgBlue600, hover bgBlue700, textWhite, fontSemibold
-                         , py3, px8, roundedLg, transitionColors, duration200
-                         , textCenter, cursorPointer
-                         ]
+                    , tw
+                        [ Tw.bgBlue600
+                        , Tw.hover Tw.bgBlue700
+                        , Tw.textWhite
+                        , Tw.fontSemibold
+                        , Tw.py3
+                        , Tw.px8
+                        , Tw.roundedLg
+                        , Tw.transitionColors
+                        , Tw.duration200
+                        , Tw.textCenter
+                        , Tw.cursorPointer
+                        ]
                     ]
                     [ text "Get Started" ]
-                , a [ href "/components"
+                , a
+                    [ href "/components"
                     , attribute "sky-nav" ""
-                    , tw [ bgWhite, hover bgGray50, textGray700, fontSemibold
-                         , py3, px8, roundedLg, border, borderGray300
-                         , transitionColors, duration200
-                         , textCenter, cursorPointer
-                         ]
+                    , tw
+                        [ Tw.bgWhite
+                        , Tw.hover Tw.bgGray50
+                        , Tw.textGray700
+                        , Tw.fontSemibold
+                        , Tw.py3
+                        , Tw.px8
+                        , Tw.roundedLg
+                        , Tw.border
+                        , Tw.borderGray300
+                        , Tw.transitionColors
+                        , Tw.duration200
+                        , Tw.textCenter
+                        , Tw.cursorPointer
+                        ]
                     ]
                     [ text "See Components" ]
                 ]
             ]
         ]
 
-
 featuresSection =
-    div [ tw [ py20, px6 ] ]
-        [ div [ tw [ maxW6xl, mxAuto ] ]
-            [ h2 [ tw [ text3xl, fontBold, textCenter, textGray900, mb4 ] ]
+    div [ tw [ Tw.py20 , Tw.px6 ] ]
+        [ div [ tw [ Tw.maxW6xl , Tw.mxAuto ] ]
+            [ h2
+                [ tw
+                    [ Tw.text3xl
+                    , Tw.fontBold
+                    , Tw.textCenter
+                    , Tw.textGray900
+                    , Tw.mb4
+                    ]
+                ]
                 [ text "Why Sky-Tailwind?" ]
-            , p [ tw [ textCenter, textGray500, mb12, maxW2xl, mxAuto ] ]
-                [ text "All the rapid prototyping power of Tailwind CSS, with the safety guarantees of the Sky compiler." ]
-            , div [ tw [ grid, gridCols1, md gridCols3, gap8 ] ]
-                [ featureCard
-                    "Compile-Time Safety"
+            , p
+                [ tw
+                    [ Tw.textCenter
+                    , Tw.textGray500
+                    , Tw.mb12
+                    , Tw.maxW2xl
+                    , Tw.mxAuto
+                    ]
+                ]
+                [ text
+                    "All the rapid prototyping power of Tailwind CSS, with the safety guarantees of the Sky compiler."
+                ]
+            , div
+                [ tw [ Tw.grid , Tw.gridCols1 , Tw.md Tw.gridCols3 , Tw.gap8 ] ]
+                [ featureCard "Compile-Time Safety"
                     "Every utility is a real function. Typos become compiler errors, not invisible bugs in production."
-                    "bgRed50"
-                    "textRed700"
-                , featureCard
-                    "Autocomplete Friendly"
+                , featureCard "Autocomplete Friendly"
                     "Import a module and let your editor show every available utility. No memorizing class name strings."
-                    "bgBlue50"
-                    "textBlue700"
-                , featureCard
-                    "Composable by Design"
+                , featureCard "Composable by Design"
                     "Utilities are values. Pass them to functions, build conditional lists, create your own component helpers."
-                    "bgGreen50"
-                    "textGreen700"
-                , featureCard
-                    "Responsive Wrappers"
+                , featureCard "Responsive Wrappers"
                     "Apply any utility at any breakpoint with sm, md, lg, xl. Type-safe responsive design."
-                    "bgPurple50"
-                    "textPurple700"
-                , featureCard
-                    "State Variants"
+                , featureCard "State Variants"
                     "hover, focus, active, disabled — wrap any utility for interactive styles."
-                    "bgOrange50"
-                    "textOrange700"
-                , featureCard
-                    "Zero Runtime Cost"
+                , featureCard "Zero Runtime Cost"
                     "CSS is generated as a static string baked into your binary. No JavaScript, no CDN, no build step."
-                    "bgIndigo50"
-                    "textIndigo700"
                 ]
             ]
         ]
 
-
-featureCard title_ description bgColor_ textColor_ =
-    div [ tw [ bgWhite, roundedXl, shadowMd, p6
-             , hover shadowLg, transitionAll, duration300
-             ]
+featureCard title_ description =
+    div
+        [ tw
+            [ Tw.bgWhite
+            , Tw.roundedXl
+            , Tw.shadowMd
+            , Tw.p6
+            , Tw.hover Tw.shadowLg
+            , Tw.transitionAll
+            , Tw.duration300
+            ]
         ]
-        [ h3 [ tw [ textLg, fontSemibold, textGray900, mb2 ] ]
+        [ h3 [ tw [ Tw.textLg , Tw.fontSemibold , Tw.textGray900 , Tw.mb2 ] ]
             [ text title_ ]
-        , p [ tw [ textSm, textGray600, leadingRelaxed ] ]
+        , p [ tw [ Tw.textSm , Tw.textGray600 , Tw.leadingRelaxed ] ]
             [ text description ]
         ]
 
-
 liveDemo model =
-    div [ tw [ bgWhite, py20, px6 ] ]
-        [ div [ tw [ maxW4xl, mxAuto ] ]
-            [ h2 [ tw [ text3xl, fontBold, textCenter, textGray900, mb4 ] ]
+    div [ tw [ Tw.bgWhite , Tw.py20 , Tw.px6 ] ]
+        [ div [ tw [ Tw.maxW4xl , Tw.mxAuto ] ]
+            [ h2
+                [ tw
+                    [ Tw.text3xl
+                    , Tw.fontBold
+                    , Tw.textCenter
+                    , Tw.textGray900
+                    , Tw.mb4
+                    ]
+                ]
                 [ text "Live Interactive Demo" ]
-            , p [ tw [ textCenter, textGray500, mb12 ] ]
-                [ text "This counter is built entirely with Sky-Tailwind utilities. Try it!" ]
-            , div [ tw [ bgGray50, roundedXl, p8, maxW2xl, mxAuto ] ]
-                [ p [ tw [ text5xl, fontBold, textCenter, textGray900, mb8, fontMono ] ]
+            , p [ tw [ Tw.textCenter , Tw.textGray500 , Tw.mb12 ] ]
+                [ text
+                    "This counter is built entirely with Sky-Tailwind utilities. Try it!"
+                ]
+            , div
+                [ tw
+                    [ Tw.bgGray50
+                    , Tw.roundedXl
+                    , Tw.p8
+                    , Tw.maxW2xl
+                    , Tw.mxAuto
+                    ]
+                ]
+                [ p
+                    [ tw
+                        [ Tw.text5xl
+                        , Tw.fontBold
+                        , Tw.textCenter
+                        , Tw.textGray900
+                        , Tw.mb8
+                        , Tw.fontMono
+                        ]
+                    ]
                     [ text (String.fromInt model.count) ]
-                , div [ tw [ flex, justifyCenter, gap4 ] ]
+                , div [ tw [ Tw.flex , Tw.justifyCenter , Tw.gap4 ] ]
                     [ button
-                        [ tw [ bgRed500, hover bgRed600, textWhite, fontSemibold
-                             , py3, px6, roundedLg, transitionColors, duration200
-                             , cursorPointer, textLg
-                             ]
-                        , onClick "Decrement"
+                        [ tw
+                            [ Tw.bgRed500
+                            , Tw.hover Tw.bgRed600
+                            , Tw.textWhite
+                            , Tw.fontSemibold
+                            , Tw.py3
+                            , Tw.px6
+                            , Tw.roundedLg
+                            , Tw.transitionColors
+                            , Tw.duration200
+                            , Tw.cursorPointer
+                            , Tw.textLg
+                            ]
+                        , onClick Decrement
                         ]
                         [ text "- Subtract" ]
                     , button
-                        [ tw [ bgGreen500, hover bgGreen600, textWhite, fontSemibold
-                             , py3, px6, roundedLg, transitionColors, duration200
-                             , cursorPointer, textLg
-                             ]
-                        , onClick "Increment"
+                        [ tw
+                            [ Tw.bgGreen500
+                            , Tw.hover Tw.bgGreen600
+                            , Tw.textWhite
+                            , Tw.fontSemibold
+                            , Tw.py3
+                            , Tw.px6
+                            , Tw.roundedLg
+                            , Tw.transitionColors
+                            , Tw.duration200
+                            , Tw.cursorPointer
+                            , Tw.textLg
+                            ]
+                        , onClick Increment
                         ]
                         [ text "+ Add" ]
                     ]
                 ]
-            , codeBlock "-- The button above is just:\nbutton\n    [ tw [ bgGreen500, hover bgGreen600, textWhite, fontSemibold\n         , py3, px6, roundedLg, transitionColors, duration200\n         , cursorPointer, textLg\n         ]\n    , onClick \"Increment\"\n    ]\n    [ text \"+ Add\" ]"
+            , codeBlock
+                "-- The button above is just:\nbutton\n    [ tw [ Tw.bgGreen500, Tw.hover Tw.bgGreen600, Tw.textWhite\n         , Tw.fontSemibold, Tw.py3, Tw.px6, Tw.roundedLg\n         , Tw.transitionColors, Tw.duration200\n         , Tw.cursorPointer, Tw.textLg\n         ]\n    , onClick \"Increment\"\n    ]\n    [ text \"+ Add\" ]"
             ]
         ]
 
-
 quickRefSection =
-    div [ tw [ py20, px6 ] ]
-        [ div [ tw [ maxW6xl, mxAuto ] ]
-            [ h2 [ tw [ text3xl, fontBold, textCenter, textGray900, mb4 ] ]
+    div [ tw [ Tw.py20 , Tw.px6 ] ]
+        [ div [ tw [ Tw.maxW6xl , Tw.mxAuto ] ]
+            [ h2
+                [ tw
+                    [ Tw.text3xl
+                    , Tw.fontBold
+                    , Tw.textCenter
+                    , Tw.textGray900
+                    , Tw.mb4
+                    ]
+                ]
                 [ text "Quick Reference" ]
-            , p [ tw [ textCenter, textGray500, mb12 ] ]
-                [ text "Each utility is a function returning a class attribute tuple." ]
-            , div [ tw [ grid, gridCols1, md gridCols2, gap6 ] ]
-                [ refCard "Core Combinator"
-                    [ "tw : List (String, String) -> (String, String)"
+            , p [ tw [ Tw.textCenter , Tw.textGray500 , Tw.mb12 ] ]
+                [ text
+                    "Each utility is a function returning a class attribute tuple."
+                ]
+            , div
+                [ tw [ Tw.grid , Tw.gridCols1 , Tw.md Tw.gridCols2 , Tw.gap6 ] ]
+                [ refCard "Import & Core"
+                    [ "import Tailwind as Tw exposing (styles, tw)"
+                    , "tw : List (String, String) -> (String, String)"
                     , "twWith : String -> List (...) -> (String, String)"
                     , "styles : VNode  -- place once in your view"
                     ]
@@ -350,503 +419,944 @@ quickRefSection =
                     , "selectNone, pointerEventsNone"
                     ]
                 , refCard "Responsive & State"
-                    [ "sm, md, lg, xl, xxl"
-                    , "  Usage: md textLg, lg gridCols3"
-                    , "hover, focus, active, disabled"
-                    , "firstChild, lastChild, odd, even"
-                    , "  Usage: hover bgBlue700, focus ring2"
+                    [ "Tw.sm, Tw.md, Tw.lg, Tw.xl, Tw.xxl"
+                    , "  Usage: Tw.md Tw.textLg, Tw.lg Tw.gridCols3"
+                    , "Tw.hover, Tw.focus, Tw.active, Tw.disabled"
+                    , "Tw.firstChild, Tw.lastChild, Tw.odd, Tw.even"
+                    , "  Usage: Tw.hover Tw.bgBlue700, Tw.focus Tw.ring2"
                     ]
                 ]
             ]
         ]
 
-
 refCard title_ items =
-    div [ tw [ bgWhite, roundedLg, shadow, p6 ] ]
-        [ h3 [ tw [ fontSemibold, textGray900, mb4 ] ]
-            [ text title_ ]
-        , ul [ tw [ textSm, fontMono, textGray600 ] ]
-            (items
-                |> List.map (\item ->
-                    li [ tw [ mb2, leadingRelaxed ] ] [ text item ]
-                )
-            )
-        ]
+    let
+        renderItem =
+            \item -> li [ tw [ Tw.mb2 , Tw.leadingRelaxed ] ] [ text item ]
+    in
+        div [ tw [ Tw.bgWhite , Tw.roundedLg , Tw.shadow , Tw.p6 ] ]
+            [ h3 [ tw [ Tw.fontSemibold , Tw.textGray900 , Tw.mb4 ] ]
+                [ text title_ ]
+            , ul [ tw [ Tw.textSm , Tw.fontMono , Tw.textGray600 ] ]
+                (List.map renderItem items)
+            ]
 
-
--- ============================================================
--- GETTING STARTED PAGE
--- ============================================================
-
-gettingStartedPage =
-    div [ tw [ maxW4xl, mxAuto, px6, py12 ] ]
-        [ h1 [ tw [ text3xl, fontBold, textGray900, mb8 ] ]
+gettingStartedView =
+    div [ tw [ Tw.maxW4xl , Tw.mxAuto , Tw.px6 , Tw.py12 ] ]
+        [ h1 [ tw [ Tw.text3xl , Tw.fontBold , Tw.textGray900 , Tw.mb8 ] ]
             [ text "Getting Started" ]
-
-        -- Step 1: Install
         , section_ "1. Add to your project"
-            [ p [ tw [ textGray600, mb4, leadingRelaxed ] ]
+            [ p [ tw [ Tw.textGray600 , Tw.mb4 , Tw.leadingRelaxed ] ]
                 [ text "Add sky-tailwind as a dependency in your sky.toml:" ]
-            , codeBlock "[dependencies]\n\"github.com/anzellai/sky-tailwind\" = \"latest\""
+            , codeBlock
+                "[dependencies]\n\"github.com/anzellai/sky-tailwind\" = \"latest\""
             ]
-
-        -- Step 2: Import
-        , section_ "2. Import the modules you need"
-            [ p [ tw [ textGray600, mb4, leadingRelaxed ] ]
-                [ text "Each category has its own module. Import what you use:" ]
-            , codeBlock "import SkyTailwind exposing (styles, tw)\nimport SkyTailwind.Spacing exposing (p4, mt2, gap4)\nimport SkyTailwind.Typography exposing (textLg, fontBold, textWhite)\nimport SkyTailwind.Background exposing (bgBlue500)\nimport SkyTailwind.Border exposing (roundedLg)\nimport SkyTailwind.Effects exposing (shadowMd)\nimport SkyTailwind.State exposing (hover)\nimport SkyTailwind.Responsive exposing (md, lg)"
-            , p [ tw [ textGray600, mt4, mb4, leadingRelaxed ] ]
-                [ text "Or import everything from a module with exposing (..) for rapid prototyping:" ]
-            , codeBlock "import SkyTailwind.Spacing exposing (..)\nimport SkyTailwind.Typography exposing (..)"
+        , section_ "2. Import Tailwind"
+            [ p [ tw [ Tw.textGray600 , Tw.mb4 , Tw.leadingRelaxed ] ]
+                [ text
+                    "One import gives you access to every utility via the Tw. prefix:"
+                ]
+            , codeBlock "import Tailwind as Tw exposing (styles, tw)"
+            , p [ tw [ Tw.textGray600 , Tw.mt4 , Tw.mb4 , Tw.leadingRelaxed ] ]
+                [ text
+                    "Or import individual submodules if you prefer granular control:"
+                ]
+            , codeBlock
+                "import Tailwind.Spacing exposing (p4, mt2, gap4)\nimport Tailwind.Typography exposing (textLg, fontBold)"
             ]
-
-        -- Step 3: Add styles
         , section_ "3. Add the styles node to your view"
-            [ p [ tw [ textGray600, mb4, leadingRelaxed ] ]
-                [ text "Place the styles VNode once in your top-level view. This injects all the CSS rules:" ]
-            , codeBlock "view model =\n    div []\n        [ styles    -- inject CSS, place once at top level\n        , h1 [] [ text \"Hello!\" ]\n        ]"
+            [ p [ tw [ Tw.textGray600 , Tw.mb4 , Tw.leadingRelaxed ] ]
+                [ text
+                    "Place the styles VNode once in your top-level view. This injects all the CSS rules:"
+                ]
+            , codeBlock
+                "view model =\n    div []\n        [ styles    -- inject CSS, place once at top level\n        , h1 [] [ text \"Hello!\" ]\n        ]"
             ]
-
-        -- Step 4: Use tw
         , section_ "4. Compose utilities with tw"
-            [ p [ tw [ textGray600, mb4, leadingRelaxed ] ]
-                [ text "The tw function merges a list of utilities into a single class attribute:" ]
-            , codeBlock "button\n    [ tw [ bgBlue500, textWhite, fontBold, py2, px4, roundedLg ] ]\n    [ text \"Click me\" ]"
-            , p [ tw [ textGray600, mt4, mb4, leadingRelaxed ] ]
-                [ text "For a single utility, use it directly as an attribute:" ]
-            , codeBlock "div [ p4 ] [ text \"Just padding\" ]"
+            [ p [ tw [ Tw.textGray600 , Tw.mb4 , Tw.leadingRelaxed ] ]
+                [ text
+                    "The tw function merges a list of utilities into a single class attribute:"
+                ]
+            , codeBlock
+                "button\n    [ tw [ Tw.bgBlue500, Tw.textWhite, Tw.fontBold, Tw.py2, Tw.px4, Tw.roundedLg ] ]\n    [ text \"Click me\" ]"
+            , p [ tw [ Tw.textGray600 , Tw.mt4 , Tw.mb4 , Tw.leadingRelaxed ] ]
+                [ text "For a single utility, use it directly as an attribute:"
+                ]
+            , codeBlock "div [ Tw.p4 ] [ text \"Just padding\" ]"
             ]
-
-        -- Step 5: Responsive
         , section_ "5. Responsive design"
-            [ p [ tw [ textGray600, mb4, leadingRelaxed ] ]
-                [ text "Wrap any utility with a breakpoint function. The variant functions (sm, md, lg, xl, xxl) take a utility and return a responsive version:" ]
-            , codeBlock "div [ tw [ p4, md p8, lg p12 ] ]\n    [ text \"Padding grows with screen size\" ]\n\ndiv [ tw [ gridCols1, md gridCols2, lg gridCols4, gap4 ] ]\n    [ text \"Responsive grid\" ]"
-            , div [ tw [ bgBlue50, roundedLg, p4, mt4, mb4 ] ]
-                [ p [ tw [ textSm, textBlue700 ] ]
-                    [ text "Breakpoints: sm = 640px, md = 768px, lg = 1024px, xl = 1280px, xxl = 1536px" ]
+            [ p [ tw [ Tw.textGray600 , Tw.mb4 , Tw.leadingRelaxed ] ]
+                [ text "Wrap any utility with a breakpoint function:" ]
+            , codeBlock
+                "div [ tw [ Tw.p4, Tw.md Tw.p8, Tw.lg Tw.p12 ] ]\n    [ text \"Padding grows with screen size\" ]\n\ndiv [ tw [ Tw.gridCols1, Tw.md Tw.gridCols2, Tw.lg Tw.gridCols4, Tw.gap4 ] ]\n    [ text \"Responsive grid\" ]"
+            , div
+                [ tw [ Tw.bgBlue50 , Tw.roundedLg , Tw.p4 , Tw.mt4 , Tw.mb4 ] ]
+                [ p [ tw [ Tw.textSm , Tw.textBlue700 ] ]
+                    [ text
+                        "Breakpoints: sm = 640px, md = 768px, lg = 1024px, xl = 1280px, xxl = 1536px"
+                    ]
                 ]
             ]
-
-        -- Step 6: State
         , section_ "6. Interactive states"
-            [ p [ tw [ textGray600, mb4, leadingRelaxed ] ]
-                [ text "Wrap a utility with hover, focus, active, or disabled to apply it on that state:" ]
-            , codeBlock "button\n    [ tw [ bgBlue500\n         , hover bgBlue700\n         , focus ring2\n         , active scale95\n         , transitionAll, duration200\n         ]\n    ]\n    [ text \"Interactive button\" ]"
-            , p [ tw [ textGray600, mt4, mb4, leadingRelaxed ] ]
-                [ text "This works because hover, focus, etc. are higher-order functions that prefix the class name." ]
+            [ p [ tw [ Tw.textGray600 , Tw.mb4 , Tw.leadingRelaxed ] ]
+                [ text
+                    "Wrap a utility with hover, focus, active, or disabled to apply it on that state:"
+                ]
+            , codeBlock
+                "button\n    [ tw [ Tw.bgBlue500, Tw.hover Tw.bgBlue700, Tw.focus Tw.ring2\n         , Tw.active Tw.scale95, Tw.transitionAll, Tw.duration200\n         ]\n    ]\n    [ text \"Interactive button\" ]"
+            , p [ tw [ Tw.textGray600 , Tw.mt4 , Tw.mb4 , Tw.leadingRelaxed ] ]
+                [ text
+                    "This works because hover, focus, etc. are higher-order functions that prefix the class name."
+                ]
             ]
-
-        -- Step 7: Conditional
         , section_ "7. Conditional styling"
-            [ p [ tw [ textGray600, mb4, leadingRelaxed ] ]
-                [ text "Since tw takes a List, conditional styling is just list manipulation:" ]
-            , codeBlock "div [ tw ([ p4, rounded, textWhite ]\n    ++ (if model.active\n        then [ bgGreen500 ]\n        else [ bgGray400 ])\n    ) ]\n    [ text \"Conditional background\" ]"
+            [ p [ tw [ Tw.textGray600 , Tw.mb4 , Tw.leadingRelaxed ] ]
+                [ text
+                    "Since tw takes a List, conditional styling is just list manipulation:"
+                ]
+            , codeBlock
+                "div [ tw ([ Tw.p4, Tw.rounded, Tw.textWhite ]\n    ++ (if model.active\n        then [ Tw.bgGreen500 ]\n        else [ Tw.bgGray400 ])\n    ) ]\n    [ text \"Conditional background\" ]"
             ]
-
-        -- Step 8: twWith
         , section_ "8. Mixing with custom classes"
-            [ p [ tw [ textGray600, mb4, leadingRelaxed ] ]
-                [ text "Use twWith to merge sky-tailwind utilities with additional custom class names:" ]
-            , codeBlock "div [ twWith \"my-custom-class animated\" [ p4, bgWhite, roundedLg ] ]\n    [ text \"Sky-Tailwind + custom\" ]"
+            [ p [ tw [ Tw.textGray600 , Tw.mb4 , Tw.leadingRelaxed ] ]
+                [ text
+                    "Use twWith to merge sky-tailwind utilities with additional custom class names:"
+                ]
+            , codeBlock
+                "div [ twWith \"my-custom-class\" [ Tw.p4, Tw.bgWhite, Tw.roundedLg ] ]\n    [ text \"Sky-Tailwind + custom\" ]"
             ]
-
-        -- Step 9: Component patterns
         , section_ "9. Building reusable components"
-            [ p [ tw [ textGray600, mb4, leadingRelaxed ] ]
-                [ text "Extract styled elements into functions — this is the Sky-Tailwind way of building a design system:" ]
-            , codeBlock "-- Define a reusable button component\nprimaryBtn label msg =\n    button\n        [ tw [ bgBlue600, hover bgBlue700, textWhite, fontSemibold\n             , py2, px6, roundedLg, transitionColors, duration200\n             , cursorPointer\n             ]\n        , onClick msg\n        ]\n        [ text label ]\n\n\n-- Define a card component\ncard title_ body =\n    div [ tw [ bgWhite, roundedXl, shadowMd, p6\n             , hover shadowLg, transitionAll, duration300\n             ]\n        ]\n        [ h3 [ tw [ textLg, fontSemibold, mb2 ] ] [ text title_ ]\n        , p [ tw [ textSm, textGray600 ] ] [ text body ]\n        ]\n\n\n-- Use them in your view\nview model =\n    div [ tw [ grid, md gridCols3, gap6, p8 ] ]\n        [ card \"Title\" \"Description\"\n        , card \"Title\" \"Description\"\n        , primaryBtn \"Save\" \"Save\"\n        ]"
+            [ p [ tw [ Tw.textGray600 , Tw.mb4 , Tw.leadingRelaxed ] ]
+                [ text
+                    "Extract styled elements into functions — the Sky-Tailwind way of building a design system:"
+                ]
+            , codeBlock
+                "primaryBtn label msg =\n    button\n        [ tw [ Tw.bgBlue600, Tw.hover Tw.bgBlue700, Tw.textWhite\n             , Tw.fontSemibold, Tw.py2, Tw.px6, Tw.roundedLg\n             ]\n        , onClick msg\n        ]\n        [ text label ]\n\ncard title_ body =\n    div [ tw [ Tw.bgWhite, Tw.roundedXl, Tw.shadowMd, Tw.p6 ] ]\n        [ h3 [ tw [ Tw.textLg, Tw.fontSemibold, Tw.mb2 ] ]\n            [ text title_ ]\n        , p [ tw [ Tw.textSm, Tw.textGray600 ] ]\n            [ text body ]\n        ]"
             ]
         ]
 
-
 section_ title_ content =
-    div [ tw [ mb12 ] ]
-        ([ h2 [ tw [ text2xl, fontSemibold, textGray900, mb4, mt4 ] ]
-            [ text title_ ]
-        ] ++ content)
-
+    let
+        header =
+            h2
+                [ tw
+                    [ Tw.text2xl
+                    , Tw.fontSemibold
+                    , Tw.textGray900
+                    , Tw.mb4
+                    , Tw.mt4
+                    ]
+                ]
+                [ text title_ ]
+        children =
+            [ header ] ++ content
+    in
+        div [ tw [ Tw.mb12 ] ] children
 
 codeBlock code =
-    pre [ tw [ bgGray900, textGray100, p6, roundedLg, overflowXAuto
-             , textSm, fontMono, leadingRelaxed, mt4, mb4
-             ]
+    pre
+        [ tw
+            [ Tw.bgGray900
+            , Tw.textGray100
+            , Tw.p6
+            , Tw.roundedLg
+            , Tw.overflowXAuto
+            , Tw.textSm
+            , Tw.fontMono
+            , Tw.leadingRelaxed
+            , Tw.mt4
+            , Tw.mb4
+            ]
         ]
         [ codeNode [] [ text code ] ]
 
-
--- ============================================================
--- COMPONENTS PAGE
--- ============================================================
-
-componentsPage model =
-    div [ tw [ maxW6xl, mxAuto, px6, py12 ] ]
-        [ h1 [ tw [ text3xl, fontBold, textGray900, mb4 ] ]
+componentsView model =
+    div [ tw [ Tw.maxW6xl , Tw.mxAuto , Tw.px6 , Tw.py12 ] ]
+        [ h1 [ tw [ Tw.text3xl , Tw.fontBold , Tw.textGray900 , Tw.mb4 ] ]
             [ text "Component Gallery" ]
-        , p [ tw [ textGray500, mb12, maxW2xl ] ]
-            [ text "Example UI patterns built with Sky-Tailwind. Copy the code to use in your own projects." ]
-
-        -- Buttons
+        , p [ tw [ Tw.textGray500 , Tw.mb12 , Tw.maxW2xl ] ]
+            [ text
+                "Example UI patterns built with Sky-Tailwind. Copy the code to use in your own projects."
+            ]
         , componentSection "Buttons" buttonsDemo
-
-        -- Cards
         , componentSection "Cards" cardsDemo
-
-        -- Alerts
         , componentSection "Alerts" alertsDemo
-
-        -- Navigation
-        , componentSection "Badge & Tags" badgesDemo
-
-        -- Form Inputs
+        , componentSection "Badges" badgesDemo
         , componentSection "Form Elements" formsDemo
-
-        -- Pricing
         , componentSection "Pricing Card" pricingDemo
-
-        -- Stats
         , componentSection "Stats" statsDemo
         ]
 
-
 componentSection title_ content =
-    div [ tw [ mb16 ] ]
-        [ h2 [ tw [ text2xl, fontSemibold, textGray900, mb6, pb2, borderB, borderGray200 ] ]
+    div [ tw [ Tw.mb16 ] ]
+        [ h2
+            [ tw
+                [ Tw.text2xl
+                , Tw.fontSemibold
+                , Tw.textGray900
+                , Tw.mb6
+                , Tw.pb2
+                , Tw.borderB
+                , Tw.borderGray200
+                ]
+            ]
             [ text title_ ]
         , content
         ]
 
-
--- Buttons Demo
 buttonsDemo =
-    div [ tw [ flex, flexWrap, gap4, itemsCenter ] ]
-        [ button [ tw [ bgBlue600, hover bgBlue700, textWhite, fontSemibold
-                       , py2, px6, roundedLg, transitionColors, duration200, cursorPointer
-                       ] ]
+    div [ tw [ Tw.flex , Tw.flexWrap , Tw.gap4 , Tw.itemsCenter ] ]
+        [ button
+            [ tw
+                [ Tw.bgBlue600
+                , Tw.hover Tw.bgBlue700
+                , Tw.textWhite
+                , Tw.fontSemibold
+                , Tw.py2
+                , Tw.px6
+                , Tw.roundedLg
+                , Tw.transitionColors
+                , Tw.duration200
+                , Tw.cursorPointer
+                ]
+            ]
             [ text "Primary" ]
-        , button [ tw [ bgWhite, hover bgGray50, textGray700, fontSemibold
-                       , py2, px6, roundedLg, border, borderGray300
-                       , transitionColors, duration200, cursorPointer
-                       ] ]
+        , button
+            [ tw
+                [ Tw.bgWhite
+                , Tw.hover Tw.bgGray50
+                , Tw.textGray700
+                , Tw.fontSemibold
+                , Tw.py2
+                , Tw.px6
+                , Tw.roundedLg
+                , Tw.border
+                , Tw.borderGray300
+                , Tw.transitionColors
+                , Tw.duration200
+                , Tw.cursorPointer
+                ]
+            ]
             [ text "Secondary" ]
-        , button [ tw [ bgGreen600, hover bgGreen700, textWhite, fontSemibold
-                       , py2, px6, roundedLg, transitionColors, duration200, cursorPointer
-                       ] ]
+        , button
+            [ tw
+                [ Tw.bgGreen600
+                , Tw.hover Tw.bgGreen700
+                , Tw.textWhite
+                , Tw.fontSemibold
+                , Tw.py2
+                , Tw.px6
+                , Tw.roundedLg
+                , Tw.transitionColors
+                , Tw.duration200
+                , Tw.cursorPointer
+                ]
+            ]
             [ text "Success" ]
-        , button [ tw [ bgRed600, hover bgRed700, textWhite, fontSemibold
-                       , py2, px6, roundedLg, transitionColors, duration200, cursorPointer
-                       ] ]
+        , button
+            [ tw
+                [ Tw.bgRed600
+                , Tw.hover Tw.bgRed700
+                , Tw.textWhite
+                , Tw.fontSemibold
+                , Tw.py2
+                , Tw.px6
+                , Tw.roundedLg
+                , Tw.transitionColors
+                , Tw.duration200
+                , Tw.cursorPointer
+                ]
+            ]
             [ text "Danger" ]
-        , button [ tw [ bgGray200, textGray500
-                       , py2, px6, roundedLg, cursorNotAllowed, opacity50
-                       ] ]
+        , button
+            [ tw
+                [ Tw.bgGray200
+                , Tw.textGray500
+                , Tw.py2
+                , Tw.px6
+                , Tw.roundedLg
+                , Tw.cursorNotAllowed
+                , Tw.opacity50
+                ]
+            ]
             [ text "Disabled" ]
-        , button [ tw [ bgBlue600, hover bgBlue700, textWhite, fontSemibold
-                       , py1, px3, roundedMd, textSm, transitionColors, duration200, cursorPointer
-                       ] ]
+        , button
+            [ tw
+                [ Tw.bgBlue600
+                , Tw.hover Tw.bgBlue700
+                , Tw.textWhite
+                , Tw.fontSemibold
+                , Tw.py1
+                , Tw.px3
+                , Tw.roundedMd
+                , Tw.textSm
+                , Tw.transitionColors
+                , Tw.duration200
+                , Tw.cursorPointer
+                ]
+            ]
             [ text "Small" ]
-        , button [ tw [ bgBlue600, hover bgBlue700, textWhite, fontSemibold
-                       , py3, px8, roundedLg, textLg, transitionColors, duration200, cursorPointer
-                       ] ]
+        , button
+            [ tw
+                [ Tw.bgBlue600
+                , Tw.hover Tw.bgBlue700
+                , Tw.textWhite
+                , Tw.fontSemibold
+                , Tw.py3
+                , Tw.px8
+                , Tw.roundedLg
+                , Tw.textLg
+                , Tw.transitionColors
+                , Tw.duration200
+                , Tw.cursorPointer
+                ]
+            ]
             [ text "Large" ]
-        , button [ tw [ bgTransparent, textBlue600, hover textBlue700, fontSemibold
-                       , py2, px6, roundedLg, border2, borderBlue500
-                       , transitionColors, duration200, cursorPointer
-                       ] ]
+        , button
+            [ tw
+                [ Tw.bgTransparent
+                , Tw.textBlue600
+                , Tw.hover Tw.textBlue700
+                , Tw.fontSemibold
+                , Tw.py2
+                , Tw.px6
+                , Tw.roundedLg
+                , Tw.border2
+                , Tw.borderBlue500
+                , Tw.transitionColors
+                , Tw.duration200
+                , Tw.cursorPointer
+                ]
+            ]
             [ text "Outline" ]
-        , button [ tw [ bgBlue600, hover bgBlue700, textWhite, fontSemibold
-                       , py2, px6, roundedFull, transitionColors, duration200, cursorPointer
-                       ] ]
+        , button
+            [ tw
+                [ Tw.bgBlue600
+                , Tw.hover Tw.bgBlue700
+                , Tw.textWhite
+                , Tw.fontSemibold
+                , Tw.py2
+                , Tw.px6
+                , Tw.roundedFull
+                , Tw.transitionColors
+                , Tw.duration200
+                , Tw.cursorPointer
+                ]
+            ]
             [ text "Pill" ]
         ]
 
-
--- Cards Demo
 cardsDemo =
-    div [ tw [ grid, gridCols1, md gridCols3, gap6 ] ]
-        [ div [ tw [ bgWhite, roundedXl, shadowMd, overflowHidden
-                   , hover shadowLg, transitionAll, duration300
-                   ] ]
-            [ div [ tw [ h48, bgBlue500 ] ] []
-            , div [ tw [ p6 ] ]
-                [ h3 [ tw [ fontSemibold, textLg, textGray900, mb2 ] ]
-                    [ text "Card with Image" ]
-                , p [ tw [ textSm, textGray600, leadingRelaxed ] ]
-                    [ text "A card with a colored header area that could hold an image or illustration." ]
+    div [ tw [ Tw.grid , Tw.gridCols1 , Tw.md Tw.gridCols3 , Tw.gap6 ] ]
+        [ div
+            [ tw
+                [ Tw.bgWhite
+                , Tw.roundedXl
+                , Tw.shadowMd
+                , Tw.overflowHidden
+                , Tw.hover Tw.shadowLg
+                , Tw.transitionAll
+                , Tw.duration300
                 ]
             ]
-        , div [ tw [ bgWhite, roundedXl, shadowMd, p6, borderL, border4
-                   , hover shadowLg, transitionAll, duration300
-                   ] ]
-            [ h3 [ tw [ fontSemibold, textLg, textGray900, mb2 ] ]
-                [ text "Left Border Accent" ]
-            , p [ tw [ textSm, textGray600, leadingRelaxed ] ]
-                [ text "A card with a left border accent. Great for callouts and highlighted content." ]
+            [ div [ tw [ Tw.h48 , Tw.bgBlue500 ] ] []
+            , div [ tw [ Tw.p6 ] ]
+                [ h3
+                    [ tw
+                        [ Tw.fontSemibold
+                        , Tw.textLg
+                        , Tw.textGray900
+                        , Tw.mb2
+                        ]
+                    ]
+                    [ text "Card with Image" ]
+                , p [ tw [ Tw.textSm , Tw.textGray600 , Tw.leadingRelaxed ] ]
+                    [ text
+                        "A card with a colored header area that could hold an image or illustration."
+                    ]
+                ]
             ]
-        , div [ tw [ bgGray900, roundedXl, shadowMd, p6
-                   , hover shadowLg, transitionAll, duration300
-                   ] ]
-            [ h3 [ tw [ fontSemibold, textLg, textWhite, mb2 ] ]
+        , div
+            [ tw
+                [ Tw.bgWhite
+                , Tw.roundedXl
+                , Tw.shadowMd
+                , Tw.p6
+                , Tw.borderL
+                , Tw.border4
+                , Tw.hover Tw.shadowLg
+                , Tw.transitionAll
+                , Tw.duration300
+                ]
+            ]
+            [ h3
+                [ tw [ Tw.fontSemibold , Tw.textLg , Tw.textGray900 , Tw.mb2 ] ]
+                [ text "Left Border Accent" ]
+            , p [ tw [ Tw.textSm , Tw.textGray600 , Tw.leadingRelaxed ] ]
+                [ text
+                    "A card with a left border accent. Great for callouts and highlighted content."
+                ]
+            ]
+        , div
+            [ tw
+                [ Tw.bgGray900
+                , Tw.roundedXl
+                , Tw.shadowMd
+                , Tw.p6
+                , Tw.hover Tw.shadowLg
+                , Tw.transitionAll
+                , Tw.duration300
+                ]
+            ]
+            [ h3 [ tw [ Tw.fontSemibold , Tw.textLg , Tw.textWhite , Tw.mb2 ] ]
                 [ text "Dark Card" ]
-            , p [ tw [ textSm, textGray400, leadingRelaxed ] ]
-                [ text "A dark themed card for contrast sections. Works great for CTAs." ]
-            , button [ tw [ mt4, bgWhite, textGray900, fontSemibold
-                          , py2, px4, roundedLg, textSm
-                          , transitionColors, duration200, cursorPointer
-                          ] ]
+            , p [ tw [ Tw.textSm , Tw.textGray400 , Tw.leadingRelaxed ] ]
+                [ text
+                    "A dark themed card for contrast sections. Works great for CTAs."
+                ]
+            , button
+                [ tw
+                    [ Tw.mt4
+                    , Tw.bgWhite
+                    , Tw.textGray900
+                    , Tw.fontSemibold
+                    , Tw.py2
+                    , Tw.px4
+                    , Tw.roundedLg
+                    , Tw.textSm
+                    , Tw.transitionColors
+                    , Tw.duration200
+                    , Tw.cursorPointer
+                    ]
+                ]
                 [ text "Learn more" ]
             ]
         ]
 
-
--- Alerts Demo
 alertsDemo =
-    div [ tw [ flex, flexCol, gap4 ] ]
-        [ div [ tw [ bgBlue50, border, borderBlue500, roundedLg, p4 ] ]
-            [ p [ tw [ fontSemibold, textBlue700 ] ] [ text "Info" ]
-            , p [ tw [ textSm, textBlue600, mt1 ] ]
-                [ text "Sky-Tailwind utilities are compiled at build time. No runtime overhead." ]
+    div [ tw [ Tw.flex , Tw.flexCol , Tw.gap4 ] ]
+        [ div
+            [ tw
+                [ Tw.bgBlue50
+                , Tw.border
+                , Tw.borderBlue500
+                , Tw.roundedLg
+                , Tw.p4
+                ]
             ]
-        , div [ tw [ bgGreen50, border, borderGreen500, roundedLg, p4 ] ]
-            [ p [ tw [ fontSemibold, textGreen700 ] ] [ text "Success" ]
-            , p [ tw [ textSm, textGreen600, mt1 ] ]
+            [ p [ tw [ Tw.fontSemibold , Tw.textBlue700 ] ] [ text "Info" ]
+            , p [ tw [ Tw.textSm , Tw.textBlue600 , Tw.mt1 ] ]
+                [ text
+                    "Sky-Tailwind utilities are compiled at build time. No runtime overhead."
+                ]
+            ]
+        , div
+            [ tw
+                [ Tw.bgGreen50
+                , Tw.border
+                , Tw.borderGreen500
+                , Tw.roundedLg
+                , Tw.p4
+                ]
+            ]
+            [ p [ tw [ Tw.fontSemibold , Tw.textGreen700 ] ] [ text "Success" ]
+            , p [ tw [ Tw.textSm , Tw.textGreen600 , Tw.mt1 ] ]
                 [ text "Your project has been deployed successfully." ]
             ]
-        , div [ tw [ bgYellow50, border, roundedLg, p4 ] ]
-            [ p [ tw [ fontSemibold, textYellow500 ] ] [ text "Warning" ]
-            , p [ tw [ textSm, textOrange500, mt1 ] ]
+        , div [ tw [ Tw.bgYellow50 , Tw.border , Tw.roundedLg , Tw.p4 ] ]
+            [ p [ tw [ Tw.fontSemibold , Tw.textYellow500 ] ] [ text "Warning" ]
+            , p [ tw [ Tw.textSm , Tw.textOrange500 , Tw.mt1 ] ]
                 [ text "Your API key will expire in 3 days. Please renew it." ]
             ]
-        , div [ tw [ bgRed50, border, borderRed500, roundedLg, p4 ] ]
-            [ p [ tw [ fontSemibold, textRed700 ] ] [ text "Error" ]
-            , p [ tw [ textSm, textRed600, mt1 ] ]
-                [ text "Connection to database failed. Check your configuration." ]
+        , div
+            [ tw
+                [ Tw.bgRed50
+                , Tw.border
+                , Tw.borderRed500
+                , Tw.roundedLg
+                , Tw.p4
+                ]
+            ]
+            [ p [ tw [ Tw.fontSemibold , Tw.textRed700 ] ] [ text "Error" ]
+            , p [ tw [ Tw.textSm , Tw.textRed600 , Tw.mt1 ] ]
+                [ text
+                    "Connection to database failed. Check your configuration."
+                ]
             ]
         ]
 
-
--- Badges Demo
 badgesDemo =
-    div [ tw [ flex, flexWrap, gap3, itemsCenter ] ]
-        [ span [ tw [ bgBlue100, textBlue700, textXs, fontSemibold, py1, px3, roundedFull ] ]
+    div [ tw [ Tw.flex , Tw.flexWrap , Tw.gap3 , Tw.itemsCenter ] ]
+        [ span
+            [ tw
+                [ Tw.bgBlue100
+                , Tw.textBlue700
+                , Tw.textXs
+                , Tw.fontSemibold
+                , Tw.py1
+                , Tw.px3
+                , Tw.roundedFull
+                ]
+            ]
             [ text "Blue" ]
-        , span [ tw [ bgGreen100, textGreen700, textXs, fontSemibold, py1, px3, roundedFull ] ]
+        , span
+            [ tw
+                [ Tw.bgGreen100
+                , Tw.textGreen700
+                , Tw.textXs
+                , Tw.fontSemibold
+                , Tw.py1
+                , Tw.px3
+                , Tw.roundedFull
+                ]
+            ]
             [ text "Green" ]
-        , span [ tw [ bgRed100, textRed700, textXs, fontSemibold, py1, px3, roundedFull ] ]
+        , span
+            [ tw
+                [ Tw.bgRed100
+                , Tw.textRed700
+                , Tw.textXs
+                , Tw.fontSemibold
+                , Tw.py1
+                , Tw.px3
+                , Tw.roundedFull
+                ]
+            ]
             [ text "Red" ]
-        , span [ tw [ bgPurple100, textPurple600, textXs, fontSemibold, py1, px3, roundedFull ] ]
+        , span
+            [ tw
+                [ Tw.bgPurple100
+                , Tw.textPurple600
+                , Tw.textXs
+                , Tw.fontSemibold
+                , Tw.py1
+                , Tw.px3
+                , Tw.roundedFull
+                ]
+            ]
             [ text "Purple" ]
-        , span [ tw [ bgGray100, textGray700, textXs, fontSemibold, py1, px3, roundedFull ] ]
+        , span
+            [ tw
+                [ Tw.bgGray100
+                , Tw.textGray700
+                , Tw.textXs
+                , Tw.fontSemibold
+                , Tw.py1
+                , Tw.px3
+                , Tw.roundedFull
+                ]
+            ]
             [ text "Gray" ]
-        , span [ tw [ bgYellow100, textYellow500, textXs, fontSemibold, py1, px3, roundedFull ] ]
+        , span
+            [ tw
+                [ Tw.bgYellow100
+                , Tw.textYellow500
+                , Tw.textXs
+                , Tw.fontSemibold
+                , Tw.py1
+                , Tw.px3
+                , Tw.roundedFull
+                ]
+            ]
             [ text "Yellow" ]
-        , span [ tw [ bgIndigo100, textIndigo600, textXs, fontSemibold, py1, px3, roundedFull ] ]
+        , span
+            [ tw
+                [ Tw.bgIndigo100
+                , Tw.textIndigo600
+                , Tw.textXs
+                , Tw.fontSemibold
+                , Tw.py1
+                , Tw.px3
+                , Tw.roundedFull
+                ]
+            ]
             [ text "Indigo" ]
-        , span [ tw [ bgPink100, textPink500, textXs, fontSemibold, py1, px3, roundedFull ] ]
+        , span
+            [ tw
+                [ Tw.bgPink100
+                , Tw.textPink500
+                , Tw.textXs
+                , Tw.fontSemibold
+                , Tw.py1
+                , Tw.px3
+                , Tw.roundedFull
+                ]
+            ]
             [ text "Pink" ]
-        , span [ tw [ border, borderGray300, textGray600, textXs, fontSemibold, py1, px3, roundedFull ] ]
+        , span
+            [ tw
+                [ Tw.border
+                , Tw.borderGray300
+                , Tw.textGray600
+                , Tw.textXs
+                , Tw.fontSemibold
+                , Tw.py1
+                , Tw.px3
+                , Tw.roundedFull
+                ]
+            ]
             [ text "Outlined" ]
-        , span [ tw [ bgBlue600, textWhite, textXs, fontSemibold, py1, px3, rounded ] ]
+        , span
+            [ tw
+                [ Tw.bgBlue600
+                , Tw.textWhite
+                , Tw.textXs
+                , Tw.fontSemibold
+                , Tw.py1
+                , Tw.px3
+                , Tw.rounded
+                ]
+            ]
             [ text "Square" ]
         ]
 
-
--- Forms Demo
 formsDemo =
-    div [ tw [ maxW2xl ] ]
-        [ div [ tw [ mb4 ] ]
-            [ label [ tw [ block, textSm, fontMedium, textGray700, mb1 ] ]
+    div [ tw [ Tw.maxW2xl ] ]
+        [ div [ tw [ Tw.mb4 ] ]
+            [ label
+                [ tw
+                    [ Tw.block
+                    , Tw.textSm
+                    , Tw.fontMedium
+                    , Tw.textGray700
+                    , Tw.mb1
+                    ]
+                ]
                 [ text "Email address" ]
-            , input [ tw [ wFull, border, borderGray300, roundedLg, py2, px3
-                         , textSm, textGray900
-                         , focus borderBlue500
-                         , transitionColors, duration200
-                         ]
-                    , type_ "email"
-                    , placeholder "you@example.com"
-                    ] []
+            , input
+                [ tw
+                    [ Tw.wFull
+                    , Tw.border
+                    , Tw.borderGray300
+                    , Tw.roundedLg
+                    , Tw.py2
+                    , Tw.px3
+                    , Tw.textSm
+                    , Tw.textGray900
+                    , Tw.focus Tw.borderBlue500
+                    , Tw.transitionColors
+                    , Tw.duration200
+                    ]
+                , type_ "email"
+                , placeholder "you@example.com"
+                ]
             ]
-        , div [ tw [ mb4 ] ]
-            [ label [ tw [ block, textSm, fontMedium, textGray700, mb1 ] ]
+        , div [ tw [ Tw.mb4 ] ]
+            [ label
+                [ tw
+                    [ Tw.block
+                    , Tw.textSm
+                    , Tw.fontMedium
+                    , Tw.textGray700
+                    , Tw.mb1
+                    ]
+                ]
                 [ text "Password" ]
-            , input [ tw [ wFull, border, borderGray300, roundedLg, py2, px3
-                         , textSm, textGray900
-                         , focus borderBlue500
-                         , transitionColors, duration200
-                         ]
-                    , type_ "password"
-                    , placeholder "Enter your password"
-                    ] []
+            , input
+                [ tw
+                    [ Tw.wFull
+                    , Tw.border
+                    , Tw.borderGray300
+                    , Tw.roundedLg
+                    , Tw.py2
+                    , Tw.px3
+                    , Tw.textSm
+                    , Tw.textGray900
+                    , Tw.focus Tw.borderBlue500
+                    , Tw.transitionColors
+                    , Tw.duration200
+                    ]
+                , type_ "password"
+                , placeholder "Enter your password"
+                ]
             ]
-        , div [ tw [ mb4 ] ]
-            [ label [ tw [ block, textSm, fontMedium, textGray700, mb1 ] ]
+        , div [ tw [ Tw.mb4 ] ]
+            [ label
+                [ tw
+                    [ Tw.block
+                    , Tw.textSm
+                    , Tw.fontMedium
+                    , Tw.textGray700
+                    , Tw.mb1
+                    ]
+                ]
                 [ text "Select option" ]
-            , select [ tw [ wFull, border, borderGray300, roundedLg, py2, px3
-                          , textSm, textGray900, bgWhite
-                          , focus borderBlue500
-                          , transitionColors, duration200
-                          ] ]
+            , select
+                [ tw
+                    [ Tw.wFull
+                    , Tw.border
+                    , Tw.borderGray300
+                    , Tw.roundedLg
+                    , Tw.py2
+                    , Tw.px3
+                    , Tw.textSm
+                    , Tw.textGray900
+                    , Tw.bgWhite
+                    , Tw.focus Tw.borderBlue500
+                    , Tw.transitionColors
+                    , Tw.duration200
+                    ]
+                ]
                 [ option [] [ text "Choose one..." ]
                 , option [] [ text "Option A" ]
                 , option [] [ text "Option B" ]
                 , option [] [ text "Option C" ]
                 ]
             ]
-        , div [ tw [ mb4 ] ]
-            [ label [ tw [ block, textSm, fontMedium, textGray700, mb1 ] ]
+        , div [ tw [ Tw.mb4 ] ]
+            [ label
+                [ tw
+                    [ Tw.block
+                    , Tw.textSm
+                    , Tw.fontMedium
+                    , Tw.textGray700
+                    , Tw.mb1
+                    ]
+                ]
                 [ text "Message" ]
-            , textarea [ tw [ wFull, border, borderGray300, roundedLg, py2, px3
-                            , textSm, textGray900
-                            , focus borderBlue500
-                            , transitionColors, duration200
-                            ]
-                       , placeholder "Write your message..."
-                       , rows "4"
-                       ] []
+            , textarea
+                [ tw
+                    [ Tw.wFull
+                    , Tw.border
+                    , Tw.borderGray300
+                    , Tw.roundedLg
+                    , Tw.py2
+                    , Tw.px3
+                    , Tw.textSm
+                    , Tw.textGray900
+                    , Tw.focus Tw.borderBlue500
+                    , Tw.transitionColors
+                    , Tw.duration200
+                    ]
+                , placeholder "Write your message..."
+                , rows "4"
+                ]
+                []
             ]
-        , button [ tw [ bgBlue600, hover bgBlue700, textWhite, fontSemibold
-                       , py2, px6, roundedLg, transitionColors, duration200, cursorPointer
-                       ] ]
+        , button
+            [ tw
+                [ Tw.bgBlue600
+                , Tw.hover Tw.bgBlue700
+                , Tw.textWhite
+                , Tw.fontSemibold
+                , Tw.py2
+                , Tw.px6
+                , Tw.roundedLg
+                , Tw.transitionColors
+                , Tw.duration200
+                , Tw.cursorPointer
+                ]
+            ]
             [ text "Submit" ]
         ]
 
-
--- Pricing Demo
 pricingDemo =
-    div [ tw [ grid, gridCols1, md gridCols3, gap6 ] ]
+    div [ tw [ Tw.grid , Tw.gridCols1 , Tw.md Tw.gridCols3 , Tw.gap6 ] ]
         [ pricingCard "Starter" "Free" "0"
-            [ "1 project", "Basic utilities", "Community support" ]
+            [ "1 project" , "Basic utilities" , "Community support" ]
             False
         , pricingCard "Pro" "Popular" "29"
-            [ "Unlimited projects", "All utilities", "Priority support", "Custom themes" ]
+            [ "Unlimited projects"
+            , "All utilities"
+            , "Priority support"
+            , "Custom themes"
+            ]
             True
         , pricingCard "Enterprise" "" "99"
-            [ "Unlimited everything", "Custom builds", "Dedicated support", "SLA guarantee", "Team training" ]
+            [ "Unlimited everything"
+            , "Custom builds"
+            , "Dedicated support"
+            , "SLA guarantee"
+            , "Team training"
+            ]
             False
         ]
-
 
 pricingCard name badge price features highlighted =
     let
         cardStyle =
             if highlighted then
-                [ bgBlue600, textWhite, roundedXl, shadow2xl, p8
-                , scale105
+                [ Tw.bgBlue600
+                , Tw.textWhite
+                , Tw.roundedXl
+                , Tw.shadow2xl
+                , Tw.p8
+                , Tw.scale105
                 ]
             else
-                [ bgWhite, roundedXl, shadowMd, p8 ]
-
+                [ Tw.bgWhite , Tw.roundedXl , Tw.shadowMd , Tw.p8 ]
         priceColor =
-            if highlighted then textWhite else textGray900
-
+            if highlighted then
+                Tw.textWhite
+            else
+                Tw.textGray900
         descColor =
-            if highlighted then textBlue100 else textGray500
-
+            if highlighted then
+                Tw.textBlue100
+            else
+                Tw.textGray500
         featureColor =
-            if highlighted then textBlue100 else textGray600
-
+            if highlighted then
+                Tw.textBlue100
+            else
+                Tw.textGray600
         btnStyle =
             if highlighted then
-                [ bgWhite, textBlue600, hover bgBlue50 ]
+                [ Tw.bgWhite , Tw.textBlue600 , Tw.hover Tw.bgBlue50 ]
             else
-                [ bgBlue600, hover bgBlue700, textWhite ]
+                [ Tw.bgBlue600 , Tw.hover Tw.bgBlue700 , Tw.textWhite ]
     in
-    div [ tw cardStyle ]
-        [ div [ tw [ flex, justifyBetween, itemsCenter, mb4 ] ]
-            [ h3 [ tw [ textXl, fontBold, priceColor ] ] [ text name ]
-            , if badge == "" then
-                text ""
-              else
-                span [ tw [ bgYellow400, textGray900, textXs, fontSemibold, py1, px2, roundedFull ] ]
-                    [ text badge ]
+        div [ tw cardStyle ]
+            [ div
+                [ tw [ Tw.flex , Tw.justifyBetween , Tw.itemsCenter , Tw.mb4 ] ]
+                [ h3 [ tw [ Tw.textXl , Tw.fontBold , priceColor ] ]
+                    [ text name ]
+                , badgeView badge
+                ]
+            , div [ tw [ Tw.mb6 ] ]
+                [ span [ tw [ Tw.text4xl , Tw.fontExtrabold , priceColor ] ]
+                    [ text ("$" ++ price) ]
+                , span [ tw [ Tw.textSm , descColor ] ] [ text " / month" ]
+                ]
+            , ul [ tw [ Tw.mb8 ] ]
+                (List.map (renderFeature featureColor) features)
+            , button
+                [ tw
+                    (
+                    btnStyle ++
+                    [ Tw.wFull
+                    , Tw.fontSemibold
+                    , Tw.py3
+                    , Tw.px6
+                    , Tw.roundedLg
+                    , Tw.transitionColors
+                    , Tw.duration200
+                    , Tw.cursorPointer
+                    ]
+                    )
+                ]
+                [ text "Get started" ]
             ]
-        , div [ tw [ mb6 ] ]
-            [ span [ tw [ text4xl, fontExtrabold, priceColor ] ] [ text ("$" ++ price) ]
-            , span [ tw [ textSm, descColor ] ] [ text " / month" ]
+
+badgeView badge =
+    if badge == "" then
+        text ""
+    else
+        span
+            [ tw
+                [ Tw.bgYellow400
+                , Tw.textGray900
+                , Tw.textXs
+                , Tw.fontSemibold
+                , Tw.py1
+                , Tw.px2
+                , Tw.roundedFull
+                ]
             ]
-        , ul [ tw [ mb8 ] ]
-            (features
-                |> List.map (\f ->
-                    li [ tw [ py2, textSm, featureColor, flex, itemsCenter, gap2 ] ]
-                        [ span [] [ text f ] ]
-                )
-            )
-        , button [ tw (btnStyle ++ [ wFull, fontSemibold, py3, px6, roundedLg
-                                   , transitionColors, duration200, cursorPointer
-                                   ]) ]
-            [ text "Get started" ]
+            [ text badge ]
+
+renderFeature featureColor f =
+    li
+        [ tw
+            [ Tw.py2
+            , Tw.textSm
+            , featureColor
+            , Tw.flex
+            , Tw.itemsCenter
+            , Tw.gap2
+            ]
         ]
+        [ span [] [ text f ] ]
 
-
--- Stats Demo
 statsDemo =
-    div [ tw [ grid, gridCols1, sm gridCols2, lg gridCols4, gap6 ] ]
-        [ statCard "Total Users" "12,847" "textBlue600" "bgBlue50"
-        , statCard "Revenue" "$48,295" "textGreen600" "bgGreen50"
-        , statCard "Active Now" "342" "textPurple600" "bgPurple50"
-        , statCard "Bounce Rate" "2.4%" "textRed600" "bgRed50"
+    div
+        [ tw
+            [ Tw.grid
+            , Tw.gridCols1
+            , Tw.sm Tw.gridCols2
+            , Tw.lg Tw.gridCols4
+            , Tw.gap6
+            ]
+        ]
+        [ statCard "Total Users" "12,847"
+        , statCard "Revenue" "$48,295"
+        , statCard "Active Now" "342"
+        , statCard "Bounce Rate" "2.4%"
         ]
 
-
-statCard label_ value_ colorClass bgClass =
-    div [ tw [ bgWhite, roundedXl, shadowMd, p6 ] ]
-        [ p [ tw [ textSm, fontMedium, textGray500, mb1 ] ]
+statCard label_ value_ =
+    div [ tw [ Tw.bgWhite , Tw.roundedXl , Tw.shadowMd , Tw.p6 ] ]
+        [ p [ tw [ Tw.textSm , Tw.fontMedium , Tw.textGray500 , Tw.mb1 ] ]
             [ text label_ ]
-        , p [ tw [ text3xl, fontBold, textGray900 ] ]
-            [ text value_ ]
+        , p [ tw [ Tw.text3xl , Tw.fontBold , Tw.textGray900 ] ] [ text value_ ]
         ]
-
-
--- ============================================================
--- FOOTER
--- ============================================================
 
 footer_ =
-    div [ tw [ bgGray900, mt20 ] ]
-        [ div [ tw [ maxW6xl, mxAuto, px6, py12 ] ]
-            [ div [ tw [ grid, gridCols1, md gridCols3, gap8 ] ]
+    div [ tw [ Tw.bgGray900 , Tw.mt20 ] ]
+        [ div [ tw [ Tw.maxW6xl , Tw.mxAuto , Tw.px6 , Tw.py12 ] ]
+            [ div
+                [ tw [ Tw.grid , Tw.gridCols1 , Tw.md Tw.gridCols3 , Tw.gap8 ] ]
                 [ div []
-                    [ h3 [ tw [ textLg, fontBold, textWhite, mb4 ] ]
+                    [ h3
+                        [ tw [ Tw.textLg , Tw.fontBold , Tw.textWhite , Tw.mb4 ]
+                        ]
                         [ text "Sky-Tailwind" ]
-                    , p [ tw [ textSm, textGray400, leadingRelaxed ] ]
-                        [ text "Type-safe Tailwind CSS utilities for the Sky programming language. Build beautiful, responsive UIs with compile-time safety." ]
-                    ]
-                , div []
-                    [ h3 [ tw [ textSm, fontSemibold, textGray400, uppercase, trackingWider, mb4 ] ]
-                        [ text "Modules" ]
-                    , ul [ tw [ textSm, textGray400 ] ]
-                        [ li [ tw [ mb2 ] ] [ text "SkyTailwind.Spacing" ]
-                        , li [ tw [ mb2 ] ] [ text "SkyTailwind.Typography" ]
-                        , li [ tw [ mb2 ] ] [ text "SkyTailwind.Layout" ]
-                        , li [ tw [ mb2 ] ] [ text "SkyTailwind.Flex" ]
-                        , li [ tw [ mb2 ] ] [ text "SkyTailwind.Grid" ]
-                        , li [ tw [ mb2 ] ] [ text "SkyTailwind.Background" ]
-                        , li [ tw [ mb2 ] ] [ text "SkyTailwind.Border" ]
-                        , li [ tw [ mb2 ] ] [ text "SkyTailwind.Effects" ]
+                    , p
+                        [ tw [ Tw.textSm , Tw.textGray400 , Tw.leadingRelaxed ]
+                        ]
+                        [ text
+                            "Type-safe Tailwind CSS utilities for the Sky programming language. Build beautiful, responsive UIs with compile-time safety."
                         ]
                     ]
                 , div []
-                    [ h3 [ tw [ textSm, fontSemibold, textGray400, uppercase, trackingWider, mb4 ] ]
+                    [ h3
+                        [ tw
+                            [ Tw.textSm
+                            , Tw.fontSemibold
+                            , Tw.textGray400
+                            , Tw.uppercase
+                            , Tw.trackingWider
+                            , Tw.mb4
+                            ]
+                        ]
+                        [ text "Modules" ]
+                    , ul [ tw [ Tw.textSm , Tw.textGray400 ] ]
+                        [ li [ tw [ Tw.mb2 ] ] [ text "Tailwind.Spacing" ]
+                        , li [ tw [ Tw.mb2 ] ] [ text "Tailwind.Typography" ]
+                        , li [ tw [ Tw.mb2 ] ] [ text "Tailwind.Layout" ]
+                        , li [ tw [ Tw.mb2 ] ] [ text "Tailwind.Flex" ]
+                        , li [ tw [ Tw.mb2 ] ] [ text "Tailwind.Grid" ]
+                        , li [ tw [ Tw.mb2 ] ] [ text "Tailwind.Background" ]
+                        , li [ tw [ Tw.mb2 ] ] [ text "Tailwind.Border" ]
+                        , li [ tw [ Tw.mb2 ] ] [ text "Tailwind.Effects" ]
+                        ]
+                    ]
+                , div []
+                    [ h3
+                        [ tw
+                            [ Tw.textSm
+                            , Tw.fontSemibold
+                            , Tw.textGray400
+                            , Tw.uppercase
+                            , Tw.trackingWider
+                            , Tw.mb4
+                            ]
+                        ]
                         [ text "Resources" ]
-                    , ul [ tw [ textSm, textGray400 ] ]
-                        [ li [ tw [ mb2 ] ] [ text "Getting Started" ]
-                        , li [ tw [ mb2 ] ] [ text "Component Gallery" ]
-                        , li [ tw [ mb2 ] ] [ text "Sky Language Docs" ]
-                        , li [ tw [ mb2 ] ] [ text "GitHub Repository" ]
+                    , ul [ tw [ Tw.textSm , Tw.textGray400 ] ]
+                        [ li [ tw [ Tw.mb2 ] ] [ text "Getting Started" ]
+                        , li [ tw [ Tw.mb2 ] ] [ text "Component Gallery" ]
+                        , li [ tw [ Tw.mb2 ] ] [ text "Sky Language Docs" ]
+                        , li [ tw [ Tw.mb2 ] ] [ text "GitHub Repository" ]
                         ]
                     ]
                 ]
-            , div [ tw [ borderT, borderGray800, mt8, pt8 ] ]
-                [ p [ tw [ textSm, textGray500, textCenter ] ]
+            , div [ tw [ Tw.borderT , Tw.borderGray800 , Tw.mt8 , Tw.pt8 ] ]
+                [ p [ tw [ Tw.textSm , Tw.textGray500 , Tw.textCenter ] ]
                     [ text "Built with Sky and Sky-Tailwind" ]
                 ]
             ]
         ]
-
-
--- ============================================================
--- MAIN
--- ============================================================
 
 main =
     app
