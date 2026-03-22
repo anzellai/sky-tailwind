@@ -215,3 +215,76 @@ orderLast =
 orderNone : ( String, String )
 orderNone =
     cls "order-none"
+
+-- Flex Basis
+basis0 : ( String, String )
+basis0 =
+    cls "basis-0"
+
+basis1 : ( String, String )
+basis1 =
+    cls "basis-1"
+
+basis2 : ( String, String )
+basis2 =
+    cls "basis-2"
+
+basis4 : ( String, String )
+basis4 =
+    cls "basis-4"
+
+basis8 : ( String, String )
+basis8 =
+    cls "basis-8"
+
+basis12 : ( String, String )
+basis12 =
+    cls "basis-12"
+
+basis16 : ( String, String )
+basis16 =
+    cls "basis-16"
+
+basis24 : ( String, String )
+basis24 =
+    cls "basis-24"
+
+basis32 : ( String, String )
+basis32 =
+    cls "basis-32"
+
+basis48 : ( String, String )
+basis48 =
+    cls "basis-48"
+
+basis64 : ( String, String )
+basis64 =
+    cls "basis-64"
+
+basisAuto : ( String, String )
+basisAuto =
+    cls "basis-auto"
+
+basisFull : ( String, String )
+basisFull =
+    cls "basis-full"
+
+basisHalf : ( String, String )
+basisHalf =
+    cls "basis-1/2"
+
+basisThird : ( String, String )
+basisThird =
+    cls "basis-1/3"
+
+basis2Third : ( String, String )
+basis2Third =
+    cls "basis-2/3"
+
+basisQuarter : ( String, String )
+basisQuarter =
+    cls "basis-1/4"
+
+basis3Quarter : ( String, String )
+basis3Quarter =
+    cls "basis-3/4"

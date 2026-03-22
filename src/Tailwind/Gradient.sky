@@ -1,0 +1,439 @@
+module Tailwind.Gradient exposing (..)
+
+import Sky.Core.Prelude exposing (..)
+import Tailwind.Internal.Classes exposing (cls)
+
+bgGradientToT : ( String, String )
+bgGradientToT =
+    cls "bg-gradient-to-t"
+
+bgGradientToTR : ( String, String )
+bgGradientToTR =
+    cls "bg-gradient-to-tr"
+
+bgGradientToR : ( String, String )
+bgGradientToR =
+    cls "bg-gradient-to-r"
+
+bgGradientToBR : ( String, String )
+bgGradientToBR =
+    cls "bg-gradient-to-br"
+
+bgGradientToB : ( String, String )
+bgGradientToB =
+    cls "bg-gradient-to-b"
+
+bgGradientToBL : ( String, String )
+bgGradientToBL =
+    cls "bg-gradient-to-bl"
+
+bgGradientToL : ( String, String )
+bgGradientToL =
+    cls "bg-gradient-to-l"
+
+bgGradientToTL : ( String, String )
+bgGradientToTL =
+    cls "bg-gradient-to-tl"
+
+-- From stops
+fromTransparent : ( String, String )
+fromTransparent =
+    cls "from-transparent"
+
+fromBlack : ( String, String )
+fromBlack =
+    cls "from-black"
+
+fromWhite : ( String, String )
+fromWhite =
+    cls "from-white"
+
+fromSlate50 : ( String, String )
+fromSlate50 =
+    cls "from-slate-50"
+
+fromSlate100 : ( String, String )
+fromSlate100 =
+    cls "from-slate-100"
+
+fromSlate200 : ( String, String )
+fromSlate200 =
+    cls "from-slate-200"
+
+fromSlate300 : ( String, String )
+fromSlate300 =
+    cls "from-slate-300"
+
+fromSlate400 : ( String, String )
+fromSlate400 =
+    cls "from-slate-400"
+
+fromSlate500 : ( String, String )
+fromSlate500 =
+    cls "from-slate-500"
+
+fromSlate600 : ( String, String )
+fromSlate600 =
+    cls "from-slate-600"
+
+fromSlate700 : ( String, String )
+fromSlate700 =
+    cls "from-slate-700"
+
+fromSlate800 : ( String, String )
+fromSlate800 =
+    cls "from-slate-800"
+
+fromSlate900 : ( String, String )
+fromSlate900 =
+    cls "from-slate-900"
+
+fromGray50 : ( String, String )
+fromGray50 =
+    cls "from-gray-50"
+
+fromGray100 : ( String, String )
+fromGray100 =
+    cls "from-gray-100"
+
+fromGray200 : ( String, String )
+fromGray200 =
+    cls "from-gray-200"
+
+fromGray300 : ( String, String )
+fromGray300 =
+    cls "from-gray-300"
+
+fromGray400 : ( String, String )
+fromGray400 =
+    cls "from-gray-400"
+
+fromGray500 : ( String, String )
+fromGray500 =
+    cls "from-gray-500"
+
+fromGray600 : ( String, String )
+fromGray600 =
+    cls "from-gray-600"
+
+fromGray700 : ( String, String )
+fromGray700 =
+    cls "from-gray-700"
+
+fromGray800 : ( String, String )
+fromGray800 =
+    cls "from-gray-800"
+
+fromGray900 : ( String, String )
+fromGray900 =
+    cls "from-gray-900"
+
+fromRed50 : ( String, String )
+fromRed50 =
+    cls "from-red-50"
+
+fromRed100 : ( String, String )
+fromRed100 =
+    cls "from-red-100"
+
+fromRed200 : ( String, String )
+fromRed200 =
+    cls "from-red-200"
+
+fromRed300 : ( String, String )
+fromRed300 =
+    cls "from-red-300"
+
+fromRed400 : ( String, String )
+fromRed400 =
+    cls "from-red-400"
+
+fromRed500 : ( String, String )
+fromRed500 =
+    cls "from-red-500"
+
+fromRed600 : ( String, String )
+fromRed600 =
+    cls "from-red-600"
+
+fromRed700 : ( String, String )
+fromRed700 =
+    cls "from-red-700"
+
+fromRed800 : ( String, String )
+fromRed800 =
+    cls "from-red-800"
+
+fromRed900 : ( String, String )
+fromRed900 =
+    cls "from-red-900"
+
+fromOrange500 : ( String, String )
+fromOrange500 =
+    cls "from-orange-500"
+
+fromAmber500 : ( String, String )
+fromAmber500 =
+    cls "from-amber-500"
+
+fromYellow500 : ( String, String )
+fromYellow500 =
+    cls "from-yellow-500"
+
+fromLime500 : ( String, String )
+fromLime500 =
+    cls "from-lime-500"
+
+fromGreen500 : ( String, String )
+fromGreen500 =
+    cls "from-green-500"
+
+fromEmerald500 : ( String, String )
+fromEmerald500 =
+    cls "from-emerald-500"
+
+fromTeal500 : ( String, String )
+fromTeal500 =
+    cls "from-teal-500"
+
+fromCyan500 : ( String, String )
+fromCyan500 =
+    cls "from-cyan-500"
+
+fromSky500 : ( String, String )
+fromSky500 =
+    cls "from-sky-500"
+
+fromBlue50 : ( String, String )
+fromBlue50 =
+    cls "from-blue-50"
+
+fromBlue100 : ( String, String )
+fromBlue100 =
+    cls "from-blue-100"
+
+fromBlue200 : ( String, String )
+fromBlue200 =
+    cls "from-blue-200"
+
+fromBlue300 : ( String, String )
+fromBlue300 =
+    cls "from-blue-300"
+
+fromBlue400 : ( String, String )
+fromBlue400 =
+    cls "from-blue-400"
+
+fromBlue500 : ( String, String )
+fromBlue500 =
+    cls "from-blue-500"
+
+fromBlue600 : ( String, String )
+fromBlue600 =
+    cls "from-blue-600"
+
+fromBlue700 : ( String, String )
+fromBlue700 =
+    cls "from-blue-700"
+
+fromBlue800 : ( String, String )
+fromBlue800 =
+    cls "from-blue-800"
+
+fromBlue900 : ( String, String )
+fromBlue900 =
+    cls "from-blue-900"
+
+fromIndigo500 : ( String, String )
+fromIndigo500 =
+    cls "from-indigo-500"
+
+fromViolet500 : ( String, String )
+fromViolet500 =
+    cls "from-violet-500"
+
+fromPurple500 : ( String, String )
+fromPurple500 =
+    cls "from-purple-500"
+
+fromFuchsia500 : ( String, String )
+fromFuchsia500 =
+    cls "from-fuchsia-500"
+
+fromPink500 : ( String, String )
+fromPink500 =
+    cls "from-pink-500"
+
+fromRose500 : ( String, String )
+fromRose500 =
+    cls "from-rose-500"
+
+-- Via stops
+viaTransparent : ( String, String )
+viaTransparent =
+    cls "via-transparent"
+
+viaBlack : ( String, String )
+viaBlack =
+    cls "via-black"
+
+viaWhite : ( String, String )
+viaWhite =
+    cls "via-white"
+
+viaSlate500 : ( String, String )
+viaSlate500 =
+    cls "via-slate-500"
+
+viaGray500 : ( String, String )
+viaGray500 =
+    cls "via-gray-500"
+
+viaRed500 : ( String, String )
+viaRed500 =
+    cls "via-red-500"
+
+viaBlue500 : ( String, String )
+viaBlue500 =
+    cls "via-blue-500"
+
+viaGreen500 : ( String, String )
+viaGreen500 =
+    cls "via-green-500"
+
+viaPurple500 : ( String, String )
+viaPurple500 =
+    cls "via-purple-500"
+
+-- To stops
+toTransparent : ( String, String )
+toTransparent =
+    cls "to-transparent"
+
+toBlack : ( String, String )
+toBlack =
+    cls "to-black"
+
+toWhite : ( String, String )
+toWhite =
+    cls "to-white"
+
+toSlate50 : ( String, String )
+toSlate50 =
+    cls "to-slate-50"
+
+toSlate100 : ( String, String )
+toSlate100 =
+    cls "to-slate-100"
+
+toSlate200 : ( String, String )
+toSlate200 =
+    cls "to-slate-200"
+
+toSlate300 : ( String, String )
+toSlate300 =
+    cls "to-slate-300"
+
+toSlate400 : ( String, String )
+toSlate400 =
+    cls "to-slate-400"
+
+toSlate500 : ( String, String )
+toSlate500 =
+    cls "to-slate-500"
+
+toSlate600 : ( String, String )
+toSlate600 =
+    cls "to-slate-600"
+
+toSlate700 : ( String, String )
+toSlate700 =
+    cls "to-slate-700"
+
+toSlate800 : ( String, String )
+toSlate800 =
+    cls "to-slate-800"
+
+toSlate900 : ( String, String )
+toSlate900 =
+    cls "to-slate-900"
+
+toGray50 : ( String, String )
+toGray50 =
+    cls "to-gray-50"
+
+toGray100 : ( String, String )
+toGray100 =
+    cls "to-gray-100"
+
+toGray200 : ( String, String )
+toGray200 =
+    cls "to-gray-200"
+
+toGray300 : ( String, String )
+toGray300 =
+    cls "to-gray-300"
+
+toGray400 : ( String, String )
+toGray400 =
+    cls "to-gray-400"
+
+toGray500 : ( String, String )
+toGray500 =
+    cls "to-gray-500"
+
+toGray600 : ( String, String )
+toGray600 =
+    cls "to-gray-600"
+
+toGray700 : ( String, String )
+toGray700 =
+    cls "to-gray-700"
+
+toGray800 : ( String, String )
+toGray800 =
+    cls "to-gray-800"
+
+toGray900 : ( String, String )
+toGray900 =
+    cls "to-gray-900"
+
+toBlue500 : ( String, String )
+toBlue500 =
+    cls "to-blue-500"
+
+toBlue600 : ( String, String )
+toBlue600 =
+    cls "to-blue-600"
+
+toBlue700 : ( String, String )
+toBlue700 =
+    cls "to-blue-700"
+
+toGreen500 : ( String, String )
+toGreen500 =
+    cls "to-green-500"
+
+toRed500 : ( String, String )
+toRed500 =
+    cls "to-red-500"
+
+toPurple500 : ( String, String )
+toPurple500 =
+    cls "to-purple-500"
+
+toIndigo500 : ( String, String )
+toIndigo500 =
+    cls "to-indigo-500"
+
+toCyan500 : ( String, String )
+toCyan500 =
+    cls "to-cyan-500"
+
+toTeal500 : ( String, String )
+toTeal500 =
+    cls "to-teal-500"
+
+toSky500 : ( String, String )
+toSky500 =
+    cls "to-sky-500"

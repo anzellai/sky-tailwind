@@ -1,0 +1,232 @@
+module Tailwind.Filters exposing (..)
+
+import Sky.Core.Prelude exposing (..)
+import Tailwind.Internal.Classes exposing (cls)
+
+blurNone : ( String, String )
+blurNone =
+    cls "blur-none"
+
+blurSm : ( String, String )
+blurSm =
+    cls "blur-sm"
+
+blur_ : ( String, String )
+blur_ =
+    cls "blur"
+
+blurMd : ( String, String )
+blurMd =
+    cls "blur-md"
+
+blurLg : ( String, String )
+blurLg =
+    cls "blur-lg"
+
+blurXl : ( String, String )
+blurXl =
+    cls "blur-xl"
+
+blur2xl : ( String, String )
+blur2xl =
+    cls "blur-2xl"
+
+blur3xl : ( String, String )
+blur3xl =
+    cls "blur-3xl"
+
+brightness0 : ( String, String )
+brightness0 =
+    cls "brightness-0"
+
+brightness50 : ( String, String )
+brightness50 =
+    cls "brightness-50"
+
+brightness75 : ( String, String )
+brightness75 =
+    cls "brightness-75"
+
+brightness90 : ( String, String )
+brightness90 =
+    cls "brightness-90"
+
+brightness95 : ( String, String )
+brightness95 =
+    cls "brightness-95"
+
+brightness100 : ( String, String )
+brightness100 =
+    cls "brightness-100"
+
+brightness105 : ( String, String )
+brightness105 =
+    cls "brightness-105"
+
+brightness110 : ( String, String )
+brightness110 =
+    cls "brightness-110"
+
+brightness125 : ( String, String )
+brightness125 =
+    cls "brightness-125"
+
+brightness150 : ( String, String )
+brightness150 =
+    cls "brightness-150"
+
+brightness200 : ( String, String )
+brightness200 =
+    cls "brightness-200"
+
+contrast0 : ( String, String )
+contrast0 =
+    cls "contrast-0"
+
+contrast50 : ( String, String )
+contrast50 =
+    cls "contrast-50"
+
+contrast75 : ( String, String )
+contrast75 =
+    cls "contrast-75"
+
+contrast100 : ( String, String )
+contrast100 =
+    cls "contrast-100"
+
+contrast125 : ( String, String )
+contrast125 =
+    cls "contrast-125"
+
+contrast150 : ( String, String )
+contrast150 =
+    cls "contrast-150"
+
+contrast200 : ( String, String )
+contrast200 =
+    cls "contrast-200"
+
+grayscale0 : ( String, String )
+grayscale0 =
+    cls "grayscale-0"
+
+grayscale : ( String, String )
+grayscale =
+    cls "grayscale"
+
+hueRotate0 : ( String, String )
+hueRotate0 =
+    cls "hue-rotate-0"
+
+hueRotate15 : ( String, String )
+hueRotate15 =
+    cls "hue-rotate-15"
+
+hueRotate30 : ( String, String )
+hueRotate30 =
+    cls "hue-rotate-30"
+
+hueRotate60 : ( String, String )
+hueRotate60 =
+    cls "hue-rotate-60"
+
+hueRotate90 : ( String, String )
+hueRotate90 =
+    cls "hue-rotate-90"
+
+hueRotate180 : ( String, String )
+hueRotate180 =
+    cls "hue-rotate-180"
+
+invert0 : ( String, String )
+invert0 =
+    cls "invert-0"
+
+invert : ( String, String )
+invert =
+    cls "invert"
+
+saturate0 : ( String, String )
+saturate0 =
+    cls "saturate-0"
+
+saturate50 : ( String, String )
+saturate50 =
+    cls "saturate-50"
+
+saturate100 : ( String, String )
+saturate100 =
+    cls "saturate-100"
+
+saturate150 : ( String, String )
+saturate150 =
+    cls "saturate-150"
+
+saturate200 : ( String, String )
+saturate200 =
+    cls "saturate-200"
+
+sepia0 : ( String, String )
+sepia0 =
+    cls "sepia-0"
+
+sepia : ( String, String )
+sepia =
+    cls "sepia"
+
+backdropBlurNone : ( String, String )
+backdropBlurNone =
+    cls "backdrop-blur-none"
+
+backdropBlurSm : ( String, String )
+backdropBlurSm =
+    cls "backdrop-blur-sm"
+
+backdropBlur : ( String, String )
+backdropBlur =
+    cls "backdrop-blur"
+
+backdropBlurMd : ( String, String )
+backdropBlurMd =
+    cls "backdrop-blur-md"
+
+backdropBlurLg : ( String, String )
+backdropBlurLg =
+    cls "backdrop-blur-lg"
+
+backdropBlurXl : ( String, String )
+backdropBlurXl =
+    cls "backdrop-blur-xl"
+
+backdropBlur2xl : ( String, String )
+backdropBlur2xl =
+    cls "backdrop-blur-2xl"
+
+dropShadowSm : ( String, String )
+dropShadowSm =
+    cls "drop-shadow-sm"
+
+dropShadow : ( String, String )
+dropShadow =
+    cls "drop-shadow"
+
+dropShadowMd : ( String, String )
+dropShadowMd =
+    cls "drop-shadow-md"
+
+dropShadowLg : ( String, String )
+dropShadowLg =
+    cls "drop-shadow-lg"
+
+dropShadowXl : ( String, String )
+dropShadowXl =
+    cls "drop-shadow-xl"
+
+dropShadow2xl : ( String, String )
+dropShadow2xl =
+    cls "drop-shadow-2xl"
+
+dropShadowNone : ( String, String )
+dropShadowNone =
+    cls "drop-shadow-none"

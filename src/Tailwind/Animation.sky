@@ -1,0 +1,24 @@
+module Tailwind.Animation exposing (..)
+
+import Sky.Core.Prelude exposing (..)
+import Tailwind.Internal.Classes exposing (cls)
+
+animateNone : ( String, String )
+animateNone =
+    cls "animate-none"
+
+animateSpin : ( String, String )
+animateSpin =
+    cls "animate-spin"
+
+animatePing : ( String, String )
+animatePing =
+    cls "animate-ping"
+
+animatePulse : ( String, String )
+animatePulse =
+    cls "animate-pulse"
+
+animateBounce : ( String, String )
+animateBounce =
+    cls "animate-bounce"

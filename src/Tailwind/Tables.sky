@@ -1,0 +1,48 @@
+module Tailwind.Tables exposing (..)
+
+import Sky.Core.Prelude exposing (..)
+import Tailwind.Internal.Classes exposing (cls)
+
+borderCollapse : ( String, String )
+borderCollapse =
+    cls "border-collapse"
+
+borderSeparate : ( String, String )
+borderSeparate =
+    cls "border-separate"
+
+borderSpacing0 : ( String, String )
+borderSpacing0 =
+    cls "border-spacing-0"
+
+borderSpacing1 : ( String, String )
+borderSpacing1 =
+    cls "border-spacing-1"
+
+borderSpacing2 : ( String, String )
+borderSpacing2 =
+    cls "border-spacing-2"
+
+borderSpacing4 : ( String, String )
+borderSpacing4 =
+    cls "border-spacing-4"
+
+borderSpacing8 : ( String, String )
+borderSpacing8 =
+    cls "border-spacing-8"
+
+tableAuto : ( String, String )
+tableAuto =
+    cls "table-auto"
+
+tableFixed : ( String, String )
+tableFixed =
+    cls "table-fixed"
+
+captionTop : ( String, String )
+captionTop =
+    cls "caption-top"
+
+captionBottom : ( String, String )
+captionBottom =
+    cls "caption-bottom"

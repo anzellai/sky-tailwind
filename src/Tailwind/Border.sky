@@ -223,3 +223,59 @@ ring2 =
 ring4 : ( String, String )
 ring4 =
     cls "ring-4"
+
+borderSlate200 : ( String, String )
+borderSlate200 =
+    cls "border-slate-200"
+
+borderSlate300 : ( String, String )
+borderSlate300 =
+    cls "border-slate-300"
+
+borderSlate400 : ( String, String )
+borderSlate400 =
+    cls "border-slate-400"
+
+borderAmber500 : ( String, String )
+borderAmber500 =
+    cls "border-amber-500"
+
+borderTeal500 : ( String, String )
+borderTeal500 =
+    cls "border-teal-500"
+
+borderCyan500 : ( String, String )
+borderCyan500 =
+    cls "border-cyan-500"
+
+borderSky500 : ( String, String )
+borderSky500 =
+    cls "border-sky-500"
+
+borderEmerald500 : ( String, String )
+borderEmerald500 =
+    cls "border-emerald-500"
+
+borderViolet500 : ( String, String )
+borderViolet500 =
+    cls "border-violet-500"
+
+borderRose500 : ( String, String )
+borderRose500 =
+    cls "border-rose-500"
+
+borderIndigo500 : ( String, String )
+borderIndigo500 =
+    cls "border-indigo-500"
+
+borderPurple500 : ( String, String )
+borderPurple500 =
+    cls "border-purple-500"
+
+borderOrange500 : ( String, String )
+borderOrange500 =
+    cls "border-orange-500"
+
+borderYellow500 : ( String, String )
+borderYellow500 =
+    cls "border-yellow-500"

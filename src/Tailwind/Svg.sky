@@ -1,0 +1,76 @@
+module Tailwind.Svg exposing (..)
+
+import Sky.Core.Prelude exposing (..)
+import Tailwind.Internal.Classes exposing (cls)
+
+fillNone : ( String, String )
+fillNone =
+    cls "fill-none"
+
+fillCurrent : ( String, String )
+fillCurrent =
+    cls "fill-current"
+
+fillBlack : ( String, String )
+fillBlack =
+    cls "fill-black"
+
+fillWhite : ( String, String )
+fillWhite =
+    cls "fill-white"
+
+fillSlate500 : ( String, String )
+fillSlate500 =
+    cls "fill-slate-500"
+
+fillGray500 : ( String, String )
+fillGray500 =
+    cls "fill-gray-500"
+
+fillRed500 : ( String, String )
+fillRed500 =
+    cls "fill-red-500"
+
+fillBlue500 : ( String, String )
+fillBlue500 =
+    cls "fill-blue-500"
+
+fillGreen500 : ( String, String )
+fillGreen500 =
+    cls "fill-green-500"
+
+strokeNone : ( String, String )
+strokeNone =
+    cls "stroke-none"
+
+strokeCurrent : ( String, String )
+strokeCurrent =
+    cls "stroke-current"
+
+strokeBlack : ( String, String )
+strokeBlack =
+    cls "stroke-black"
+
+strokeWhite : ( String, String )
+strokeWhite =
+    cls "stroke-white"
+
+strokeSlate500 : ( String, String )
+strokeSlate500 =
+    cls "stroke-slate-500"
+
+strokeGray500 : ( String, String )
+strokeGray500 =
+    cls "stroke-gray-500"
+
+stroke0 : ( String, String )
+stroke0 =
+    cls "stroke-0"
+
+stroke1 : ( String, String )
+stroke1 =
+    cls "stroke-1"
+
+stroke2 : ( String, String )
+stroke2 =
+    cls "stroke-2"

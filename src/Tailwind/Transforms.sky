@@ -1,0 +1,300 @@
+module Tailwind.Transforms exposing (..)
+
+import Sky.Core.Prelude exposing (..)
+import Tailwind.Internal.Classes exposing (cls)
+
+-- Translate X
+translateX0 : ( String, String )
+translateX0 =
+    cls "translate-x-0"
+
+translateX1 : ( String, String )
+translateX1 =
+    cls "translate-x-1"
+
+translateX2 : ( String, String )
+translateX2 =
+    cls "translate-x-2"
+
+translateX3 : ( String, String )
+translateX3 =
+    cls "translate-x-3"
+
+translateX4 : ( String, String )
+translateX4 =
+    cls "translate-x-4"
+
+translateX5 : ( String, String )
+translateX5 =
+    cls "translate-x-5"
+
+translateX6 : ( String, String )
+translateX6 =
+    cls "translate-x-6"
+
+translateX8 : ( String, String )
+translateX8 =
+    cls "translate-x-8"
+
+translateX10 : ( String, String )
+translateX10 =
+    cls "translate-x-10"
+
+translateX12 : ( String, String )
+translateX12 =
+    cls "translate-x-12"
+
+translateX16 : ( String, String )
+translateX16 =
+    cls "translate-x-16"
+
+translateX20 : ( String, String )
+translateX20 =
+    cls "translate-x-20"
+
+translateX24 : ( String, String )
+translateX24 =
+    cls "translate-x-24"
+
+translateXHalf : ( String, String )
+translateXHalf =
+    cls "translate-x-1/2"
+
+translateXFull : ( String, String )
+translateXFull =
+    cls "translate-x-full"
+
+negTranslateX1 : ( String, String )
+negTranslateX1 =
+    cls "-translate-x-1"
+
+negTranslateX2 : ( String, String )
+negTranslateX2 =
+    cls "-translate-x-2"
+
+negTranslateX4 : ( String, String )
+negTranslateX4 =
+    cls "-translate-x-4"
+
+negTranslateX8 : ( String, String )
+negTranslateX8 =
+    cls "-translate-x-8"
+
+negTranslateXHalf : ( String, String )
+negTranslateXHalf =
+    cls "-translate-x-1/2"
+
+negTranslateXFull : ( String, String )
+negTranslateXFull =
+    cls "-translate-x-full"
+
+-- Translate Y
+translateY0 : ( String, String )
+translateY0 =
+    cls "translate-y-0"
+
+translateY1 : ( String, String )
+translateY1 =
+    cls "translate-y-1"
+
+translateY2 : ( String, String )
+translateY2 =
+    cls "translate-y-2"
+
+translateY3 : ( String, String )
+translateY3 =
+    cls "translate-y-3"
+
+translateY4 : ( String, String )
+translateY4 =
+    cls "translate-y-4"
+
+translateY5 : ( String, String )
+translateY5 =
+    cls "translate-y-5"
+
+translateY6 : ( String, String )
+translateY6 =
+    cls "translate-y-6"
+
+translateY8 : ( String, String )
+translateY8 =
+    cls "translate-y-8"
+
+translateY10 : ( String, String )
+translateY10 =
+    cls "translate-y-10"
+
+translateY12 : ( String, String )
+translateY12 =
+    cls "translate-y-12"
+
+translateY16 : ( String, String )
+translateY16 =
+    cls "translate-y-16"
+
+translateY20 : ( String, String )
+translateY20 =
+    cls "translate-y-20"
+
+translateY24 : ( String, String )
+translateY24 =
+    cls "translate-y-24"
+
+translateYHalf : ( String, String )
+translateYHalf =
+    cls "translate-y-1/2"
+
+translateYFull : ( String, String )
+translateYFull =
+    cls "translate-y-full"
+
+negTranslateY1 : ( String, String )
+negTranslateY1 =
+    cls "-translate-y-1"
+
+negTranslateY2 : ( String, String )
+negTranslateY2 =
+    cls "-translate-y-2"
+
+negTranslateY4 : ( String, String )
+negTranslateY4 =
+    cls "-translate-y-4"
+
+negTranslateY8 : ( String, String )
+negTranslateY8 =
+    cls "-translate-y-8"
+
+negTranslateYHalf : ( String, String )
+negTranslateYHalf =
+    cls "-translate-y-1/2"
+
+negTranslateYFull : ( String, String )
+negTranslateYFull =
+    cls "-translate-y-full"
+
+-- Skew
+skewX0 : ( String, String )
+skewX0 =
+    cls "skew-x-0"
+
+skewX1 : ( String, String )
+skewX1 =
+    cls "skew-x-1"
+
+skewX2 : ( String, String )
+skewX2 =
+    cls "skew-x-2"
+
+skewX3 : ( String, String )
+skewX3 =
+    cls "skew-x-3"
+
+skewX6 : ( String, String )
+skewX6 =
+    cls "skew-x-6"
+
+skewX12 : ( String, String )
+skewX12 =
+    cls "skew-x-12"
+
+negSkewX1 : ( String, String )
+negSkewX1 =
+    cls "-skew-x-1"
+
+negSkewX2 : ( String, String )
+negSkewX2 =
+    cls "-skew-x-2"
+
+negSkewX3 : ( String, String )
+negSkewX3 =
+    cls "-skew-x-3"
+
+negSkewX6 : ( String, String )
+negSkewX6 =
+    cls "-skew-x-6"
+
+negSkewX12 : ( String, String )
+negSkewX12 =
+    cls "-skew-x-12"
+
+skewY0 : ( String, String )
+skewY0 =
+    cls "skew-y-0"
+
+skewY1 : ( String, String )
+skewY1 =
+    cls "skew-y-1"
+
+skewY2 : ( String, String )
+skewY2 =
+    cls "skew-y-2"
+
+skewY3 : ( String, String )
+skewY3 =
+    cls "skew-y-3"
+
+skewY6 : ( String, String )
+skewY6 =
+    cls "skew-y-6"
+
+skewY12 : ( String, String )
+skewY12 =
+    cls "skew-y-12"
+
+negSkewY1 : ( String, String )
+negSkewY1 =
+    cls "-skew-y-1"
+
+negSkewY2 : ( String, String )
+negSkewY2 =
+    cls "-skew-y-2"
+
+negSkewY3 : ( String, String )
+negSkewY3 =
+    cls "-skew-y-3"
+
+negSkewY6 : ( String, String )
+negSkewY6 =
+    cls "-skew-y-6"
+
+negSkewY12 : ( String, String )
+negSkewY12 =
+    cls "-skew-y-12"
+
+-- Transform Origin
+originCenter : ( String, String )
+originCenter =
+    cls "origin-center"
+
+originTop : ( String, String )
+originTop =
+    cls "origin-top"
+
+originTopRight : ( String, String )
+originTopRight =
+    cls "origin-top-right"
+
+originRight : ( String, String )
+originRight =
+    cls "origin-right"
+
+originBottomRight : ( String, String )
+originBottomRight =
+    cls "origin-bottom-right"
+
+originBottom : ( String, String )
+originBottom =
+    cls "origin-bottom"
+
+originBottomLeft : ( String, String )
+originBottomLeft =
+    cls "origin-bottom-left"
+
+originLeft : ( String, String )
+originLeft =
+    cls "origin-left"
+
+originTopLeft : ( String, String )
+originTopLeft =
+    cls "origin-top-left"

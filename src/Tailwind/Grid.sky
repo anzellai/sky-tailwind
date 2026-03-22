@@ -236,3 +236,111 @@ placeSelfEnd =
 placeSelfAuto : ( String, String )
 placeSelfAuto =
     cls "place-self-auto"
+
+-- Column Start/End
+colStart1 : ( String, String )
+colStart1 =
+    cls "col-start-1"
+
+colStart2 : ( String, String )
+colStart2 =
+    cls "col-start-2"
+
+colStart3 : ( String, String )
+colStart3 =
+    cls "col-start-3"
+
+colStart4 : ( String, String )
+colStart4 =
+    cls "col-start-4"
+
+colStartAuto : ( String, String )
+colStartAuto =
+    cls "col-start-auto"
+
+colEnd1 : ( String, String )
+colEnd1 =
+    cls "col-end-1"
+
+colEnd2 : ( String, String )
+colEnd2 =
+    cls "col-end-2"
+
+colEnd3 : ( String, String )
+colEnd3 =
+    cls "col-end-3"
+
+colEnd4 : ( String, String )
+colEnd4 =
+    cls "col-end-4"
+
+colEndAuto : ( String, String )
+colEndAuto =
+    cls "col-end-auto"
+
+-- Row Start/End
+rowStart1 : ( String, String )
+rowStart1 =
+    cls "row-start-1"
+
+rowStart2 : ( String, String )
+rowStart2 =
+    cls "row-start-2"
+
+rowStart3 : ( String, String )
+rowStart3 =
+    cls "row-start-3"
+
+rowStartAuto : ( String, String )
+rowStartAuto =
+    cls "row-start-auto"
+
+rowEnd1 : ( String, String )
+rowEnd1 =
+    cls "row-end-1"
+
+rowEnd2 : ( String, String )
+rowEnd2 =
+    cls "row-end-2"
+
+rowEnd3 : ( String, String )
+rowEnd3 =
+    cls "row-end-3"
+
+rowEndAuto : ( String, String )
+rowEndAuto =
+    cls "row-end-auto"
+
+-- Auto Columns
+autoColsAuto : ( String, String )
+autoColsAuto =
+    cls "auto-cols-auto"
+
+autoColsMin : ( String, String )
+autoColsMin =
+    cls "auto-cols-min"
+
+autoColsMax : ( String, String )
+autoColsMax =
+    cls "auto-cols-max"
+
+autoColsFr : ( String, String )
+autoColsFr =
+    cls "auto-cols-fr"
+
+-- Auto Rows
+autoRowsAuto : ( String, String )
+autoRowsAuto =
+    cls "auto-rows-auto"
+
+autoRowsMin : ( String, String )
+autoRowsMin =
+    cls "auto-rows-min"
+
+autoRowsMax : ( String, String )
+autoRowsMax =
+    cls "auto-rows-max"
+
+autoRowsFr : ( String, String )
+autoRowsFr =
+    cls "auto-rows-fr"

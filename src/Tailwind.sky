@@ -15,6 +15,18 @@ import Tailwind.Border as Border_
 import Tailwind.Effects as Effects
 import Tailwind.State as State
 import Tailwind.Responsive as Responsive
+import Tailwind.Sizing as Sizing
+import Tailwind.Animation as Animation
+import Tailwind.Transforms as Transforms
+import Tailwind.Filters as Filters
+import Tailwind.Gradient as Gradient
+import Tailwind.Accessibility as Accessibility
+import Tailwind.Interactivity as Interactivity_
+import Tailwind.Outline as Outline
+import Tailwind.Divide as Divide
+import Tailwind.RingColor as RingColor
+import Tailwind.Svg as Svg
+import Tailwind.Tables as Tables
 
 styles : VNode
 styles =
@@ -2218,3 +2230,430 @@ xl attr =
 xxl : ( String, String ) -> ( String, String )
 xxl attr =
     Responsive.xxl attr
+
+-- New State variants
+group =
+    State.group
+
+groupHover : ( String, String ) -> ( String, String )
+groupHover attr =
+    State.groupHover attr
+
+groupFocus : ( String, String ) -> ( String, String )
+groupFocus attr =
+    State.groupFocus attr
+
+focusVisible : ( String, String ) -> ( String, String )
+focusVisible attr =
+    State.focusVisible attr
+
+focusWithin : ( String, String ) -> ( String, String )
+focusWithin attr =
+    State.focusWithin attr
+
+placeholder_ : ( String, String ) -> ( String, String )
+placeholder_ attr =
+    State.placeholder attr
+
+checked : ( String, String ) -> ( String, String )
+checked attr =
+    State.checked attr
+
+-- Sizing
+aspectAuto =
+    Sizing.aspectAuto
+
+aspectSquare =
+    Sizing.aspectSquare
+
+aspectVideo =
+    Sizing.aspectVideo
+
+objectContain =
+    Sizing.objectContain
+
+objectCover =
+    Sizing.objectCover
+
+objectFill =
+    Sizing.objectFill
+
+objectNone =
+    Sizing.objectNone
+
+objectScaleDown =
+    Sizing.objectScaleDown
+
+objectBottom =
+    Sizing.objectBottom
+
+objectCenter =
+    Sizing.objectCenter
+
+objectLeft =
+    Sizing.objectLeft
+
+objectRight =
+    Sizing.objectRight
+
+objectTop =
+    Sizing.objectTop
+
+boxBorder =
+    Sizing.boxBorder
+
+boxContent =
+    Sizing.boxContent
+
+container_ =
+    Sizing.container
+
+-- Animation
+animateNone =
+    Animation.animateNone
+
+animateSpin =
+    Animation.animateSpin
+
+animatePing =
+    Animation.animatePing
+
+animatePulse =
+    Animation.animatePulse
+
+animateBounce =
+    Animation.animateBounce
+
+-- Transforms
+translateX0 =
+    Transforms.translateX0
+
+translateX1 =
+    Transforms.translateX1
+
+translateX2 =
+    Transforms.translateX2
+
+translateX4 =
+    Transforms.translateX4
+
+translateX8 =
+    Transforms.translateX8
+
+translateXHalf =
+    Transforms.translateXHalf
+
+translateXFull =
+    Transforms.translateXFull
+
+negTranslateXHalf =
+    Transforms.negTranslateXHalf
+
+negTranslateXFull =
+    Transforms.negTranslateXFull
+
+translateY0 =
+    Transforms.translateY0
+
+translateY1 =
+    Transforms.translateY1
+
+translateY2 =
+    Transforms.translateY2
+
+translateY4 =
+    Transforms.translateY4
+
+translateY8 =
+    Transforms.translateY8
+
+translateYHalf =
+    Transforms.translateYHalf
+
+translateYFull =
+    Transforms.translateYFull
+
+negTranslateYHalf =
+    Transforms.negTranslateYHalf
+
+negTranslateYFull =
+    Transforms.negTranslateYFull
+
+originCenter =
+    Transforms.originCenter
+
+originTop =
+    Transforms.originTop
+
+originBottom =
+    Transforms.originBottom
+
+originLeft =
+    Transforms.originLeft
+
+originRight =
+    Transforms.originRight
+
+-- Filters
+blurNone =
+    Filters.blurNone
+
+blurSm =
+    Filters.blurSm
+
+blur_ =
+    Filters.blur_
+
+blurMd =
+    Filters.blurMd
+
+blurLg =
+    Filters.blurLg
+
+blurXl =
+    Filters.blurXl
+
+backdropBlurNone =
+    Filters.backdropBlurNone
+
+backdropBlurSm =
+    Filters.backdropBlurSm
+
+backdropBlur =
+    Filters.backdropBlur
+
+backdropBlurMd =
+    Filters.backdropBlurMd
+
+backdropBlurLg =
+    Filters.backdropBlurLg
+
+grayscale =
+    Filters.grayscale
+
+grayscale0 =
+    Filters.grayscale0
+
+invert =
+    Filters.invert
+
+sepia =
+    Filters.sepia
+
+dropShadow =
+    Filters.dropShadow
+
+dropShadowMd =
+    Filters.dropShadowMd
+
+dropShadowLg =
+    Filters.dropShadowLg
+
+dropShadowNone =
+    Filters.dropShadowNone
+
+-- Gradient
+bgGradientToT =
+    Gradient.bgGradientToT
+
+bgGradientToTR =
+    Gradient.bgGradientToTR
+
+bgGradientToR =
+    Gradient.bgGradientToR
+
+bgGradientToBR =
+    Gradient.bgGradientToBR
+
+bgGradientToB =
+    Gradient.bgGradientToB
+
+bgGradientToBL =
+    Gradient.bgGradientToBL
+
+bgGradientToL =
+    Gradient.bgGradientToL
+
+bgGradientToTL =
+    Gradient.bgGradientToTL
+
+fromTransparent =
+    Gradient.fromTransparent
+
+fromBlack =
+    Gradient.fromBlack
+
+fromWhite =
+    Gradient.fromWhite
+
+fromSlate900 =
+    Gradient.fromSlate900
+
+fromSlate800 =
+    Gradient.fromSlate800
+
+fromSlate700 =
+    Gradient.fromSlate700
+
+fromBlue500 =
+    Gradient.fromBlue500
+
+fromBlue600 =
+    Gradient.fromBlue600
+
+fromGreen500 =
+    Gradient.fromGreen500
+
+fromRed500 =
+    Gradient.fromRed500
+
+fromPurple500 =
+    Gradient.fromPurple500
+
+toTransparent =
+    Gradient.toTransparent
+
+toBlack =
+    Gradient.toBlack
+
+toWhite =
+    Gradient.toWhite
+
+toSlate500 =
+    Gradient.toSlate500
+
+toSlate700 =
+    Gradient.toSlate700
+
+toBlue500 =
+    Gradient.toBlue500
+
+toGreen500 =
+    Gradient.toGreen500
+
+-- Outline
+outlineNone =
+    Outline.outlineNone
+
+outline_ =
+    Outline.outline_
+
+outlineDashed =
+    Outline.outlineDashed
+
+outline0 =
+    Outline.outline0
+
+outline2 =
+    Outline.outline2
+
+outlineOffset0 =
+    Outline.outlineOffset0
+
+outlineOffset2 =
+    Outline.outlineOffset2
+
+-- Divide
+divideX =
+    Divide.divideX
+
+divideY =
+    Divide.divideY
+
+divideX0 =
+    Divide.divideX0
+
+divideY0 =
+    Divide.divideY0
+
+divideGray200 =
+    Divide.divideGray200
+
+divideSlate200 =
+    Divide.divideSlate200
+
+-- Ring colors
+ringTransparent =
+    RingColor.ringTransparent
+
+ringBlack =
+    RingColor.ringBlack
+
+ringWhite =
+    RingColor.ringWhite
+
+ringBlue500 =
+    RingColor.ringBlue500
+
+ringBlue600 =
+    RingColor.ringBlue600
+
+ringGreen500 =
+    RingColor.ringGreen500
+
+ringRed500 =
+    RingColor.ringRed500
+
+ringOffset0 =
+    RingColor.ringOffset0
+
+ringOffset2 =
+    RingColor.ringOffset2
+
+ringInset =
+    RingColor.ringInset
+
+-- Accessibility
+srOnly =
+    Accessibility.srOnly
+
+notSrOnly =
+    Accessibility.notSrOnly
+
+-- SVG
+fillNone =
+    Svg.fillNone
+
+fillCurrent =
+    Svg.fillCurrent
+
+strokeNone =
+    Svg.strokeNone
+
+strokeCurrent =
+    Svg.strokeCurrent
+
+-- Tables
+borderCollapse =
+    Tables.borderCollapse
+
+borderSeparate =
+    Tables.borderSeparate
+
+tableAuto =
+    Tables.tableAuto
+
+tableFixed =
+    Tables.tableFixed
+
+-- Interactivity
+appearanceNone =
+    Interactivity_.appearanceNone
+
+scrollSmooth =
+    Interactivity_.scrollSmooth
+
+scrollAuto =
+    Interactivity_.scrollAuto
+
+touchNone =
+    Interactivity_.touchNone
+
+touchManipulation =
+    Interactivity_.touchManipulation
+
+willChangeTransform =
+    Interactivity_.willChangeTransform
+
+resizeNone =
+    Interactivity_.resizeNone

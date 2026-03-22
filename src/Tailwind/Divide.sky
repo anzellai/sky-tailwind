@@ -1,0 +1,92 @@
+module Tailwind.Divide exposing (..)
+
+import Sky.Core.Prelude exposing (..)
+import Tailwind.Internal.Classes exposing (cls)
+
+divideX0 : ( String, String )
+divideX0 =
+    cls "divide-x-0"
+
+divideX : ( String, String )
+divideX =
+    cls "divide-x"
+
+divideX2 : ( String, String )
+divideX2 =
+    cls "divide-x-2"
+
+divideX4 : ( String, String )
+divideX4 =
+    cls "divide-x-4"
+
+divideX8 : ( String, String )
+divideX8 =
+    cls "divide-x-8"
+
+divideXReverse : ( String, String )
+divideXReverse =
+    cls "divide-x-reverse"
+
+divideY0 : ( String, String )
+divideY0 =
+    cls "divide-y-0"
+
+divideY : ( String, String )
+divideY =
+    cls "divide-y"
+
+divideY2 : ( String, String )
+divideY2 =
+    cls "divide-y-2"
+
+divideY4 : ( String, String )
+divideY4 =
+    cls "divide-y-4"
+
+divideY8 : ( String, String )
+divideY8 =
+    cls "divide-y-8"
+
+divideYReverse : ( String, String )
+divideYReverse =
+    cls "divide-y-reverse"
+
+divideSolid : ( String, String )
+divideSolid =
+    cls "divide-solid"
+
+divideDashed : ( String, String )
+divideDashed =
+    cls "divide-dashed"
+
+divideDotted : ( String, String )
+divideDotted =
+    cls "divide-dotted"
+
+divideDouble : ( String, String )
+divideDouble =
+    cls "divide-double"
+
+divideNone : ( String, String )
+divideNone =
+    cls "divide-none"
+
+divideGray100 : ( String, String )
+divideGray100 =
+    cls "divide-gray-100"
+
+divideGray200 : ( String, String )
+divideGray200 =
+    cls "divide-gray-200"
+
+divideGray300 : ( String, String )
+divideGray300 =
+    cls "divide-gray-300"
+
+divideGray700 : ( String, String )
+divideGray700 =
+    cls "divide-gray-700"
+
+divideSlate200 : ( String, String )
+divideSlate200 =
+    cls "divide-slate-200"

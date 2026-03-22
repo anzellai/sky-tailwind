@@ -1,0 +1,64 @@
+module Tailwind.Outline exposing (..)
+
+import Sky.Core.Prelude exposing (..)
+import Tailwind.Internal.Classes exposing (cls)
+
+outlineNone : ( String, String )
+outlineNone =
+    cls "outline-none"
+
+outline_ : ( String, String )
+outline_ =
+    cls "outline"
+
+outlineDashed : ( String, String )
+outlineDashed =
+    cls "outline-dashed"
+
+outlineDotted : ( String, String )
+outlineDotted =
+    cls "outline-dotted"
+
+outlineDouble : ( String, String )
+outlineDouble =
+    cls "outline-double"
+
+outline0 : ( String, String )
+outline0 =
+    cls "outline-0"
+
+outline1 : ( String, String )
+outline1 =
+    cls "outline-1"
+
+outline2 : ( String, String )
+outline2 =
+    cls "outline-2"
+
+outline4 : ( String, String )
+outline4 =
+    cls "outline-4"
+
+outline8 : ( String, String )
+outline8 =
+    cls "outline-8"
+
+outlineOffset0 : ( String, String )
+outlineOffset0 =
+    cls "outline-offset-0"
+
+outlineOffset1 : ( String, String )
+outlineOffset1 =
+    cls "outline-offset-1"
+
+outlineOffset2 : ( String, String )
+outlineOffset2 =
+    cls "outline-offset-2"
+
+outlineOffset4 : ( String, String )
+outlineOffset4 =
+    cls "outline-offset-4"
+
+outlineOffset8 : ( String, String )
+outlineOffset8 =
+    cls "outline-offset-8"

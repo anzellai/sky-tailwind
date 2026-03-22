@@ -430,3 +430,343 @@ bgRepeatX =
 bgRepeatY : ( String, String )
 bgRepeatY =
     cls "bg-repeat-y"
+
+-- Amber
+bgAmber50 : ( String, String )
+bgAmber50 =
+    cls "bg-amber-50"
+
+bgAmber100 : ( String, String )
+bgAmber100 =
+    cls "bg-amber-100"
+
+bgAmber200 : ( String, String )
+bgAmber200 =
+    cls "bg-amber-200"
+
+bgAmber300 : ( String, String )
+bgAmber300 =
+    cls "bg-amber-300"
+
+bgAmber400 : ( String, String )
+bgAmber400 =
+    cls "bg-amber-400"
+
+bgAmber500 : ( String, String )
+bgAmber500 =
+    cls "bg-amber-500"
+
+bgAmber600 : ( String, String )
+bgAmber600 =
+    cls "bg-amber-600"
+
+bgAmber700 : ( String, String )
+bgAmber700 =
+    cls "bg-amber-700"
+
+-- Teal
+bgTeal50 : ( String, String )
+bgTeal50 =
+    cls "bg-teal-50"
+
+bgTeal100 : ( String, String )
+bgTeal100 =
+    cls "bg-teal-100"
+
+bgTeal200 : ( String, String )
+bgTeal200 =
+    cls "bg-teal-200"
+
+bgTeal300 : ( String, String )
+bgTeal300 =
+    cls "bg-teal-300"
+
+bgTeal400 : ( String, String )
+bgTeal400 =
+    cls "bg-teal-400"
+
+bgTeal500 : ( String, String )
+bgTeal500 =
+    cls "bg-teal-500"
+
+bgTeal600 : ( String, String )
+bgTeal600 =
+    cls "bg-teal-600"
+
+bgTeal700 : ( String, String )
+bgTeal700 =
+    cls "bg-teal-700"
+
+-- Cyan
+bgCyan50 : ( String, String )
+bgCyan50 =
+    cls "bg-cyan-50"
+
+bgCyan100 : ( String, String )
+bgCyan100 =
+    cls "bg-cyan-100"
+
+bgCyan200 : ( String, String )
+bgCyan200 =
+    cls "bg-cyan-200"
+
+bgCyan300 : ( String, String )
+bgCyan300 =
+    cls "bg-cyan-300"
+
+bgCyan400 : ( String, String )
+bgCyan400 =
+    cls "bg-cyan-400"
+
+bgCyan500 : ( String, String )
+bgCyan500 =
+    cls "bg-cyan-500"
+
+bgCyan600 : ( String, String )
+bgCyan600 =
+    cls "bg-cyan-600"
+
+bgCyan700 : ( String, String )
+bgCyan700 =
+    cls "bg-cyan-700"
+
+-- Sky
+bgSky50 : ( String, String )
+bgSky50 =
+    cls "bg-sky-50"
+
+bgSky100 : ( String, String )
+bgSky100 =
+    cls "bg-sky-100"
+
+bgSky200 : ( String, String )
+bgSky200 =
+    cls "bg-sky-200"
+
+bgSky300 : ( String, String )
+bgSky300 =
+    cls "bg-sky-300"
+
+bgSky400 : ( String, String )
+bgSky400 =
+    cls "bg-sky-400"
+
+bgSky500 : ( String, String )
+bgSky500 =
+    cls "bg-sky-500"
+
+bgSky600 : ( String, String )
+bgSky600 =
+    cls "bg-sky-600"
+
+bgSky700 : ( String, String )
+bgSky700 =
+    cls "bg-sky-700"
+
+-- Emerald
+bgEmerald50 : ( String, String )
+bgEmerald50 =
+    cls "bg-emerald-50"
+
+bgEmerald100 : ( String, String )
+bgEmerald100 =
+    cls "bg-emerald-100"
+
+bgEmerald200 : ( String, String )
+bgEmerald200 =
+    cls "bg-emerald-200"
+
+bgEmerald300 : ( String, String )
+bgEmerald300 =
+    cls "bg-emerald-300"
+
+bgEmerald400 : ( String, String )
+bgEmerald400 =
+    cls "bg-emerald-400"
+
+bgEmerald500 : ( String, String )
+bgEmerald500 =
+    cls "bg-emerald-500"
+
+bgEmerald600 : ( String, String )
+bgEmerald600 =
+    cls "bg-emerald-600"
+
+bgEmerald700 : ( String, String )
+bgEmerald700 =
+    cls "bg-emerald-700"
+
+-- Violet
+bgViolet50 : ( String, String )
+bgViolet50 =
+    cls "bg-violet-50"
+
+bgViolet100 : ( String, String )
+bgViolet100 =
+    cls "bg-violet-100"
+
+bgViolet200 : ( String, String )
+bgViolet200 =
+    cls "bg-violet-200"
+
+bgViolet300 : ( String, String )
+bgViolet300 =
+    cls "bg-violet-300"
+
+bgViolet400 : ( String, String )
+bgViolet400 =
+    cls "bg-violet-400"
+
+bgViolet500 : ( String, String )
+bgViolet500 =
+    cls "bg-violet-500"
+
+bgViolet600 : ( String, String )
+bgViolet600 =
+    cls "bg-violet-600"
+
+bgViolet700 : ( String, String )
+bgViolet700 =
+    cls "bg-violet-700"
+
+-- Rose
+bgRose50 : ( String, String )
+bgRose50 =
+    cls "bg-rose-50"
+
+bgRose100 : ( String, String )
+bgRose100 =
+    cls "bg-rose-100"
+
+bgRose200 : ( String, String )
+bgRose200 =
+    cls "bg-rose-200"
+
+bgRose300 : ( String, String )
+bgRose300 =
+    cls "bg-rose-300"
+
+bgRose400 : ( String, String )
+bgRose400 =
+    cls "bg-rose-400"
+
+bgRose500 : ( String, String )
+bgRose500 =
+    cls "bg-rose-500"
+
+bgRose600 : ( String, String )
+bgRose600 =
+    cls "bg-rose-600"
+
+bgRose700 : ( String, String )
+bgRose700 =
+    cls "bg-rose-700"
+
+-- Fuchsia
+bgFuchsia50 : ( String, String )
+bgFuchsia50 =
+    cls "bg-fuchsia-50"
+
+bgFuchsia100 : ( String, String )
+bgFuchsia100 =
+    cls "bg-fuchsia-100"
+
+bgFuchsia200 : ( String, String )
+bgFuchsia200 =
+    cls "bg-fuchsia-200"
+
+bgFuchsia300 : ( String, String )
+bgFuchsia300 =
+    cls "bg-fuchsia-300"
+
+bgFuchsia400 : ( String, String )
+bgFuchsia400 =
+    cls "bg-fuchsia-400"
+
+bgFuchsia500 : ( String, String )
+bgFuchsia500 =
+    cls "bg-fuchsia-500"
+
+bgFuchsia600 : ( String, String )
+bgFuchsia600 =
+    cls "bg-fuchsia-600"
+
+bgFuchsia700 : ( String, String )
+bgFuchsia700 =
+    cls "bg-fuchsia-700"
+
+-- Lime
+bgLime50 : ( String, String )
+bgLime50 =
+    cls "bg-lime-50"
+
+bgLime100 : ( String, String )
+bgLime100 =
+    cls "bg-lime-100"
+
+bgLime200 : ( String, String )
+bgLime200 =
+    cls "bg-lime-200"
+
+bgLime300 : ( String, String )
+bgLime300 =
+    cls "bg-lime-300"
+
+bgLime400 : ( String, String )
+bgLime400 =
+    cls "bg-lime-400"
+
+bgLime500 : ( String, String )
+bgLime500 =
+    cls "bg-lime-500"
+
+bgLime600 : ( String, String )
+bgLime600 =
+    cls "bg-lime-600"
+
+bgLime700 : ( String, String )
+bgLime700 =
+    cls "bg-lime-700"
+
+-- Background Attachment
+bgFixed : ( String, String )
+bgFixed =
+    cls "bg-fixed"
+
+bgLocal : ( String, String )
+bgLocal =
+    cls "bg-local"
+
+bgScroll_ : ( String, String )
+bgScroll_ =
+    cls "bg-scroll"
+
+-- Background Clip
+bgClipBorder : ( String, String )
+bgClipBorder =
+    cls "bg-clip-border"
+
+bgClipPadding : ( String, String )
+bgClipPadding =
+    cls "bg-clip-padding"
+
+bgClipContent : ( String, String )
+bgClipContent =
+    cls "bg-clip-content"
+
+bgClipText : ( String, String )
+bgClipText =
+    cls "bg-clip-text"
+
+-- Background Origin
+bgOriginBorder : ( String, String )
+bgOriginBorder =
+    cls "bg-origin-border"
+
+bgOriginPadding : ( String, String )
+bgOriginPadding =
+    cls "bg-origin-padding"
+
+bgOriginContent : ( String, String )
+bgOriginContent =
+    cls "bg-origin-content"

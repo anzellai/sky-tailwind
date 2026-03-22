@@ -1,0 +1,128 @@
+module Tailwind.RingColor exposing (..)
+
+import Sky.Core.Prelude exposing (..)
+import Tailwind.Internal.Classes exposing (cls)
+
+ringTransparent : ( String, String )
+ringTransparent =
+    cls "ring-transparent"
+
+ringBlack : ( String, String )
+ringBlack =
+    cls "ring-black"
+
+ringWhite : ( String, String )
+ringWhite =
+    cls "ring-white"
+
+ringSlate200 : ( String, String )
+ringSlate200 =
+    cls "ring-slate-200"
+
+ringSlate300 : ( String, String )
+ringSlate300 =
+    cls "ring-slate-300"
+
+ringSlate400 : ( String, String )
+ringSlate400 =
+    cls "ring-slate-400"
+
+ringGray200 : ( String, String )
+ringGray200 =
+    cls "ring-gray-200"
+
+ringGray300 : ( String, String )
+ringGray300 =
+    cls "ring-gray-300"
+
+ringGray400 : ( String, String )
+ringGray400 =
+    cls "ring-gray-400"
+
+ringRed500 : ( String, String )
+ringRed500 =
+    cls "ring-red-500"
+
+ringRed600 : ( String, String )
+ringRed600 =
+    cls "ring-red-600"
+
+ringOrange500 : ( String, String )
+ringOrange500 =
+    cls "ring-orange-500"
+
+ringYellow500 : ( String, String )
+ringYellow500 =
+    cls "ring-yellow-500"
+
+ringGreen500 : ( String, String )
+ringGreen500 =
+    cls "ring-green-500"
+
+ringGreen600 : ( String, String )
+ringGreen600 =
+    cls "ring-green-600"
+
+ringBlue300 : ( String, String )
+ringBlue300 =
+    cls "ring-blue-300"
+
+ringBlue400 : ( String, String )
+ringBlue400 =
+    cls "ring-blue-400"
+
+ringBlue500 : ( String, String )
+ringBlue500 =
+    cls "ring-blue-500"
+
+ringBlue600 : ( String, String )
+ringBlue600 =
+    cls "ring-blue-600"
+
+ringIndigo500 : ( String, String )
+ringIndigo500 =
+    cls "ring-indigo-500"
+
+ringPurple500 : ( String, String )
+ringPurple500 =
+    cls "ring-purple-500"
+
+ringPink500 : ( String, String )
+ringPink500 =
+    cls "ring-pink-500"
+
+ringOffset0 : ( String, String )
+ringOffset0 =
+    cls "ring-offset-0"
+
+ringOffset1 : ( String, String )
+ringOffset1 =
+    cls "ring-offset-1"
+
+ringOffset2 : ( String, String )
+ringOffset2 =
+    cls "ring-offset-2"
+
+ringOffset4 : ( String, String )
+ringOffset4 =
+    cls "ring-offset-4"
+
+ringOffset8 : ( String, String )
+ringOffset8 =
+    cls "ring-offset-8"
+
+ringOffsetWhite : ( String, String )
+ringOffsetWhite =
+    cls "ring-offset-white"
+
+ringOffsetBlack : ( String, String )
+ringOffsetBlack =
+    cls "ring-offset-black"
+
+ringOffsetSlate50 : ( String, String )
+ringOffsetSlate50 =
+    cls "ring-offset-slate-50"
+
+ringInset : ( String, String )
+ringInset =
+    cls "ring-inset"

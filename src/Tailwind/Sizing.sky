@@ -1,0 +1,84 @@
+module Tailwind.Sizing exposing (..)
+
+import Sky.Core.Prelude exposing (..)
+import Tailwind.Internal.Classes exposing (cls)
+
+aspectAuto : ( String, String )
+aspectAuto =
+    cls "aspect-auto"
+
+aspectSquare : ( String, String )
+aspectSquare =
+    cls "aspect-square"
+
+aspectVideo : ( String, String )
+aspectVideo =
+    cls "aspect-video"
+
+objectContain : ( String, String )
+objectContain =
+    cls "object-contain"
+
+objectCover : ( String, String )
+objectCover =
+    cls "object-cover"
+
+objectFill : ( String, String )
+objectFill =
+    cls "object-fill"
+
+objectNone : ( String, String )
+objectNone =
+    cls "object-none"
+
+objectScaleDown : ( String, String )
+objectScaleDown =
+    cls "object-scale-down"
+
+objectBottom : ( String, String )
+objectBottom =
+    cls "object-bottom"
+
+objectCenter : ( String, String )
+objectCenter =
+    cls "object-center"
+
+objectLeft : ( String, String )
+objectLeft =
+    cls "object-left"
+
+objectLeftBottom : ( String, String )
+objectLeftBottom =
+    cls "object-left-bottom"
+
+objectLeftTop : ( String, String )
+objectLeftTop =
+    cls "object-left-top"
+
+objectRight : ( String, String )
+objectRight =
+    cls "object-right"
+
+objectRightBottom : ( String, String )
+objectRightBottom =
+    cls "object-right-bottom"
+
+objectRightTop : ( String, String )
+objectRightTop =
+    cls "object-right-top"
+
+objectTop : ( String, String )
+objectTop =
+    cls "object-top"
+
+boxBorder : ( String, String )
+boxBorder =
+    cls "box-border"
+
+boxContent : ( String, String )
+boxContent =
+    cls "box-content"
+
+container : ( String, String )
+container =
+    cls "container"

@@ -1,0 +1,120 @@
+module Tailwind.Interactivity exposing (..)
+
+import Sky.Core.Prelude exposing (..)
+import Tailwind.Internal.Classes exposing (cls)
+
+appearanceNone : ( String, String )
+appearanceNone =
+    cls "appearance-none"
+
+appearanceAuto : ( String, String )
+appearanceAuto =
+    cls "appearance-auto"
+
+cursorNone : ( String, String )
+cursorNone =
+    cls "cursor-none"
+
+resizeNone : ( String, String )
+resizeNone =
+    cls "resize-none"
+
+resize_ : ( String, String )
+resize_ =
+    cls "resize"
+
+resizeX : ( String, String )
+resizeX =
+    cls "resize-x"
+
+resizeY : ( String, String )
+resizeY =
+    cls "resize-y"
+
+scrollAuto : ( String, String )
+scrollAuto =
+    cls "scroll-auto"
+
+scrollSmooth : ( String, String )
+scrollSmooth =
+    cls "scroll-smooth"
+
+snapStart : ( String, String )
+snapStart =
+    cls "snap-start"
+
+snapEnd : ( String, String )
+snapEnd =
+    cls "snap-end"
+
+snapCenter : ( String, String )
+snapCenter =
+    cls "snap-center"
+
+snapAlignNone : ( String, String )
+snapAlignNone =
+    cls "snap-align-none"
+
+snapNone : ( String, String )
+snapNone =
+    cls "snap-none"
+
+snapX : ( String, String )
+snapX =
+    cls "snap-x"
+
+snapY : ( String, String )
+snapY =
+    cls "snap-y"
+
+snapBoth : ( String, String )
+snapBoth =
+    cls "snap-both"
+
+snapMandatory : ( String, String )
+snapMandatory =
+    cls "snap-mandatory"
+
+snapProximity : ( String, String )
+snapProximity =
+    cls "snap-proximity"
+
+touchAuto : ( String, String )
+touchAuto =
+    cls "touch-auto"
+
+touchNone : ( String, String )
+touchNone =
+    cls "touch-none"
+
+touchPanX : ( String, String )
+touchPanX =
+    cls "touch-pan-x"
+
+touchPanY : ( String, String )
+touchPanY =
+    cls "touch-pan-y"
+
+touchPinchZoom : ( String, String )
+touchPinchZoom =
+    cls "touch-pinch-zoom"
+
+touchManipulation : ( String, String )
+touchManipulation =
+    cls "touch-manipulation"
+
+willChangeAuto : ( String, String )
+willChangeAuto =
+    cls "will-change-auto"
+
+willChangeScroll : ( String, String )
+willChangeScroll =
+    cls "will-change-scroll"
+
+willChangeContents : ( String, String )
+willChangeContents =
+    cls "will-change-contents"
+
+willChangeTransform : ( String, String )
+willChangeTransform =
+    cls "will-change-transform"

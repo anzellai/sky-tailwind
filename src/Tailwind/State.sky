@@ -1,6 +1,7 @@
-module Tailwind.State exposing (hover, focus, active, disabled, firstChild, lastChild, odd, even)
+module Tailwind.State exposing (hover, focus, active, disabled, firstChild, lastChild, odd, even, group, groupHover, groupFocus, focusVisible, focusWithin, placeholder, checked, required, invalid)
 
 import Sky.Core.Prelude exposing (..)
+import Tailwind.Internal.Classes exposing (cls)
 
 hover : ( String, String ) -> ( String, String )
 hover ( _, className ) =
@@ -33,3 +34,39 @@ odd ( _, className ) =
 even : ( String, String ) -> ( String, String )
 even ( _, className ) =
     ( "class" , "even:" ++ className )
+
+group : ( String, String )
+group =
+    cls "group"
+
+groupHover : ( String, String ) -> ( String, String )
+groupHover ( _, className ) =
+    ( "class" , "group-hover:" ++ className )
+
+groupFocus : ( String, String ) -> ( String, String )
+groupFocus ( _, className ) =
+    ( "class" , "group-focus:" ++ className )
+
+focusVisible : ( String, String ) -> ( String, String )
+focusVisible ( _, className ) =
+    ( "class" , "focus-visible:" ++ className )
+
+focusWithin : ( String, String ) -> ( String, String )
+focusWithin ( _, className ) =
+    ( "class" , "focus-within:" ++ className )
+
+placeholder : ( String, String ) -> ( String, String )
+placeholder ( _, className ) =
+    ( "class" , "placeholder:" ++ className )
+
+checked : ( String, String ) -> ( String, String )
+checked ( _, className ) =
+    ( "class" , "checked:" ++ className )
+
+required : ( String, String ) -> ( String, String )
+required ( _, className ) =
+    ( "class" , "required:" ++ className )
+
+invalid : ( String, String ) -> ( String, String )
+invalid ( _, className ) =
+    ( "class" , "invalid:" ++ className )

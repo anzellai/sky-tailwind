@@ -353,3 +353,251 @@ whitespacePreWrap =
 truncate : ( String, String )
 truncate =
     cls "truncate"
+
+-- Amber
+textAmber500 : ( String, String )
+textAmber500 =
+    cls "text-amber-500"
+
+textAmber600 : ( String, String )
+textAmber600 =
+    cls "text-amber-600"
+
+textAmber700 : ( String, String )
+textAmber700 =
+    cls "text-amber-700"
+
+-- Teal
+textTeal500 : ( String, String )
+textTeal500 =
+    cls "text-teal-500"
+
+textTeal600 : ( String, String )
+textTeal600 =
+    cls "text-teal-600"
+
+textTeal700 : ( String, String )
+textTeal700 =
+    cls "text-teal-700"
+
+-- Cyan
+textCyan500 : ( String, String )
+textCyan500 =
+    cls "text-cyan-500"
+
+textCyan600 : ( String, String )
+textCyan600 =
+    cls "text-cyan-600"
+
+textCyan700 : ( String, String )
+textCyan700 =
+    cls "text-cyan-700"
+
+-- Sky
+textSky500 : ( String, String )
+textSky500 =
+    cls "text-sky-500"
+
+textSky600 : ( String, String )
+textSky600 =
+    cls "text-sky-600"
+
+textSky700 : ( String, String )
+textSky700 =
+    cls "text-sky-700"
+
+-- Emerald
+textEmerald500 : ( String, String )
+textEmerald500 =
+    cls "text-emerald-500"
+
+textEmerald600 : ( String, String )
+textEmerald600 =
+    cls "text-emerald-600"
+
+textEmerald700 : ( String, String )
+textEmerald700 =
+    cls "text-emerald-700"
+
+-- Violet
+textViolet500 : ( String, String )
+textViolet500 =
+    cls "text-violet-500"
+
+textViolet600 : ( String, String )
+textViolet600 =
+    cls "text-violet-600"
+
+textViolet700 : ( String, String )
+textViolet700 =
+    cls "text-violet-700"
+
+-- Rose
+textRose500 : ( String, String )
+textRose500 =
+    cls "text-rose-500"
+
+textRose600 : ( String, String )
+textRose600 =
+    cls "text-rose-600"
+
+textRose700 : ( String, String )
+textRose700 =
+    cls "text-rose-700"
+
+-- Fuchsia
+textFuchsia500 : ( String, String )
+textFuchsia500 =
+    cls "text-fuchsia-500"
+
+textFuchsia600 : ( String, String )
+textFuchsia600 =
+    cls "text-fuchsia-600"
+
+textFuchsia700 : ( String, String )
+textFuchsia700 =
+    cls "text-fuchsia-700"
+
+-- Lime
+textLime500 : ( String, String )
+textLime500 =
+    cls "text-lime-500"
+
+textLime600 : ( String, String )
+textLime600 =
+    cls "text-lime-600"
+
+textLime700 : ( String, String )
+textLime700 =
+    cls "text-lime-700"
+
+-- Slate
+textSlate50 : ( String, String )
+textSlate50 =
+    cls "text-slate-50"
+
+textSlate100 : ( String, String )
+textSlate100 =
+    cls "text-slate-100"
+
+textSlate200 : ( String, String )
+textSlate200 =
+    cls "text-slate-200"
+
+textSlate300 : ( String, String )
+textSlate300 =
+    cls "text-slate-300"
+
+textSlate400 : ( String, String )
+textSlate400 =
+    cls "text-slate-400"
+
+textSlate500 : ( String, String )
+textSlate500 =
+    cls "text-slate-500"
+
+textSlate600 : ( String, String )
+textSlate600 =
+    cls "text-slate-600"
+
+textSlate700 : ( String, String )
+textSlate700 =
+    cls "text-slate-700"
+
+textSlate800 : ( String, String )
+textSlate800 =
+    cls "text-slate-800"
+
+textSlate900 : ( String, String )
+textSlate900 =
+    cls "text-slate-900"
+
+-- List Style
+listNone : ( String, String )
+listNone =
+    cls "list-none"
+
+listDisc : ( String, String )
+listDisc =
+    cls "list-disc"
+
+listDecimal : ( String, String )
+listDecimal =
+    cls "list-decimal"
+
+listInside : ( String, String )
+listInside =
+    cls "list-inside"
+
+listOutside : ( String, String )
+listOutside =
+    cls "list-outside"
+
+-- Word Break
+breakNormal : ( String, String )
+breakNormal =
+    cls "break-normal"
+
+breakWords : ( String, String )
+breakWords =
+    cls "break-words"
+
+breakAll : ( String, String )
+breakAll =
+    cls "break-all"
+
+breakKeep : ( String, String )
+breakKeep =
+    cls "break-keep"
+
+-- Hyphens
+hyphensNone : ( String, String )
+hyphensNone =
+    cls "hyphens-none"
+
+hyphensManual : ( String, String )
+hyphensManual =
+    cls "hyphens-manual"
+
+hyphensAuto : ( String, String )
+hyphensAuto =
+    cls "hyphens-auto"
+
+-- Font Smoothing
+antialiased : ( String, String )
+antialiased =
+    cls "antialiased"
+
+subpixelAntialiased : ( String, String )
+subpixelAntialiased =
+    cls "subpixel-antialiased"
+
+-- Text Overflow / Wrap
+textEllipsis : ( String, String )
+textEllipsis =
+    cls "text-ellipsis"
+
+textClip : ( String, String )
+textClip =
+    cls "text-clip"
+
+textWrap : ( String, String )
+textWrap =
+    cls "text-wrap"
+
+textNowrap : ( String, String )
+textNowrap =
+    cls "text-nowrap"
+
+textBalance : ( String, String )
+textBalance =
+    cls "text-balance"
+
+textPretty : ( String, String )
+textPretty =
+    cls "text-pretty"
+
+-- Content
+contentNone : ( String, String )
+contentNone =
+    cls "content-none"

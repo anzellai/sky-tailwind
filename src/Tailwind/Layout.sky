@@ -443,3 +443,42 @@ maxHFull =
 maxHScreen : ( String, String )
 maxHScreen =
     cls "max-h-screen"
+
+-- Float
+floatRight : ( String, String )
+floatRight =
+    cls "float-right"
+
+floatLeft : ( String, String )
+floatLeft =
+    cls "float-left"
+
+floatNone : ( String, String )
+floatNone =
+    cls "float-none"
+
+-- Clear
+clearLeft : ( String, String )
+clearLeft =
+    cls "clear-left"
+
+clearRight : ( String, String )
+clearRight =
+    cls "clear-right"
+
+clearBoth : ( String, String )
+clearBoth =
+    cls "clear-both"
+
+clearNone : ( String, String )
+clearNone =
+    cls "clear-none"
+
+-- Isolation
+isolate : ( String, String )
+isolate =
+    cls "isolate"
+
+isolationAuto : ( String, String )
+isolationAuto =
+    cls "isolation-auto"
