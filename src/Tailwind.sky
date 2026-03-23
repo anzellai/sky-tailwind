@@ -74,14 +74,26 @@ p5 =
 p6 =
     Spacing.p6
 
+p7 =
+    Spacing.p7
+
 p8 =
     Spacing.p8
+
+p9 =
+    Spacing.p9
 
 p10 =
     Spacing.p10
 
+p11 =
+    Spacing.p11
+
 p12 =
     Spacing.p12
+
+p14 =
+    Spacing.p14
 
 p16 =
     Spacing.p16
@@ -91,6 +103,45 @@ p20 =
 
 p24 =
     Spacing.p24
+
+p28 =
+    Spacing.p28
+
+p32 =
+    Spacing.p32
+
+p36 =
+    Spacing.p36
+
+p40 =
+    Spacing.p40
+
+p44 =
+    Spacing.p44
+
+p48 =
+    Spacing.p48
+
+p52 =
+    Spacing.p52
+
+p56 =
+    Spacing.p56
+
+p60 =
+    Spacing.p60
+
+p64 =
+    Spacing.p64
+
+p72 =
+    Spacing.p72
+
+p80 =
+    Spacing.p80
+
+p96 =
+    Spacing.p96
 
 px0 =
     Spacing.px0
@@ -113,14 +164,26 @@ px5 =
 px6 =
     Spacing.px6
 
+px7 =
+    Spacing.px7
+
 px8 =
     Spacing.px8
+
+px9 =
+    Spacing.px9
 
 px10 =
     Spacing.px10
 
+px11 =
+    Spacing.px11
+
 px12 =
     Spacing.px12
+
+px14 =
+    Spacing.px14
 
 px16 =
     Spacing.px16
@@ -130,6 +193,45 @@ px20 =
 
 px24 =
     Spacing.px24
+
+px28 =
+    Spacing.px28
+
+px32 =
+    Spacing.px32
+
+px36 =
+    Spacing.px36
+
+px40 =
+    Spacing.px40
+
+px44 =
+    Spacing.px44
+
+px48 =
+    Spacing.px48
+
+px52 =
+    Spacing.px52
+
+px56 =
+    Spacing.px56
+
+px60 =
+    Spacing.px60
+
+px64 =
+    Spacing.px64
+
+px72 =
+    Spacing.px72
+
+px80 =
+    Spacing.px80
+
+px96 =
+    Spacing.px96
 
 py0 =
     Spacing.py0
@@ -152,14 +254,26 @@ py5 =
 py6 =
     Spacing.py6
 
+py7 =
+    Spacing.py7
+
 py8 =
     Spacing.py8
+
+py9 =
+    Spacing.py9
 
 py10 =
     Spacing.py10
 
+py11 =
+    Spacing.py11
+
 py12 =
     Spacing.py12
+
+py14 =
+    Spacing.py14
 
 py16 =
     Spacing.py16
@@ -169,6 +283,45 @@ py20 =
 
 py24 =
     Spacing.py24
+
+py28 =
+    Spacing.py28
+
+py32 =
+    Spacing.py32
+
+py36 =
+    Spacing.py36
+
+py40 =
+    Spacing.py40
+
+py44 =
+    Spacing.py44
+
+py48 =
+    Spacing.py48
+
+py52 =
+    Spacing.py52
+
+py56 =
+    Spacing.py56
+
+py60 =
+    Spacing.py60
+
+py64 =
+    Spacing.py64
+
+py72 =
+    Spacing.py72
+
+py80 =
+    Spacing.py80
+
+py96 =
+    Spacing.py96
 
 pt0 =
     Spacing.pt0
@@ -303,14 +456,26 @@ m5 =
 m6 =
     Spacing.m6
 
+m7 =
+    Spacing.m7
+
 m8 =
     Spacing.m8
+
+m9 =
+    Spacing.m9
 
 m10 =
     Spacing.m10
 
+m11 =
+    Spacing.m11
+
 m12 =
     Spacing.m12
+
+m14 =
+    Spacing.m14
 
 m16 =
     Spacing.m16
@@ -320,6 +485,45 @@ m20 =
 
 m24 =
     Spacing.m24
+
+m28 =
+    Spacing.m28
+
+m32 =
+    Spacing.m32
+
+m36 =
+    Spacing.m36
+
+m40 =
+    Spacing.m40
+
+m44 =
+    Spacing.m44
+
+m48 =
+    Spacing.m48
+
+m52 =
+    Spacing.m52
+
+m56 =
+    Spacing.m56
+
+m60 =
+    Spacing.m60
+
+m64 =
+    Spacing.m64
+
+m72 =
+    Spacing.m72
+
+m80 =
+    Spacing.m80
+
+m96 =
+    Spacing.m96
 
 mAuto =
     Spacing.mAuto
@@ -339,11 +543,41 @@ mx3 =
 mx4 =
     Spacing.mx4
 
+mx5 =
+    Spacing.mx5
+
 mx6 =
     Spacing.mx6
 
+mx7 =
+    Spacing.mx7
+
 mx8 =
     Spacing.mx8
+
+mx9 =
+    Spacing.mx9
+
+mx10 =
+    Spacing.mx10
+
+mx11 =
+    Spacing.mx11
+
+mx12 =
+    Spacing.mx12
+
+mx14 =
+    Spacing.mx14
+
+mx16 =
+    Spacing.mx16
+
+mx20 =
+    Spacing.mx20
+
+mx24 =
+    Spacing.mx24
 
 mxAuto =
     Spacing.mxAuto
@@ -363,11 +597,41 @@ my3 =
 my4 =
     Spacing.my4
 
+my5 =
+    Spacing.my5
+
 my6 =
     Spacing.my6
 
+my7 =
+    Spacing.my7
+
 my8 =
     Spacing.my8
+
+my9 =
+    Spacing.my9
+
+my10 =
+    Spacing.my10
+
+my11 =
+    Spacing.my11
+
+my12 =
+    Spacing.my12
+
+my14 =
+    Spacing.my14
+
+my16 =
+    Spacing.my16
+
+my20 =
+    Spacing.my20
+
+my24 =
+    Spacing.my24
 
 mt0 =
     Spacing.mt0
@@ -511,14 +775,95 @@ gap5 =
 gap6 =
     Spacing.gap6
 
+gap7 =
+    Spacing.gap7
+
 gap8 =
     Spacing.gap8
+
+gap9 =
+    Spacing.gap9
 
 gap10 =
     Spacing.gap10
 
+gap11 =
+    Spacing.gap11
+
 gap12 =
     Spacing.gap12
+
+gap14 =
+    Spacing.gap14
+
+gap16 =
+    Spacing.gap16
+
+gap20 =
+    Spacing.gap20
+
+gap24 =
+    Spacing.gap24
+
+gapX0 =
+    Spacing.gapX0
+
+gapX1 =
+    Spacing.gapX1
+
+gapX2 =
+    Spacing.gapX2
+
+gapX3 =
+    Spacing.gapX3
+
+gapX4 =
+    Spacing.gapX4
+
+gapX5 =
+    Spacing.gapX5
+
+gapX6 =
+    Spacing.gapX6
+
+gapX8 =
+    Spacing.gapX8
+
+gapX10 =
+    Spacing.gapX10
+
+gapX12 =
+    Spacing.gapX12
+
+gapY0 =
+    Spacing.gapY0
+
+gapY1 =
+    Spacing.gapY1
+
+gapY2 =
+    Spacing.gapY2
+
+gapY3 =
+    Spacing.gapY3
+
+gapY4 =
+    Spacing.gapY4
+
+gapY5 =
+    Spacing.gapY5
+
+gapY6 =
+    Spacing.gapY6
+
+gapY8 =
+    Spacing.gapY8
+
+gapY10 =
+    Spacing.gapY10
+
+gapY12 =
+    Spacing.gapY12
 
 -- Typography: Font Size
 textXs =
@@ -651,6 +996,18 @@ textGray800 =
 textGray900 =
     Typography.textGray900
 
+textRed100 =
+    Typography.textRed100
+
+textRed200 =
+    Typography.textRed200
+
+textRed300 =
+    Typography.textRed300
+
+textRed400 =
+    Typography.textRed400
+
 textRed500 =
     Typography.textRed500
 
@@ -660,11 +1017,38 @@ textRed600 =
 textRed700 =
     Typography.textRed700
 
+textRed800 =
+    Typography.textRed800
+
+textRed900 =
+    Typography.textRed900
+
+textOrange400 =
+    Typography.textOrange400
+
 textOrange500 =
     Typography.textOrange500
 
+textOrange600 =
+    Typography.textOrange600
+
+textOrange700 =
+    Typography.textOrange700
+
+textYellow400 =
+    Typography.textYellow400
+
 textYellow500 =
     Typography.textYellow500
+
+textYellow600 =
+    Typography.textYellow600
+
+textYellow700 =
+    Typography.textYellow700
+
+textGreen400 =
+    Typography.textGreen400
 
 textGreen500 =
     Typography.textGreen500
@@ -675,8 +1059,20 @@ textGreen600 =
 textGreen700 =
     Typography.textGreen700
 
+textGreen800 =
+    Typography.textGreen800
+
 textBlue100 =
     Typography.textBlue100
+
+textBlue200 =
+    Typography.textBlue200
+
+textBlue300 =
+    Typography.textBlue300
+
+textBlue400 =
+    Typography.textBlue400
 
 textBlue500 =
     Typography.textBlue500
@@ -687,11 +1083,26 @@ textBlue600 =
 textBlue700 =
     Typography.textBlue700
 
+textBlue800 =
+    Typography.textBlue800
+
+textBlue900 =
+    Typography.textBlue900
+
+textIndigo400 =
+    Typography.textIndigo400
+
 textIndigo500 =
     Typography.textIndigo500
 
 textIndigo600 =
     Typography.textIndigo600
+
+textIndigo700 =
+    Typography.textIndigo700
+
+textPurple400 =
+    Typography.textPurple400
 
 textPurple500 =
     Typography.textPurple500
@@ -699,8 +1110,108 @@ textPurple500 =
 textPurple600 =
     Typography.textPurple600
 
+textPurple700 =
+    Typography.textPurple700
+
+textPink400 =
+    Typography.textPink400
+
 textPink500 =
     Typography.textPink500
+
+textPink600 =
+    Typography.textPink600
+
+textTeal400 =
+    Typography.textTeal400
+
+textTeal500 =
+    Typography.textTeal500
+
+textTeal600 =
+    Typography.textTeal600
+
+textTeal700 =
+    Typography.textTeal700
+
+textCyan400 =
+    Typography.textCyan400
+
+textCyan500 =
+    Typography.textCyan500
+
+textCyan600 =
+    Typography.textCyan600
+
+textCyan700 =
+    Typography.textCyan700
+
+textEmerald400 =
+    Typography.textEmerald400
+
+textEmerald500 =
+    Typography.textEmerald500
+
+textEmerald600 =
+    Typography.textEmerald600
+
+textEmerald700 =
+    Typography.textEmerald700
+
+textViolet400 =
+    Typography.textViolet400
+
+textViolet500 =
+    Typography.textViolet500
+
+textViolet600 =
+    Typography.textViolet600
+
+textViolet700 =
+    Typography.textViolet700
+
+textFuchsia400 =
+    Typography.textFuchsia400
+
+textFuchsia500 =
+    Typography.textFuchsia500
+
+textFuchsia600 =
+    Typography.textFuchsia600
+
+textFuchsia700 =
+    Typography.textFuchsia700
+
+textRose400 =
+    Typography.textRose400
+
+textRose500 =
+    Typography.textRose500
+
+textRose600 =
+    Typography.textRose600
+
+textRose700 =
+    Typography.textRose700
+
+-- Typography: Vertical Align
+alignBaseline =
+    Typography.alignBaseline
+
+alignTop =
+    Typography.alignTop
+
+alignMiddle =
+    Typography.alignMiddle
+
+alignBottom =
+    Typography.alignBottom
+
+alignTextTop =
+    Typography.alignTextTop
+
+alignTextBottom =
+    Typography.alignTextBottom
 
 -- Typography: Text Decoration
 underline =
@@ -840,6 +1351,9 @@ sticky =
 inset0 =
     Layout.inset0
 
+insetAuto =
+    Layout.insetAuto
+
 insetX0 =
     Layout.insetX0
 
@@ -855,17 +1369,71 @@ top1 =
 top2 =
     Layout.top2
 
+top3 =
+    Layout.top3
+
 top4 =
     Layout.top4
+
+top5 =
+    Layout.top5
+
+top6 =
+    Layout.top6
+
+top8 =
+    Layout.top8
+
+top10 =
+    Layout.top10
+
+top12 =
+    Layout.top12
 
 right0 =
     Layout.right0
 
+right1 =
+    Layout.right1
+
+right2 =
+    Layout.right2
+
+right3 =
+    Layout.right3
+
+right4 =
+    Layout.right4
+
 bottom0 =
     Layout.bottom0
 
+bottom1 =
+    Layout.bottom1
+
+bottom2 =
+    Layout.bottom2
+
+bottom3 =
+    Layout.bottom3
+
+bottom4 =
+    Layout.bottom4
+
 left0 =
     Layout.left0
+
+left1 =
+    Layout.left1
+
+left2 =
+    Layout.left2
+
+left3 =
+    Layout.left3
+
+left4 =
+    Layout.left4
 
 -- Layout: Z-Index
 z0 =
@@ -924,14 +1492,38 @@ w1 =
 w2 =
     Layout.w2
 
+w3 =
+    Layout.w3
+
 w4 =
     Layout.w4
+
+w5 =
+    Layout.w5
+
+w6 =
+    Layout.w6
+
+w7 =
+    Layout.w7
 
 w8 =
     Layout.w8
 
+w9 =
+    Layout.w9
+
+w10 =
+    Layout.w10
+
+w11 =
+    Layout.w11
+
 w12 =
     Layout.w12
+
+w14 =
+    Layout.w14
 
 w16 =
     Layout.w16
@@ -942,20 +1534,44 @@ w20 =
 w24 =
     Layout.w24
 
+w28 =
+    Layout.w28
+
 w32 =
     Layout.w32
+
+w36 =
+    Layout.w36
 
 w40 =
     Layout.w40
 
+w44 =
+    Layout.w44
+
 w48 =
     Layout.w48
+
+w52 =
+    Layout.w52
 
 w56 =
     Layout.w56
 
+w60 =
+    Layout.w60
+
 w64 =
     Layout.w64
+
+w72 =
+    Layout.w72
+
+w80 =
+    Layout.w80
+
+w96 =
+    Layout.w96
 
 wAuto =
     Layout.wAuto
@@ -1000,29 +1616,86 @@ h1 =
 h2 =
     Layout.h2
 
+h3 =
+    Layout.h3
+
 h4 =
     Layout.h4
+
+h5 =
+    Layout.h5
+
+h6 =
+    Layout.h6
+
+h7 =
+    Layout.h7
 
 h8 =
     Layout.h8
 
+h9 =
+    Layout.h9
+
+h10 =
+    Layout.h10
+
+h11 =
+    Layout.h11
+
 h12 =
     Layout.h12
+
+h14 =
+    Layout.h14
 
 h16 =
     Layout.h16
 
+h20 =
+    Layout.h20
+
 h24 =
     Layout.h24
+
+h28 =
+    Layout.h28
 
 h32 =
     Layout.h32
 
+h36 =
+    Layout.h36
+
+h40 =
+    Layout.h40
+
+h44 =
+    Layout.h44
+
 h48 =
     Layout.h48
 
+h52 =
+    Layout.h52
+
+h56 =
+    Layout.h56
+
+h60 =
+    Layout.h60
+
 h64 =
     Layout.h64
+
+h72 =
+    Layout.h72
+
+h80 =
+    Layout.h80
+
+h96 =
+    Layout.h96
 
 hAuto =
     Layout.hAuto
@@ -1048,6 +1721,12 @@ minW0 =
 
 minWFull =
     Layout.minWFull
+
+minWMin =
+    Layout.minWMin
+
+minWMax =
+    Layout.minWMax
 
 maxWNone =
     Layout.maxWNone
@@ -1822,6 +2501,9 @@ borderBlack =
 borderWhite =
     Border_.borderWhite
 
+borderGray50 =
+    Border_.borderGray50
+
 borderGray100 =
     Border_.borderGray100
 
@@ -1846,14 +2528,143 @@ borderGray700 =
 borderGray800 =
     Border_.borderGray800
 
+borderGray900 =
+    Border_.borderGray900
+
+borderRed100 =
+    Border_.borderRed100
+
+borderRed200 =
+    Border_.borderRed200
+
+borderRed300 =
+    Border_.borderRed300
+
+borderRed400 =
+    Border_.borderRed400
+
 borderRed500 =
     Border_.borderRed500
+
+borderRed600 =
+    Border_.borderRed600
+
+borderRed700 =
+    Border_.borderRed700
+
+borderRed800 =
+    Border_.borderRed800
+
+borderBlue100 =
+    Border_.borderBlue100
+
+borderBlue200 =
+    Border_.borderBlue200
+
+borderBlue300 =
+    Border_.borderBlue300
+
+borderBlue400 =
+    Border_.borderBlue400
 
 borderBlue500 =
     Border_.borderBlue500
 
+borderBlue600 =
+    Border_.borderBlue600
+
+borderBlue700 =
+    Border_.borderBlue700
+
+borderBlue800 =
+    Border_.borderBlue800
+
+borderGreen100 =
+    Border_.borderGreen100
+
+borderGreen200 =
+    Border_.borderGreen200
+
+borderGreen300 =
+    Border_.borderGreen300
+
+borderGreen400 =
+    Border_.borderGreen400
+
 borderGreen500 =
     Border_.borderGreen500
+
+borderGreen600 =
+    Border_.borderGreen600
+
+borderGreen700 =
+    Border_.borderGreen700
+
+borderGreen800 =
+    Border_.borderGreen800
+
+borderYellow200 =
+    Border_.borderYellow200
+
+borderYellow300 =
+    Border_.borderYellow300
+
+borderYellow400 =
+    Border_.borderYellow400
+
+borderYellow500 =
+    Border_.borderYellow500
+
+borderYellow600 =
+    Border_.borderYellow600
+
+borderIndigo500 =
+    Border_.borderIndigo500
+
+borderIndigo600 =
+    Border_.borderIndigo600
+
+borderPurple500 =
+    Border_.borderPurple500
+
+borderPurple600 =
+    Border_.borderPurple600
+
+borderOrange500 =
+    Border_.borderOrange500
+
+borderPink500 =
+    Border_.borderPink500
+
+borderSlate200 =
+    Border_.borderSlate200
+
+borderSlate300 =
+    Border_.borderSlate300
+
+borderSlate400 =
+    Border_.borderSlate400
+
+borderAmber500 =
+    Border_.borderAmber500
+
+borderTeal500 =
+    Border_.borderTeal500
+
+borderCyan500 =
+    Border_.borderCyan500
+
+borderSky500 =
+    Border_.borderSky500
+
+borderEmerald500 =
+    Border_.borderEmerald500
+
+borderViolet500 =
+    Border_.borderViolet500
+
+borderRose500 =
+    Border_.borderRose500
 
 -- Border: Style
 borderSolid =

@@ -69,6 +69,10 @@ borderWhite : ( String, String )
 borderWhite =
     cls "border-white"
 
+borderGray50 : ( String, String )
+borderGray50 =
+    cls "border-gray-50"
+
 borderGray100 : ( String, String )
 borderGray100 =
     cls "border-gray-100"
@@ -101,17 +105,137 @@ borderGray800 : ( String, String )
 borderGray800 =
     cls "border-gray-800"
 
+borderGray900 : ( String, String )
+borderGray900 =
+    cls "border-gray-900"
+
+borderRed100 : ( String, String )
+borderRed100 =
+    cls "border-red-100"
+
+borderRed200 : ( String, String )
+borderRed200 =
+    cls "border-red-200"
+
+borderRed300 : ( String, String )
+borderRed300 =
+    cls "border-red-300"
+
+borderRed400 : ( String, String )
+borderRed400 =
+    cls "border-red-400"
+
 borderRed500 : ( String, String )
 borderRed500 =
     cls "border-red-500"
+
+borderRed600 : ( String, String )
+borderRed600 =
+    cls "border-red-600"
+
+borderRed700 : ( String, String )
+borderRed700 =
+    cls "border-red-700"
+
+borderRed800 : ( String, String )
+borderRed800 =
+    cls "border-red-800"
+
+borderBlue100 : ( String, String )
+borderBlue100 =
+    cls "border-blue-100"
+
+borderBlue200 : ( String, String )
+borderBlue200 =
+    cls "border-blue-200"
+
+borderBlue300 : ( String, String )
+borderBlue300 =
+    cls "border-blue-300"
+
+borderBlue400 : ( String, String )
+borderBlue400 =
+    cls "border-blue-400"
 
 borderBlue500 : ( String, String )
 borderBlue500 =
     cls "border-blue-500"
 
+borderBlue600 : ( String, String )
+borderBlue600 =
+    cls "border-blue-600"
+
+borderBlue700 : ( String, String )
+borderBlue700 =
+    cls "border-blue-700"
+
+borderBlue800 : ( String, String )
+borderBlue800 =
+    cls "border-blue-800"
+
+borderGreen100 : ( String, String )
+borderGreen100 =
+    cls "border-green-100"
+
+borderGreen200 : ( String, String )
+borderGreen200 =
+    cls "border-green-200"
+
+borderGreen300 : ( String, String )
+borderGreen300 =
+    cls "border-green-300"
+
+borderGreen400 : ( String, String )
+borderGreen400 =
+    cls "border-green-400"
+
 borderGreen500 : ( String, String )
 borderGreen500 =
     cls "border-green-500"
+
+borderGreen600 : ( String, String )
+borderGreen600 =
+    cls "border-green-600"
+
+borderGreen700 : ( String, String )
+borderGreen700 =
+    cls "border-green-700"
+
+borderGreen800 : ( String, String )
+borderGreen800 =
+    cls "border-green-800"
+
+-- Yellow
+borderYellow200 : ( String, String )
+borderYellow200 =
+    cls "border-yellow-200"
+
+borderYellow300 : ( String, String )
+borderYellow300 =
+    cls "border-yellow-300"
+
+borderYellow400 : ( String, String )
+borderYellow400 =
+    cls "border-yellow-400"
+
+borderYellow600 : ( String, String )
+borderYellow600 =
+    cls "border-yellow-600"
+
+-- Indigo
+borderIndigo600 : ( String, String )
+borderIndigo600 =
+    cls "border-indigo-600"
+
+-- Purple
+borderPurple600 : ( String, String )
+borderPurple600 =
+    cls "border-purple-600"
+
+-- Pink
+borderPink500 : ( String, String )
+borderPink500 =
+    cls "border-pink-500"
 
 -- Border Style
 borderSolid : ( String, String )

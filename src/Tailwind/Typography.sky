@@ -176,6 +176,22 @@ textGray900 : ( String, String )
 textGray900 =
     cls "text-gray-900"
 
+textRed100 : ( String, String )
+textRed100 =
+    cls "text-red-100"
+
+textRed200 : ( String, String )
+textRed200 =
+    cls "text-red-200"
+
+textRed300 : ( String, String )
+textRed300 =
+    cls "text-red-300"
+
+textRed400 : ( String, String )
+textRed400 =
+    cls "text-red-400"
+
 textRed500 : ( String, String )
 textRed500 =
     cls "text-red-500"
@@ -188,13 +204,49 @@ textRed700 : ( String, String )
 textRed700 =
     cls "text-red-700"
 
+textRed800 : ( String, String )
+textRed800 =
+    cls "text-red-800"
+
+textRed900 : ( String, String )
+textRed900 =
+    cls "text-red-900"
+
+textOrange400 : ( String, String )
+textOrange400 =
+    cls "text-orange-400"
+
 textOrange500 : ( String, String )
 textOrange500 =
     cls "text-orange-500"
 
+textOrange600 : ( String, String )
+textOrange600 =
+    cls "text-orange-600"
+
+textOrange700 : ( String, String )
+textOrange700 =
+    cls "text-orange-700"
+
+textYellow400 : ( String, String )
+textYellow400 =
+    cls "text-yellow-400"
+
 textYellow500 : ( String, String )
 textYellow500 =
     cls "text-yellow-500"
+
+textYellow600 : ( String, String )
+textYellow600 =
+    cls "text-yellow-600"
+
+textYellow700 : ( String, String )
+textYellow700 =
+    cls "text-yellow-700"
+
+textGreen400 : ( String, String )
+textGreen400 =
+    cls "text-green-400"
 
 textGreen500 : ( String, String )
 textGreen500 =
@@ -208,9 +260,25 @@ textGreen700 : ( String, String )
 textGreen700 =
     cls "text-green-700"
 
+textGreen800 : ( String, String )
+textGreen800 =
+    cls "text-green-800"
+
 textBlue100 : ( String, String )
 textBlue100 =
     cls "text-blue-100"
+
+textBlue200 : ( String, String )
+textBlue200 =
+    cls "text-blue-200"
+
+textBlue300 : ( String, String )
+textBlue300 =
+    cls "text-blue-300"
+
+textBlue400 : ( String, String )
+textBlue400 =
+    cls "text-blue-400"
 
 textBlue500 : ( String, String )
 textBlue500 =
@@ -224,6 +292,18 @@ textBlue700 : ( String, String )
 textBlue700 =
     cls "text-blue-700"
 
+textBlue800 : ( String, String )
+textBlue800 =
+    cls "text-blue-800"
+
+textBlue900 : ( String, String )
+textBlue900 =
+    cls "text-blue-900"
+
+textIndigo400 : ( String, String )
+textIndigo400 =
+    cls "text-indigo-400"
+
 textIndigo500 : ( String, String )
 textIndigo500 =
     cls "text-indigo-500"
@@ -231,6 +311,14 @@ textIndigo500 =
 textIndigo600 : ( String, String )
 textIndigo600 =
     cls "text-indigo-600"
+
+textIndigo700 : ( String, String )
+textIndigo700 =
+    cls "text-indigo-700"
+
+textPurple400 : ( String, String )
+textPurple400 =
+    cls "text-purple-400"
 
 textPurple500 : ( String, String )
 textPurple500 =
@@ -240,9 +328,21 @@ textPurple600 : ( String, String )
 textPurple600 =
     cls "text-purple-600"
 
+textPurple700 : ( String, String )
+textPurple700 =
+    cls "text-purple-700"
+
+textPink400 : ( String, String )
+textPink400 =
+    cls "text-pink-400"
+
 textPink500 : ( String, String )
 textPink500 =
     cls "text-pink-500"
+
+textPink600 : ( String, String )
+textPink600 =
+    cls "text-pink-600"
 
 -- Text Decoration
 underline : ( String, String )
@@ -368,6 +468,10 @@ textAmber700 =
     cls "text-amber-700"
 
 -- Teal
+textTeal400 : ( String, String )
+textTeal400 =
+    cls "text-teal-400"
+
 textTeal500 : ( String, String )
 textTeal500 =
     cls "text-teal-500"
@@ -381,6 +485,10 @@ textTeal700 =
     cls "text-teal-700"
 
 -- Cyan
+textCyan400 : ( String, String )
+textCyan400 =
+    cls "text-cyan-400"
+
 textCyan500 : ( String, String )
 textCyan500 =
     cls "text-cyan-500"
@@ -407,6 +515,10 @@ textSky700 =
     cls "text-sky-700"
 
 -- Emerald
+textEmerald400 : ( String, String )
+textEmerald400 =
+    cls "text-emerald-400"
+
 textEmerald500 : ( String, String )
 textEmerald500 =
     cls "text-emerald-500"
@@ -420,6 +532,10 @@ textEmerald700 =
     cls "text-emerald-700"
 
 -- Violet
+textViolet400 : ( String, String )
+textViolet400 =
+    cls "text-violet-400"
+
 textViolet500 : ( String, String )
 textViolet500 =
     cls "text-violet-500"
@@ -433,6 +549,10 @@ textViolet700 =
     cls "text-violet-700"
 
 -- Rose
+textRose400 : ( String, String )
+textRose400 =
+    cls "text-rose-400"
+
 textRose500 : ( String, String )
 textRose500 =
     cls "text-rose-500"
@@ -446,6 +566,10 @@ textRose700 =
     cls "text-rose-700"
 
 -- Fuchsia
+textFuchsia400 : ( String, String )
+textFuchsia400 =
+    cls "text-fuchsia-400"
+
 textFuchsia500 : ( String, String )
 textFuchsia500 =
     cls "text-fuchsia-500"
@@ -596,6 +720,31 @@ textBalance =
 textPretty : ( String, String )
 textPretty =
     cls "text-pretty"
+
+-- Vertical Align
+alignBaseline : ( String, String )
+alignBaseline =
+    cls "align-baseline"
+
+alignTop : ( String, String )
+alignTop =
+    cls "align-top"
+
+alignMiddle : ( String, String )
+alignMiddle =
+    cls "align-middle"
+
+alignBottom : ( String, String )
+alignBottom =
+    cls "align-bottom"
+
+alignTextTop : ( String, String )
+alignTextTop =
+    cls "align-text-top"
+
+alignTextBottom : ( String, String )
+alignTextBottom =
+    cls "align-text-bottom"
 
 -- Content
 contentNone : ( String, String )

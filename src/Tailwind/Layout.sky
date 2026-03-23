@@ -74,6 +74,10 @@ inset0 : ( String, String )
 inset0 =
     cls "inset-0"
 
+insetAuto : ( String, String )
+insetAuto =
+    cls "inset-auto"
+
 insetX0 : ( String, String )
 insetX0 =
     cls "inset-x-0"
@@ -94,21 +98,93 @@ top2 : ( String, String )
 top2 =
     cls "top-2"
 
+top3 : ( String, String )
+top3 =
+    cls "top-3"
+
 top4 : ( String, String )
 top4 =
     cls "top-4"
+
+top5 : ( String, String )
+top5 =
+    cls "top-5"
+
+top6 : ( String, String )
+top6 =
+    cls "top-6"
+
+top8 : ( String, String )
+top8 =
+    cls "top-8"
+
+top10 : ( String, String )
+top10 =
+    cls "top-10"
+
+top12 : ( String, String )
+top12 =
+    cls "top-12"
 
 right0 : ( String, String )
 right0 =
     cls "right-0"
 
+right1 : ( String, String )
+right1 =
+    cls "right-1"
+
+right2 : ( String, String )
+right2 =
+    cls "right-2"
+
+right3 : ( String, String )
+right3 =
+    cls "right-3"
+
+right4 : ( String, String )
+right4 =
+    cls "right-4"
+
 bottom0 : ( String, String )
 bottom0 =
     cls "bottom-0"
 
+bottom1 : ( String, String )
+bottom1 =
+    cls "bottom-1"
+
+bottom2 : ( String, String )
+bottom2 =
+    cls "bottom-2"
+
+bottom3 : ( String, String )
+bottom3 =
+    cls "bottom-3"
+
+bottom4 : ( String, String )
+bottom4 =
+    cls "bottom-4"
+
 left0 : ( String, String )
 left0 =
     cls "left-0"
+
+left1 : ( String, String )
+left1 =
+    cls "left-1"
+
+left2 : ( String, String )
+left2 =
+    cls "left-2"
+
+left3 : ( String, String )
+left3 =
+    cls "left-3"
+
+left4 : ( String, String )
+left4 =
+    cls "left-4"
 
 -- Z-Index
 z0 : ( String, String )
@@ -185,17 +261,49 @@ w2 : ( String, String )
 w2 =
     cls "w-2"
 
+w3 : ( String, String )
+w3 =
+    cls "w-3"
+
 w4 : ( String, String )
 w4 =
     cls "w-4"
+
+w5 : ( String, String )
+w5 =
+    cls "w-5"
+
+w6 : ( String, String )
+w6 =
+    cls "w-6"
+
+w7 : ( String, String )
+w7 =
+    cls "w-7"
 
 w8 : ( String, String )
 w8 =
     cls "w-8"
 
+w9 : ( String, String )
+w9 =
+    cls "w-9"
+
+w10 : ( String, String )
+w10 =
+    cls "w-10"
+
+w11 : ( String, String )
+w11 =
+    cls "w-11"
+
 w12 : ( String, String )
 w12 =
     cls "w-12"
+
+w14 : ( String, String )
+w14 =
+    cls "w-14"
 
 w16 : ( String, String )
 w16 =
@@ -209,25 +317,57 @@ w24 : ( String, String )
 w24 =
     cls "w-24"
 
+w28 : ( String, String )
+w28 =
+    cls "w-28"
+
 w32 : ( String, String )
 w32 =
     cls "w-32"
+
+w36 : ( String, String )
+w36 =
+    cls "w-36"
 
 w40 : ( String, String )
 w40 =
     cls "w-40"
 
+w44 : ( String, String )
+w44 =
+    cls "w-44"
+
 w48 : ( String, String )
 w48 =
     cls "w-48"
+
+w52 : ( String, String )
+w52 =
+    cls "w-52"
 
 w56 : ( String, String )
 w56 =
     cls "w-56"
 
+w60 : ( String, String )
+w60 =
+    cls "w-60"
+
 w64 : ( String, String )
 w64 =
     cls "w-64"
+
+w72 : ( String, String )
+w72 =
+    cls "w-72"
+
+w80 : ( String, String )
+w80 =
+    cls "w-80"
+
+w96 : ( String, String )
+w96 =
+    cls "w-96"
 
 wAuto : ( String, String )
 wAuto =
@@ -286,37 +426,113 @@ h2 : ( String, String )
 h2 =
     cls "h-2"
 
+h3 : ( String, String )
+h3 =
+    cls "h-3"
+
 h4 : ( String, String )
 h4 =
     cls "h-4"
+
+h5 : ( String, String )
+h5 =
+    cls "h-5"
+
+h6 : ( String, String )
+h6 =
+    cls "h-6"
+
+h7 : ( String, String )
+h7 =
+    cls "h-7"
 
 h8 : ( String, String )
 h8 =
     cls "h-8"
 
+h9 : ( String, String )
+h9 =
+    cls "h-9"
+
+h10 : ( String, String )
+h10 =
+    cls "h-10"
+
+h11 : ( String, String )
+h11 =
+    cls "h-11"
+
 h12 : ( String, String )
 h12 =
     cls "h-12"
+
+h14 : ( String, String )
+h14 =
+    cls "h-14"
 
 h16 : ( String, String )
 h16 =
     cls "h-16"
 
+h20 : ( String, String )
+h20 =
+    cls "h-20"
+
 h24 : ( String, String )
 h24 =
     cls "h-24"
+
+h28 : ( String, String )
+h28 =
+    cls "h-28"
 
 h32 : ( String, String )
 h32 =
     cls "h-32"
 
+h36 : ( String, String )
+h36 =
+    cls "h-36"
+
+h40 : ( String, String )
+h40 =
+    cls "h-40"
+
+h44 : ( String, String )
+h44 =
+    cls "h-44"
+
 h48 : ( String, String )
 h48 =
     cls "h-48"
 
+h52 : ( String, String )
+h52 =
+    cls "h-52"
+
+h56 : ( String, String )
+h56 =
+    cls "h-56"
+
+h60 : ( String, String )
+h60 =
+    cls "h-60"
+
 h64 : ( String, String )
 h64 =
     cls "h-64"
+
+h72 : ( String, String )
+h72 =
+    cls "h-72"
+
+h80 : ( String, String )
+h80 =
+    cls "h-80"
+
+h96 : ( String, String )
+h96 =
+    cls "h-96"
 
 hAuto : ( String, String )
 hAuto =
@@ -350,6 +566,14 @@ minW0 =
 minWFull : ( String, String )
 minWFull =
     cls "min-w-full"
+
+minWMin : ( String, String )
+minWMin =
+    cls "min-w-min"
+
+minWMax : ( String, String )
+minWMax =
+    cls "min-w-max"
 
 maxWNone : ( String, String )
 maxWNone =
