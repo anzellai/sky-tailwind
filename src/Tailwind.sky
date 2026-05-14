@@ -4,6 +4,7 @@ import Sky.Core.Prelude exposing (..)
 import Sky.Core.String as String
 import Sky.Core.List as List
 import Std.Html exposing (styleNode)
+import Std.Html.Attributes as Attrs
 import Tailwind.Internal.Css as Css
 import Tailwind.Spacing as Spacing
 import Tailwind.Typography as Typography
@@ -28,11 +29,9 @@ import Tailwind.RingColor as RingColor
 import Tailwind.Svg as Svg
 import Tailwind.Tables as Tables
 
-styles : VNode
 styles =
     styleNode [] Css.allRules
 
-tw : List (( String, String )) -> ( String, String )
 tw attrs =
     let
         classes =
@@ -40,9 +39,8 @@ tw attrs =
                 |> List.map (\( _, v ) -> v)
                 |> String.join " "
     in
-        ( "class" , classes )
+        Attrs.attribute "class" classes
 
-twWith : String -> List (( String, String )) -> ( String, String )
 twWith extra attrs =
     let
         classes =
@@ -50,7 +48,7 @@ twWith extra attrs =
                 |> List.map (\( _, v ) -> v)
                 |> String.join " "
     in
-        ( "class" , classes ++ " " ++ extra )
+        Attrs.attribute "class" (classes ++ " " ++ extra)
 
 -- Spacing: Padding
 p0 =

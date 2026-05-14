@@ -1,4 +1,5 @@
 # Sky build artifacts
+sky-out/
 dist/
 .skycache/
 .skydeps/
