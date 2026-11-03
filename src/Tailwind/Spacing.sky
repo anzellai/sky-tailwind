@@ -3,1098 +3,1368 @@ module Tailwind.Spacing exposing (..)
 import Sky.Core.Prelude exposing (..)
 import Tailwind.Internal.Classes exposing (cls)
 
+
 -- Padding
 p0 : ( String, String )
 p0 =
     cls "p-0"
 
+
 p1 : ( String, String )
 p1 =
     cls "p-1"
+
 
 p2 : ( String, String )
 p2 =
     cls "p-2"
 
+
 p3 : ( String, String )
 p3 =
     cls "p-3"
+
 
 p4 : ( String, String )
 p4 =
     cls "p-4"
 
+
 p5 : ( String, String )
 p5 =
     cls "p-5"
+
 
 p6 : ( String, String )
 p6 =
     cls "p-6"
 
+
 p7 : ( String, String )
 p7 =
     cls "p-7"
+
 
 p8 : ( String, String )
 p8 =
     cls "p-8"
 
+
 p9 : ( String, String )
 p9 =
     cls "p-9"
+
 
 p10 : ( String, String )
 p10 =
     cls "p-10"
 
+
 p11 : ( String, String )
 p11 =
     cls "p-11"
+
 
 p12 : ( String, String )
 p12 =
     cls "p-12"
 
+
 p14 : ( String, String )
 p14 =
     cls "p-14"
+
 
 p16 : ( String, String )
 p16 =
     cls "p-16"
 
+
 p20 : ( String, String )
 p20 =
     cls "p-20"
+
 
 p24 : ( String, String )
 p24 =
     cls "p-24"
 
+
 p28 : ( String, String )
 p28 =
     cls "p-28"
+
 
 p32 : ( String, String )
 p32 =
     cls "p-32"
 
+
 p36 : ( String, String )
 p36 =
     cls "p-36"
+
 
 p40 : ( String, String )
 p40 =
     cls "p-40"
 
+
 p44 : ( String, String )
 p44 =
     cls "p-44"
+
 
 p48 : ( String, String )
 p48 =
     cls "p-48"
 
+
 p52 : ( String, String )
 p52 =
     cls "p-52"
+
 
 p56 : ( String, String )
 p56 =
     cls "p-56"
 
+
 p60 : ( String, String )
 p60 =
     cls "p-60"
+
 
 p64 : ( String, String )
 p64 =
     cls "p-64"
 
+
 p72 : ( String, String )
 p72 =
     cls "p-72"
+
 
 p80 : ( String, String )
 p80 =
     cls "p-80"
 
+
 p96 : ( String, String )
 p96 =
     cls "p-96"
+
 
 -- Padding X
 px0 : ( String, String )
 px0 =
     cls "px-0"
 
+
 px1 : ( String, String )
 px1 =
     cls "px-1"
+
 
 px2 : ( String, String )
 px2 =
     cls "px-2"
 
+
 px3 : ( String, String )
 px3 =
     cls "px-3"
+
 
 px4 : ( String, String )
 px4 =
     cls "px-4"
 
+
 px5 : ( String, String )
 px5 =
     cls "px-5"
+
 
 px6 : ( String, String )
 px6 =
     cls "px-6"
 
+
 px7 : ( String, String )
 px7 =
     cls "px-7"
+
 
 px8 : ( String, String )
 px8 =
     cls "px-8"
 
+
 px9 : ( String, String )
 px9 =
     cls "px-9"
+
 
 px10 : ( String, String )
 px10 =
     cls "px-10"
 
+
 px11 : ( String, String )
 px11 =
     cls "px-11"
+
 
 px12 : ( String, String )
 px12 =
     cls "px-12"
 
+
 px14 : ( String, String )
 px14 =
     cls "px-14"
+
 
 px16 : ( String, String )
 px16 =
     cls "px-16"
 
+
 px20 : ( String, String )
 px20 =
     cls "px-20"
+
 
 px24 : ( String, String )
 px24 =
     cls "px-24"
 
+
 px28 : ( String, String )
 px28 =
     cls "px-28"
+
 
 px32 : ( String, String )
 px32 =
     cls "px-32"
 
+
 px36 : ( String, String )
 px36 =
     cls "px-36"
+
 
 px40 : ( String, String )
 px40 =
     cls "px-40"
 
+
 px44 : ( String, String )
 px44 =
     cls "px-44"
+
 
 px48 : ( String, String )
 px48 =
     cls "px-48"
 
+
 px52 : ( String, String )
 px52 =
     cls "px-52"
+
 
 px56 : ( String, String )
 px56 =
     cls "px-56"
 
+
 px60 : ( String, String )
 px60 =
     cls "px-60"
+
 
 px64 : ( String, String )
 px64 =
     cls "px-64"
 
+
 px72 : ( String, String )
 px72 =
     cls "px-72"
+
 
 px80 : ( String, String )
 px80 =
     cls "px-80"
 
+
 px96 : ( String, String )
 px96 =
     cls "px-96"
+
 
 -- Padding Y
 py0 : ( String, String )
 py0 =
     cls "py-0"
 
+
 py1 : ( String, String )
 py1 =
     cls "py-1"
+
 
 py2 : ( String, String )
 py2 =
     cls "py-2"
 
+
 py3 : ( String, String )
 py3 =
     cls "py-3"
+
 
 py4 : ( String, String )
 py4 =
     cls "py-4"
 
+
 py5 : ( String, String )
 py5 =
     cls "py-5"
+
 
 py6 : ( String, String )
 py6 =
     cls "py-6"
 
+
 py7 : ( String, String )
 py7 =
     cls "py-7"
+
 
 py8 : ( String, String )
 py8 =
     cls "py-8"
 
+
 py9 : ( String, String )
 py9 =
     cls "py-9"
+
 
 py10 : ( String, String )
 py10 =
     cls "py-10"
 
+
 py11 : ( String, String )
 py11 =
     cls "py-11"
+
 
 py12 : ( String, String )
 py12 =
     cls "py-12"
 
+
 py14 : ( String, String )
 py14 =
     cls "py-14"
+
 
 py16 : ( String, String )
 py16 =
     cls "py-16"
 
+
 py20 : ( String, String )
 py20 =
     cls "py-20"
+
 
 py24 : ( String, String )
 py24 =
     cls "py-24"
 
+
 py28 : ( String, String )
 py28 =
     cls "py-28"
+
 
 py32 : ( String, String )
 py32 =
     cls "py-32"
 
+
 py36 : ( String, String )
 py36 =
     cls "py-36"
+
 
 py40 : ( String, String )
 py40 =
     cls "py-40"
 
+
 py44 : ( String, String )
 py44 =
     cls "py-44"
+
 
 py48 : ( String, String )
 py48 =
     cls "py-48"
 
+
 py52 : ( String, String )
 py52 =
     cls "py-52"
+
 
 py56 : ( String, String )
 py56 =
     cls "py-56"
 
+
 py60 : ( String, String )
 py60 =
     cls "py-60"
+
 
 py64 : ( String, String )
 py64 =
     cls "py-64"
 
+
 py72 : ( String, String )
 py72 =
     cls "py-72"
+
 
 py80 : ( String, String )
 py80 =
     cls "py-80"
 
+
 py96 : ( String, String )
 py96 =
     cls "py-96"
+
 
 -- Padding Top
 pt0 : ( String, String )
 pt0 =
     cls "pt-0"
 
+
 pt1 : ( String, String )
 pt1 =
     cls "pt-1"
+
 
 pt2 : ( String, String )
 pt2 =
     cls "pt-2"
 
+
 pt3 : ( String, String )
 pt3 =
     cls "pt-3"
+
 
 pt4 : ( String, String )
 pt4 =
     cls "pt-4"
 
+
 pt5 : ( String, String )
 pt5 =
     cls "pt-5"
+
 
 pt6 : ( String, String )
 pt6 =
     cls "pt-6"
 
+
 pt8 : ( String, String )
 pt8 =
     cls "pt-8"
+
 
 pt10 : ( String, String )
 pt10 =
     cls "pt-10"
 
+
 pt12 : ( String, String )
 pt12 =
     cls "pt-12"
+
 
 pt16 : ( String, String )
 pt16 =
     cls "pt-16"
 
+
 pt20 : ( String, String )
 pt20 =
     cls "pt-20"
 
+
 pt24 : ( String, String )
 pt24 =
     cls "pt-24"
+
 
 -- Padding Right
 pr0 : ( String, String )
 pr0 =
     cls "pr-0"
 
+
 pr1 : ( String, String )
 pr1 =
     cls "pr-1"
+
 
 pr2 : ( String, String )
 pr2 =
     cls "pr-2"
 
+
 pr3 : ( String, String )
 pr3 =
     cls "pr-3"
+
 
 pr4 : ( String, String )
 pr4 =
     cls "pr-4"
 
+
 pr5 : ( String, String )
 pr5 =
     cls "pr-5"
+
 
 pr6 : ( String, String )
 pr6 =
     cls "pr-6"
 
+
 pr8 : ( String, String )
 pr8 =
     cls "pr-8"
+
 
 -- Padding Bottom
 pb0 : ( String, String )
 pb0 =
     cls "pb-0"
 
+
 pb1 : ( String, String )
 pb1 =
     cls "pb-1"
+
 
 pb2 : ( String, String )
 pb2 =
     cls "pb-2"
 
+
 pb3 : ( String, String )
 pb3 =
     cls "pb-3"
+
 
 pb4 : ( String, String )
 pb4 =
     cls "pb-4"
 
+
 pb5 : ( String, String )
 pb5 =
     cls "pb-5"
+
 
 pb6 : ( String, String )
 pb6 =
     cls "pb-6"
 
+
 pb8 : ( String, String )
 pb8 =
     cls "pb-8"
+
 
 -- Padding Left
 pl0 : ( String, String )
 pl0 =
     cls "pl-0"
 
+
 pl1 : ( String, String )
 pl1 =
     cls "pl-1"
+
 
 pl2 : ( String, String )
 pl2 =
     cls "pl-2"
 
+
 pl3 : ( String, String )
 pl3 =
     cls "pl-3"
+
 
 pl4 : ( String, String )
 pl4 =
     cls "pl-4"
 
+
 pl5 : ( String, String )
 pl5 =
     cls "pl-5"
+
 
 pl6 : ( String, String )
 pl6 =
     cls "pl-6"
 
+
 pl8 : ( String, String )
 pl8 =
     cls "pl-8"
+
 
 -- Margin
 m0 : ( String, String )
 m0 =
     cls "m-0"
 
+
 m1 : ( String, String )
 m1 =
     cls "m-1"
+
 
 m2 : ( String, String )
 m2 =
     cls "m-2"
 
+
 m3 : ( String, String )
 m3 =
     cls "m-3"
+
 
 m4 : ( String, String )
 m4 =
     cls "m-4"
 
+
 m5 : ( String, String )
 m5 =
     cls "m-5"
+
 
 m6 : ( String, String )
 m6 =
     cls "m-6"
 
+
 m7 : ( String, String )
 m7 =
     cls "m-7"
+
 
 m8 : ( String, String )
 m8 =
     cls "m-8"
 
+
 m9 : ( String, String )
 m9 =
     cls "m-9"
+
 
 m10 : ( String, String )
 m10 =
     cls "m-10"
 
+
 m11 : ( String, String )
 m11 =
     cls "m-11"
+
 
 m12 : ( String, String )
 m12 =
     cls "m-12"
 
+
 m14 : ( String, String )
 m14 =
     cls "m-14"
+
 
 m16 : ( String, String )
 m16 =
     cls "m-16"
 
+
 m20 : ( String, String )
 m20 =
     cls "m-20"
+
 
 m24 : ( String, String )
 m24 =
     cls "m-24"
 
+
 m28 : ( String, String )
 m28 =
     cls "m-28"
+
 
 m32 : ( String, String )
 m32 =
     cls "m-32"
 
+
 m36 : ( String, String )
 m36 =
     cls "m-36"
+
 
 m40 : ( String, String )
 m40 =
     cls "m-40"
 
+
 m44 : ( String, String )
 m44 =
     cls "m-44"
+
 
 m48 : ( String, String )
 m48 =
     cls "m-48"
 
+
 m52 : ( String, String )
 m52 =
     cls "m-52"
+
 
 m56 : ( String, String )
 m56 =
     cls "m-56"
 
+
 m60 : ( String, String )
 m60 =
     cls "m-60"
+
 
 m64 : ( String, String )
 m64 =
     cls "m-64"
 
+
 m72 : ( String, String )
 m72 =
     cls "m-72"
+
 
 m80 : ( String, String )
 m80 =
     cls "m-80"
 
+
 m96 : ( String, String )
 m96 =
     cls "m-96"
 
+
 mAuto : ( String, String )
 mAuto =
     cls "m-auto"
+
 
 -- Margin X
 mx0 : ( String, String )
 mx0 =
     cls "mx-0"
 
+
 mx1 : ( String, String )
 mx1 =
     cls "mx-1"
+
 
 mx2 : ( String, String )
 mx2 =
     cls "mx-2"
 
+
 mx3 : ( String, String )
 mx3 =
     cls "mx-3"
+
 
 mx4 : ( String, String )
 mx4 =
     cls "mx-4"
 
+
 mx5 : ( String, String )
 mx5 =
     cls "mx-5"
+
 
 mx6 : ( String, String )
 mx6 =
     cls "mx-6"
 
+
 mx7 : ( String, String )
 mx7 =
     cls "mx-7"
+
 
 mx8 : ( String, String )
 mx8 =
     cls "mx-8"
 
+
 mx9 : ( String, String )
 mx9 =
     cls "mx-9"
+
 
 mx10 : ( String, String )
 mx10 =
     cls "mx-10"
 
+
 mx11 : ( String, String )
 mx11 =
     cls "mx-11"
+
 
 mx12 : ( String, String )
 mx12 =
     cls "mx-12"
 
+
 mx14 : ( String, String )
 mx14 =
     cls "mx-14"
+
 
 mx16 : ( String, String )
 mx16 =
     cls "mx-16"
 
+
 mx20 : ( String, String )
 mx20 =
     cls "mx-20"
+
 
 mx24 : ( String, String )
 mx24 =
     cls "mx-24"
 
+
 mxAuto : ( String, String )
 mxAuto =
     cls "mx-auto"
+
 
 -- Margin Y
 my0 : ( String, String )
 my0 =
     cls "my-0"
 
+
 my1 : ( String, String )
 my1 =
     cls "my-1"
+
 
 my2 : ( String, String )
 my2 =
     cls "my-2"
 
+
 my3 : ( String, String )
 my3 =
     cls "my-3"
+
 
 my4 : ( String, String )
 my4 =
     cls "my-4"
 
+
 my5 : ( String, String )
 my5 =
     cls "my-5"
+
 
 my6 : ( String, String )
 my6 =
     cls "my-6"
 
+
 my7 : ( String, String )
 my7 =
     cls "my-7"
+
 
 my8 : ( String, String )
 my8 =
     cls "my-8"
 
+
 my9 : ( String, String )
 my9 =
     cls "my-9"
+
 
 my10 : ( String, String )
 my10 =
     cls "my-10"
 
+
 my11 : ( String, String )
 my11 =
     cls "my-11"
+
 
 my12 : ( String, String )
 my12 =
     cls "my-12"
 
+
 my14 : ( String, String )
 my14 =
     cls "my-14"
+
 
 my16 : ( String, String )
 my16 =
     cls "my-16"
 
+
 my20 : ( String, String )
 my20 =
     cls "my-20"
 
+
 my24 : ( String, String )
 my24 =
     cls "my-24"
+
 
 -- Margin Top
 mt0 : ( String, String )
 mt0 =
     cls "mt-0"
 
+
 mt1 : ( String, String )
 mt1 =
     cls "mt-1"
+
 
 mt2 : ( String, String )
 mt2 =
     cls "mt-2"
 
+
 mt3 : ( String, String )
 mt3 =
     cls "mt-3"
+
 
 mt4 : ( String, String )
 mt4 =
     cls "mt-4"
 
+
 mt5 : ( String, String )
 mt5 =
     cls "mt-5"
+
 
 mt6 : ( String, String )
 mt6 =
     cls "mt-6"
 
+
 mt8 : ( String, String )
 mt8 =
     cls "mt-8"
+
 
 mt10 : ( String, String )
 mt10 =
     cls "mt-10"
 
+
 mt12 : ( String, String )
 mt12 =
     cls "mt-12"
+
 
 mt16 : ( String, String )
 mt16 =
     cls "mt-16"
 
+
 mt20 : ( String, String )
 mt20 =
     cls "mt-20"
+
 
 -- Margin Right
 mr0 : ( String, String )
 mr0 =
     cls "mr-0"
 
+
 mr1 : ( String, String )
 mr1 =
     cls "mr-1"
+
 
 mr2 : ( String, String )
 mr2 =
     cls "mr-2"
 
+
 mr3 : ( String, String )
 mr3 =
     cls "mr-3"
+
 
 mr4 : ( String, String )
 mr4 =
     cls "mr-4"
 
+
 mr6 : ( String, String )
 mr6 =
     cls "mr-6"
+
 
 mr8 : ( String, String )
 mr8 =
     cls "mr-8"
 
+
 mrAuto : ( String, String )
 mrAuto =
     cls "mr-auto"
+
 
 -- Margin Bottom
 mb0 : ( String, String )
 mb0 =
     cls "mb-0"
 
+
 mb1 : ( String, String )
 mb1 =
     cls "mb-1"
+
 
 mb2 : ( String, String )
 mb2 =
     cls "mb-2"
 
+
 mb3 : ( String, String )
 mb3 =
     cls "mb-3"
+
 
 mb4 : ( String, String )
 mb4 =
     cls "mb-4"
 
+
 mb5 : ( String, String )
 mb5 =
     cls "mb-5"
+
 
 mb6 : ( String, String )
 mb6 =
     cls "mb-6"
 
+
 mb8 : ( String, String )
 mb8 =
     cls "mb-8"
+
 
 mb10 : ( String, String )
 mb10 =
     cls "mb-10"
 
+
 mb12 : ( String, String )
 mb12 =
     cls "mb-12"
+
 
 mb16 : ( String, String )
 mb16 =
     cls "mb-16"
 
+
 mb20 : ( String, String )
 mb20 =
     cls "mb-20"
+
 
 -- Margin Left
 ml0 : ( String, String )
 ml0 =
     cls "ml-0"
 
+
 ml1 : ( String, String )
 ml1 =
     cls "ml-1"
+
 
 ml2 : ( String, String )
 ml2 =
     cls "ml-2"
 
+
 ml3 : ( String, String )
 ml3 =
     cls "ml-3"
+
 
 ml4 : ( String, String )
 ml4 =
     cls "ml-4"
 
+
 ml6 : ( String, String )
 ml6 =
     cls "ml-6"
+
 
 ml8 : ( String, String )
 ml8 =
     cls "ml-8"
 
+
 mlAuto : ( String, String )
 mlAuto =
     cls "ml-auto"
+
 
 -- Gap
 gap0 : ( String, String )
 gap0 =
     cls "gap-0"
 
+
 gap1 : ( String, String )
 gap1 =
     cls "gap-1"
+
 
 gap2 : ( String, String )
 gap2 =
     cls "gap-2"
 
+
 gap3 : ( String, String )
 gap3 =
     cls "gap-3"
+
 
 gap4 : ( String, String )
 gap4 =
     cls "gap-4"
 
+
 gap5 : ( String, String )
 gap5 =
     cls "gap-5"
+
 
 gap6 : ( String, String )
 gap6 =
     cls "gap-6"
 
+
 gap7 : ( String, String )
 gap7 =
     cls "gap-7"
+
 
 gap8 : ( String, String )
 gap8 =
     cls "gap-8"
 
+
 gap9 : ( String, String )
 gap9 =
     cls "gap-9"
+
 
 gap10 : ( String, String )
 gap10 =
     cls "gap-10"
 
+
 gap11 : ( String, String )
 gap11 =
     cls "gap-11"
+
 
 gap12 : ( String, String )
 gap12 =
     cls "gap-12"
 
+
 gap14 : ( String, String )
 gap14 =
     cls "gap-14"
+
 
 gap16 : ( String, String )
 gap16 =
     cls "gap-16"
 
+
 gap20 : ( String, String )
 gap20 =
     cls "gap-20"
 
+
 gap24 : ( String, String )
 gap24 =
     cls "gap-24"
+
 
 -- Gap X
 gapX0 : ( String, String )
 gapX0 =
     cls "gap-x-0"
 
+
 gapX1 : ( String, String )
 gapX1 =
     cls "gap-x-1"
+
 
 gapX2 : ( String, String )
 gapX2 =
     cls "gap-x-2"
 
+
 gapX3 : ( String, String )
 gapX3 =
     cls "gap-x-3"
+
 
 gapX4 : ( String, String )
 gapX4 =
     cls "gap-x-4"
 
+
 gapX5 : ( String, String )
 gapX5 =
     cls "gap-x-5"
+
 
 gapX6 : ( String, String )
 gapX6 =
     cls "gap-x-6"
 
+
 gapX8 : ( String, String )
 gapX8 =
     cls "gap-x-8"
+
 
 gapX10 : ( String, String )
 gapX10 =
     cls "gap-x-10"
 
+
 gapX12 : ( String, String )
 gapX12 =
     cls "gap-x-12"
+
 
 -- Gap Y
 gapY0 : ( String, String )
 gapY0 =
     cls "gap-y-0"
 
+
 gapY1 : ( String, String )
 gapY1 =
     cls "gap-y-1"
+
 
 gapY2 : ( String, String )
 gapY2 =
     cls "gap-y-2"
 
+
 gapY3 : ( String, String )
 gapY3 =
     cls "gap-y-3"
+
 
 gapY4 : ( String, String )
 gapY4 =
     cls "gap-y-4"
 
+
 gapY5 : ( String, String )
 gapY5 =
     cls "gap-y-5"
+
 
 gapY6 : ( String, String )
 gapY6 =
     cls "gap-y-6"
 
+
 gapY8 : ( String, String )
 gapY8 =
     cls "gap-y-8"
 
+
 gapY10 : ( String, String )
 gapY10 =
     cls "gap-y-10"
+
 
 gapY12 : ( String, String )
 gapY12 =

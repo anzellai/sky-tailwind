@@ -1,72 +1,107 @@
-module Tailwind.State exposing (hover, focus, active, disabled, firstChild, lastChild, odd, even, group, groupHover, groupFocus, focusVisible, focusWithin, placeholder, checked, required, invalid)
+module Tailwind.State exposing
+    ( hover
+    , focus
+    , active
+    , disabled
+    , firstChild
+    , lastChild
+    , odd
+    , even
+    , group
+    , groupHover
+    , groupFocus
+    , focusVisible
+    , focusWithin
+    , placeholder
+    , checked
+    , required
+    , invalid
+    )
 
 import Sky.Core.Prelude exposing (..)
 import Tailwind.Internal.Classes exposing (cls)
 
+
 hover : ( String, String ) -> ( String, String )
 hover ( _, className ) =
-    ( "class" , "hover:" ++ className )
+    ( "class", "hover:" ++ className )
+
 
 focus : ( String, String ) -> ( String, String )
 focus ( _, className ) =
-    ( "class" , "focus:" ++ className )
+    ( "class", "focus:" ++ className )
+
 
 active : ( String, String ) -> ( String, String )
 active ( _, className ) =
-    ( "class" , "active:" ++ className )
+    ( "class", "active:" ++ className )
+
 
 disabled : ( String, String ) -> ( String, String )
 disabled ( _, className ) =
-    ( "class" , "disabled:" ++ className )
+    ( "class", "disabled:" ++ className )
+
 
 firstChild : ( String, String ) -> ( String, String )
 firstChild ( _, className ) =
-    ( "class" , "first:" ++ className )
+    ( "class", "first:" ++ className )
+
 
 lastChild : ( String, String ) -> ( String, String )
 lastChild ( _, className ) =
-    ( "class" , "last:" ++ className )
+    ( "class", "last:" ++ className )
+
 
 odd : ( String, String ) -> ( String, String )
 odd ( _, className ) =
-    ( "class" , "odd:" ++ className )
+    ( "class", "odd:" ++ className )
+
 
 even : ( String, String ) -> ( String, String )
 even ( _, className ) =
-    ( "class" , "even:" ++ className )
+    ( "class", "even:" ++ className )
+
 
 group : ( String, String )
 group =
     cls "group"
 
+
 groupHover : ( String, String ) -> ( String, String )
 groupHover ( _, className ) =
-    ( "class" , "group-hover:" ++ className )
+    ( "class", "group-hover:" ++ className )
+
 
 groupFocus : ( String, String ) -> ( String, String )
 groupFocus ( _, className ) =
-    ( "class" , "group-focus:" ++ className )
+    ( "class", "group-focus:" ++ className )
+
 
 focusVisible : ( String, String ) -> ( String, String )
 focusVisible ( _, className ) =
-    ( "class" , "focus-visible:" ++ className )
+    ( "class", "focus-visible:" ++ className )
+
 
 focusWithin : ( String, String ) -> ( String, String )
 focusWithin ( _, className ) =
-    ( "class" , "focus-within:" ++ className )
+    ( "class", "focus-within:" ++ className )
+
 
 placeholder : ( String, String ) -> ( String, String )
 placeholder ( _, className ) =
-    ( "class" , "placeholder:" ++ className )
+    ( "class", "placeholder:" ++ className )
+
 
 checked : ( String, String ) -> ( String, String )
 checked ( _, className ) =
-    ( "class" , "checked:" ++ className )
+    ( "class", "checked:" ++ className )
+
 
 required : ( String, String ) -> ( String, String )
 required ( _, className ) =
-    ( "class" , "required:" ++ className )
+    ( "class", "required:" ++ className )
+
 
 invalid : ( String, String ) -> ( String, String )
 invalid ( _, className ) =
-    ( "class" , "invalid:" ++ className )
+    ( "class", "invalid:" ++ className )

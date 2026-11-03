@@ -3,402 +3,500 @@ module Tailwind.Border exposing (..)
 import Sky.Core.Prelude exposing (..)
 import Tailwind.Internal.Classes exposing (cls)
 
+
 -- Border Width
 border : ( String, String )
 border =
     cls "border"
 
+
 border0 : ( String, String )
 border0 =
     cls "border-0"
+
 
 border2 : ( String, String )
 border2 =
     cls "border-2"
 
+
 border4 : ( String, String )
 border4 =
     cls "border-4"
+
 
 border8 : ( String, String )
 border8 =
     cls "border-8"
 
+
 borderT : ( String, String )
 borderT =
     cls "border-t"
+
 
 borderR : ( String, String )
 borderR =
     cls "border-r"
 
+
 borderB : ( String, String )
 borderB =
     cls "border-b"
+
 
 borderL : ( String, String )
 borderL =
     cls "border-l"
 
+
 borderT0 : ( String, String )
 borderT0 =
     cls "border-t-0"
+
 
 borderT2 : ( String, String )
 borderT2 =
     cls "border-t-2"
 
+
 borderB0 : ( String, String )
 borderB0 =
     cls "border-b-0"
 
+
 borderB2 : ( String, String )
 borderB2 =
     cls "border-b-2"
+
 
 -- Border Color
 borderTransparent : ( String, String )
 borderTransparent =
     cls "border-transparent"
 
+
 borderBlack : ( String, String )
 borderBlack =
     cls "border-black"
+
 
 borderWhite : ( String, String )
 borderWhite =
     cls "border-white"
 
+
 borderGray50 : ( String, String )
 borderGray50 =
     cls "border-gray-50"
+
 
 borderGray100 : ( String, String )
 borderGray100 =
     cls "border-gray-100"
 
+
 borderGray200 : ( String, String )
 borderGray200 =
     cls "border-gray-200"
+
 
 borderGray300 : ( String, String )
 borderGray300 =
     cls "border-gray-300"
 
+
 borderGray400 : ( String, String )
 borderGray400 =
     cls "border-gray-400"
+
 
 borderGray500 : ( String, String )
 borderGray500 =
     cls "border-gray-500"
 
+
 borderGray600 : ( String, String )
 borderGray600 =
     cls "border-gray-600"
+
 
 borderGray700 : ( String, String )
 borderGray700 =
     cls "border-gray-700"
 
+
 borderGray800 : ( String, String )
 borderGray800 =
     cls "border-gray-800"
+
 
 borderGray900 : ( String, String )
 borderGray900 =
     cls "border-gray-900"
 
+
 borderRed100 : ( String, String )
 borderRed100 =
     cls "border-red-100"
+
 
 borderRed200 : ( String, String )
 borderRed200 =
     cls "border-red-200"
 
+
 borderRed300 : ( String, String )
 borderRed300 =
     cls "border-red-300"
+
 
 borderRed400 : ( String, String )
 borderRed400 =
     cls "border-red-400"
 
+
 borderRed500 : ( String, String )
 borderRed500 =
     cls "border-red-500"
+
 
 borderRed600 : ( String, String )
 borderRed600 =
     cls "border-red-600"
 
+
 borderRed700 : ( String, String )
 borderRed700 =
     cls "border-red-700"
+
 
 borderRed800 : ( String, String )
 borderRed800 =
     cls "border-red-800"
 
+
 borderBlue100 : ( String, String )
 borderBlue100 =
     cls "border-blue-100"
+
 
 borderBlue200 : ( String, String )
 borderBlue200 =
     cls "border-blue-200"
 
+
 borderBlue300 : ( String, String )
 borderBlue300 =
     cls "border-blue-300"
+
 
 borderBlue400 : ( String, String )
 borderBlue400 =
     cls "border-blue-400"
 
+
 borderBlue500 : ( String, String )
 borderBlue500 =
     cls "border-blue-500"
+
 
 borderBlue600 : ( String, String )
 borderBlue600 =
     cls "border-blue-600"
 
+
 borderBlue700 : ( String, String )
 borderBlue700 =
     cls "border-blue-700"
+
 
 borderBlue800 : ( String, String )
 borderBlue800 =
     cls "border-blue-800"
 
+
 borderGreen100 : ( String, String )
 borderGreen100 =
     cls "border-green-100"
+
 
 borderGreen200 : ( String, String )
 borderGreen200 =
     cls "border-green-200"
 
+
 borderGreen300 : ( String, String )
 borderGreen300 =
     cls "border-green-300"
+
 
 borderGreen400 : ( String, String )
 borderGreen400 =
     cls "border-green-400"
 
+
 borderGreen500 : ( String, String )
 borderGreen500 =
     cls "border-green-500"
+
 
 borderGreen600 : ( String, String )
 borderGreen600 =
     cls "border-green-600"
 
+
 borderGreen700 : ( String, String )
 borderGreen700 =
     cls "border-green-700"
 
+
 borderGreen800 : ( String, String )
 borderGreen800 =
     cls "border-green-800"
+
 
 -- Yellow
 borderYellow200 : ( String, String )
 borderYellow200 =
     cls "border-yellow-200"
 
+
 borderYellow300 : ( String, String )
 borderYellow300 =
     cls "border-yellow-300"
+
 
 borderYellow400 : ( String, String )
 borderYellow400 =
     cls "border-yellow-400"
 
+
 borderYellow600 : ( String, String )
 borderYellow600 =
     cls "border-yellow-600"
+
 
 -- Indigo
 borderIndigo600 : ( String, String )
 borderIndigo600 =
     cls "border-indigo-600"
 
+
 -- Purple
 borderPurple600 : ( String, String )
 borderPurple600 =
     cls "border-purple-600"
+
 
 -- Pink
 borderPink500 : ( String, String )
 borderPink500 =
     cls "border-pink-500"
 
+
 -- Border Style
 borderSolid : ( String, String )
 borderSolid =
     cls "border-solid"
 
+
 borderDashed : ( String, String )
 borderDashed =
     cls "border-dashed"
+
 
 borderDotted : ( String, String )
 borderDotted =
     cls "border-dotted"
 
+
 borderDouble : ( String, String )
 borderDouble =
     cls "border-double"
 
+
 borderNone_ : ( String, String )
 borderNone_ =
     cls "border-none"
+
 
 -- Border Radius
 roundedNone : ( String, String )
 roundedNone =
     cls "rounded-none"
 
+
 roundedSm : ( String, String )
 roundedSm =
     cls "rounded-sm"
+
 
 rounded : ( String, String )
 rounded =
     cls "rounded"
 
+
 roundedMd : ( String, String )
 roundedMd =
     cls "rounded-md"
+
 
 roundedLg : ( String, String )
 roundedLg =
     cls "rounded-lg"
 
+
 roundedXl : ( String, String )
 roundedXl =
     cls "rounded-xl"
+
 
 rounded2xl : ( String, String )
 rounded2xl =
     cls "rounded-2xl"
 
+
 rounded3xl : ( String, String )
 rounded3xl =
     cls "rounded-3xl"
+
 
 roundedFull : ( String, String )
 roundedFull =
     cls "rounded-full"
 
+
 roundedT : ( String, String )
 roundedT =
     cls "rounded-t"
+
 
 roundedR : ( String, String )
 roundedR =
     cls "rounded-r"
 
+
 roundedB : ( String, String )
 roundedB =
     cls "rounded-b"
+
 
 roundedL : ( String, String )
 roundedL =
     cls "rounded-l"
 
+
 roundedTLg : ( String, String )
 roundedTLg =
     cls "rounded-t-lg"
+
 
 roundedBLg : ( String, String )
 roundedBLg =
     cls "rounded-b-lg"
 
+
 roundedTXl : ( String, String )
 roundedTXl =
     cls "rounded-t-xl"
 
+
 roundedBXl : ( String, String )
 roundedBXl =
     cls "rounded-b-xl"
+
 
 -- Ring
 ring : ( String, String )
 ring =
     cls "ring"
 
+
 ring0 : ( String, String )
 ring0 =
     cls "ring-0"
+
 
 ring1 : ( String, String )
 ring1 =
     cls "ring-1"
 
+
 ring2 : ( String, String )
 ring2 =
     cls "ring-2"
+
 
 ring4 : ( String, String )
 ring4 =
     cls "ring-4"
 
+
 borderSlate200 : ( String, String )
 borderSlate200 =
     cls "border-slate-200"
+
 
 borderSlate300 : ( String, String )
 borderSlate300 =
     cls "border-slate-300"
 
+
 borderSlate400 : ( String, String )
 borderSlate400 =
     cls "border-slate-400"
+
 
 borderAmber500 : ( String, String )
 borderAmber500 =
     cls "border-amber-500"
 
+
 borderTeal500 : ( String, String )
 borderTeal500 =
     cls "border-teal-500"
+
 
 borderCyan500 : ( String, String )
 borderCyan500 =
     cls "border-cyan-500"
 
+
 borderSky500 : ( String, String )
 borderSky500 =
     cls "border-sky-500"
+
 
 borderEmerald500 : ( String, String )
 borderEmerald500 =
     cls "border-emerald-500"
 
+
 borderViolet500 : ( String, String )
 borderViolet500 =
     cls "border-violet-500"
+
 
 borderRose500 : ( String, String )
 borderRose500 =
     cls "border-rose-500"
 
+
 borderIndigo500 : ( String, String )
 borderIndigo500 =
     cls "border-indigo-500"
+
 
 borderPurple500 : ( String, String )
 borderPurple500 =
     cls "border-purple-500"
 
+
 borderOrange500 : ( String, String )
 borderOrange500 =
     cls "border-orange-500"
+
 
 borderYellow500 : ( String, String )
 borderYellow500 =

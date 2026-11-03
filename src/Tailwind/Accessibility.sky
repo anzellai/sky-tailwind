@@ -3,9 +3,11 @@ module Tailwind.Accessibility exposing (..)
 import Sky.Core.Prelude exposing (..)
 import Tailwind.Internal.Classes exposing (cls)
 
+
 srOnly : ( String, String )
 srOnly =
     cls "sr-only"
+
 
 notSrOnly : ( String, String )
 notSrOnly =

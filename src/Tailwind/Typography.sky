@@ -3,748 +3,928 @@ module Tailwind.Typography exposing (..)
 import Sky.Core.Prelude exposing (..)
 import Tailwind.Internal.Classes exposing (cls)
 
+
 -- Font Size
 textXs : ( String, String )
 textXs =
     cls "text-xs"
 
+
 textSm : ( String, String )
 textSm =
     cls "text-sm"
+
 
 textBase : ( String, String )
 textBase =
     cls "text-base"
 
+
 textLg : ( String, String )
 textLg =
     cls "text-lg"
+
 
 textXl : ( String, String )
 textXl =
     cls "text-xl"
 
+
 text2xl : ( String, String )
 text2xl =
     cls "text-2xl"
+
 
 text3xl : ( String, String )
 text3xl =
     cls "text-3xl"
 
+
 text4xl : ( String, String )
 text4xl =
     cls "text-4xl"
+
 
 text5xl : ( String, String )
 text5xl =
     cls "text-5xl"
 
+
 text6xl : ( String, String )
 text6xl =
     cls "text-6xl"
+
 
 text7xl : ( String, String )
 text7xl =
     cls "text-7xl"
 
+
 text8xl : ( String, String )
 text8xl =
     cls "text-8xl"
 
+
 text9xl : ( String, String )
 text9xl =
     cls "text-9xl"
+
 
 -- Font Weight
 fontThin : ( String, String )
 fontThin =
     cls "font-thin"
 
+
 fontExtralight : ( String, String )
 fontExtralight =
     cls "font-extralight"
+
 
 fontLight : ( String, String )
 fontLight =
     cls "font-light"
 
+
 fontNormal : ( String, String )
 fontNormal =
     cls "font-normal"
+
 
 fontMedium : ( String, String )
 fontMedium =
     cls "font-medium"
 
+
 fontSemibold : ( String, String )
 fontSemibold =
     cls "font-semibold"
+
 
 fontBold : ( String, String )
 fontBold =
     cls "font-bold"
 
+
 fontExtrabold : ( String, String )
 fontExtrabold =
     cls "font-extrabold"
 
+
 fontBlack : ( String, String )
 fontBlack =
     cls "font-black"
+
 
 -- Font Family
 fontSans : ( String, String )
 fontSans =
     cls "font-sans"
 
+
 fontSerif : ( String, String )
 fontSerif =
     cls "font-serif"
 
+
 fontMono : ( String, String )
 fontMono =
     cls "font-mono"
+
 
 -- Text Align
 textLeft : ( String, String )
 textLeft =
     cls "text-left"
 
+
 textCenter : ( String, String )
 textCenter =
     cls "text-center"
+
 
 textRight : ( String, String )
 textRight =
     cls "text-right"
 
+
 textJustify : ( String, String )
 textJustify =
     cls "text-justify"
+
 
 -- Text Color
 textTransparent : ( String, String )
 textTransparent =
     cls "text-transparent"
 
+
 textBlack : ( String, String )
 textBlack =
     cls "text-black"
+
 
 textWhite : ( String, String )
 textWhite =
     cls "text-white"
 
+
 textGray50 : ( String, String )
 textGray50 =
     cls "text-gray-50"
+
 
 textGray100 : ( String, String )
 textGray100 =
     cls "text-gray-100"
 
+
 textGray200 : ( String, String )
 textGray200 =
     cls "text-gray-200"
+
 
 textGray300 : ( String, String )
 textGray300 =
     cls "text-gray-300"
 
+
 textGray400 : ( String, String )
 textGray400 =
     cls "text-gray-400"
+
 
 textGray500 : ( String, String )
 textGray500 =
     cls "text-gray-500"
 
+
 textGray600 : ( String, String )
 textGray600 =
     cls "text-gray-600"
+
 
 textGray700 : ( String, String )
 textGray700 =
     cls "text-gray-700"
 
+
 textGray800 : ( String, String )
 textGray800 =
     cls "text-gray-800"
+
 
 textGray900 : ( String, String )
 textGray900 =
     cls "text-gray-900"
 
+
 textRed100 : ( String, String )
 textRed100 =
     cls "text-red-100"
+
 
 textRed200 : ( String, String )
 textRed200 =
     cls "text-red-200"
 
+
 textRed300 : ( String, String )
 textRed300 =
     cls "text-red-300"
+
 
 textRed400 : ( String, String )
 textRed400 =
     cls "text-red-400"
 
+
 textRed500 : ( String, String )
 textRed500 =
     cls "text-red-500"
+
 
 textRed600 : ( String, String )
 textRed600 =
     cls "text-red-600"
 
+
 textRed700 : ( String, String )
 textRed700 =
     cls "text-red-700"
+
 
 textRed800 : ( String, String )
 textRed800 =
     cls "text-red-800"
 
+
 textRed900 : ( String, String )
 textRed900 =
     cls "text-red-900"
+
 
 textOrange400 : ( String, String )
 textOrange400 =
     cls "text-orange-400"
 
+
 textOrange500 : ( String, String )
 textOrange500 =
     cls "text-orange-500"
+
 
 textOrange600 : ( String, String )
 textOrange600 =
     cls "text-orange-600"
 
+
 textOrange700 : ( String, String )
 textOrange700 =
     cls "text-orange-700"
+
 
 textYellow400 : ( String, String )
 textYellow400 =
     cls "text-yellow-400"
 
+
 textYellow500 : ( String, String )
 textYellow500 =
     cls "text-yellow-500"
+
 
 textYellow600 : ( String, String )
 textYellow600 =
     cls "text-yellow-600"
 
+
 textYellow700 : ( String, String )
 textYellow700 =
     cls "text-yellow-700"
+
 
 textGreen400 : ( String, String )
 textGreen400 =
     cls "text-green-400"
 
+
 textGreen500 : ( String, String )
 textGreen500 =
     cls "text-green-500"
+
 
 textGreen600 : ( String, String )
 textGreen600 =
     cls "text-green-600"
 
+
 textGreen700 : ( String, String )
 textGreen700 =
     cls "text-green-700"
+
 
 textGreen800 : ( String, String )
 textGreen800 =
     cls "text-green-800"
 
+
 textBlue100 : ( String, String )
 textBlue100 =
     cls "text-blue-100"
+
 
 textBlue200 : ( String, String )
 textBlue200 =
     cls "text-blue-200"
 
+
 textBlue300 : ( String, String )
 textBlue300 =
     cls "text-blue-300"
+
 
 textBlue400 : ( String, String )
 textBlue400 =
     cls "text-blue-400"
 
+
 textBlue500 : ( String, String )
 textBlue500 =
     cls "text-blue-500"
+
 
 textBlue600 : ( String, String )
 textBlue600 =
     cls "text-blue-600"
 
+
 textBlue700 : ( String, String )
 textBlue700 =
     cls "text-blue-700"
+
 
 textBlue800 : ( String, String )
 textBlue800 =
     cls "text-blue-800"
 
+
 textBlue900 : ( String, String )
 textBlue900 =
     cls "text-blue-900"
+
 
 textIndigo400 : ( String, String )
 textIndigo400 =
     cls "text-indigo-400"
 
+
 textIndigo500 : ( String, String )
 textIndigo500 =
     cls "text-indigo-500"
+
 
 textIndigo600 : ( String, String )
 textIndigo600 =
     cls "text-indigo-600"
 
+
 textIndigo700 : ( String, String )
 textIndigo700 =
     cls "text-indigo-700"
+
 
 textPurple400 : ( String, String )
 textPurple400 =
     cls "text-purple-400"
 
+
 textPurple500 : ( String, String )
 textPurple500 =
     cls "text-purple-500"
+
 
 textPurple600 : ( String, String )
 textPurple600 =
     cls "text-purple-600"
 
+
 textPurple700 : ( String, String )
 textPurple700 =
     cls "text-purple-700"
+
 
 textPink400 : ( String, String )
 textPink400 =
     cls "text-pink-400"
 
+
 textPink500 : ( String, String )
 textPink500 =
     cls "text-pink-500"
 
+
 textPink600 : ( String, String )
 textPink600 =
     cls "text-pink-600"
+
 
 -- Text Decoration
 underline : ( String, String )
 underline =
     cls "underline"
 
+
 overline : ( String, String )
 overline =
     cls "overline"
+
 
 lineThrough : ( String, String )
 lineThrough =
     cls "line-through"
 
+
 noUnderline : ( String, String )
 noUnderline =
     cls "no-underline"
+
 
 -- Text Transform
 uppercase : ( String, String )
 uppercase =
     cls "uppercase"
 
+
 lowercase : ( String, String )
 lowercase =
     cls "lowercase"
+
 
 capitalize : ( String, String )
 capitalize =
     cls "capitalize"
 
+
 normalCase : ( String, String )
 normalCase =
     cls "normal-case"
+
 
 -- Line Height
 leadingNone : ( String, String )
 leadingNone =
     cls "leading-none"
 
+
 leadingTight : ( String, String )
 leadingTight =
     cls "leading-tight"
+
 
 leadingSnug : ( String, String )
 leadingSnug =
     cls "leading-snug"
 
+
 leadingNormal : ( String, String )
 leadingNormal =
     cls "leading-normal"
+
 
 leadingRelaxed : ( String, String )
 leadingRelaxed =
     cls "leading-relaxed"
 
+
 leadingLoose : ( String, String )
 leadingLoose =
     cls "leading-loose"
+
 
 -- Letter Spacing
 trackingTighter : ( String, String )
 trackingTighter =
     cls "tracking-tighter"
 
+
 trackingTight : ( String, String )
 trackingTight =
     cls "tracking-tight"
+
 
 trackingNormal : ( String, String )
 trackingNormal =
     cls "tracking-normal"
 
+
 trackingWide : ( String, String )
 trackingWide =
     cls "tracking-wide"
+
 
 trackingWider : ( String, String )
 trackingWider =
     cls "tracking-wider"
 
+
 trackingWidest : ( String, String )
 trackingWidest =
     cls "tracking-widest"
+
 
 -- Whitespace
 whitespaceNormal : ( String, String )
 whitespaceNormal =
     cls "whitespace-normal"
 
+
 whitespaceNowrap : ( String, String )
 whitespaceNowrap =
     cls "whitespace-nowrap"
+
 
 whitespacePre : ( String, String )
 whitespacePre =
     cls "whitespace-pre"
 
+
 whitespacePreLine : ( String, String )
 whitespacePreLine =
     cls "whitespace-pre-line"
 
+
 whitespacePreWrap : ( String, String )
 whitespacePreWrap =
     cls "whitespace-pre-wrap"
+
 
 -- Truncate
 truncate : ( String, String )
 truncate =
     cls "truncate"
 
+
 -- Amber
 textAmber500 : ( String, String )
 textAmber500 =
     cls "text-amber-500"
 
+
 textAmber600 : ( String, String )
 textAmber600 =
     cls "text-amber-600"
 
+
 textAmber700 : ( String, String )
 textAmber700 =
     cls "text-amber-700"
+
 
 -- Teal
 textTeal400 : ( String, String )
 textTeal400 =
     cls "text-teal-400"
 
+
 textTeal500 : ( String, String )
 textTeal500 =
     cls "text-teal-500"
+
 
 textTeal600 : ( String, String )
 textTeal600 =
     cls "text-teal-600"
 
+
 textTeal700 : ( String, String )
 textTeal700 =
     cls "text-teal-700"
+
 
 -- Cyan
 textCyan400 : ( String, String )
 textCyan400 =
     cls "text-cyan-400"
 
+
 textCyan500 : ( String, String )
 textCyan500 =
     cls "text-cyan-500"
+
 
 textCyan600 : ( String, String )
 textCyan600 =
     cls "text-cyan-600"
 
+
 textCyan700 : ( String, String )
 textCyan700 =
     cls "text-cyan-700"
+
 
 -- Sky
 textSky500 : ( String, String )
 textSky500 =
     cls "text-sky-500"
 
+
 textSky600 : ( String, String )
 textSky600 =
     cls "text-sky-600"
 
+
 textSky700 : ( String, String )
 textSky700 =
     cls "text-sky-700"
+
 
 -- Emerald
 textEmerald400 : ( String, String )
 textEmerald400 =
     cls "text-emerald-400"
 
+
 textEmerald500 : ( String, String )
 textEmerald500 =
     cls "text-emerald-500"
+
 
 textEmerald600 : ( String, String )
 textEmerald600 =
     cls "text-emerald-600"
 
+
 textEmerald700 : ( String, String )
 textEmerald700 =
     cls "text-emerald-700"
+
 
 -- Violet
 textViolet400 : ( String, String )
 textViolet400 =
     cls "text-violet-400"
 
+
 textViolet500 : ( String, String )
 textViolet500 =
     cls "text-violet-500"
+
 
 textViolet600 : ( String, String )
 textViolet600 =
     cls "text-violet-600"
 
+
 textViolet700 : ( String, String )
 textViolet700 =
     cls "text-violet-700"
+
 
 -- Rose
 textRose400 : ( String, String )
 textRose400 =
     cls "text-rose-400"
 
+
 textRose500 : ( String, String )
 textRose500 =
     cls "text-rose-500"
+
 
 textRose600 : ( String, String )
 textRose600 =
     cls "text-rose-600"
 
+
 textRose700 : ( String, String )
 textRose700 =
     cls "text-rose-700"
+
 
 -- Fuchsia
 textFuchsia400 : ( String, String )
 textFuchsia400 =
     cls "text-fuchsia-400"
 
+
 textFuchsia500 : ( String, String )
 textFuchsia500 =
     cls "text-fuchsia-500"
+
 
 textFuchsia600 : ( String, String )
 textFuchsia600 =
     cls "text-fuchsia-600"
 
+
 textFuchsia700 : ( String, String )
 textFuchsia700 =
     cls "text-fuchsia-700"
+
 
 -- Lime
 textLime500 : ( String, String )
 textLime500 =
     cls "text-lime-500"
 
+
 textLime600 : ( String, String )
 textLime600 =
     cls "text-lime-600"
 
+
 textLime700 : ( String, String )
 textLime700 =
     cls "text-lime-700"
+
 
 -- Slate
 textSlate50 : ( String, String )
 textSlate50 =
     cls "text-slate-50"
 
+
 textSlate100 : ( String, String )
 textSlate100 =
     cls "text-slate-100"
+
 
 textSlate200 : ( String, String )
 textSlate200 =
     cls "text-slate-200"
 
+
 textSlate300 : ( String, String )
 textSlate300 =
     cls "text-slate-300"
+
 
 textSlate400 : ( String, String )
 textSlate400 =
     cls "text-slate-400"
 
+
 textSlate500 : ( String, String )
 textSlate500 =
     cls "text-slate-500"
+
 
 textSlate600 : ( String, String )
 textSlate600 =
     cls "text-slate-600"
 
+
 textSlate700 : ( String, String )
 textSlate700 =
     cls "text-slate-700"
+
 
 textSlate800 : ( String, String )
 textSlate800 =
     cls "text-slate-800"
 
+
 textSlate900 : ( String, String )
 textSlate900 =
     cls "text-slate-900"
+
 
 -- List Style
 listNone : ( String, String )
 listNone =
     cls "list-none"
 
+
 listDisc : ( String, String )
 listDisc =
     cls "list-disc"
+
 
 listDecimal : ( String, String )
 listDecimal =
     cls "list-decimal"
 
+
 listInside : ( String, String )
 listInside =
     cls "list-inside"
 
+
 listOutside : ( String, String )
 listOutside =
     cls "list-outside"
+
 
 -- Word Break
 breakNormal : ( String, String )
 breakNormal =
     cls "break-normal"
 
+
 breakWords : ( String, String )
 breakWords =
     cls "break-words"
+
 
 breakAll : ( String, String )
 breakAll =
     cls "break-all"
 
+
 breakKeep : ( String, String )
 breakKeep =
     cls "break-keep"
+
 
 -- Hyphens
 hyphensNone : ( String, String )
 hyphensNone =
     cls "hyphens-none"
 
+
 hyphensManual : ( String, String )
 hyphensManual =
     cls "hyphens-manual"
 
+
 hyphensAuto : ( String, String )
 hyphensAuto =
     cls "hyphens-auto"
+
 
 -- Font Smoothing
 antialiased : ( String, String )
 antialiased =
     cls "antialiased"
 
+
 subpixelAntialiased : ( String, String )
 subpixelAntialiased =
     cls "subpixel-antialiased"
+
 
 -- Text Overflow / Wrap
 textEllipsis : ( String, String )
 textEllipsis =
     cls "text-ellipsis"
 
+
 textClip : ( String, String )
 textClip =
     cls "text-clip"
+
 
 textWrap : ( String, String )
 textWrap =
     cls "text-wrap"
 
+
 textNowrap : ( String, String )
 textNowrap =
     cls "text-nowrap"
+
 
 textBalance : ( String, String )
 textBalance =
     cls "text-balance"
 
+
 textPretty : ( String, String )
 textPretty =
     cls "text-pretty"
+
 
 -- Vertical Align
 alignBaseline : ( String, String )
 alignBaseline =
     cls "align-baseline"
 
+
 alignTop : ( String, String )
 alignTop =
     cls "align-top"
+
 
 alignMiddle : ( String, String )
 alignMiddle =
     cls "align-middle"
 
+
 alignBottom : ( String, String )
 alignBottom =
     cls "align-bottom"
+
 
 alignTextTop : ( String, String )
 alignTextTop =
     cls "align-text-top"
 
+
 alignTextBottom : ( String, String )
 alignTextBottom =
     cls "align-text-bottom"
+
 
 -- Content
 contentNone : ( String, String )

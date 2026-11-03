@@ -3,116 +3,174 @@ module Tailwind.Internal.Css exposing (allRules)
 import Sky.Core.Prelude exposing (..)
 import Std.Css exposing (..)
 
+
 allRules : String
 allRules =
     stylesheet
-        (
+        (baseRules
+            -- ============================================================
+            -- Spacing: padding, margin, gap, space
+            -- ============================================================
+            ++ spacingRules
+            ++ typographyRules
+            ++ layoutRules
+            ++ flexRules
+            ++ gridRules
+            ++ backgroundRules
+            ++ borderRules
+            ++ effectsRules
+            ++ sizingRules
+            ++ animationRules
+            ++ transformsRules
+            ++ filtersRules
+            ++ gradientRules
+            ++ outlineRules
+            ++ divideRules
+            ++ ringRules
+            ++ tableRules
+            ++ accessibilityRules
+            ++ svgRules
+            ++ interactivityRules
+            ++ stateRules)
+
 
 -- ============================================================
 -- Base Reset
 -- ============================================================
-        baseRules ++
-
--- ============================================================
--- Spacing: padding, margin, gap, space
--- ============================================================
-        spacingRules ++
-        typographyRules ++
-        layoutRules ++
-        flexRules ++
-        gridRules ++
-        backgroundRules ++
-        borderRules ++
-        effectsRules ++
-        sizingRules ++
-        animationRules ++
-        transformsRules ++
-        filtersRules ++
-        gradientRules ++
-        outlineRules ++
-        divideRules ++
-        ringRules ++
-        tableRules ++
-        accessibilityRules ++ svgRules ++ interactivityRules ++ stateRules
-        )
-
 baseRules =
     [ rule "*, *::before, *::after" [ property "box-sizing" "border-box" ]
-
     -- Padding X (left + right)
-    , rule "body" [ margin (lengthRaw "0") , padding (lengthRaw "0") ]
+    , rule "body" [ margin (lengthRaw "0"), padding (lengthRaw "0") ]
     ]
+
 
 spacingRules =
     [ rule ".p-0" [ padding (lengthRaw "0") ]
-
     -- Padding Y (top + bottom)
     , rule ".p-1" [ padding (lengthRaw "0.25rem") ]
-
     -- Padding Top
     , rule ".p-2" [ padding (lengthRaw "0.5rem") ]
-
     -- Padding Right
     , rule ".p-3" [ padding (lengthRaw "0.75rem") ]
-
     -- Padding Bottom
     , rule ".p-4" [ padding (lengthRaw "1rem") ]
-
     -- Padding Left
     , rule ".p-5" [ padding (lengthRaw "1.25rem") ]
-
     -- Margin (all sides)
     , rule ".p-6" [ padding (lengthRaw "1.5rem") ]
-
     -- Margin X (left + right)
     , rule ".p-8" [ padding (lengthRaw "2rem") ]
-
     -- Margin Y (top + bottom)
     , rule ".p-10" [ padding (lengthRaw "2.5rem") ]
-
     -- Margin Top
     , rule ".p-12" [ padding (lengthRaw "3rem") ]
-
     -- Margin Right
     , rule ".p-16" [ padding (lengthRaw "4rem") ]
-
     -- Margin Bottom
     , rule ".p-20" [ padding (lengthRaw "5rem") ]
-
     -- Margin Left
     , rule ".p-24" [ padding (lengthRaw "6rem") ]
-
     -- Negative margins
-    , rule ".px-0" [ paddingLeft (lengthRaw "0") , paddingRight (lengthRaw "0") ]
-
+    , rule ".px-0" [ paddingLeft (lengthRaw "0"), paddingRight (lengthRaw "0") ]
     -- Gap
-    , rule ".px-1" [ paddingLeft (lengthRaw "0.25rem") , paddingRight (lengthRaw "0.25rem") ]
-
+    , rule
+          ".px-1"
+          [ paddingLeft (lengthRaw "0.25rem")
+          , paddingRight (lengthRaw "0.25rem")
+          ]
     -- Space between (uses adjacent sibling selector)
-    , rule ".px-2" [ paddingLeft (lengthRaw "0.5rem") , paddingRight (lengthRaw "0.5rem") ]
-    , rule ".px-3" [ paddingLeft (lengthRaw "0.75rem") , paddingRight (lengthRaw "0.75rem") ]
-    , rule ".px-4" [ paddingLeft (lengthRaw "1rem") , paddingRight (lengthRaw "1rem") ]
-    , rule ".px-5" [ paddingLeft (lengthRaw "1.25rem") , paddingRight (lengthRaw "1.25rem") ]
-    , rule ".px-6" [ paddingLeft (lengthRaw "1.5rem") , paddingRight (lengthRaw "1.5rem") ]
-    , rule ".px-8" [ paddingLeft (lengthRaw "2rem") , paddingRight (lengthRaw "2rem") ]
-    , rule ".px-10" [ paddingLeft (lengthRaw "2.5rem") , paddingRight (lengthRaw "2.5rem") ]
-    , rule ".px-12" [ paddingLeft (lengthRaw "3rem") , paddingRight (lengthRaw "3rem") ]
-    , rule ".px-16" [ paddingLeft (lengthRaw "4rem") , paddingRight (lengthRaw "4rem") ]
-    , rule ".px-20" [ paddingLeft (lengthRaw "5rem") , paddingRight (lengthRaw "5rem") ]
-    , rule ".px-24" [ paddingLeft (lengthRaw "6rem") , paddingRight (lengthRaw "6rem") ]
-    , rule ".py-0" [ paddingTop (lengthRaw "0") , paddingBottom (lengthRaw "0") ]
-    , rule ".py-1" [ paddingTop (lengthRaw "0.25rem") , paddingBottom (lengthRaw "0.25rem") ]
-    , rule ".py-2" [ paddingTop (lengthRaw "0.5rem") , paddingBottom (lengthRaw "0.5rem") ]
-    , rule ".py-3" [ paddingTop (lengthRaw "0.75rem") , paddingBottom (lengthRaw "0.75rem") ]
-    , rule ".py-4" [ paddingTop (lengthRaw "1rem") , paddingBottom (lengthRaw "1rem") ]
-    , rule ".py-5" [ paddingTop (lengthRaw "1.25rem") , paddingBottom (lengthRaw "1.25rem") ]
-    , rule ".py-6" [ paddingTop (lengthRaw "1.5rem") , paddingBottom (lengthRaw "1.5rem") ]
-    , rule ".py-8" [ paddingTop (lengthRaw "2rem") , paddingBottom (lengthRaw "2rem") ]
-    , rule ".py-10" [ paddingTop (lengthRaw "2.5rem") , paddingBottom (lengthRaw "2.5rem") ]
-    , rule ".py-12" [ paddingTop (lengthRaw "3rem") , paddingBottom (lengthRaw "3rem") ]
-    , rule ".py-16" [ paddingTop (lengthRaw "4rem") , paddingBottom (lengthRaw "4rem") ]
-    , rule ".py-20" [ paddingTop (lengthRaw "5rem") , paddingBottom (lengthRaw "5rem") ]
-    , rule ".py-24" [ paddingTop (lengthRaw "6rem") , paddingBottom (lengthRaw "6rem") ]
+    , rule
+          ".px-2"
+          [ paddingLeft (lengthRaw "0.5rem")
+          , paddingRight (lengthRaw "0.5rem")
+          ]
+    , rule
+          ".px-3"
+          [ paddingLeft (lengthRaw "0.75rem")
+          , paddingRight (lengthRaw "0.75rem")
+          ]
+    , rule
+          ".px-4"
+          [ paddingLeft (lengthRaw "1rem"), paddingRight (lengthRaw "1rem") ]
+    , rule
+          ".px-5"
+          [ paddingLeft (lengthRaw "1.25rem")
+          , paddingRight (lengthRaw "1.25rem")
+          ]
+    , rule
+          ".px-6"
+          [ paddingLeft (lengthRaw "1.5rem")
+          , paddingRight (lengthRaw "1.5rem")
+          ]
+    , rule
+          ".px-8"
+          [ paddingLeft (lengthRaw "2rem"), paddingRight (lengthRaw "2rem") ]
+    , rule
+          ".px-10"
+          [ paddingLeft (lengthRaw "2.5rem")
+          , paddingRight (lengthRaw "2.5rem")
+          ]
+    , rule
+          ".px-12"
+          [ paddingLeft (lengthRaw "3rem"), paddingRight (lengthRaw "3rem") ]
+    , rule
+          ".px-16"
+          [ paddingLeft (lengthRaw "4rem"), paddingRight (lengthRaw "4rem") ]
+    , rule
+          ".px-20"
+          [ paddingLeft (lengthRaw "5rem"), paddingRight (lengthRaw "5rem") ]
+    , rule
+          ".px-24"
+          [ paddingLeft (lengthRaw "6rem"), paddingRight (lengthRaw "6rem") ]
+    , rule ".py-0" [ paddingTop (lengthRaw "0"), paddingBottom (lengthRaw "0") ]
+    , rule
+          ".py-1"
+          [ paddingTop (lengthRaw "0.25rem")
+          , paddingBottom (lengthRaw "0.25rem")
+          ]
+    , rule
+          ".py-2"
+          [ paddingTop (lengthRaw "0.5rem")
+          , paddingBottom (lengthRaw "0.5rem")
+          ]
+    , rule
+          ".py-3"
+          [ paddingTop (lengthRaw "0.75rem")
+          , paddingBottom (lengthRaw "0.75rem")
+          ]
+    , rule
+          ".py-4"
+          [ paddingTop (lengthRaw "1rem"), paddingBottom (lengthRaw "1rem") ]
+    , rule
+          ".py-5"
+          [ paddingTop (lengthRaw "1.25rem")
+          , paddingBottom (lengthRaw "1.25rem")
+          ]
+    , rule
+          ".py-6"
+          [ paddingTop (lengthRaw "1.5rem")
+          , paddingBottom (lengthRaw "1.5rem")
+          ]
+    , rule
+          ".py-8"
+          [ paddingTop (lengthRaw "2rem"), paddingBottom (lengthRaw "2rem") ]
+    , rule
+          ".py-10"
+          [ paddingTop (lengthRaw "2.5rem")
+          , paddingBottom (lengthRaw "2.5rem")
+          ]
+    , rule
+          ".py-12"
+          [ paddingTop (lengthRaw "3rem"), paddingBottom (lengthRaw "3rem") ]
+    , rule
+          ".py-16"
+          [ paddingTop (lengthRaw "4rem"), paddingBottom (lengthRaw "4rem") ]
+    , rule
+          ".py-20"
+          [ paddingTop (lengthRaw "5rem"), paddingBottom (lengthRaw "5rem") ]
+    , rule
+          ".py-24"
+          [ paddingTop (lengthRaw "6rem"), paddingBottom (lengthRaw "6rem") ]
     , rule ".pt-0" [ paddingTop (lengthRaw "0") ]
     , rule ".pt-1" [ paddingTop (lengthRaw "0.25rem") ]
     , rule ".pt-2" [ paddingTop (lengthRaw "0.5rem") ]
@@ -170,27 +228,77 @@ spacingRules =
     , rule ".m-20" [ margin (lengthRaw "5rem") ]
     , rule ".m-24" [ margin (lengthRaw "6rem") ]
     , rule ".m-auto" [ margin (lengthRaw "auto") ]
-    , rule ".mx-0" [ marginLeft (lengthRaw "0") , marginRight (lengthRaw "0") ]
-    , rule ".mx-1" [ marginLeft (lengthRaw "0.25rem") , marginRight (lengthRaw "0.25rem") ]
-    , rule ".mx-2" [ marginLeft (lengthRaw "0.5rem") , marginRight (lengthRaw "0.5rem") ]
-    , rule ".mx-3" [ marginLeft (lengthRaw "0.75rem") , marginRight (lengthRaw "0.75rem") ]
-    , rule ".mx-4" [ marginLeft (lengthRaw "1rem") , marginRight (lengthRaw "1rem") ]
-    , rule ".mx-5" [ marginLeft (lengthRaw "1.25rem") , marginRight (lengthRaw "1.25rem") ]
-    , rule ".mx-6" [ marginLeft (lengthRaw "1.5rem") , marginRight (lengthRaw "1.5rem") ]
-    , rule ".mx-8" [ marginLeft (lengthRaw "2rem") , marginRight (lengthRaw "2rem") ]
-    , rule ".mx-10" [ marginLeft (lengthRaw "2.5rem") , marginRight (lengthRaw "2.5rem") ]
-    , rule ".mx-12" [ marginLeft (lengthRaw "3rem") , marginRight (lengthRaw "3rem") ]
-    , rule ".mx-auto" [ marginLeft (lengthRaw "auto") , marginRight (lengthRaw "auto") ]
-    , rule ".my-0" [ marginTop (lengthRaw "0") , marginBottom (lengthRaw "0") ]
-    , rule ".my-1" [ marginTop (lengthRaw "0.25rem") , marginBottom (lengthRaw "0.25rem") ]
-    , rule ".my-2" [ marginTop (lengthRaw "0.5rem") , marginBottom (lengthRaw "0.5rem") ]
-    , rule ".my-3" [ marginTop (lengthRaw "0.75rem") , marginBottom (lengthRaw "0.75rem") ]
-    , rule ".my-4" [ marginTop (lengthRaw "1rem") , marginBottom (lengthRaw "1rem") ]
-    , rule ".my-5" [ marginTop (lengthRaw "1.25rem") , marginBottom (lengthRaw "1.25rem") ]
-    , rule ".my-6" [ marginTop (lengthRaw "1.5rem") , marginBottom (lengthRaw "1.5rem") ]
-    , rule ".my-8" [ marginTop (lengthRaw "2rem") , marginBottom (lengthRaw "2rem") ]
-    , rule ".my-10" [ marginTop (lengthRaw "2.5rem") , marginBottom (lengthRaw "2.5rem") ]
-    , rule ".my-12" [ marginTop (lengthRaw "3rem") , marginBottom (lengthRaw "3rem") ]
+    , rule ".mx-0" [ marginLeft (lengthRaw "0"), marginRight (lengthRaw "0") ]
+    , rule
+          ".mx-1"
+          [ marginLeft (lengthRaw "0.25rem")
+          , marginRight (lengthRaw "0.25rem")
+          ]
+    , rule
+          ".mx-2"
+          [ marginLeft (lengthRaw "0.5rem"), marginRight (lengthRaw "0.5rem") ]
+    , rule
+          ".mx-3"
+          [ marginLeft (lengthRaw "0.75rem")
+          , marginRight (lengthRaw "0.75rem")
+          ]
+    , rule
+          ".mx-4"
+          [ marginLeft (lengthRaw "1rem"), marginRight (lengthRaw "1rem") ]
+    , rule
+          ".mx-5"
+          [ marginLeft (lengthRaw "1.25rem")
+          , marginRight (lengthRaw "1.25rem")
+          ]
+    , rule
+          ".mx-6"
+          [ marginLeft (lengthRaw "1.5rem"), marginRight (lengthRaw "1.5rem") ]
+    , rule
+          ".mx-8"
+          [ marginLeft (lengthRaw "2rem"), marginRight (lengthRaw "2rem") ]
+    , rule
+          ".mx-10"
+          [ marginLeft (lengthRaw "2.5rem"), marginRight (lengthRaw "2.5rem") ]
+    , rule
+          ".mx-12"
+          [ marginLeft (lengthRaw "3rem"), marginRight (lengthRaw "3rem") ]
+    , rule
+          ".mx-auto"
+          [ marginLeft (lengthRaw "auto"), marginRight (lengthRaw "auto") ]
+    , rule ".my-0" [ marginTop (lengthRaw "0"), marginBottom (lengthRaw "0") ]
+    , rule
+          ".my-1"
+          [ marginTop (lengthRaw "0.25rem")
+          , marginBottom (lengthRaw "0.25rem")
+          ]
+    , rule
+          ".my-2"
+          [ marginTop (lengthRaw "0.5rem"), marginBottom (lengthRaw "0.5rem") ]
+    , rule
+          ".my-3"
+          [ marginTop (lengthRaw "0.75rem")
+          , marginBottom (lengthRaw "0.75rem")
+          ]
+    , rule
+          ".my-4"
+          [ marginTop (lengthRaw "1rem"), marginBottom (lengthRaw "1rem") ]
+    , rule
+          ".my-5"
+          [ marginTop (lengthRaw "1.25rem")
+          , marginBottom (lengthRaw "1.25rem")
+          ]
+    , rule
+          ".my-6"
+          [ marginTop (lengthRaw "1.5rem"), marginBottom (lengthRaw "1.5rem") ]
+    , rule
+          ".my-8"
+          [ marginTop (lengthRaw "2rem"), marginBottom (lengthRaw "2rem") ]
+    , rule
+          ".my-10"
+          [ marginTop (lengthRaw "2.5rem"), marginBottom (lengthRaw "2.5rem") ]
+    , rule
+          ".my-12"
+          [ marginTop (lengthRaw "3rem"), marginBottom (lengthRaw "3rem") ]
     , rule ".mt-0" [ marginTop (lengthRaw "0") ]
     , rule ".mt-1" [ marginTop (lengthRaw "0.25rem") ]
     , rule ".mt-2" [ marginTop (lengthRaw "0.5rem") ]
@@ -246,7 +354,9 @@ spacingRules =
     , rule ".-ml-2" [ marginLeft (lengthRaw "-0.5rem") ]
     , rule ".-mr-1" [ marginRight (lengthRaw "-0.25rem") ]
     , rule ".-mr-2" [ marginRight (lengthRaw "-0.5rem") ]
-    , rule ".-mx-4" [ marginLeft (lengthRaw "-1rem") , marginRight (lengthRaw "-1rem") ]
+    , rule
+          ".-mx-4"
+          [ marginLeft (lengthRaw "-1rem"), marginRight (lengthRaw "-1rem") ]
     , rule ".gap-0" [ gap (lengthRaw "0") ]
     , rule ".gap-1" [ gap (lengthRaw "0.25rem") ]
     , rule ".gap-2" [ gap (lengthRaw "0.5rem") ]
@@ -292,129 +402,122 @@ spacingRules =
     , rule ".space-y-12 > * + *" [ marginTop (lengthRaw "3rem") ]
     ]
 
+
 -- ============================================================
 -- Typography
 -- ============================================================
 typographyRules =
-    [ rule ".text-xs" [ fontSize (lengthRaw "0.75rem") , lineHeight (lengthRaw "1rem") ]
-
+    [ rule
+          ".text-xs"
+          [ fontSize (lengthRaw "0.75rem"), lineHeight (lengthRaw "1rem") ]
     -- Font Weight
-    , rule ".text-sm" [ fontSize (lengthRaw "0.875rem") , lineHeight (lengthRaw "1.25rem") ]
-
+    , rule
+          ".text-sm"
+          [ fontSize (lengthRaw "0.875rem"), lineHeight (lengthRaw "1.25rem") ]
     -- Font Family
-    , rule ".text-base" [ fontSize (lengthRaw "1rem") , lineHeight (lengthRaw "1.5rem") ]
-
+    , rule
+          ".text-base"
+          [ fontSize (lengthRaw "1rem"), lineHeight (lengthRaw "1.5rem") ]
     -- Text Align
-    , rule ".text-lg" [ fontSize (lengthRaw "1.125rem") , lineHeight (lengthRaw "1.75rem") ]
-
+    , rule
+          ".text-lg"
+          [ fontSize (lengthRaw "1.125rem"), lineHeight (lengthRaw "1.75rem") ]
     -- Text Color: black/white/transparent
-    , rule ".text-xl" [ fontSize (lengthRaw "1.25rem") , lineHeight (lengthRaw "1.75rem") ]
-
+    , rule
+          ".text-xl"
+          [ fontSize (lengthRaw "1.25rem"), lineHeight (lengthRaw "1.75rem") ]
     -- Text Color: slate
-    , rule ".text-2xl" [ fontSize (lengthRaw "1.5rem") , lineHeight (lengthRaw "2rem") ]
-
+    , rule
+          ".text-2xl"
+          [ fontSize (lengthRaw "1.5rem"), lineHeight (lengthRaw "2rem") ]
     -- Text Color: gray
-    , rule ".text-3xl" [ fontSize (lengthRaw "1.875rem") , lineHeight (lengthRaw "2.25rem") ]
-
+    , rule
+          ".text-3xl"
+          [ fontSize (lengthRaw "1.875rem"), lineHeight (lengthRaw "2.25rem") ]
     -- Text Color: red
-    , rule ".text-4xl" [ fontSize (lengthRaw "2.25rem") , lineHeight (lengthRaw "2.5rem") ]
-
+    , rule
+          ".text-4xl"
+          [ fontSize (lengthRaw "2.25rem"), lineHeight (lengthRaw "2.5rem") ]
     -- Text Color: orange
-    , rule ".text-5xl" [ fontSize (lengthRaw "3rem") , lineHeight (lengthRaw "1") ]
-
+    , rule
+          ".text-5xl"
+          [ fontSize (lengthRaw "3rem"), lineHeight (lengthRaw "1") ]
     -- Text Color: amber
-    , rule ".text-6xl" [ fontSize (lengthRaw "3.75rem") , lineHeight (lengthRaw "1") ]
-
+    , rule
+          ".text-6xl"
+          [ fontSize (lengthRaw "3.75rem"), lineHeight (lengthRaw "1") ]
     -- Text Color: yellow
-    , rule ".text-7xl" [ fontSize (lengthRaw "4.5rem") , lineHeight (lengthRaw "1") ]
-
+    , rule
+          ".text-7xl"
+          [ fontSize (lengthRaw "4.5rem"), lineHeight (lengthRaw "1") ]
     -- Text Color: lime
-    , rule ".text-8xl" [ fontSize (lengthRaw "6rem") , lineHeight (lengthRaw "1") ]
-
+    , rule
+          ".text-8xl"
+          [ fontSize (lengthRaw "6rem"), lineHeight (lengthRaw "1") ]
     -- Text Color: green
-    , rule ".text-9xl" [ fontSize (lengthRaw "8rem") , lineHeight (lengthRaw "1") ]
-
+    , rule
+          ".text-9xl"
+          [ fontSize (lengthRaw "8rem"), lineHeight (lengthRaw "1") ]
     -- Text Color: emerald
     , rule ".font-thin" [ fontWeight (FontWeightRaw "100") ]
-
     -- Text Color: teal
     , rule ".font-extralight" [ fontWeight (FontWeightRaw "200") ]
-
     -- Text Color: cyan
     , rule ".font-light" [ fontWeight (FontWeightRaw "300") ]
-
     -- Text Color: sky
     , rule ".font-normal" [ fontWeight (FontWeightRaw "400") ]
-
     -- Text Color: blue
     , rule ".font-medium" [ fontWeight (FontWeightRaw "500") ]
-
     -- Text Color: indigo
     , rule ".font-semibold" [ fontWeight (FontWeightRaw "600") ]
-
     -- Text Color: violet
     , rule ".font-bold" [ fontWeight (FontWeightRaw "700") ]
-
     -- Text Color: purple
     , rule ".font-extrabold" [ fontWeight (FontWeightRaw "800") ]
-
     -- Text Color: fuchsia
     , rule ".font-black" [ fontWeight (FontWeightRaw "900") ]
-
     -- Text Color: pink
-    , rule ".font-sans"
-        [ fontFamily
-            "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\""
-        ]
-
+    , rule
+          ".font-sans"
+          [ fontFamily
+                "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\""
+          ]
     -- Text Color: rose
-    , rule ".font-serif"
-        [ fontFamily
-            "ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif"
-        ]
-
+    , rule
+          ".font-serif"
+          [ fontFamily
+                "ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif"
+          ]
     -- Text Decoration
-    , rule ".font-mono"
-        [ fontFamily
-            "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
-        ]
-
+    , rule
+          ".font-mono"
+          [ fontFamily
+                "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+          ]
     -- Text Transform
     , rule ".text-left" [ textAlign (TextAlignRaw "left") ]
-
     -- Font Style
     , rule ".text-center" [ textAlign (TextAlignRaw "center") ]
-
     -- Line Height
     , rule ".text-right" [ textAlign (TextAlignRaw "right") ]
-
     -- Letter Spacing
     , rule ".text-justify" [ textAlign (TextAlignRaw "justify") ]
-
     -- Whitespace
     , rule ".text-start" [ textAlign (TextAlignRaw "start") ]
-
     -- Truncate / Overflow
     , rule ".text-end" [ textAlign (TextAlignRaw "end") ]
-
     -- Word Break
     , rule ".text-transparent" [ color (colorRaw "transparent") ]
-
     -- List Style Type
     , rule ".text-black" [ color (colorRaw "#000000") ]
-
     -- List Style Position
     , rule ".text-white" [ color (colorRaw "#ffffff") ]
-
     -- Text Indent
     , rule ".text-current" [ color (colorRaw "currentColor") ]
-
     -- Vertical Align
     , rule ".text-slate-50" [ color (colorRaw "#f8fafc") ]
-
     -- Content
     , rule ".text-slate-100" [ color (colorRaw "#f1f5f9") ]
-
     -- Hyphens
     , rule ".text-slate-200" [ color (colorRaw "#e2e8f0") ]
     , rule ".text-slate-300" [ color (colorRaw "#cbd5e1") ]
@@ -621,15 +724,17 @@ typographyRules =
     , rule ".whitespace-pre-line" [ property "white-space" "pre-line" ]
     , rule ".whitespace-pre-wrap" [ property "white-space" "pre-wrap" ]
     , rule ".whitespace-break-spaces" [ property "white-space" "break-spaces" ]
-    , rule ".truncate"
-        [ property "overflow" "hidden"
-        , property "text-overflow" "ellipsis"
-        , property "white-space" "nowrap"
-        ]
+    , rule
+          ".truncate"
+          [ property "overflow" "hidden"
+          , property "text-overflow" "ellipsis"
+          , property "white-space" "nowrap"
+          ]
     , rule ".text-ellipsis" [ property "text-overflow" "ellipsis" ]
     , rule ".text-clip" [ property "text-overflow" "clip" ]
-    , rule ".break-normal"
-        [ property "overflow-wrap" "normal" , property "word-break" "normal" ]
+    , rule
+          ".break-normal"
+          [ property "overflow-wrap" "normal", property "word-break" "normal" ]
     , rule ".break-words" [ property "overflow-wrap" "break-word" ]
     , rule ".break-all" [ property "word-break" "break-all" ]
     , rule ".break-keep" [ property "word-break" "keep-all" ]
@@ -655,42 +760,32 @@ typographyRules =
     , rule ".hyphens-auto" [ property "hyphens" "auto" ]
     ]
 
+
 -- ============================================================
 -- Layout: display, position, z-index, overflow, float, clear, visibility, isolation
 -- ============================================================
 layoutRules =
     [ rule ".block" [ display (DisplayRaw "block") ]
-
     -- Position
     , rule ".inline-block" [ display (DisplayRaw "inline-block") ]
-
     -- Inset (top/right/bottom/left)
     , rule ".inline" [ display (DisplayRaw "inline") ]
-
     -- Z-Index
     , rule ".flex" [ display (DisplayRaw "flex") ]
-
     -- Overflow
     , rule ".inline-flex" [ display (DisplayRaw "inline-flex") ]
-
     -- Overscroll
     , rule ".grid" [ display (DisplayRaw "grid") ]
-
     -- Float
     , rule ".inline-grid" [ display (DisplayRaw "inline-grid") ]
-
     -- Clear
     , rule ".hidden" [ display (DisplayRaw "none") ]
-
     -- Visibility
     , rule ".contents" [ display (DisplayRaw "contents") ]
-
     -- Isolation
     , rule ".flow-root" [ display (DisplayRaw "flow-root") ]
-
     -- Columns
     , rule ".table" [ display (DisplayRaw "table") ]
-
     -- Break
     , rule ".table-caption" [ display (DisplayRaw "table-caption") ]
     , rule ".table-row" [ display (DisplayRaw "table-row") ]
@@ -705,19 +800,45 @@ layoutRules =
     , rule ".absolute" [ position (PositionRaw "absolute") ]
     , rule ".fixed" [ position (PositionRaw "fixed") ]
     , rule ".sticky" [ position (PositionRaw "sticky") ]
-    , rule ".inset-0" [ top (lengthRaw "0") , right (lengthRaw "0") , bottom (lengthRaw "0") , left (lengthRaw "0") ]
-    , rule ".inset-1"
-        [ top (lengthRaw "0.25rem") , right (lengthRaw "0.25rem") , bottom (lengthRaw "0.25rem") , left (lengthRaw "0.25rem") ]
-    , rule ".inset-2"
-        [ top (lengthRaw "0.5rem") , right (lengthRaw "0.5rem") , bottom (lengthRaw "0.5rem") , left (lengthRaw "0.5rem") ]
-    , rule ".inset-4"
-        [ top (lengthRaw "1rem") , right (lengthRaw "1rem") , bottom (lengthRaw "1rem") , left (lengthRaw "1rem") ]
-    , rule ".inset-auto"
-        [ top (lengthRaw "auto") , right (lengthRaw "auto") , bottom (lengthRaw "auto") , left (lengthRaw "auto") ]
-    , rule ".inset-x-0" [ left (lengthRaw "0") , right (lengthRaw "0") ]
-    , rule ".inset-x-auto" [ left (lengthRaw "auto") , right (lengthRaw "auto") ]
-    , rule ".inset-y-0" [ top (lengthRaw "0") , bottom (lengthRaw "0") ]
-    , rule ".inset-y-auto" [ top (lengthRaw "auto") , bottom (lengthRaw "auto") ]
+    , rule
+          ".inset-0"
+          [ top (lengthRaw "0")
+          , right (lengthRaw "0")
+          , bottom (lengthRaw "0")
+          , left (lengthRaw "0")
+          ]
+    , rule
+          ".inset-1"
+          [ top (lengthRaw "0.25rem")
+          , right (lengthRaw "0.25rem")
+          , bottom (lengthRaw "0.25rem")
+          , left (lengthRaw "0.25rem")
+          ]
+    , rule
+          ".inset-2"
+          [ top (lengthRaw "0.5rem")
+          , right (lengthRaw "0.5rem")
+          , bottom (lengthRaw "0.5rem")
+          , left (lengthRaw "0.5rem")
+          ]
+    , rule
+          ".inset-4"
+          [ top (lengthRaw "1rem")
+          , right (lengthRaw "1rem")
+          , bottom (lengthRaw "1rem")
+          , left (lengthRaw "1rem")
+          ]
+    , rule
+          ".inset-auto"
+          [ top (lengthRaw "auto")
+          , right (lengthRaw "auto")
+          , bottom (lengthRaw "auto")
+          , left (lengthRaw "auto")
+          ]
+    , rule ".inset-x-0" [ left (lengthRaw "0"), right (lengthRaw "0") ]
+    , rule ".inset-x-auto" [ left (lengthRaw "auto"), right (lengthRaw "auto") ]
+    , rule ".inset-y-0" [ top (lengthRaw "0"), bottom (lengthRaw "0") ]
+    , rule ".inset-y-auto" [ top (lengthRaw "auto"), bottom (lengthRaw "auto") ]
     , rule ".top-0" [ top (lengthRaw "0") ]
     , rule ".top-1" [ top (lengthRaw "0.25rem") ]
     , rule ".top-2" [ top (lengthRaw "0.5rem") ]
@@ -805,45 +926,38 @@ layoutRules =
     , rule ".break-inside-avoid" [ property "break-inside" "avoid" ]
     ]
 
+
 -- ============================================================
 -- Flexbox
 -- ============================================================
 flexRules =
     [ rule ".flex-row" [ flexDirection (FlexDirectionRaw "row") ]
-
     -- Flex Wrap
-    , rule ".flex-row-reverse" [ flexDirection (FlexDirectionRaw "row-reverse") ]
-
+    , rule
+          ".flex-row-reverse"
+          [ flexDirection (FlexDirectionRaw "row-reverse") ]
     -- Justify Content
     , rule ".flex-col" [ flexDirection (FlexDirectionRaw "column") ]
-
     -- Justify Items
-    , rule ".flex-col-reverse" [ flexDirection (FlexDirectionRaw "column-reverse") ]
-
+    , rule
+          ".flex-col-reverse"
+          [ flexDirection (FlexDirectionRaw "column-reverse") ]
     -- Justify Self
     , rule ".flex-wrap" [ flexWrap (FlexWrapRaw "wrap") ]
-
     -- Align Items
     , rule ".flex-wrap-reverse" [ flexWrap (FlexWrapRaw "wrap-reverse") ]
-
     -- Align Self
     , rule ".flex-nowrap" [ flexWrap (FlexWrapRaw "nowrap") ]
-
     -- Align Content
     , rule ".justify-start" [ justifyContent (AlignRaw "flex-start") ]
-
     -- Flex shorthand
     , rule ".justify-end" [ justifyContent (AlignRaw "flex-end") ]
-
     -- Flex Grow
     , rule ".justify-center" [ justifyContent (AlignRaw "center") ]
-
     -- Flex Shrink
     , rule ".justify-between" [ justifyContent (AlignRaw "space-between") ]
-
     -- Flex Basis
     , rule ".justify-around" [ justifyContent (AlignRaw "space-around") ]
-
     -- Order
     , rule ".justify-evenly" [ justifyContent (AlignRaw "space-evenly") ]
     , rule ".justify-stretch" [ justifyContent (AlignRaw "stretch") ]
@@ -917,36 +1031,28 @@ flexRules =
     , rule ".order-none" [ property "order" "0" ]
     ]
 
+
 -- ============================================================
 -- Grid
 -- ============================================================
 gridRules =
     [ rule ".grid-cols-1" [ gridTemplateColumns "repeat(1, minmax(0, 1fr))" ]
-
     -- Grid Template Rows
     , rule ".grid-cols-2" [ gridTemplateColumns "repeat(2, minmax(0, 1fr))" ]
-
     -- Column Span
     , rule ".grid-cols-3" [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
-
     -- Row Span
     , rule ".grid-cols-4" [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
-
     -- Grid Auto Flow
     , rule ".grid-cols-5" [ gridTemplateColumns "repeat(5, minmax(0, 1fr))" ]
-
     -- Grid Auto Columns
     , rule ".grid-cols-6" [ gridTemplateColumns "repeat(6, minmax(0, 1fr))" ]
-
     -- Grid Auto Rows
     , rule ".grid-cols-7" [ gridTemplateColumns "repeat(7, minmax(0, 1fr))" ]
-
     -- Place Content
     , rule ".grid-cols-8" [ gridTemplateColumns "repeat(8, minmax(0, 1fr))" ]
-
     -- Place Items
     , rule ".grid-cols-9" [ gridTemplateColumns "repeat(9, minmax(0, 1fr))" ]
-
     -- Place Self
     , rule ".grid-cols-10" [ gridTemplateColumns "repeat(10, minmax(0, 1fr))" ]
     , rule ".grid-cols-11" [ gridTemplateColumns "repeat(11, minmax(0, 1fr))" ]
@@ -1034,84 +1140,60 @@ gridRules =
     , rule ".place-self-stretch" [ property "place-self" "stretch" ]
     ]
 
+
 -- ============================================================
 -- Background
 -- ============================================================
 backgroundRules =
     [ rule ".bg-transparent" [ backgroundColor (colorRaw "transparent") ]
-
     -- Background Color: slate
     , rule ".bg-black" [ backgroundColor (colorRaw "#000000") ]
-
     -- Background Color: gray
     , rule ".bg-white" [ backgroundColor (colorRaw "#ffffff") ]
-
     -- Background Color: red
     , rule ".bg-current" [ backgroundColor (colorRaw "currentColor") ]
-
     -- Background Color: orange
     , rule ".bg-slate-50" [ backgroundColor (colorRaw "#f8fafc") ]
-
     -- Background Color: amber
     , rule ".bg-slate-100" [ backgroundColor (colorRaw "#f1f5f9") ]
-
     -- Background Color: yellow
     , rule ".bg-slate-200" [ backgroundColor (colorRaw "#e2e8f0") ]
-
     -- Background Color: lime
     , rule ".bg-slate-300" [ backgroundColor (colorRaw "#cbd5e1") ]
-
     -- Background Color: green
     , rule ".bg-slate-400" [ backgroundColor (colorRaw "#94a3b8") ]
-
     -- Background Color: emerald
     , rule ".bg-slate-500" [ backgroundColor (colorRaw "#64748b") ]
-
     -- Background Color: teal
     , rule ".bg-slate-600" [ backgroundColor (colorRaw "#475569") ]
-
     -- Background Color: cyan
     , rule ".bg-slate-700" [ backgroundColor (colorRaw "#334155") ]
-
     -- Background Color: sky
     , rule ".bg-slate-800" [ backgroundColor (colorRaw "#1e293b") ]
-
     -- Background Color: blue
     , rule ".bg-slate-900" [ backgroundColor (colorRaw "#0f172a") ]
-
     -- Background Color: indigo
     , rule ".bg-gray-50" [ backgroundColor (colorRaw "#f9fafb") ]
-
     -- Background Color: violet
     , rule ".bg-gray-100" [ backgroundColor (colorRaw "#f3f4f6") ]
-
     -- Background Color: purple
     , rule ".bg-gray-200" [ backgroundColor (colorRaw "#e5e7eb") ]
-
     -- Background Color: fuchsia
     , rule ".bg-gray-300" [ backgroundColor (colorRaw "#d1d5db") ]
-
     -- Background Color: pink
     , rule ".bg-gray-400" [ backgroundColor (colorRaw "#9ca3af") ]
-
     -- Background Color: rose
     , rule ".bg-gray-500" [ backgroundColor (colorRaw "#6b7280") ]
-
     -- Background Size
     , rule ".bg-gray-600" [ backgroundColor (colorRaw "#4b5563") ]
-
     -- Background Position
     , rule ".bg-gray-700" [ backgroundColor (colorRaw "#374151") ]
-
     -- Background Repeat
     , rule ".bg-gray-800" [ backgroundColor (colorRaw "#1f2937") ]
-
     -- Background Attachment
     , rule ".bg-gray-900" [ backgroundColor (colorRaw "#111827") ]
-
     -- Background Clip
     , rule ".bg-gray-950" [ backgroundColor (colorRaw "#030712") ]
-
     -- Background Origin
     , rule ".bg-red-50" [ backgroundColor (colorRaw "#fef2f2") ]
     , rule ".bg-red-100" [ backgroundColor (colorRaw "#fee2e2") ]
@@ -1277,33 +1359,30 @@ backgroundRules =
     , rule ".bg-clip-border" [ property "background-clip" "border-box" ]
     , rule ".bg-clip-padding" [ property "background-clip" "padding-box" ]
     , rule ".bg-clip-content" [ property "background-clip" "content-box" ]
-    , rule ".bg-clip-text"
-        [ property "background-clip" "text"
-        , property "-webkit-background-clip" "text"
-        ]
+    , rule
+          ".bg-clip-text"
+          [ property "background-clip" "text"
+          , property "-webkit-background-clip" "text"
+          ]
     , rule ".bg-origin-border" [ property "background-origin" "border-box" ]
     , rule ".bg-origin-padding" [ property "background-origin" "padding-box" ]
     , rule ".bg-origin-content" [ property "background-origin" "content-box" ]
     ]
+
 
 -- ============================================================
 -- Border
 -- ============================================================
 borderRules =
     [ rule ".border" [ border "1px solid" ]
-
     -- Border Color
     , rule ".border-0" [ borderWidth (lengthRaw "0px") ]
-
     -- Border Style
     , rule ".border-2" [ borderWidth (lengthRaw "2px") ]
-
     -- Border Radius
     , rule ".border-4" [ borderWidth (lengthRaw "4px") ]
-
     -- Border Collapse (for tables)
     , rule ".border-8" [ borderWidth (lengthRaw "8px") ]
-
     -- Border Spacing
     , rule ".border-t" [ borderTop "1px solid" ]
     , rule ".border-r" [ borderRight "1px solid" ]
@@ -1374,78 +1453,96 @@ borderRules =
     , rule ".rounded-2xl" [ borderRadius (lengthRaw "1rem") ]
     , rule ".rounded-3xl" [ borderRadius (lengthRaw "1.5rem") ]
     , rule ".rounded-full" [ borderRadius (lengthRaw "9999px") ]
-    , rule ".rounded-t-none"
-        [ property "border-top-left-radius" "0"
-        , property "border-top-right-radius" "0"
-        ]
-    , rule ".rounded-t-sm"
-        [ property "border-top-left-radius" "0.125rem"
-        , property "border-top-right-radius" "0.125rem"
-        ]
-    , rule ".rounded-t"
-        [ property "border-top-left-radius" "0.25rem"
-        , property "border-top-right-radius" "0.25rem"
-        ]
-    , rule ".rounded-t-md"
-        [ property "border-top-left-radius" "0.375rem"
-        , property "border-top-right-radius" "0.375rem"
-        ]
-    , rule ".rounded-t-lg"
-        [ property "border-top-left-radius" "0.5rem"
-        , property "border-top-right-radius" "0.5rem"
-        ]
-    , rule ".rounded-t-xl"
-        [ property "border-top-left-radius" "0.75rem"
-        , property "border-top-right-radius" "0.75rem"
-        ]
-    , rule ".rounded-t-2xl"
-        [ property "border-top-left-radius" "1rem"
-        , property "border-top-right-radius" "1rem"
-        ]
-    , rule ".rounded-t-full"
-        [ property "border-top-left-radius" "9999px"
-        , property "border-top-right-radius" "9999px"
-        ]
-    , rule ".rounded-r"
-        [ property "border-top-right-radius" "0.25rem"
-        , property "border-bottom-right-radius" "0.25rem"
-        ]
-    , rule ".rounded-r-lg"
-        [ property "border-top-right-radius" "0.5rem"
-        , property "border-bottom-right-radius" "0.5rem"
-        ]
-    , rule ".rounded-r-full"
-        [ property "border-top-right-radius" "9999px"
-        , property "border-bottom-right-radius" "9999px"
-        ]
-    , rule ".rounded-b"
-        [ property "border-bottom-left-radius" "0.25rem"
-        , property "border-bottom-right-radius" "0.25rem"
-        ]
-    , rule ".rounded-b-lg"
-        [ property "border-bottom-left-radius" "0.5rem"
-        , property "border-bottom-right-radius" "0.5rem"
-        ]
-    , rule ".rounded-b-xl"
-        [ property "border-bottom-left-radius" "0.75rem"
-        , property "border-bottom-right-radius" "0.75rem"
-        ]
-    , rule ".rounded-b-full"
-        [ property "border-bottom-left-radius" "9999px"
-        , property "border-bottom-right-radius" "9999px"
-        ]
-    , rule ".rounded-l"
-        [ property "border-top-left-radius" "0.25rem"
-        , property "border-bottom-left-radius" "0.25rem"
-        ]
-    , rule ".rounded-l-lg"
-        [ property "border-top-left-radius" "0.5rem"
-        , property "border-bottom-left-radius" "0.5rem"
-        ]
-    , rule ".rounded-l-full"
-        [ property "border-top-left-radius" "9999px"
-        , property "border-bottom-left-radius" "9999px"
-        ]
+    , rule
+          ".rounded-t-none"
+          [ property "border-top-left-radius" "0"
+          , property "border-top-right-radius" "0"
+          ]
+    , rule
+          ".rounded-t-sm"
+          [ property "border-top-left-radius" "0.125rem"
+          , property "border-top-right-radius" "0.125rem"
+          ]
+    , rule
+          ".rounded-t"
+          [ property "border-top-left-radius" "0.25rem"
+          , property "border-top-right-radius" "0.25rem"
+          ]
+    , rule
+          ".rounded-t-md"
+          [ property "border-top-left-radius" "0.375rem"
+          , property "border-top-right-radius" "0.375rem"
+          ]
+    , rule
+          ".rounded-t-lg"
+          [ property "border-top-left-radius" "0.5rem"
+          , property "border-top-right-radius" "0.5rem"
+          ]
+    , rule
+          ".rounded-t-xl"
+          [ property "border-top-left-radius" "0.75rem"
+          , property "border-top-right-radius" "0.75rem"
+          ]
+    , rule
+          ".rounded-t-2xl"
+          [ property "border-top-left-radius" "1rem"
+          , property "border-top-right-radius" "1rem"
+          ]
+    , rule
+          ".rounded-t-full"
+          [ property "border-top-left-radius" "9999px"
+          , property "border-top-right-radius" "9999px"
+          ]
+    , rule
+          ".rounded-r"
+          [ property "border-top-right-radius" "0.25rem"
+          , property "border-bottom-right-radius" "0.25rem"
+          ]
+    , rule
+          ".rounded-r-lg"
+          [ property "border-top-right-radius" "0.5rem"
+          , property "border-bottom-right-radius" "0.5rem"
+          ]
+    , rule
+          ".rounded-r-full"
+          [ property "border-top-right-radius" "9999px"
+          , property "border-bottom-right-radius" "9999px"
+          ]
+    , rule
+          ".rounded-b"
+          [ property "border-bottom-left-radius" "0.25rem"
+          , property "border-bottom-right-radius" "0.25rem"
+          ]
+    , rule
+          ".rounded-b-lg"
+          [ property "border-bottom-left-radius" "0.5rem"
+          , property "border-bottom-right-radius" "0.5rem"
+          ]
+    , rule
+          ".rounded-b-xl"
+          [ property "border-bottom-left-radius" "0.75rem"
+          , property "border-bottom-right-radius" "0.75rem"
+          ]
+    , rule
+          ".rounded-b-full"
+          [ property "border-bottom-left-radius" "9999px"
+          , property "border-bottom-right-radius" "9999px"
+          ]
+    , rule
+          ".rounded-l"
+          [ property "border-top-left-radius" "0.25rem"
+          , property "border-bottom-left-radius" "0.25rem"
+          ]
+    , rule
+          ".rounded-l-lg"
+          [ property "border-top-left-radius" "0.5rem"
+          , property "border-bottom-left-radius" "0.5rem"
+          ]
+    , rule
+          ".rounded-l-full"
+          [ property "border-top-left-radius" "9999px"
+          , property "border-bottom-left-radius" "9999px"
+          ]
     , rule ".border-collapse" [ borderCollapse "collapse" ]
     , rule ".border-separate" [ borderCollapse "separate" ]
     , rule ".border-spacing-0" [ property "border-spacing" "0" ]
@@ -1454,42 +1551,40 @@ borderRules =
     , rule ".border-spacing-4" [ property "border-spacing" "1rem" ]
     ]
 
+
 -- ============================================================
 -- Effects: shadow, opacity, transition, mix-blend
 -- ============================================================
 effectsRules =
     [ rule ".shadow-sm" [ boxShadow "0 1px 2px 0 rgba(0, 0, 0, 0.05)" ]
-
     -- Opacity
-    , rule ".shadow"
-        [ boxShadow
-            "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)"
-        ]
-
+    , rule
+          ".shadow"
+          [ boxShadow
+                "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)"
+          ]
     -- Mix Blend Mode
-    , rule ".shadow-md"
-        [ boxShadow
-            "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)"
-        ]
-
+    , rule
+          ".shadow-md"
+          [ boxShadow
+                "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)"
+          ]
     -- Transition
-    , rule ".shadow-lg"
-        [ boxShadow
-            "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)"
-        ]
-
+    , rule
+          ".shadow-lg"
+          [ boxShadow
+                "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)"
+          ]
     -- Transition Duration
-    , rule ".shadow-xl"
-        [ boxShadow
-            "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)"
-        ]
-
+    , rule
+          ".shadow-xl"
+          [ boxShadow
+                "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)"
+          ]
     -- Transition Timing Function
     , rule ".shadow-2xl" [ boxShadow "0 25px 50px -12px rgba(0, 0, 0, 0.25)" ]
-
     -- Transition Delay
     , rule ".shadow-inner" [ boxShadow "inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)" ]
-
     -- Will Change
     , rule ".shadow-none" [ boxShadow "none" ]
     , rule ".opacity-0" [ property "opacity" "0" ]
@@ -1520,22 +1615,28 @@ effectsRules =
     , rule ".mix-blend-soft-light" [ property "mix-blend-mode" "soft-light" ]
     , rule ".mix-blend-difference" [ property "mix-blend-mode" "difference" ]
     , rule ".mix-blend-exclusion" [ property "mix-blend-mode" "exclusion" ]
-    , rule ".transition-all"
-        [ transition "all 150ms cubic-bezier(0.4, 0, 0.2, 1)" ]
-    , rule ".transition"
-        [ transition
-            "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 150ms cubic-bezier(0.4, 0, 0.2, 1)"
-        ]
-    , rule ".transition-colors"
-        [ transition
-            "color, background-color, border-color, text-decoration-color, fill, stroke 150ms cubic-bezier(0.4, 0, 0.2, 1)"
-        ]
-    , rule ".transition-opacity"
-        [ transition "opacity 150ms cubic-bezier(0.4, 0, 0.2, 1)" ]
-    , rule ".transition-shadow"
-        [ transition "box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1)" ]
-    , rule ".transition-transform"
-        [ transition "transform 150ms cubic-bezier(0.4, 0, 0.2, 1)" ]
+    , rule
+          ".transition-all"
+          [ transition "all 150ms cubic-bezier(0.4, 0, 0.2, 1)" ]
+    , rule
+          ".transition"
+          [ transition
+                "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter 150ms cubic-bezier(0.4, 0, 0.2, 1)"
+          ]
+    , rule
+          ".transition-colors"
+          [ transition
+                "color, background-color, border-color, text-decoration-color, fill, stroke 150ms cubic-bezier(0.4, 0, 0.2, 1)"
+          ]
+    , rule
+          ".transition-opacity"
+          [ transition "opacity 150ms cubic-bezier(0.4, 0, 0.2, 1)" ]
+    , rule
+          ".transition-shadow"
+          [ transition "box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1)" ]
+    , rule
+          ".transition-transform"
+          [ transition "transform 150ms cubic-bezier(0.4, 0, 0.2, 1)" ]
     , rule ".transition-none" [ transition "none" ]
     , rule ".duration-75" [ property "transition-duration" "75ms" ]
     , rule ".duration-100" [ property "transition-duration" "100ms" ]
@@ -1546,12 +1647,16 @@ effectsRules =
     , rule ".duration-700" [ property "transition-duration" "700ms" ]
     , rule ".duration-1000" [ property "transition-duration" "1000ms" ]
     , rule ".ease-linear" [ property "transition-timing-function" "linear" ]
-    , rule ".ease-in"
-        [ property "transition-timing-function" "cubic-bezier(0.4, 0, 1, 1)" ]
-    , rule ".ease-out"
-        [ property "transition-timing-function" "cubic-bezier(0, 0, 0.2, 1)" ]
-    , rule ".ease-in-out"
-        [ property "transition-timing-function" "cubic-bezier(0.4, 0, 0.2, 1)" ]
+    , rule
+          ".ease-in"
+          [ property "transition-timing-function" "cubic-bezier(0.4, 0, 1, 1)" ]
+    , rule
+          ".ease-out"
+          [ property "transition-timing-function" "cubic-bezier(0, 0, 0.2, 1)" ]
+    , rule
+          ".ease-in-out"
+          [ property "transition-timing-function" "cubic-bezier(0.4, 0, 0.2, 1)"
+          ]
     , rule ".delay-75" [ property "transition-delay" "75ms" ]
     , rule ".delay-100" [ property "transition-delay" "100ms" ]
     , rule ".delay-150" [ property "transition-delay" "150ms" ]
@@ -1566,42 +1671,32 @@ effectsRules =
     , rule ".will-change-transform" [ property "will-change" "transform" ]
     ]
 
+
 -- ============================================================
 -- Sizing: width, height, min/max, aspect-ratio, object, box, container
 -- ============================================================
 sizingRules =
     [ rule ".w-0" [ width (lengthRaw "0") ]
-
     -- Height
     , rule ".w-1" [ width (lengthRaw "0.25rem") ]
-
     -- Size (width + height)
     , rule ".w-2" [ width (lengthRaw "0.5rem") ]
-
     -- Min Width
     , rule ".w-3" [ width (lengthRaw "0.75rem") ]
-
     -- Max Width
     , rule ".w-4" [ width (lengthRaw "1rem") ]
-
     -- Min Height
     , rule ".w-5" [ width (lengthRaw "1.25rem") ]
-
     -- Max Height
     , rule ".w-6" [ width (lengthRaw "1.5rem") ]
-
     -- Aspect Ratio
     , rule ".w-8" [ width (lengthRaw "2rem") ]
-
     -- Object Fit
     , rule ".w-10" [ width (lengthRaw "2.5rem") ]
-
     -- Object Position
     , rule ".w-12" [ width (lengthRaw "3rem") ]
-
     -- Box Sizing
     , rule ".w-16" [ width (lengthRaw "4rem") ]
-
     -- Container
     , rule ".w-20" [ width (lengthRaw "5rem") ]
     , rule ".w-24" [ width (lengthRaw "6rem") ]
@@ -1671,20 +1766,28 @@ sizingRules =
     , rule ".h-1\\/2" [ height (lengthRaw "50%") ]
     , rule ".h-1\\/3" [ height (lengthRaw "33.333333%") ]
     , rule ".h-2\\/3" [ height (lengthRaw "66.666667%") ]
-    , rule ".size-0" [ width (lengthRaw "0") , height (lengthRaw "0") ]
-    , rule ".size-1" [ width (lengthRaw "0.25rem") , height (lengthRaw "0.25rem") ]
-    , rule ".size-2" [ width (lengthRaw "0.5rem") , height (lengthRaw "0.5rem") ]
-    , rule ".size-3" [ width (lengthRaw "0.75rem") , height (lengthRaw "0.75rem") ]
-    , rule ".size-4" [ width (lengthRaw "1rem") , height (lengthRaw "1rem") ]
-    , rule ".size-5" [ width (lengthRaw "1.25rem") , height (lengthRaw "1.25rem") ]
-    , rule ".size-6" [ width (lengthRaw "1.5rem") , height (lengthRaw "1.5rem") ]
-    , rule ".size-8" [ width (lengthRaw "2rem") , height (lengthRaw "2rem") ]
-    , rule ".size-10" [ width (lengthRaw "2.5rem") , height (lengthRaw "2.5rem") ]
-    , rule ".size-12" [ width (lengthRaw "3rem") , height (lengthRaw "3rem") ]
-    , rule ".size-16" [ width (lengthRaw "4rem") , height (lengthRaw "4rem") ]
-    , rule ".size-20" [ width (lengthRaw "5rem") , height (lengthRaw "5rem") ]
-    , rule ".size-24" [ width (lengthRaw "6rem") , height (lengthRaw "6rem") ]
-    , rule ".size-full" [ width (lengthRaw "100%") , height (lengthRaw "100%") ]
+    , rule ".size-0" [ width (lengthRaw "0"), height (lengthRaw "0") ]
+    , rule
+          ".size-1"
+          [ width (lengthRaw "0.25rem"), height (lengthRaw "0.25rem") ]
+    , rule ".size-2" [ width (lengthRaw "0.5rem"), height (lengthRaw "0.5rem") ]
+    , rule
+          ".size-3"
+          [ width (lengthRaw "0.75rem"), height (lengthRaw "0.75rem") ]
+    , rule ".size-4" [ width (lengthRaw "1rem"), height (lengthRaw "1rem") ]
+    , rule
+          ".size-5"
+          [ width (lengthRaw "1.25rem"), height (lengthRaw "1.25rem") ]
+    , rule ".size-6" [ width (lengthRaw "1.5rem"), height (lengthRaw "1.5rem") ]
+    , rule ".size-8" [ width (lengthRaw "2rem"), height (lengthRaw "2rem") ]
+    , rule
+          ".size-10"
+          [ width (lengthRaw "2.5rem"), height (lengthRaw "2.5rem") ]
+    , rule ".size-12" [ width (lengthRaw "3rem"), height (lengthRaw "3rem") ]
+    , rule ".size-16" [ width (lengthRaw "4rem"), height (lengthRaw "4rem") ]
+    , rule ".size-20" [ width (lengthRaw "5rem"), height (lengthRaw "5rem") ]
+    , rule ".size-24" [ width (lengthRaw "6rem"), height (lengthRaw "6rem") ]
+    , rule ".size-full" [ width (lengthRaw "100%"), height (lengthRaw "100%") ]
     , rule ".min-w-0" [ minWidth (lengthRaw "0") ]
     , rule ".min-w-full" [ minWidth (lengthRaw "100%") ]
     , rule ".min-w-min" [ minWidth (lengthRaw "min-content") ]
@@ -1760,52 +1863,60 @@ sizingRules =
     , rule ".container" [ width (lengthRaw "100%") ]
     ]
 
+
 -- ============================================================
 -- Animation
 -- ============================================================
 animationRules =
     [ keyframes "spin" [ frame "to" [ rawProp "transform:rotate(360deg)" ] ]
-    , keyframes "ping"
-        [ frame "75%, 100%" [ rawProp "transform:scale(2)" , rawProp "opacity:0" ] ]
+    , keyframes
+          "ping"
+          [ frame
+                "75%, 100%"
+                [ rawProp "transform:scale(2)", rawProp "opacity:0" ]
+          ]
     , keyframes "pulse" [ frame "50%" [ rawProp "opacity:.5" ] ]
-    , keyframes "bounce"
-        [ frame "0%, 100%"
-            [ rawProp "transform:translateY(-25%)"
-            , rawProp "animation-timing-function:cubic-bezier(0.8, 0, 1, 1)"
-            ]
-        , frame "50%"
-            [ rawProp "transform:none"
-            , rawProp "animation-timing-function:cubic-bezier(0, 0, 0.2, 1)"
-            ]
-        ]
+    , keyframes
+          "bounce"
+          [ frame
+                "0%, 100%"
+                [ rawProp "transform:translateY(-25%)"
+                , rawProp "animation-timing-function:cubic-bezier(0.8, 0, 1, 1)"
+                ]
+          , frame
+                "50%"
+                [ rawProp "transform:none"
+                , rawProp "animation-timing-function:cubic-bezier(0, 0, 0.2, 1)"
+                ]
+          ]
     , rule ".animate-none" [ property "animation" "none" ]
     , rule ".animate-spin" [ property "animation" "spin 1s linear infinite" ]
-    , rule ".animate-ping"
-        [ property "animation" "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite" ]
-    , rule ".animate-pulse"
-        [ property "animation" "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite"
-        ]
+    , rule
+          ".animate-ping"
+          [ property "animation" "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite" ]
+    , rule
+          ".animate-pulse"
+          [ property
+                "animation"
+                "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite"
+          ]
     , rule ".animate-bounce" [ property "animation" "bounce 1s infinite" ]
     ]
+
 
 -- ============================================================
 -- Transforms: scale, rotate, translate, skew, origin
 -- ============================================================
 transformsRules =
     [ rule ".scale-0" [ transform "scale(0)" ]
-
     -- Rotate
     , rule ".scale-50" [ transform "scale(.5)" ]
-
     -- Translate X
     , rule ".scale-75" [ transform "scale(.75)" ]
-
     -- Translate Y
     , rule ".scale-90" [ transform "scale(.9)" ]
-
     -- Skew
     , rule ".scale-95" [ transform "scale(.95)" ]
-
     -- Transform Origin
     , rule ".scale-100" [ transform "scale(1)" ]
     , rule ".scale-105" [ transform "scale(1.05)" ]
@@ -1902,57 +2013,42 @@ transformsRules =
     , rule ".origin-top-left" [ property "transform-origin" "top left" ]
     ]
 
+
 -- ============================================================
 -- Filters
 -- ============================================================
 filtersRules =
     [ rule ".blur-none" [ property "filter" "blur(0)" ]
-
     -- Brightness
     , rule ".blur-sm" [ property "filter" "blur(4px)" ]
-
     -- Contrast
     , rule ".blur" [ property "filter" "blur(8px)" ]
-
     -- Grayscale
     , rule ".blur-md" [ property "filter" "blur(12px)" ]
-
     -- Hue Rotate
     , rule ".blur-lg" [ property "filter" "blur(16px)" ]
-
     -- Invert
     , rule ".blur-xl" [ property "filter" "blur(24px)" ]
-
     -- Saturate
     , rule ".blur-2xl" [ property "filter" "blur(40px)" ]
-
     -- Sepia
     , rule ".blur-3xl" [ property "filter" "blur(64px)" ]
-
     -- Drop Shadow
     , rule ".brightness-0" [ property "filter" "brightness(0)" ]
-
     -- Backdrop Blur
     , rule ".brightness-50" [ property "filter" "brightness(.5)" ]
-
     -- Backdrop Brightness
     , rule ".brightness-75" [ property "filter" "brightness(.75)" ]
-
     -- Backdrop Contrast
     , rule ".brightness-90" [ property "filter" "brightness(.9)" ]
-
     -- Backdrop Grayscale
     , rule ".brightness-95" [ property "filter" "brightness(.95)" ]
-
     -- Backdrop Saturate
     , rule ".brightness-100" [ property "filter" "brightness(1)" ]
-
     -- Backdrop Sepia
     , rule ".brightness-105" [ property "filter" "brightness(1.05)" ]
-
     -- Backdrop Invert
     , rule ".brightness-110" [ property "filter" "brightness(1.1)" ]
-
     -- Backdrop Opacity
     , rule ".brightness-125" [ property "filter" "brightness(1.25)" ]
     , rule ".brightness-150" [ property "filter" "brightness(1.5)" ]
@@ -1981,26 +2077,36 @@ filtersRules =
     , rule ".saturate-200" [ property "filter" "saturate(2)" ]
     , rule ".sepia-0" [ property "filter" "sepia(0)" ]
     , rule ".sepia" [ property "filter" "sepia(100%)" ]
-    , rule ".drop-shadow-sm"
-        [ property "filter" "drop-shadow(0 1px 1px rgba(0,0,0,0.05))" ]
-    , rule ".drop-shadow"
-        [ property "filter"
-            "drop-shadow(0 1px 2px rgba(0,0,0,0.1)) drop-shadow(0 1px 1px rgba(0,0,0,0.06))"
-        ]
-    , rule ".drop-shadow-md"
-        [ property "filter"
-            "drop-shadow(0 4px 3px rgba(0,0,0,0.07)) drop-shadow(0 2px 2px rgba(0,0,0,0.06))"
-        ]
-    , rule ".drop-shadow-lg"
-        [ property "filter"
-            "drop-shadow(0 10px 8px rgba(0,0,0,0.04)) drop-shadow(0 4px 3px rgba(0,0,0,0.1))"
-        ]
-    , rule ".drop-shadow-xl"
-        [ property "filter"
-            "drop-shadow(0 20px 13px rgba(0,0,0,0.03)) drop-shadow(0 8px 5px rgba(0,0,0,0.08))"
-        ]
-    , rule ".drop-shadow-2xl"
-        [ property "filter" "drop-shadow(0 25px 25px rgba(0,0,0,0.15))" ]
+    , rule
+          ".drop-shadow-sm"
+          [ property "filter" "drop-shadow(0 1px 1px rgba(0,0,0,0.05))" ]
+    , rule
+          ".drop-shadow"
+          [ property
+                "filter"
+                "drop-shadow(0 1px 2px rgba(0,0,0,0.1)) drop-shadow(0 1px 1px rgba(0,0,0,0.06))"
+          ]
+    , rule
+          ".drop-shadow-md"
+          [ property
+                "filter"
+                "drop-shadow(0 4px 3px rgba(0,0,0,0.07)) drop-shadow(0 2px 2px rgba(0,0,0,0.06))"
+          ]
+    , rule
+          ".drop-shadow-lg"
+          [ property
+                "filter"
+                "drop-shadow(0 10px 8px rgba(0,0,0,0.04)) drop-shadow(0 4px 3px rgba(0,0,0,0.1))"
+          ]
+    , rule
+          ".drop-shadow-xl"
+          [ property
+                "filter"
+                "drop-shadow(0 20px 13px rgba(0,0,0,0.03)) drop-shadow(0 8px 5px rgba(0,0,0,0.08))"
+          ]
+    , rule
+          ".drop-shadow-2xl"
+          [ property "filter" "drop-shadow(0 25px 25px rgba(0,0,0,0.15))" ]
     , rule ".drop-shadow-none" [ property "filter" "drop-shadow(0 0 #0000)" ]
     , rule ".backdrop-blur-none" [ property "backdrop-filter" "blur(0)" ]
     , rule ".backdrop-blur-sm" [ property "backdrop-filter" "blur(4px)" ]
@@ -2010,34 +2116,44 @@ filtersRules =
     , rule ".backdrop-blur-xl" [ property "backdrop-filter" "blur(24px)" ]
     , rule ".backdrop-blur-2xl" [ property "backdrop-filter" "blur(40px)" ]
     , rule ".backdrop-blur-3xl" [ property "backdrop-filter" "blur(64px)" ]
-    , rule ".backdrop-brightness-0"
-        [ property "backdrop-filter" "brightness(0)" ]
-    , rule ".backdrop-brightness-50"
-        [ property "backdrop-filter" "brightness(.5)" ]
-    , rule ".backdrop-brightness-75"
-        [ property "backdrop-filter" "brightness(.75)" ]
-    , rule ".backdrop-brightness-100"
-        [ property "backdrop-filter" "brightness(1)" ]
-    , rule ".backdrop-brightness-125"
-        [ property "backdrop-filter" "brightness(1.25)" ]
-    , rule ".backdrop-brightness-150"
-        [ property "backdrop-filter" "brightness(1.5)" ]
-    , rule ".backdrop-brightness-200"
-        [ property "backdrop-filter" "brightness(2)" ]
+    , rule
+          ".backdrop-brightness-0"
+          [ property "backdrop-filter" "brightness(0)" ]
+    , rule
+          ".backdrop-brightness-50"
+          [ property "backdrop-filter" "brightness(.5)" ]
+    , rule
+          ".backdrop-brightness-75"
+          [ property "backdrop-filter" "brightness(.75)" ]
+    , rule
+          ".backdrop-brightness-100"
+          [ property "backdrop-filter" "brightness(1)" ]
+    , rule
+          ".backdrop-brightness-125"
+          [ property "backdrop-filter" "brightness(1.25)" ]
+    , rule
+          ".backdrop-brightness-150"
+          [ property "backdrop-filter" "brightness(1.5)" ]
+    , rule
+          ".backdrop-brightness-200"
+          [ property "backdrop-filter" "brightness(2)" ]
     , rule ".backdrop-contrast-0" [ property "backdrop-filter" "contrast(0)" ]
     , rule ".backdrop-contrast-50" [ property "backdrop-filter" "contrast(.5)" ]
     , rule ".backdrop-contrast-100" [ property "backdrop-filter" "contrast(1)" ]
-    , rule ".backdrop-contrast-150"
-        [ property "backdrop-filter" "contrast(1.5)" ]
+    , rule
+          ".backdrop-contrast-150"
+          [ property "backdrop-filter" "contrast(1.5)" ]
     , rule ".backdrop-contrast-200" [ property "backdrop-filter" "contrast(2)" ]
     , rule ".backdrop-grayscale-0" [ property "backdrop-filter" "grayscale(0)" ]
-    , rule ".backdrop-grayscale"
-        [ property "backdrop-filter" "grayscale(100%)" ]
+    , rule
+          ".backdrop-grayscale"
+          [ property "backdrop-filter" "grayscale(100%)" ]
     , rule ".backdrop-saturate-0" [ property "backdrop-filter" "saturate(0)" ]
     , rule ".backdrop-saturate-50" [ property "backdrop-filter" "saturate(.5)" ]
     , rule ".backdrop-saturate-100" [ property "backdrop-filter" "saturate(1)" ]
-    , rule ".backdrop-saturate-150"
-        [ property "backdrop-filter" "saturate(1.5)" ]
+    , rule
+          ".backdrop-saturate-150"
+          [ property "backdrop-filter" "saturate(1.5)" ]
     , rule ".backdrop-saturate-200" [ property "backdrop-filter" "saturate(2)" ]
     , rule ".backdrop-sepia-0" [ property "backdrop-filter" "sepia(0)" ]
     , rule ".backdrop-sepia" [ property "backdrop-filter" "sepia(100%)" ]
@@ -2048,144 +2164,198 @@ filtersRules =
     , rule ".backdrop-opacity-100" [ property "backdrop-filter" "opacity(1)" ]
     ]
 
+
 -- ============================================================
 -- Gradients
 -- ============================================================
 gradientRules =
-    [ rule ".bg-gradient-to-t"
-        [ property "background-image"
-            "linear-gradient(to top, var(--tw-gradient-stops))"
-        ]
-
+    [ rule
+          ".bg-gradient-to-t"
+          [ property
+                "background-image"
+                "linear-gradient(to top, var(--tw-gradient-stops))"
+          ]
     -- From colors (selected key colors)
-    , rule ".bg-gradient-to-tr"
-        [ property "background-image"
-            "linear-gradient(to top right, var(--tw-gradient-stops))"
-        ]
-
+    , rule
+          ".bg-gradient-to-tr"
+          [ property
+                "background-image"
+                "linear-gradient(to top right, var(--tw-gradient-stops))"
+          ]
     -- Via colors
-    , rule ".bg-gradient-to-r"
-        [ property "background-image"
-            "linear-gradient(to right, var(--tw-gradient-stops))"
-        ]
-
+    , rule
+          ".bg-gradient-to-r"
+          [ property
+                "background-image"
+                "linear-gradient(to right, var(--tw-gradient-stops))"
+          ]
     -- To colors
-    , rule ".bg-gradient-to-br"
-        [ property "background-image"
-            "linear-gradient(to bottom right, var(--tw-gradient-stops))"
-        ]
-    , rule ".bg-gradient-to-b"
-        [ property "background-image"
-            "linear-gradient(to bottom, var(--tw-gradient-stops))"
-        ]
-    , rule ".bg-gradient-to-bl"
-        [ property "background-image"
-            "linear-gradient(to bottom left, var(--tw-gradient-stops))"
-        ]
-    , rule ".bg-gradient-to-l"
-        [ property "background-image"
-            "linear-gradient(to left, var(--tw-gradient-stops))"
-        ]
-    , rule ".bg-gradient-to-tl"
-        [ property "background-image"
-            "linear-gradient(to top left, var(--tw-gradient-stops))"
-        ]
+    , rule
+          ".bg-gradient-to-br"
+          [ property
+                "background-image"
+                "linear-gradient(to bottom right, var(--tw-gradient-stops))"
+          ]
+    , rule
+          ".bg-gradient-to-b"
+          [ property
+                "background-image"
+                "linear-gradient(to bottom, var(--tw-gradient-stops))"
+          ]
+    , rule
+          ".bg-gradient-to-bl"
+          [ property
+                "background-image"
+                "linear-gradient(to bottom left, var(--tw-gradient-stops))"
+          ]
+    , rule
+          ".bg-gradient-to-l"
+          [ property
+                "background-image"
+                "linear-gradient(to left, var(--tw-gradient-stops))"
+          ]
+    , rule
+          ".bg-gradient-to-tl"
+          [ property
+                "background-image"
+                "linear-gradient(to top left, var(--tw-gradient-stops))"
+          ]
     , rule ".bg-none" [ property "background-image" "none" ]
-    , rule ".from-transparent"
-        [ property "--tw-gradient-from" "transparent"
-        , property "--tw-gradient-stops"
-            "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".from-black"
-        [ property "--tw-gradient-from" "#000000"
-        , property "--tw-gradient-stops"
-            "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".from-white"
-        [ property "--tw-gradient-from" "#ffffff"
-        , property "--tw-gradient-stops"
-            "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".from-blue-400"
-        [ property "--tw-gradient-from" "#60a5fa"
-        , property "--tw-gradient-stops"
-            "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".from-blue-500"
-        [ property "--tw-gradient-from" "#3b82f6"
-        , property "--tw-gradient-stops"
-            "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".from-blue-600"
-        [ property "--tw-gradient-from" "#2563eb"
-        , property "--tw-gradient-stops"
-            "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".from-indigo-500"
-        [ property "--tw-gradient-from" "#6366f1"
-        , property "--tw-gradient-stops"
-            "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".from-purple-500"
-        [ property "--tw-gradient-from" "#a855f7"
-        , property "--tw-gradient-stops"
-            "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".from-purple-600"
-        [ property "--tw-gradient-from" "#9333ea"
-        , property "--tw-gradient-stops"
-            "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".from-pink-500"
-        [ property "--tw-gradient-from" "#ec4899"
-        , property "--tw-gradient-stops"
-            "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".from-red-500"
-        [ property "--tw-gradient-from" "#ef4444"
-        , property "--tw-gradient-stops"
-            "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".from-green-400"
-        [ property "--tw-gradient-from" "#4ade80"
-        , property "--tw-gradient-stops"
-            "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".from-green-500"
-        [ property "--tw-gradient-from" "#22c55e"
-        , property "--tw-gradient-stops"
-            "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".from-cyan-500"
-        [ property "--tw-gradient-from" "#06b6d4"
-        , property "--tw-gradient-stops"
-            "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".from-teal-500"
-        [ property "--tw-gradient-from" "#14b8a6"
-        , property "--tw-gradient-stops"
-            "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".via-transparent"
-        [ property "--tw-gradient-stops"
-            "var(--tw-gradient-from), transparent, var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".via-blue-500"
-        [ property "--tw-gradient-stops"
-            "var(--tw-gradient-from), #3b82f6, var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".via-purple-500"
-        [ property "--tw-gradient-stops"
-            "var(--tw-gradient-from), #a855f7, var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".via-pink-500"
-        [ property "--tw-gradient-stops"
-            "var(--tw-gradient-from), #ec4899, var(--tw-gradient-to, transparent)"
-        ]
-    , rule ".via-indigo-500"
-        [ property "--tw-gradient-stops"
-            "var(--tw-gradient-from), #6366f1, var(--tw-gradient-to, transparent)"
-        ]
+    , rule
+          ".from-transparent"
+          [ property "--tw-gradient-from" "transparent"
+          , property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".from-black"
+          [ property "--tw-gradient-from" "#000000"
+          , property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".from-white"
+          [ property "--tw-gradient-from" "#ffffff"
+          , property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".from-blue-400"
+          [ property "--tw-gradient-from" "#60a5fa"
+          , property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".from-blue-500"
+          [ property "--tw-gradient-from" "#3b82f6"
+          , property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".from-blue-600"
+          [ property "--tw-gradient-from" "#2563eb"
+          , property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".from-indigo-500"
+          [ property "--tw-gradient-from" "#6366f1"
+          , property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".from-purple-500"
+          [ property "--tw-gradient-from" "#a855f7"
+          , property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".from-purple-600"
+          [ property "--tw-gradient-from" "#9333ea"
+          , property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".from-pink-500"
+          [ property "--tw-gradient-from" "#ec4899"
+          , property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".from-red-500"
+          [ property "--tw-gradient-from" "#ef4444"
+          , property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".from-green-400"
+          [ property "--tw-gradient-from" "#4ade80"
+          , property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".from-green-500"
+          [ property "--tw-gradient-from" "#22c55e"
+          , property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".from-cyan-500"
+          [ property "--tw-gradient-from" "#06b6d4"
+          , property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".from-teal-500"
+          [ property "--tw-gradient-from" "#14b8a6"
+          , property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".via-transparent"
+          [ property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), transparent, var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".via-blue-500"
+          [ property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), #3b82f6, var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".via-purple-500"
+          [ property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), #a855f7, var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".via-pink-500"
+          [ property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), #ec4899, var(--tw-gradient-to, transparent)"
+          ]
+    , rule
+          ".via-indigo-500"
+          [ property
+                "--tw-gradient-stops"
+                "var(--tw-gradient-from), #6366f1, var(--tw-gradient-to, transparent)"
+          ]
     , rule ".to-transparent" [ property "--tw-gradient-to" "transparent" ]
     , rule ".to-black" [ property "--tw-gradient-to" "#000000" ]
     , rule ".to-white" [ property "--tw-gradient-to" "#ffffff" ]
@@ -2203,14 +2373,16 @@ gradientRules =
     , rule ".to-teal-500" [ property "--tw-gradient-to" "#14b8a6" ]
     ]
 
+
 -- ============================================================
 -- Outline
 -- ============================================================
 outlineRules =
-    [ rule ".outline-none"
-        [ property "outline" "2px solid transparent"
-        , property "outline-offset" "2px"
-        ]
+    [ rule
+          ".outline-none"
+          [ property "outline" "2px solid transparent"
+          , property "outline-offset" "2px"
+          ]
     , rule ".outline" [ property "outline-style" "solid" ]
     , rule ".outline-dashed" [ property "outline-style" "dashed" ]
     , rule ".outline-dotted" [ property "outline-style" "dotted" ]
@@ -2236,15 +2408,14 @@ outlineRules =
     , rule ".outline-gray-500" [ property "outline-color" "#6b7280" ]
     ]
 
+
 -- ============================================================
 -- Divide
 -- ============================================================
 divideRules =
     [ rule ".divide-x-0 > * + *" [ property "border-left-width" "0px" ]
-
     -- Divide Color
     , rule ".divide-x > * + *" [ property "border-left-width" "1px" ]
-
     -- Divide Style
     , rule ".divide-x-2 > * + *" [ property "border-left-width" "2px" ]
     , rule ".divide-x-4 > * + *" [ property "border-left-width" "4px" ]
@@ -2254,7 +2425,9 @@ divideRules =
     , rule ".divide-y-2 > * + *" [ property "border-top-width" "2px" ]
     , rule ".divide-y-4 > * + *" [ property "border-top-width" "4px" ]
     , rule ".divide-y-8 > * + *" [ property "border-top-width" "8px" ]
-    , rule ".divide-transparent > * + *" [ borderColor (colorRaw "transparent") ]
+    , rule
+          ".divide-transparent > * + *"
+          [ borderColor (colorRaw "transparent") ]
     , rule ".divide-black > * + *" [ borderColor (colorRaw "#000000") ]
     , rule ".divide-white > * + *" [ borderColor (colorRaw "#ffffff") ]
     , rule ".divide-gray-100 > * + *" [ borderColor (colorRaw "#f3f4f6") ]
@@ -2270,44 +2443,56 @@ divideRules =
     , rule ".divide-none > * + *" [ borderStyle (BorderStyleRaw "none") ]
     ]
 
+
 -- ============================================================
 -- Ring
 -- ============================================================
 ringRules =
     [ rule ".ring" [ property "box-shadow" "0 0 0 3px rgba(59, 130, 246, 0.5)" ]
-
     -- Ring Offset
     , rule ".ring-0" [ property "box-shadow" "0 0 0 0px transparent" ]
-
     -- Ring Color
-    , rule ".ring-1"
-        [ property "box-shadow" "0 0 0 1px rgba(59, 130, 246, 0.5)" ]
-    , rule ".ring-2"
-        [ property "box-shadow" "0 0 0 2px rgba(59, 130, 246, 0.5)" ]
-    , rule ".ring-4"
-        [ property "box-shadow" "0 0 0 4px rgba(59, 130, 246, 0.5)" ]
-    , rule ".ring-8"
-        [ property "box-shadow" "0 0 0 8px rgba(59, 130, 246, 0.5)" ]
+    , rule
+          ".ring-1"
+          [ property "box-shadow" "0 0 0 1px rgba(59, 130, 246, 0.5)" ]
+    , rule
+          ".ring-2"
+          [ property "box-shadow" "0 0 0 2px rgba(59, 130, 246, 0.5)" ]
+    , rule
+          ".ring-4"
+          [ property "box-shadow" "0 0 0 4px rgba(59, 130, 246, 0.5)" ]
+    , rule
+          ".ring-8"
+          [ property "box-shadow" "0 0 0 8px rgba(59, 130, 246, 0.5)" ]
     , rule ".ring-inset" [ property "--tw-ring-inset" "inset" ]
-    , rule ".ring-offset-0"
-        [ property "box-shadow"
-            "0 0 0 0px #fff, 0 0 0 3px rgba(59, 130, 246, 0.5)"
-        ]
-    , rule ".ring-offset-1"
-        [ property "box-shadow"
-            "0 0 0 1px #fff, 0 0 0 4px rgba(59, 130, 246, 0.5)"
-        ]
-    , rule ".ring-offset-2"
-        [ property "box-shadow"
-            "0 0 0 2px #fff, 0 0 0 5px rgba(59, 130, 246, 0.5)"
-        ]
-    , rule ".ring-offset-4"
-        [ property "box-shadow"
-            "0 0 0 4px #fff, 0 0 0 7px rgba(59, 130, 246, 0.5)"
-        ]
+    , rule
+          ".ring-offset-0"
+          [ property
+                "box-shadow"
+                "0 0 0 0px #fff, 0 0 0 3px rgba(59, 130, 246, 0.5)"
+          ]
+    , rule
+          ".ring-offset-1"
+          [ property
+                "box-shadow"
+                "0 0 0 1px #fff, 0 0 0 4px rgba(59, 130, 246, 0.5)"
+          ]
+    , rule
+          ".ring-offset-2"
+          [ property
+                "box-shadow"
+                "0 0 0 2px #fff, 0 0 0 5px rgba(59, 130, 246, 0.5)"
+          ]
+    , rule
+          ".ring-offset-4"
+          [ property
+                "box-shadow"
+                "0 0 0 4px #fff, 0 0 0 7px rgba(59, 130, 246, 0.5)"
+          ]
     , rule ".ring-offset-white" [ property "--tw-ring-offset-color" "#ffffff" ]
-    , rule ".ring-offset-gray-50"
-        [ property "--tw-ring-offset-color" "#f9fafb" ]
+    , rule
+          ".ring-offset-gray-50"
+          [ property "--tw-ring-offset-color" "#f9fafb" ]
     , rule ".ring-transparent" [ property "--tw-ring-color" "transparent" ]
     , rule ".ring-black" [ property "--tw-ring-color" "#000000" ]
     , rule ".ring-white" [ property "--tw-ring-color" "#ffffff" ]
@@ -2323,6 +2508,7 @@ ringRules =
     , rule ".ring-pink-500" [ property "--tw-ring-color" "#ec4899" ]
     ]
 
+
 -- ============================================================
 -- Table
 -- ============================================================
@@ -2333,34 +2519,38 @@ tableRules =
     , rule ".caption-bottom" [ property "caption-side" "bottom" ]
     ]
 
+
 -- ============================================================
 -- Accessibility
 -- ============================================================
 accessibilityRules =
-    [ rule ".sr-only"
-        [ position (PositionRaw "absolute")
-        , width (lengthRaw "1px")
-        , height (lengthRaw "1px")
-        , padding (lengthRaw "0")
-        , margin (lengthRaw "-1px")
-        , overflow (OverflowRaw "hidden")
-        , property "clip" "rect(0, 0, 0, 0)"
-        , property "white-space" "nowrap"
-        , borderWidth (lengthRaw "0")
-        ]
-    , rule ".not-sr-only"
-        [ position (PositionRaw "static")
-        , width (lengthRaw "auto")
-        , height (lengthRaw "auto")
-        , padding (lengthRaw "0")
-        , margin (lengthRaw "0")
-        , overflow (OverflowRaw "visible")
-        , property "clip" "auto"
-        , property "white-space" "normal"
-        ]
+    [ rule
+          ".sr-only"
+          [ position (PositionRaw "absolute")
+          , width (lengthRaw "1px")
+          , height (lengthRaw "1px")
+          , padding (lengthRaw "0")
+          , margin (lengthRaw "-1px")
+          , overflow (OverflowRaw "hidden")
+          , property "clip" "rect(0, 0, 0, 0)"
+          , property "white-space" "nowrap"
+          , borderWidth (lengthRaw "0")
+          ]
+    , rule
+          ".not-sr-only"
+          [ position (PositionRaw "static")
+          , width (lengthRaw "auto")
+          , height (lengthRaw "auto")
+          , padding (lengthRaw "0")
+          , margin (lengthRaw "0")
+          , overflow (OverflowRaw "visible")
+          , property "clip" "auto"
+          , property "white-space" "normal"
+          ]
     , rule ".forced-color-adjust-auto" [ property "forced-color-adjust" "auto" ]
     , rule ".forced-color-adjust-none" [ property "forced-color-adjust" "none" ]
     ]
+
 
 -- ============================================================
 -- SVG
@@ -2386,45 +2576,34 @@ svgRules =
     , rule ".stroke-2" [ property "stroke-width" "2" ]
     ]
 
+
 -- ============================================================
 -- Interactivity: cursor, pointer-events, user-select, resize, scroll, touch, appearance
 -- ============================================================
 interactivityRules =
     [ rule ".cursor-auto" [ cursor (CursorRaw "auto") ]
-
     -- Pointer Events
     , rule ".cursor-default" [ cursor (CursorRaw "default") ]
-
     -- User Select
     , rule ".cursor-pointer" [ cursor (CursorRaw "pointer") ]
-
     -- Resize
     , rule ".cursor-wait" [ cursor (CursorRaw "wait") ]
-
     -- Scroll Behavior
     , rule ".cursor-text" [ cursor (CursorRaw "text") ]
-
     -- Scroll Snap Type
     , rule ".cursor-move" [ cursor (CursorRaw "move") ]
-
     -- Scroll Snap Align
     , rule ".cursor-help" [ cursor (CursorRaw "help") ]
-
     -- Scroll Margin
     , rule ".cursor-not-allowed" [ cursor (CursorRaw "not-allowed") ]
-
     -- Scroll Padding
     , rule ".cursor-none" [ cursor (CursorRaw "none") ]
-
     -- Touch Action
     , rule ".cursor-context-menu" [ cursor (CursorRaw "context-menu") ]
-
     -- Appearance
     , rule ".cursor-progress" [ cursor (CursorRaw "progress") ]
-
     -- Caret Color
     , rule ".cursor-cell" [ cursor (CursorRaw "cell") ]
-
     -- Accent Color
     , rule ".cursor-crosshair" [ cursor (CursorRaw "crosshair") ]
     , rule ".cursor-vertical-text" [ cursor (CursorRaw "vertical-text") ]
@@ -2493,109 +2672,117 @@ interactivityRules =
     , rule ".accent-green-500" [ property "accent-color" "#22c55e" ]
     ]
 
+
 -- ============================================================
 -- State variants: hover, focus, active, disabled, first, last, placeholder, focus-visible, group-hover
 -- ============================================================
 stateRules =
-    [ rule ".hover\\:bg-transparent:hover" [ backgroundColor (colorRaw "transparent") ]
-
+    [ rule
+          ".hover\\:bg-transparent:hover"
+          [ backgroundColor (colorRaw "transparent") ]
     -- Hover: text colors
     , rule ".hover\\:bg-black:hover" [ backgroundColor (colorRaw "#000000") ]
-
     -- Hover: text decoration
     , rule ".hover\\:bg-white:hover" [ backgroundColor (colorRaw "#ffffff") ]
-
     -- Hover: opacity
     , rule ".hover\\:bg-slate-50:hover" [ backgroundColor (colorRaw "#f8fafc") ]
-
     -- Hover: shadow
-    , rule ".hover\\:bg-slate-100:hover" [ backgroundColor (colorRaw "#f1f5f9") ]
-
+    , rule
+          ".hover\\:bg-slate-100:hover"
+          [ backgroundColor (colorRaw "#f1f5f9") ]
     -- Hover: scale
-    , rule ".hover\\:bg-slate-200:hover" [ backgroundColor (colorRaw "#e2e8f0") ]
-
+    , rule
+          ".hover\\:bg-slate-200:hover"
+          [ backgroundColor (colorRaw "#e2e8f0") ]
     -- Hover: ring
-    , rule ".hover\\:bg-slate-700:hover" [ backgroundColor (colorRaw "#334155") ]
-
+    , rule
+          ".hover\\:bg-slate-700:hover"
+          [ backgroundColor (colorRaw "#334155") ]
     -- Hover: border color
-    , rule ".hover\\:bg-slate-800:hover" [ backgroundColor (colorRaw "#1e293b") ]
-
+    , rule
+          ".hover\\:bg-slate-800:hover"
+          [ backgroundColor (colorRaw "#1e293b") ]
     -- Hover: translate
     , rule ".hover\\:bg-gray-50:hover" [ backgroundColor (colorRaw "#f9fafb") ]
-
     -- Hover: rotate
     , rule ".hover\\:bg-gray-100:hover" [ backgroundColor (colorRaw "#f3f4f6") ]
-
     -- Hover: brightness
     , rule ".hover\\:bg-gray-200:hover" [ backgroundColor (colorRaw "#e5e7eb") ]
-
     -- Focus: outline
     , rule ".hover\\:bg-gray-300:hover" [ backgroundColor (colorRaw "#d1d5db") ]
-
     -- Focus: ring
     , rule ".hover\\:bg-gray-600:hover" [ backgroundColor (colorRaw "#4b5563") ]
-
     -- Focus: ring colors
     , rule ".hover\\:bg-gray-700:hover" [ backgroundColor (colorRaw "#374151") ]
-
     -- Focus: border color
     , rule ".hover\\:bg-gray-800:hover" [ backgroundColor (colorRaw "#1f2937") ]
-
     -- Focus: bg
     , rule ".hover\\:bg-gray-900:hover" [ backgroundColor (colorRaw "#111827") ]
-
     -- Focus: text
     , rule ".hover\\:bg-red-50:hover" [ backgroundColor (colorRaw "#fef2f2") ]
-
     -- Focus-visible
     , rule ".hover\\:bg-red-100:hover" [ backgroundColor (colorRaw "#fee2e2") ]
-
     -- Focus-within
     , rule ".hover\\:bg-red-500:hover" [ backgroundColor (colorRaw "#ef4444") ]
-
     -- Active
     , rule ".hover\\:bg-red-600:hover" [ backgroundColor (colorRaw "#dc2626") ]
-
     -- Disabled
     , rule ".hover\\:bg-red-700:hover" [ backgroundColor (colorRaw "#b91c1c") ]
-
     -- First child
     , rule ".hover\\:bg-red-800:hover" [ backgroundColor (colorRaw "#991b1b") ]
-
     -- Last child
-    , rule ".hover\\:bg-orange-500:hover" [ backgroundColor (colorRaw "#f97316") ]
-
+    , rule
+          ".hover\\:bg-orange-500:hover"
+          [ backgroundColor (colorRaw "#f97316") ]
     -- Odd/Even
-    , rule ".hover\\:bg-orange-600:hover" [ backgroundColor (colorRaw "#ea580c") ]
-
+    , rule
+          ".hover\\:bg-orange-600:hover"
+          [ backgroundColor (colorRaw "#ea580c") ]
     -- Placeholder
-    , rule ".hover\\:bg-orange-700:hover" [ backgroundColor (colorRaw "#c2410c") ]
-
+    , rule
+          ".hover\\:bg-orange-700:hover"
+          [ backgroundColor (colorRaw "#c2410c") ]
     -- Group hover
-    , rule ".hover\\:bg-amber-500:hover" [ backgroundColor (colorRaw "#f59e0b") ]
-
+    , rule
+          ".hover\\:bg-amber-500:hover"
+          [ backgroundColor (colorRaw "#f59e0b") ]
     -- Peer states
-    , rule ".hover\\:bg-amber-600:hover" [ backgroundColor (colorRaw "#d97706") ]
-
+    , rule
+          ".hover\\:bg-amber-600:hover"
+          [ backgroundColor (colorRaw "#d97706") ]
     -- Responsive: sm (640px)
-    , rule ".hover\\:bg-yellow-400:hover" [ backgroundColor (colorRaw "#facc15") ]
-
+    , rule
+          ".hover\\:bg-yellow-400:hover"
+          [ backgroundColor (colorRaw "#facc15") ]
     -- Responsive: md (768px)
-    , rule ".hover\\:bg-yellow-500:hover" [ backgroundColor (colorRaw "#eab308") ]
-
+    , rule
+          ".hover\\:bg-yellow-500:hover"
+          [ backgroundColor (colorRaw "#eab308") ]
     -- Responsive: lg (1024px)
     , rule ".hover\\:bg-green-50:hover" [ backgroundColor (colorRaw "#f0fdf4") ]
-
     -- Responsive: xl (1280px)
-    , rule ".hover\\:bg-green-100:hover" [ backgroundColor (colorRaw "#dcfce7") ]
-
+    , rule
+          ".hover\\:bg-green-100:hover"
+          [ backgroundColor (colorRaw "#dcfce7") ]
     -- Responsive: 2xl (1536px)
-    , rule ".hover\\:bg-green-500:hover" [ backgroundColor (colorRaw "#22c55e") ]
-    , rule ".hover\\:bg-green-600:hover" [ backgroundColor (colorRaw "#16a34a") ]
-    , rule ".hover\\:bg-green-700:hover" [ backgroundColor (colorRaw "#15803d") ]
-    , rule ".hover\\:bg-green-800:hover" [ backgroundColor (colorRaw "#166534") ]
-    , rule ".hover\\:bg-emerald-500:hover" [ backgroundColor (colorRaw "#10b981") ]
-    , rule ".hover\\:bg-emerald-600:hover" [ backgroundColor (colorRaw "#059669") ]
+    , rule
+          ".hover\\:bg-green-500:hover"
+          [ backgroundColor (colorRaw "#22c55e") ]
+    , rule
+          ".hover\\:bg-green-600:hover"
+          [ backgroundColor (colorRaw "#16a34a") ]
+    , rule
+          ".hover\\:bg-green-700:hover"
+          [ backgroundColor (colorRaw "#15803d") ]
+    , rule
+          ".hover\\:bg-green-800:hover"
+          [ backgroundColor (colorRaw "#166534") ]
+    , rule
+          ".hover\\:bg-emerald-500:hover"
+          [ backgroundColor (colorRaw "#10b981") ]
+    , rule
+          ".hover\\:bg-emerald-600:hover"
+          [ backgroundColor (colorRaw "#059669") ]
     , rule ".hover\\:bg-teal-500:hover" [ backgroundColor (colorRaw "#14b8a6") ]
     , rule ".hover\\:bg-teal-600:hover" [ backgroundColor (colorRaw "#0d9488") ]
     , rule ".hover\\:bg-cyan-500:hover" [ backgroundColor (colorRaw "#06b6d4") ]
@@ -2608,16 +2795,36 @@ stateRules =
     , rule ".hover\\:bg-blue-600:hover" [ backgroundColor (colorRaw "#2563eb") ]
     , rule ".hover\\:bg-blue-700:hover" [ backgroundColor (colorRaw "#1d4ed8") ]
     , rule ".hover\\:bg-blue-800:hover" [ backgroundColor (colorRaw "#1e40af") ]
-    , rule ".hover\\:bg-indigo-500:hover" [ backgroundColor (colorRaw "#6366f1") ]
-    , rule ".hover\\:bg-indigo-600:hover" [ backgroundColor (colorRaw "#4f46e5") ]
-    , rule ".hover\\:bg-indigo-700:hover" [ backgroundColor (colorRaw "#4338ca") ]
-    , rule ".hover\\:bg-violet-500:hover" [ backgroundColor (colorRaw "#8b5cf6") ]
-    , rule ".hover\\:bg-violet-600:hover" [ backgroundColor (colorRaw "#7c3aed") ]
-    , rule ".hover\\:bg-purple-500:hover" [ backgroundColor (colorRaw "#a855f7") ]
-    , rule ".hover\\:bg-purple-600:hover" [ backgroundColor (colorRaw "#9333ea") ]
-    , rule ".hover\\:bg-purple-700:hover" [ backgroundColor (colorRaw "#7e22ce") ]
-    , rule ".hover\\:bg-fuchsia-500:hover" [ backgroundColor (colorRaw "#d946ef") ]
-    , rule ".hover\\:bg-fuchsia-600:hover" [ backgroundColor (colorRaw "#c026d3") ]
+    , rule
+          ".hover\\:bg-indigo-500:hover"
+          [ backgroundColor (colorRaw "#6366f1") ]
+    , rule
+          ".hover\\:bg-indigo-600:hover"
+          [ backgroundColor (colorRaw "#4f46e5") ]
+    , rule
+          ".hover\\:bg-indigo-700:hover"
+          [ backgroundColor (colorRaw "#4338ca") ]
+    , rule
+          ".hover\\:bg-violet-500:hover"
+          [ backgroundColor (colorRaw "#8b5cf6") ]
+    , rule
+          ".hover\\:bg-violet-600:hover"
+          [ backgroundColor (colorRaw "#7c3aed") ]
+    , rule
+          ".hover\\:bg-purple-500:hover"
+          [ backgroundColor (colorRaw "#a855f7") ]
+    , rule
+          ".hover\\:bg-purple-600:hover"
+          [ backgroundColor (colorRaw "#9333ea") ]
+    , rule
+          ".hover\\:bg-purple-700:hover"
+          [ backgroundColor (colorRaw "#7e22ce") ]
+    , rule
+          ".hover\\:bg-fuchsia-500:hover"
+          [ backgroundColor (colorRaw "#d946ef") ]
+    , rule
+          ".hover\\:bg-fuchsia-600:hover"
+          [ backgroundColor (colorRaw "#c026d3") ]
     , rule ".hover\\:bg-pink-500:hover" [ backgroundColor (colorRaw "#ec4899") ]
     , rule ".hover\\:bg-pink-600:hover" [ backgroundColor (colorRaw "#db2777") ]
     , rule ".hover\\:bg-pink-700:hover" [ backgroundColor (colorRaw "#be185d") ]
@@ -2646,9 +2853,15 @@ stateRules =
     , rule ".hover\\:text-purple-600:hover" [ color (colorRaw "#9333ea") ]
     , rule ".hover\\:text-pink-500:hover" [ color (colorRaw "#ec4899") ]
     , rule ".hover\\:text-pink-600:hover" [ color (colorRaw "#db2777") ]
-    , rule ".hover\\:underline:hover" [ textDecoration (TextDecorationRaw "underline") ]
-    , rule ".hover\\:no-underline:hover" [ textDecoration (TextDecorationRaw "none") ]
-    , rule ".hover\\:line-through:hover" [ textDecoration (TextDecorationRaw "line-through") ]
+    , rule
+          ".hover\\:underline:hover"
+          [ textDecoration (TextDecorationRaw "underline") ]
+    , rule
+          ".hover\\:no-underline:hover"
+          [ textDecoration (TextDecorationRaw "none") ]
+    , rule
+          ".hover\\:line-through:hover"
+          [ textDecoration (TextDecorationRaw "line-through") ]
     , rule ".hover\\:opacity-0:hover" [ property "opacity" "0" ]
     , rule ".hover\\:opacity-25:hover" [ property "opacity" "0.25" ]
     , rule ".hover\\:opacity-50:hover" [ property "opacity" "0.5" ]
@@ -2656,47 +2869,62 @@ stateRules =
     , rule ".hover\\:opacity-80:hover" [ property "opacity" "0.8" ]
     , rule ".hover\\:opacity-90:hover" [ property "opacity" "0.9" ]
     , rule ".hover\\:opacity-100:hover" [ property "opacity" "1" ]
-    , rule ".hover\\:shadow-sm:hover"
-        [ boxShadow "0 1px 2px 0 rgba(0, 0, 0, 0.05)" ]
-    , rule ".hover\\:shadow:hover"
-        [ boxShadow
-            "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)"
-        ]
-    , rule ".hover\\:shadow-md:hover"
-        [ boxShadow
-            "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)"
-        ]
-    , rule ".hover\\:shadow-lg:hover"
-        [ boxShadow
-            "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)"
-        ]
-    , rule ".hover\\:shadow-xl:hover"
-        [ boxShadow
-            "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)"
-        ]
-    , rule ".hover\\:shadow-2xl:hover"
-        [ boxShadow "0 25px 50px -12px rgba(0, 0, 0, 0.25)" ]
+    , rule
+          ".hover\\:shadow-sm:hover"
+          [ boxShadow "0 1px 2px 0 rgba(0, 0, 0, 0.05)" ]
+    , rule
+          ".hover\\:shadow:hover"
+          [ boxShadow
+                "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)"
+          ]
+    , rule
+          ".hover\\:shadow-md:hover"
+          [ boxShadow
+                "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)"
+          ]
+    , rule
+          ".hover\\:shadow-lg:hover"
+          [ boxShadow
+                "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)"
+          ]
+    , rule
+          ".hover\\:shadow-xl:hover"
+          [ boxShadow
+                "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)"
+          ]
+    , rule
+          ".hover\\:shadow-2xl:hover"
+          [ boxShadow "0 25px 50px -12px rgba(0, 0, 0, 0.25)" ]
     , rule ".hover\\:shadow-none:hover" [ boxShadow "none" ]
     , rule ".hover\\:scale-95:hover" [ transform "scale(.95)" ]
     , rule ".hover\\:scale-100:hover" [ transform "scale(1)" ]
     , rule ".hover\\:scale-105:hover" [ transform "scale(1.05)" ]
     , rule ".hover\\:scale-110:hover" [ transform "scale(1.1)" ]
     , rule ".hover\\:scale-125:hover" [ transform "scale(1.25)" ]
-    , rule ".hover\\:ring:hover"
-        [ property "box-shadow" "0 0 0 3px rgba(59, 130, 246, 0.5)" ]
-    , rule ".hover\\:ring-2:hover"
-        [ property "box-shadow" "0 0 0 2px rgba(59, 130, 246, 0.5)" ]
-    , rule ".hover\\:ring-4:hover"
-        [ property "box-shadow" "0 0 0 4px rgba(59, 130, 246, 0.5)" ]
-    , rule ".hover\\:border-transparent:hover" [ borderColor (colorRaw "transparent") ]
+    , rule
+          ".hover\\:ring:hover"
+          [ property "box-shadow" "0 0 0 3px rgba(59, 130, 246, 0.5)" ]
+    , rule
+          ".hover\\:ring-2:hover"
+          [ property "box-shadow" "0 0 0 2px rgba(59, 130, 246, 0.5)" ]
+    , rule
+          ".hover\\:ring-4:hover"
+          [ property "box-shadow" "0 0 0 4px rgba(59, 130, 246, 0.5)" ]
+    , rule
+          ".hover\\:border-transparent:hover"
+          [ borderColor (colorRaw "transparent") ]
     , rule ".hover\\:border-gray-300:hover" [ borderColor (colorRaw "#d1d5db") ]
     , rule ".hover\\:border-gray-400:hover" [ borderColor (colorRaw "#9ca3af") ]
     , rule ".hover\\:border-gray-500:hover" [ borderColor (colorRaw "#6b7280") ]
     , rule ".hover\\:border-blue-500:hover" [ borderColor (colorRaw "#3b82f6") ]
     , rule ".hover\\:border-blue-600:hover" [ borderColor (colorRaw "#2563eb") ]
-    , rule ".hover\\:border-indigo-500:hover" [ borderColor (colorRaw "#6366f1") ]
+    , rule
+          ".hover\\:border-indigo-500:hover"
+          [ borderColor (colorRaw "#6366f1") ]
     , rule ".hover\\:border-red-500:hover" [ borderColor (colorRaw "#ef4444") ]
-    , rule ".hover\\:border-green-500:hover" [ borderColor (colorRaw "#22c55e") ]
+    , rule
+          ".hover\\:border-green-500:hover"
+          [ borderColor (colorRaw "#22c55e") ]
     , rule ".hover\\:-translate-y-1:hover" [ transform "translateY(-0.25rem)" ]
     , rule ".hover\\:-translate-y-2:hover" [ transform "translateY(-0.5rem)" ]
     , rule ".hover\\:translate-y-0:hover" [ transform "translateY(0)" ]
@@ -2705,100 +2933,162 @@ stateRules =
     , rule ".hover\\:-rotate-1:hover" [ transform "rotate(-1deg)" ]
     , rule ".hover\\:-rotate-3:hover" [ transform "rotate(-3deg)" ]
     , rule ".hover\\:brightness-90:hover" [ property "filter" "brightness(.9)" ]
-    , rule ".hover\\:brightness-110:hover"
-        [ property "filter" "brightness(1.1)" ]
-    , rule ".hover\\:brightness-125:hover"
-        [ property "filter" "brightness(1.25)" ]
-    , rule ".focus\\:outline-none:focus"
-        [ property "outline" "2px solid transparent"
-        , property "outline-offset" "2px"
-        ]
-    , rule ".focus\\:ring:focus"
-        [ property "box-shadow" "0 0 0 3px rgba(59, 130, 246, 0.5)" ]
-    , rule ".focus\\:ring-1:focus"
-        [ property "box-shadow" "0 0 0 1px rgba(59, 130, 246, 0.5)" ]
-    , rule ".focus\\:ring-2:focus"
-        [ property "box-shadow" "0 0 0 2px rgba(59, 130, 246, 0.5)" ]
-    , rule ".focus\\:ring-4:focus"
-        [ property "box-shadow" "0 0 0 4px rgba(59, 130, 246, 0.5)" ]
-    , rule ".focus\\:ring-0:focus"
-        [ property "box-shadow" "0 0 0 0px transparent" ]
-    , rule ".focus\\:ring-blue-500:focus"
-        [ property "box-shadow" "0 0 0 3px rgba(59, 130, 246, 0.5)" ]
-    , rule ".focus\\:ring-blue-600:focus"
-        [ property "box-shadow" "0 0 0 3px rgba(37, 99, 235, 0.5)" ]
-    , rule ".focus\\:ring-indigo-500:focus"
-        [ property "box-shadow" "0 0 0 3px rgba(99, 102, 241, 0.5)" ]
-    , rule ".focus\\:ring-indigo-600:focus"
-        [ property "box-shadow" "0 0 0 3px rgba(79, 70, 229, 0.5)" ]
-    , rule ".focus\\:ring-purple-500:focus"
-        [ property "box-shadow" "0 0 0 3px rgba(168, 85, 247, 0.5)" ]
-    , rule ".focus\\:ring-red-500:focus"
-        [ property "box-shadow" "0 0 0 3px rgba(239, 68, 68, 0.5)" ]
-    , rule ".focus\\:ring-green-500:focus"
-        [ property "box-shadow" "0 0 0 3px rgba(34, 197, 94, 0.5)" ]
-    , rule ".focus\\:ring-gray-300:focus"
-        [ property "box-shadow" "0 0 0 3px rgba(209, 213, 219, 0.5)" ]
-    , rule ".focus\\:ring-gray-500:focus"
-        [ property "box-shadow" "0 0 0 3px rgba(107, 114, 128, 0.5)" ]
-    , rule ".focus\\:ring-pink-500:focus"
-        [ property "box-shadow" "0 0 0 3px rgba(236, 72, 153, 0.5)" ]
-    , rule ".focus\\:ring-offset-2:focus"
-        [ property "box-shadow"
-            "0 0 0 2px #fff, 0 0 0 5px rgba(59, 130, 246, 0.5)"
-        ]
+    , rule
+          ".hover\\:brightness-110:hover"
+          [ property "filter" "brightness(1.1)" ]
+    , rule
+          ".hover\\:brightness-125:hover"
+          [ property "filter" "brightness(1.25)" ]
+    , rule
+          ".focus\\:outline-none:focus"
+          [ property "outline" "2px solid transparent"
+          , property "outline-offset" "2px"
+          ]
+    , rule
+          ".focus\\:ring:focus"
+          [ property "box-shadow" "0 0 0 3px rgba(59, 130, 246, 0.5)" ]
+    , rule
+          ".focus\\:ring-1:focus"
+          [ property "box-shadow" "0 0 0 1px rgba(59, 130, 246, 0.5)" ]
+    , rule
+          ".focus\\:ring-2:focus"
+          [ property "box-shadow" "0 0 0 2px rgba(59, 130, 246, 0.5)" ]
+    , rule
+          ".focus\\:ring-4:focus"
+          [ property "box-shadow" "0 0 0 4px rgba(59, 130, 246, 0.5)" ]
+    , rule
+          ".focus\\:ring-0:focus"
+          [ property "box-shadow" "0 0 0 0px transparent" ]
+    , rule
+          ".focus\\:ring-blue-500:focus"
+          [ property "box-shadow" "0 0 0 3px rgba(59, 130, 246, 0.5)" ]
+    , rule
+          ".focus\\:ring-blue-600:focus"
+          [ property "box-shadow" "0 0 0 3px rgba(37, 99, 235, 0.5)" ]
+    , rule
+          ".focus\\:ring-indigo-500:focus"
+          [ property "box-shadow" "0 0 0 3px rgba(99, 102, 241, 0.5)" ]
+    , rule
+          ".focus\\:ring-indigo-600:focus"
+          [ property "box-shadow" "0 0 0 3px rgba(79, 70, 229, 0.5)" ]
+    , rule
+          ".focus\\:ring-purple-500:focus"
+          [ property "box-shadow" "0 0 0 3px rgba(168, 85, 247, 0.5)" ]
+    , rule
+          ".focus\\:ring-red-500:focus"
+          [ property "box-shadow" "0 0 0 3px rgba(239, 68, 68, 0.5)" ]
+    , rule
+          ".focus\\:ring-green-500:focus"
+          [ property "box-shadow" "0 0 0 3px rgba(34, 197, 94, 0.5)" ]
+    , rule
+          ".focus\\:ring-gray-300:focus"
+          [ property "box-shadow" "0 0 0 3px rgba(209, 213, 219, 0.5)" ]
+    , rule
+          ".focus\\:ring-gray-500:focus"
+          [ property "box-shadow" "0 0 0 3px rgba(107, 114, 128, 0.5)" ]
+    , rule
+          ".focus\\:ring-pink-500:focus"
+          [ property "box-shadow" "0 0 0 3px rgba(236, 72, 153, 0.5)" ]
+    , rule
+          ".focus\\:ring-offset-2:focus"
+          [ property
+                "box-shadow"
+                "0 0 0 2px #fff, 0 0 0 5px rgba(59, 130, 246, 0.5)"
+          ]
     , rule ".focus\\:border-blue-500:focus" [ borderColor (colorRaw "#3b82f6") ]
     , rule ".focus\\:border-blue-600:focus" [ borderColor (colorRaw "#2563eb") ]
-    , rule ".focus\\:border-indigo-500:focus" [ borderColor (colorRaw "#6366f1") ]
-    , rule ".focus\\:border-indigo-600:focus" [ borderColor (colorRaw "#4f46e5") ]
+    , rule
+          ".focus\\:border-indigo-500:focus"
+          [ borderColor (colorRaw "#6366f1") ]
+    , rule
+          ".focus\\:border-indigo-600:focus"
+          [ borderColor (colorRaw "#4f46e5") ]
     , rule ".focus\\:border-red-500:focus" [ borderColor (colorRaw "#ef4444") ]
-    , rule ".focus\\:border-green-500:focus" [ borderColor (colorRaw "#22c55e") ]
+    , rule
+          ".focus\\:border-green-500:focus"
+          [ borderColor (colorRaw "#22c55e") ]
     , rule ".focus\\:border-gray-300:focus" [ borderColor (colorRaw "#d1d5db") ]
     , rule ".focus\\:border-gray-500:focus" [ borderColor (colorRaw "#6b7280") ]
-    , rule ".focus\\:border-transparent:focus" [ borderColor (colorRaw "transparent") ]
+    , rule
+          ".focus\\:border-transparent:focus"
+          [ borderColor (colorRaw "transparent") ]
     , rule ".focus\\:bg-white:focus" [ backgroundColor (colorRaw "#ffffff") ]
     , rule ".focus\\:bg-gray-50:focus" [ backgroundColor (colorRaw "#f9fafb") ]
     , rule ".focus\\:bg-gray-100:focus" [ backgroundColor (colorRaw "#f3f4f6") ]
     , rule ".focus\\:bg-blue-100:focus" [ backgroundColor (colorRaw "#dbeafe") ]
     , rule ".focus\\:text-blue-600:focus" [ color (colorRaw "#2563eb") ]
     , rule ".focus\\:text-gray-700:focus" [ color (colorRaw "#374151") ]
-    , rule ".focus-visible\\:outline-none:focus-visible"
-        [ property "outline" "2px solid transparent"
-        , property "outline-offset" "2px"
-        ]
-    , rule ".focus-visible\\:ring-2:focus-visible"
-        [ property "box-shadow" "0 0 0 2px rgba(59, 130, 246, 0.5)" ]
-    , rule ".focus-visible\\:ring-4:focus-visible"
-        [ property "box-shadow" "0 0 0 4px rgba(59, 130, 246, 0.5)" ]
-    , rule ".focus-visible\\:ring-blue-500:focus-visible"
-        [ property "box-shadow" "0 0 0 3px rgba(59, 130, 246, 0.5)" ]
-    , rule ".focus-visible\\:ring-indigo-500:focus-visible"
-        [ property "box-shadow" "0 0 0 3px rgba(99, 102, 241, 0.5)" ]
-    , rule ".focus-visible\\:ring-offset-2:focus-visible"
-        [ property "box-shadow"
-            "0 0 0 2px #fff, 0 0 0 5px rgba(59, 130, 246, 0.5)"
-        ]
-    , rule ".focus-visible\\:border-blue-500:focus-visible"
-        [ borderColor (colorRaw "#3b82f6") ]
-    , rule ".focus-visible\\:border-indigo-500:focus-visible"
-        [ borderColor (colorRaw "#6366f1") ]
-    , rule ".focus-within\\:ring-2:focus-within"
-        [ property "box-shadow" "0 0 0 2px rgba(59, 130, 246, 0.5)" ]
-    , rule ".focus-within\\:ring-blue-500:focus-within"
-        [ property "box-shadow" "0 0 0 3px rgba(59, 130, 246, 0.5)" ]
-    , rule ".focus-within\\:border-blue-500:focus-within"
-        [ borderColor (colorRaw "#3b82f6") ]
-    , rule ".active\\:bg-gray-100:active" [ backgroundColor (colorRaw "#f3f4f6") ]
-    , rule ".active\\:bg-gray-200:active" [ backgroundColor (colorRaw "#e5e7eb") ]
-    , rule ".active\\:bg-gray-300:active" [ backgroundColor (colorRaw "#d1d5db") ]
-    , rule ".active\\:bg-red-700:active" [ backgroundColor (colorRaw "#b91c1c") ]
-    , rule ".active\\:bg-red-800:active" [ backgroundColor (colorRaw "#991b1b") ]
-    , rule ".active\\:bg-blue-700:active" [ backgroundColor (colorRaw "#1d4ed8") ]
-    , rule ".active\\:bg-blue-800:active" [ backgroundColor (colorRaw "#1e40af") ]
-    , rule ".active\\:bg-green-700:active" [ backgroundColor (colorRaw "#15803d") ]
-    , rule ".active\\:bg-green-800:active" [ backgroundColor (colorRaw "#166534") ]
-    , rule ".active\\:bg-indigo-700:active" [ backgroundColor (colorRaw "#4338ca") ]
-    , rule ".active\\:bg-purple-700:active" [ backgroundColor (colorRaw "#7e22ce") ]
+    , rule
+          ".focus-visible\\:outline-none:focus-visible"
+          [ property "outline" "2px solid transparent"
+          , property "outline-offset" "2px"
+          ]
+    , rule
+          ".focus-visible\\:ring-2:focus-visible"
+          [ property "box-shadow" "0 0 0 2px rgba(59, 130, 246, 0.5)" ]
+    , rule
+          ".focus-visible\\:ring-4:focus-visible"
+          [ property "box-shadow" "0 0 0 4px rgba(59, 130, 246, 0.5)" ]
+    , rule
+          ".focus-visible\\:ring-blue-500:focus-visible"
+          [ property "box-shadow" "0 0 0 3px rgba(59, 130, 246, 0.5)" ]
+    , rule
+          ".focus-visible\\:ring-indigo-500:focus-visible"
+          [ property "box-shadow" "0 0 0 3px rgba(99, 102, 241, 0.5)" ]
+    , rule
+          ".focus-visible\\:ring-offset-2:focus-visible"
+          [ property
+                "box-shadow"
+                "0 0 0 2px #fff, 0 0 0 5px rgba(59, 130, 246, 0.5)"
+          ]
+    , rule
+          ".focus-visible\\:border-blue-500:focus-visible"
+          [ borderColor (colorRaw "#3b82f6") ]
+    , rule
+          ".focus-visible\\:border-indigo-500:focus-visible"
+          [ borderColor (colorRaw "#6366f1") ]
+    , rule
+          ".focus-within\\:ring-2:focus-within"
+          [ property "box-shadow" "0 0 0 2px rgba(59, 130, 246, 0.5)" ]
+    , rule
+          ".focus-within\\:ring-blue-500:focus-within"
+          [ property "box-shadow" "0 0 0 3px rgba(59, 130, 246, 0.5)" ]
+    , rule
+          ".focus-within\\:border-blue-500:focus-within"
+          [ borderColor (colorRaw "#3b82f6") ]
+    , rule
+          ".active\\:bg-gray-100:active"
+          [ backgroundColor (colorRaw "#f3f4f6") ]
+    , rule
+          ".active\\:bg-gray-200:active"
+          [ backgroundColor (colorRaw "#e5e7eb") ]
+    , rule
+          ".active\\:bg-gray-300:active"
+          [ backgroundColor (colorRaw "#d1d5db") ]
+    , rule
+          ".active\\:bg-red-700:active"
+          [ backgroundColor (colorRaw "#b91c1c") ]
+    , rule
+          ".active\\:bg-red-800:active"
+          [ backgroundColor (colorRaw "#991b1b") ]
+    , rule
+          ".active\\:bg-blue-700:active"
+          [ backgroundColor (colorRaw "#1d4ed8") ]
+    , rule
+          ".active\\:bg-blue-800:active"
+          [ backgroundColor (colorRaw "#1e40af") ]
+    , rule
+          ".active\\:bg-green-700:active"
+          [ backgroundColor (colorRaw "#15803d") ]
+    , rule
+          ".active\\:bg-green-800:active"
+          [ backgroundColor (colorRaw "#166534") ]
+    , rule
+          ".active\\:bg-indigo-700:active"
+          [ backgroundColor (colorRaw "#4338ca") ]
+    , rule
+          ".active\\:bg-purple-700:active"
+          [ backgroundColor (colorRaw "#7e22ce") ]
     , rule ".active\\:scale-95:active" [ transform "scale(.95)" ]
     , rule ".active\\:scale-100:active" [ transform "scale(1)" ]
     , rule ".active\\:translate-y-0:active" [ transform "translateY(0)" ]
@@ -2806,416 +3096,649 @@ stateRules =
     , rule ".disabled\\:opacity-25:disabled" [ property "opacity" "0.25" ]
     , rule ".disabled\\:opacity-50:disabled" [ property "opacity" "0.5" ]
     , rule ".disabled\\:opacity-75:disabled" [ property "opacity" "0.75" ]
-    , rule ".disabled\\:cursor-not-allowed:disabled" [ cursor (CursorRaw "not-allowed") ]
-    , rule ".disabled\\:cursor-default:disabled" [ cursor (CursorRaw "default") ]
-    , rule ".disabled\\:bg-gray-100:disabled" [ backgroundColor (colorRaw "#f3f4f6") ]
-    , rule ".disabled\\:bg-gray-200:disabled" [ backgroundColor (colorRaw "#e5e7eb") ]
-    , rule ".disabled\\:bg-gray-300:disabled" [ backgroundColor (colorRaw "#d1d5db") ]
-    , rule ".disabled\\:bg-gray-400:disabled" [ backgroundColor (colorRaw "#9ca3af") ]
+    , rule
+          ".disabled\\:cursor-not-allowed:disabled"
+          [ cursor (CursorRaw "not-allowed") ]
+    , rule
+          ".disabled\\:cursor-default:disabled"
+          [ cursor (CursorRaw "default") ]
+    , rule
+          ".disabled\\:bg-gray-100:disabled"
+          [ backgroundColor (colorRaw "#f3f4f6") ]
+    , rule
+          ".disabled\\:bg-gray-200:disabled"
+          [ backgroundColor (colorRaw "#e5e7eb") ]
+    , rule
+          ".disabled\\:bg-gray-300:disabled"
+          [ backgroundColor (colorRaw "#d1d5db") ]
+    , rule
+          ".disabled\\:bg-gray-400:disabled"
+          [ backgroundColor (colorRaw "#9ca3af") ]
     , rule ".disabled\\:text-gray-400:disabled" [ color (colorRaw "#9ca3af") ]
     , rule ".disabled\\:text-gray-500:disabled" [ color (colorRaw "#6b7280") ]
-    , rule ".disabled\\:border-gray-200:disabled" [ borderColor (colorRaw "#e5e7eb") ]
-    , rule ".disabled\\:pointer-events-none:disabled"
-        [ property "pointer-events" "none" ]
+    , rule
+          ".disabled\\:border-gray-200:disabled"
+          [ borderColor (colorRaw "#e5e7eb") ]
+    , rule
+          ".disabled\\:pointer-events-none:disabled"
+          [ property "pointer-events" "none" ]
     , rule ".first\\:mt-0:first-child" [ marginTop (lengthRaw "0") ]
     , rule ".first\\:pt-0:first-child" [ paddingTop (lengthRaw "0") ]
-    , rule ".first\\:border-t-0:first-child"
-        [ property "border-top-width" "0px" ]
-    , rule ".first\\:rounded-t-lg:first-child"
-        [ property "border-top-left-radius" "0.5rem"
-        , property "border-top-right-radius" "0.5rem"
-        ]
-    , rule ".first\\:rounded-l-lg:first-child"
-        [ property "border-top-left-radius" "0.5rem"
-        , property "border-bottom-left-radius" "0.5rem"
-        ]
+    , rule
+          ".first\\:border-t-0:first-child"
+          [ property "border-top-width" "0px" ]
+    , rule
+          ".first\\:rounded-t-lg:first-child"
+          [ property "border-top-left-radius" "0.5rem"
+          , property "border-top-right-radius" "0.5rem"
+          ]
+    , rule
+          ".first\\:rounded-l-lg:first-child"
+          [ property "border-top-left-radius" "0.5rem"
+          , property "border-bottom-left-radius" "0.5rem"
+          ]
     , rule ".last\\:mb-0:last-child" [ marginBottom (lengthRaw "0") ]
     , rule ".last\\:pb-0:last-child" [ paddingBottom (lengthRaw "0") ]
     , rule ".last\\:border-0:last-child" [ borderWidth (lengthRaw "0px") ]
-    , rule ".last\\:border-b-0:last-child"
-        [ property "border-bottom-width" "0px" ]
-    , rule ".last\\:border-r-0:last-child"
-        [ property "border-right-width" "0px" ]
-    , rule ".last\\:rounded-b-lg:last-child"
-        [ property "border-bottom-left-radius" "0.5rem"
-        , property "border-bottom-right-radius" "0.5rem"
-        ]
-    , rule ".last\\:rounded-r-lg:last-child"
-        [ property "border-top-right-radius" "0.5rem"
-        , property "border-bottom-right-radius" "0.5rem"
-        ]
-    , rule ".odd\\:bg-white:nth-child(odd)" [ backgroundColor (colorRaw "#ffffff") ]
-    , rule ".odd\\:bg-gray-50:nth-child(odd)" [ backgroundColor (colorRaw "#f9fafb") ]
-    , rule ".even\\:bg-gray-50:nth-child(even)" [ backgroundColor (colorRaw "#f9fafb") ]
-    , rule ".even\\:bg-gray-100:nth-child(even)" [ backgroundColor (colorRaw "#f3f4f6") ]
-    , rule ".placeholder\\:text-gray-400::placeholder" [ color (colorRaw "#9ca3af") ]
-    , rule ".placeholder\\:text-gray-500::placeholder" [ color (colorRaw "#6b7280") ]
-    , rule ".placeholder\\:text-gray-300::placeholder" [ color (colorRaw "#d1d5db") ]
-    , rule ".placeholder\\:text-slate-400::placeholder" [ color (colorRaw "#94a3b8") ]
-    , rule ".placeholder\\:italic::placeholder" [ fontStyle (FontStyleRaw "italic") ]
+    , rule
+          ".last\\:border-b-0:last-child"
+          [ property "border-bottom-width" "0px" ]
+    , rule
+          ".last\\:border-r-0:last-child"
+          [ property "border-right-width" "0px" ]
+    , rule
+          ".last\\:rounded-b-lg:last-child"
+          [ property "border-bottom-left-radius" "0.5rem"
+          , property "border-bottom-right-radius" "0.5rem"
+          ]
+    , rule
+          ".last\\:rounded-r-lg:last-child"
+          [ property "border-top-right-radius" "0.5rem"
+          , property "border-bottom-right-radius" "0.5rem"
+          ]
+    , rule
+          ".odd\\:bg-white:nth-child(odd)"
+          [ backgroundColor (colorRaw "#ffffff") ]
+    , rule
+          ".odd\\:bg-gray-50:nth-child(odd)"
+          [ backgroundColor (colorRaw "#f9fafb") ]
+    , rule
+          ".even\\:bg-gray-50:nth-child(even)"
+          [ backgroundColor (colorRaw "#f9fafb") ]
+    , rule
+          ".even\\:bg-gray-100:nth-child(even)"
+          [ backgroundColor (colorRaw "#f3f4f6") ]
+    , rule
+          ".placeholder\\:text-gray-400::placeholder"
+          [ color (colorRaw "#9ca3af") ]
+    , rule
+          ".placeholder\\:text-gray-500::placeholder"
+          [ color (colorRaw "#6b7280") ]
+    , rule
+          ".placeholder\\:text-gray-300::placeholder"
+          [ color (colorRaw "#d1d5db") ]
+    , rule
+          ".placeholder\\:text-slate-400::placeholder"
+          [ color (colorRaw "#94a3b8") ]
+    , rule
+          ".placeholder\\:italic::placeholder"
+          [ fontStyle (FontStyleRaw "italic") ]
     , rule ".group:hover .group-hover\\:visible" [ visibility "visible" ]
     , rule ".group:hover .group-hover\\:invisible" [ visibility "hidden" ]
     , rule ".group:hover .group-hover\\:opacity-100" [ property "opacity" "1" ]
-    , rule ".group:hover .group-hover\\:opacity-75"
-        [ property "opacity" "0.75" ]
+    , rule
+          ".group:hover .group-hover\\:opacity-75"
+          [ property "opacity" "0.75" ]
     , rule ".group:hover .group-hover\\:scale-105" [ transform "scale(1.05)" ]
     , rule ".group:hover .group-hover\\:scale-110" [ transform "scale(1.1)" ]
-    , rule ".group:hover .group-hover\\:text-white" [ color (colorRaw "#ffffff") ]
-    , rule ".group:hover .group-hover\\:text-gray-700" [ color (colorRaw "#374151") ]
-    , rule ".group:hover .group-hover\\:text-blue-600" [ color (colorRaw "#2563eb") ]
-    , rule ".group:hover .group-hover\\:bg-gray-100"
-        [ backgroundColor (colorRaw "#f3f4f6") ]
-    , rule ".group:hover .group-hover\\:bg-blue-50"
-        [ backgroundColor (colorRaw "#eff6ff") ]
-    , rule ".group:hover .group-hover\\:translate-x-1"
-        [ transform "translateX(0.25rem)" ]
-    , rule ".group:hover .group-hover\\:-translate-y-1"
-        [ transform "translateY(-0.25rem)" ]
-    , rule ".group:hover .group-hover\\:shadow-lg"
-        [ boxShadow
-            "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)"
-        ]
-    , rule ".peer:focus ~ .peer-focus\\:text-blue-600" [ color (colorRaw "#2563eb") ]
-    , rule ".peer:focus ~ .peer-focus\\:border-blue-500"
-        [ borderColor (colorRaw "#3b82f6") ]
-    , rule ".peer:invalid ~ .peer-invalid\\:text-red-500" [ color (colorRaw "#ef4444") ]
-    , rule ".peer:invalid ~ .peer-invalid\\:border-red-500"
-        [ borderColor (colorRaw "#ef4444") ]
-    , media "(min-width: 640px)"
-        [ rule ".sm\\:block" [ display (DisplayRaw "block") ]
-        , rule ".sm\\:hidden" [ display (DisplayRaw "none") ]
-        , rule ".sm\\:flex" [ display (DisplayRaw "flex") ]
-        , rule ".sm\\:grid" [ display (DisplayRaw "grid") ]
-        , rule ".sm\\:inline" [ display (DisplayRaw "inline") ]
-        , rule ".sm\\:inline-block" [ display (DisplayRaw "inline-block") ]
-        , rule ".sm\\:inline-flex" [ display (DisplayRaw "inline-flex") ]
-        , rule ".sm\\:flex-row" [ flexDirection (FlexDirectionRaw "row") ]
-        , rule ".sm\\:flex-col" [ flexDirection (FlexDirectionRaw "column") ]
-        , rule ".sm\\:items-center" [ alignItems (AlignRaw "center") ]
-        , rule ".sm\\:justify-between" [ justifyContent (AlignRaw "space-between") ]
-        , rule ".sm\\:justify-center" [ justifyContent (AlignRaw "center") ]
-        , rule ".sm\\:grid-cols-1"
-            [ gridTemplateColumns "repeat(1, minmax(0, 1fr))" ]
-        , rule ".sm\\:grid-cols-2"
-            [ gridTemplateColumns "repeat(2, minmax(0, 1fr))" ]
-        , rule ".sm\\:grid-cols-3"
-            [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
-        , rule ".sm\\:grid-cols-4"
-            [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
-        , rule ".sm\\:p-0" [ padding (lengthRaw "0") ]
-        , rule ".sm\\:p-2" [ padding (lengthRaw "0.5rem") ]
-        , rule ".sm\\:p-4" [ padding (lengthRaw "1rem") ]
-        , rule ".sm\\:p-6" [ padding (lengthRaw "1.5rem") ]
-        , rule ".sm\\:p-8" [ padding (lengthRaw "2rem") ]
-        , rule ".sm\\:px-0" [ paddingLeft (lengthRaw "0") , paddingRight (lengthRaw "0") ]
-        , rule ".sm\\:px-4" [ paddingLeft (lengthRaw "1rem") , paddingRight (lengthRaw "1rem") ]
-        , rule ".sm\\:px-6" [ paddingLeft (lengthRaw "1.5rem") , paddingRight (lengthRaw "1.5rem") ]
-        , rule ".sm\\:px-8" [ paddingLeft (lengthRaw "2rem") , paddingRight (lengthRaw "2rem") ]
-        , rule ".sm\\:py-0" [ paddingTop (lengthRaw "0") , paddingBottom (lengthRaw "0") ]
-        , rule ".sm\\:py-4" [ paddingTop (lengthRaw "1rem") , paddingBottom (lengthRaw "1rem") ]
-        , rule ".sm\\:py-6" [ paddingTop (lengthRaw "1.5rem") , paddingBottom (lengthRaw "1.5rem") ]
-        , rule ".sm\\:py-8" [ paddingTop (lengthRaw "2rem") , paddingBottom (lengthRaw "2rem") ]
-        , rule ".sm\\:m-0" [ margin (lengthRaw "0") ]
-        , rule ".sm\\:mx-auto" [ marginLeft (lengthRaw "auto") , marginRight (lengthRaw "auto") ]
-        , rule ".sm\\:mt-0" [ marginTop (lengthRaw "0") ]
-        , rule ".sm\\:mb-0" [ marginBottom (lengthRaw "0") ]
-        , rule ".sm\\:text-xs" [ fontSize (lengthRaw "0.75rem") ]
-        , rule ".sm\\:text-sm" [ fontSize (lengthRaw "0.875rem") ]
-        , rule ".sm\\:text-base" [ fontSize (lengthRaw "1rem") ]
-        , rule ".sm\\:text-lg" [ fontSize (lengthRaw "1.125rem") ]
-        , rule ".sm\\:text-xl" [ fontSize (lengthRaw "1.25rem") ]
-        , rule ".sm\\:text-2xl" [ fontSize (lengthRaw "1.5rem") ]
-        , rule ".sm\\:text-3xl" [ fontSize (lengthRaw "1.875rem") ]
-        , rule ".sm\\:text-left" [ textAlign (TextAlignRaw "left") ]
-        , rule ".sm\\:text-center" [ textAlign (TextAlignRaw "center") ]
-        , rule ".sm\\:text-right" [ textAlign (TextAlignRaw "right") ]
-        , rule ".sm\\:w-auto" [ width (lengthRaw "auto") ]
-        , rule ".sm\\:w-full" [ width (lengthRaw "100%") ]
-        , rule ".sm\\:w-1\\/2" [ width (lengthRaw "50%") ]
-        , rule ".sm\\:w-1\\/3" [ width (lengthRaw "33.333333%") ]
-        , rule ".sm\\:w-2\\/3" [ width (lengthRaw "66.666667%") ]
-        , rule ".sm\\:max-w-sm" [ maxWidth (lengthRaw "24rem") ]
-        , rule ".sm\\:max-w-md" [ maxWidth (lengthRaw "28rem") ]
-        , rule ".sm\\:max-w-lg" [ maxWidth (lengthRaw "32rem") ]
-        , rule ".sm\\:max-w-xl" [ maxWidth (lengthRaw "36rem") ]
-        , rule ".sm\\:gap-2" [ gap (lengthRaw "0.5rem") ]
-        , rule ".sm\\:gap-4" [ gap (lengthRaw "1rem") ]
-        , rule ".sm\\:gap-6" [ gap (lengthRaw "1.5rem") ]
-        , rule ".sm\\:gap-8" [ gap (lengthRaw "2rem") ]
-        , rule ".sm\\:space-x-4 > * + *" [ marginLeft (lengthRaw "1rem") ]
-        , rule ".sm\\:space-y-0 > * + *" [ marginTop (lengthRaw "0") ]
-        , rule ".sm\\:rounded-lg" [ borderRadius (lengthRaw "0.5rem") ]
-        , rule ".sm\\:static" [ position (PositionRaw "static") ]
-        , rule ".sm\\:relative" [ position (PositionRaw "relative") ]
-        ]
-    , media "(min-width: 768px)"
-        [ rule ".md\\:block" [ display (DisplayRaw "block") ]
-        , rule ".md\\:hidden" [ display (DisplayRaw "none") ]
-        , rule ".md\\:flex" [ display (DisplayRaw "flex") ]
-        , rule ".md\\:grid" [ display (DisplayRaw "grid") ]
-        , rule ".md\\:inline" [ display (DisplayRaw "inline") ]
-        , rule ".md\\:inline-block" [ display (DisplayRaw "inline-block") ]
-        , rule ".md\\:inline-flex" [ display (DisplayRaw "inline-flex") ]
-        , rule ".md\\:flex-row" [ flexDirection (FlexDirectionRaw "row") ]
-        , rule ".md\\:flex-col" [ flexDirection (FlexDirectionRaw "column") ]
-        , rule ".md\\:items-start" [ alignItems (AlignRaw "flex-start") ]
-        , rule ".md\\:items-center" [ alignItems (AlignRaw "center") ]
-        , rule ".md\\:items-end" [ alignItems (AlignRaw "flex-end") ]
-        , rule ".md\\:justify-start" [ justifyContent (AlignRaw "flex-start") ]
-        , rule ".md\\:justify-center" [ justifyContent (AlignRaw "center") ]
-        , rule ".md\\:justify-between" [ justifyContent (AlignRaw "space-between") ]
-        , rule ".md\\:justify-end" [ justifyContent (AlignRaw "flex-end") ]
-        , rule ".md\\:grid-cols-1"
-            [ gridTemplateColumns "repeat(1, minmax(0, 1fr))" ]
-        , rule ".md\\:grid-cols-2"
-            [ gridTemplateColumns "repeat(2, minmax(0, 1fr))" ]
-        , rule ".md\\:grid-cols-3"
-            [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
-        , rule ".md\\:grid-cols-4"
-            [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
-        , rule ".md\\:grid-cols-5"
-            [ gridTemplateColumns "repeat(5, minmax(0, 1fr))" ]
-        , rule ".md\\:grid-cols-6"
-            [ gridTemplateColumns "repeat(6, minmax(0, 1fr))" ]
-        , rule ".md\\:col-span-2" [ gridColumn "span 2 / span 2" ]
-        , rule ".md\\:col-span-3" [ gridColumn "span 3 / span 3" ]
-        , rule ".md\\:col-span-4" [ gridColumn "span 4 / span 4" ]
-        , rule ".md\\:p-0" [ padding (lengthRaw "0") ]
-        , rule ".md\\:p-4" [ padding (lengthRaw "1rem") ]
-        , rule ".md\\:p-6" [ padding (lengthRaw "1.5rem") ]
-        , rule ".md\\:p-8" [ padding (lengthRaw "2rem") ]
-        , rule ".md\\:p-10" [ padding (lengthRaw "2.5rem") ]
-        , rule ".md\\:p-12" [ padding (lengthRaw "3rem") ]
-        , rule ".md\\:p-16" [ padding (lengthRaw "4rem") ]
-        , rule ".md\\:px-0" [ paddingLeft (lengthRaw "0") , paddingRight (lengthRaw "0") ]
-        , rule ".md\\:px-4" [ paddingLeft (lengthRaw "1rem") , paddingRight (lengthRaw "1rem") ]
-        , rule ".md\\:px-6" [ paddingLeft (lengthRaw "1.5rem") , paddingRight (lengthRaw "1.5rem") ]
-        , rule ".md\\:px-8" [ paddingLeft (lengthRaw "2rem") , paddingRight (lengthRaw "2rem") ]
-        , rule ".md\\:px-12" [ paddingLeft (lengthRaw "3rem") , paddingRight (lengthRaw "3rem") ]
-        , rule ".md\\:py-0" [ paddingTop (lengthRaw "0") , paddingBottom (lengthRaw "0") ]
-        , rule ".md\\:py-4" [ paddingTop (lengthRaw "1rem") , paddingBottom (lengthRaw "1rem") ]
-        , rule ".md\\:py-6" [ paddingTop (lengthRaw "1.5rem") , paddingBottom (lengthRaw "1.5rem") ]
-        , rule ".md\\:py-8" [ paddingTop (lengthRaw "2rem") , paddingBottom (lengthRaw "2rem") ]
-        , rule ".md\\:py-12" [ paddingTop (lengthRaw "3rem") , paddingBottom (lengthRaw "3rem") ]
-        , rule ".md\\:m-0" [ margin (lengthRaw "0") ]
-        , rule ".md\\:mx-auto" [ marginLeft (lengthRaw "auto") , marginRight (lengthRaw "auto") ]
-        , rule ".md\\:mt-0" [ marginTop (lengthRaw "0") ]
-        , rule ".md\\:mb-0" [ marginBottom (lengthRaw "0") ]
-        , rule ".md\\:text-sm" [ fontSize (lengthRaw "0.875rem") ]
-        , rule ".md\\:text-base" [ fontSize (lengthRaw "1rem") ]
-        , rule ".md\\:text-lg" [ fontSize (lengthRaw "1.125rem") ]
-        , rule ".md\\:text-xl" [ fontSize (lengthRaw "1.25rem") ]
-        , rule ".md\\:text-2xl" [ fontSize (lengthRaw "1.5rem") ]
-        , rule ".md\\:text-3xl" [ fontSize (lengthRaw "1.875rem") ]
-        , rule ".md\\:text-4xl" [ fontSize (lengthRaw "2.25rem") ]
-        , rule ".md\\:text-5xl" [ fontSize (lengthRaw "3rem") ]
-        , rule ".md\\:text-left" [ textAlign (TextAlignRaw "left") ]
-        , rule ".md\\:text-center" [ textAlign (TextAlignRaw "center") ]
-        , rule ".md\\:text-right" [ textAlign (TextAlignRaw "right") ]
-        , rule ".md\\:w-auto" [ width (lengthRaw "auto") ]
-        , rule ".md\\:w-full" [ width (lengthRaw "100%") ]
-        , rule ".md\\:w-1\\/2" [ width (lengthRaw "50%") ]
-        , rule ".md\\:w-1\\/3" [ width (lengthRaw "33.333333%") ]
-        , rule ".md\\:w-2\\/3" [ width (lengthRaw "66.666667%") ]
-        , rule ".md\\:w-1\\/4" [ width (lengthRaw "25%") ]
-        , rule ".md\\:w-3\\/4" [ width (lengthRaw "75%") ]
-        , rule ".md\\:max-w-md" [ maxWidth (lengthRaw "28rem") ]
-        , rule ".md\\:max-w-lg" [ maxWidth (lengthRaw "32rem") ]
-        , rule ".md\\:max-w-xl" [ maxWidth (lengthRaw "36rem") ]
-        , rule ".md\\:max-w-2xl" [ maxWidth (lengthRaw "42rem") ]
-        , rule ".md\\:max-w-3xl" [ maxWidth (lengthRaw "48rem") ]
-        , rule ".md\\:max-w-4xl" [ maxWidth (lengthRaw "56rem") ]
-        , rule ".md\\:gap-0" [ gap (lengthRaw "0") ]
-        , rule ".md\\:gap-2" [ gap (lengthRaw "0.5rem") ]
-        , rule ".md\\:gap-4" [ gap (lengthRaw "1rem") ]
-        , rule ".md\\:gap-6" [ gap (lengthRaw "1.5rem") ]
-        , rule ".md\\:gap-8" [ gap (lengthRaw "2rem") ]
-        , rule ".md\\:gap-10" [ gap (lengthRaw "2.5rem") ]
-        , rule ".md\\:space-x-4 > * + *" [ marginLeft (lengthRaw "1rem") ]
-        , rule ".md\\:space-x-6 > * + *" [ marginLeft (lengthRaw "1.5rem") ]
-        , rule ".md\\:space-y-0 > * + *" [ marginTop (lengthRaw "0") ]
-        , rule ".md\\:order-1" [ property "order" "1" ]
-        , rule ".md\\:order-2" [ property "order" "2" ]
-        , rule ".md\\:static" [ position (PositionRaw "static") ]
-        , rule ".md\\:relative" [ position (PositionRaw "relative") ]
-        , rule ".md\\:absolute" [ position (PositionRaw "absolute") ]
-        , rule ".md\\:sticky" [ position (PositionRaw "sticky") ]
-        , rule ".md\\:rounded-lg" [ borderRadius (lengthRaw "0.5rem") ]
-        , rule ".md\\:rounded-xl" [ borderRadius (lengthRaw "0.75rem") ]
-        , rule ".md\\:overflow-visible" [ overflow (OverflowRaw "visible") ]
-        , rule ".md\\:h-auto" [ height (lengthRaw "auto") ]
-        , rule ".md\\:h-full" [ height (lengthRaw "100%") ]
-        , rule ".md\\:h-screen" [ height (lengthRaw "100vh") ]
-        ]
-    , media "(min-width: 1024px)"
-        [ rule ".lg\\:block" [ display (DisplayRaw "block") ]
-        , rule ".lg\\:hidden" [ display (DisplayRaw "none") ]
-        , rule ".lg\\:flex" [ display (DisplayRaw "flex") ]
-        , rule ".lg\\:grid" [ display (DisplayRaw "grid") ]
-        , rule ".lg\\:inline" [ display (DisplayRaw "inline") ]
-        , rule ".lg\\:inline-flex" [ display (DisplayRaw "inline-flex") ]
-        , rule ".lg\\:flex-row" [ flexDirection (FlexDirectionRaw "row") ]
-        , rule ".lg\\:flex-col" [ flexDirection (FlexDirectionRaw "column") ]
-        , rule ".lg\\:items-start" [ alignItems (AlignRaw "flex-start") ]
-        , rule ".lg\\:items-center" [ alignItems (AlignRaw "center") ]
-        , rule ".lg\\:justify-start" [ justifyContent (AlignRaw "flex-start") ]
-        , rule ".lg\\:justify-center" [ justifyContent (AlignRaw "center") ]
-        , rule ".lg\\:justify-between" [ justifyContent (AlignRaw "space-between") ]
-        , rule ".lg\\:justify-end" [ justifyContent (AlignRaw "flex-end") ]
-        , rule ".lg\\:grid-cols-2"
-            [ gridTemplateColumns "repeat(2, minmax(0, 1fr))" ]
-        , rule ".lg\\:grid-cols-3"
-            [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
-        , rule ".lg\\:grid-cols-4"
-            [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
-        , rule ".lg\\:grid-cols-5"
-            [ gridTemplateColumns "repeat(5, minmax(0, 1fr))" ]
-        , rule ".lg\\:grid-cols-6"
-            [ gridTemplateColumns "repeat(6, minmax(0, 1fr))" ]
-        , rule ".lg\\:col-span-2" [ gridColumn "span 2 / span 2" ]
-        , rule ".lg\\:col-span-3" [ gridColumn "span 3 / span 3" ]
-        , rule ".lg\\:col-span-4" [ gridColumn "span 4 / span 4" ]
-        , rule ".lg\\:col-span-8" [ gridColumn "span 8 / span 8" ]
-        , rule ".lg\\:p-0" [ padding (lengthRaw "0") ]
-        , rule ".lg\\:p-4" [ padding (lengthRaw "1rem") ]
-        , rule ".lg\\:p-6" [ padding (lengthRaw "1.5rem") ]
-        , rule ".lg\\:p-8" [ padding (lengthRaw "2rem") ]
-        , rule ".lg\\:p-10" [ padding (lengthRaw "2.5rem") ]
-        , rule ".lg\\:p-12" [ padding (lengthRaw "3rem") ]
-        , rule ".lg\\:p-16" [ padding (lengthRaw "4rem") ]
-        , rule ".lg\\:p-20" [ padding (lengthRaw "5rem") ]
-        , rule ".lg\\:px-0" [ paddingLeft (lengthRaw "0") , paddingRight (lengthRaw "0") ]
-        , rule ".lg\\:px-6" [ paddingLeft (lengthRaw "1.5rem") , paddingRight (lengthRaw "1.5rem") ]
-        , rule ".lg\\:px-8" [ paddingLeft (lengthRaw "2rem") , paddingRight (lengthRaw "2rem") ]
-        , rule ".lg\\:px-12" [ paddingLeft (lengthRaw "3rem") , paddingRight (lengthRaw "3rem") ]
-        , rule ".lg\\:px-16" [ paddingLeft (lengthRaw "4rem") , paddingRight (lengthRaw "4rem") ]
-        , rule ".lg\\:py-0" [ paddingTop (lengthRaw "0") , paddingBottom (lengthRaw "0") ]
-        , rule ".lg\\:py-6" [ paddingTop (lengthRaw "1.5rem") , paddingBottom (lengthRaw "1.5rem") ]
-        , rule ".lg\\:py-8" [ paddingTop (lengthRaw "2rem") , paddingBottom (lengthRaw "2rem") ]
-        , rule ".lg\\:py-12" [ paddingTop (lengthRaw "3rem") , paddingBottom (lengthRaw "3rem") ]
-        , rule ".lg\\:m-0" [ margin (lengthRaw "0") ]
-        , rule ".lg\\:mx-auto" [ marginLeft (lengthRaw "auto") , marginRight (lengthRaw "auto") ]
-        , rule ".lg\\:mt-0" [ marginTop (lengthRaw "0") ]
-        , rule ".lg\\:mb-0" [ marginBottom (lengthRaw "0") ]
-        , rule ".lg\\:text-sm" [ fontSize (lengthRaw "0.875rem") ]
-        , rule ".lg\\:text-base" [ fontSize (lengthRaw "1rem") ]
-        , rule ".lg\\:text-lg" [ fontSize (lengthRaw "1.125rem") ]
-        , rule ".lg\\:text-xl" [ fontSize (lengthRaw "1.25rem") ]
-        , rule ".lg\\:text-2xl" [ fontSize (lengthRaw "1.5rem") ]
-        , rule ".lg\\:text-3xl" [ fontSize (lengthRaw "1.875rem") ]
-        , rule ".lg\\:text-4xl" [ fontSize (lengthRaw "2.25rem") ]
-        , rule ".lg\\:text-5xl" [ fontSize (lengthRaw "3rem") ]
-        , rule ".lg\\:text-6xl" [ fontSize (lengthRaw "3.75rem") ]
-        , rule ".lg\\:text-left" [ textAlign (TextAlignRaw "left") ]
-        , rule ".lg\\:text-center" [ textAlign (TextAlignRaw "center") ]
-        , rule ".lg\\:text-right" [ textAlign (TextAlignRaw "right") ]
-        , rule ".lg\\:w-auto" [ width (lengthRaw "auto") ]
-        , rule ".lg\\:w-full" [ width (lengthRaw "100%") ]
-        , rule ".lg\\:w-1\\/2" [ width (lengthRaw "50%") ]
-        , rule ".lg\\:w-1\\/3" [ width (lengthRaw "33.333333%") ]
-        , rule ".lg\\:w-2\\/3" [ width (lengthRaw "66.666667%") ]
-        , rule ".lg\\:w-1\\/4" [ width (lengthRaw "25%") ]
-        , rule ".lg\\:w-3\\/4" [ width (lengthRaw "75%") ]
-        , rule ".lg\\:max-w-lg" [ maxWidth (lengthRaw "32rem") ]
-        , rule ".lg\\:max-w-xl" [ maxWidth (lengthRaw "36rem") ]
-        , rule ".lg\\:max-w-2xl" [ maxWidth (lengthRaw "42rem") ]
-        , rule ".lg\\:max-w-3xl" [ maxWidth (lengthRaw "48rem") ]
-        , rule ".lg\\:max-w-4xl" [ maxWidth (lengthRaw "56rem") ]
-        , rule ".lg\\:max-w-5xl" [ maxWidth (lengthRaw "64rem") ]
-        , rule ".lg\\:max-w-6xl" [ maxWidth (lengthRaw "72rem") ]
-        , rule ".lg\\:max-w-7xl" [ maxWidth (lengthRaw "80rem") ]
-        , rule ".lg\\:gap-4" [ gap (lengthRaw "1rem") ]
-        , rule ".lg\\:gap-6" [ gap (lengthRaw "1.5rem") ]
-        , rule ".lg\\:gap-8" [ gap (lengthRaw "2rem") ]
-        , rule ".lg\\:gap-10" [ gap (lengthRaw "2.5rem") ]
-        , rule ".lg\\:gap-12" [ gap (lengthRaw "3rem") ]
-        , rule ".lg\\:space-x-4 > * + *" [ marginLeft (lengthRaw "1rem") ]
-        , rule ".lg\\:space-x-6 > * + *" [ marginLeft (lengthRaw "1.5rem") ]
-        , rule ".lg\\:space-x-8 > * + *" [ marginLeft (lengthRaw "2rem") ]
-        , rule ".lg\\:space-y-0 > * + *" [ marginTop (lengthRaw "0") ]
-        , rule ".lg\\:order-1" [ property "order" "1" ]
-        , rule ".lg\\:order-2" [ property "order" "2" ]
-        , rule ".lg\\:static" [ position (PositionRaw "static") ]
-        , rule ".lg\\:sticky" [ position (PositionRaw "sticky") ]
-        , rule ".lg\\:h-auto" [ height (lengthRaw "auto") ]
-        , rule ".lg\\:h-full" [ height (lengthRaw "100%") ]
-        , rule ".lg\\:h-screen" [ height (lengthRaw "100vh") ]
-        , rule ".lg\\:rounded-lg" [ borderRadius (lengthRaw "0.5rem") ]
-        , rule ".lg\\:rounded-xl" [ borderRadius (lengthRaw "0.75rem") ]
-        ]
-    , media "(min-width: 1280px)"
-        [ rule ".xl\\:block" [ display (DisplayRaw "block") ]
-        , rule ".xl\\:hidden" [ display (DisplayRaw "none") ]
-        , rule ".xl\\:flex" [ display (DisplayRaw "flex") ]
-        , rule ".xl\\:grid" [ display (DisplayRaw "grid") ]
-        , rule ".xl\\:inline-flex" [ display (DisplayRaw "inline-flex") ]
-        , rule ".xl\\:flex-row" [ flexDirection (FlexDirectionRaw "row") ]
-        , rule ".xl\\:items-center" [ alignItems (AlignRaw "center") ]
-        , rule ".xl\\:justify-between" [ justifyContent (AlignRaw "space-between") ]
-        , rule ".xl\\:grid-cols-3"
-            [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
-        , rule ".xl\\:grid-cols-4"
-            [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
-        , rule ".xl\\:grid-cols-5"
-            [ gridTemplateColumns "repeat(5, minmax(0, 1fr))" ]
-        , rule ".xl\\:grid-cols-6"
-            [ gridTemplateColumns "repeat(6, minmax(0, 1fr))" ]
-        , rule ".xl\\:col-span-2" [ gridColumn "span 2 / span 2" ]
-        , rule ".xl\\:col-span-3" [ gridColumn "span 3 / span 3" ]
-        , rule ".xl\\:col-span-4" [ gridColumn "span 4 / span 4" ]
-        , rule ".xl\\:p-8" [ padding (lengthRaw "2rem") ]
-        , rule ".xl\\:p-12" [ padding (lengthRaw "3rem") ]
-        , rule ".xl\\:p-16" [ padding (lengthRaw "4rem") ]
-        , rule ".xl\\:p-20" [ padding (lengthRaw "5rem") ]
-        , rule ".xl\\:px-8" [ paddingLeft (lengthRaw "2rem") , paddingRight (lengthRaw "2rem") ]
-        , rule ".xl\\:px-12" [ paddingLeft (lengthRaw "3rem") , paddingRight (lengthRaw "3rem") ]
-        , rule ".xl\\:px-16" [ paddingLeft (lengthRaw "4rem") , paddingRight (lengthRaw "4rem") ]
-        , rule ".xl\\:py-8" [ paddingTop (lengthRaw "2rem") , paddingBottom (lengthRaw "2rem") ]
-        , rule ".xl\\:py-12" [ paddingTop (lengthRaw "3rem") , paddingBottom (lengthRaw "3rem") ]
-        , rule ".xl\\:text-lg" [ fontSize (lengthRaw "1.125rem") ]
-        , rule ".xl\\:text-xl" [ fontSize (lengthRaw "1.25rem") ]
-        , rule ".xl\\:text-2xl" [ fontSize (lengthRaw "1.5rem") ]
-        , rule ".xl\\:text-3xl" [ fontSize (lengthRaw "1.875rem") ]
-        , rule ".xl\\:text-4xl" [ fontSize (lengthRaw "2.25rem") ]
-        , rule ".xl\\:text-5xl" [ fontSize (lengthRaw "3rem") ]
-        , rule ".xl\\:text-6xl" [ fontSize (lengthRaw "3.75rem") ]
-        , rule ".xl\\:w-auto" [ width (lengthRaw "auto") ]
-        , rule ".xl\\:w-full" [ width (lengthRaw "100%") ]
-        , rule ".xl\\:w-1\\/2" [ width (lengthRaw "50%") ]
-        , rule ".xl\\:w-1\\/3" [ width (lengthRaw "33.333333%") ]
-        , rule ".xl\\:w-1\\/4" [ width (lengthRaw "25%") ]
-        , rule ".xl\\:max-w-4xl" [ maxWidth (lengthRaw "56rem") ]
-        , rule ".xl\\:max-w-5xl" [ maxWidth (lengthRaw "64rem") ]
-        , rule ".xl\\:max-w-6xl" [ maxWidth (lengthRaw "72rem") ]
-        , rule ".xl\\:max-w-7xl" [ maxWidth (lengthRaw "80rem") ]
-        , rule ".xl\\:gap-6" [ gap (lengthRaw "1.5rem") ]
-        , rule ".xl\\:gap-8" [ gap (lengthRaw "2rem") ]
-        , rule ".xl\\:gap-10" [ gap (lengthRaw "2.5rem") ]
-        , rule ".xl\\:gap-12" [ gap (lengthRaw "3rem") ]
-        ]
-    , media "(min-width: 1536px)"
-        [ rule ".\\32xl\\:block" [ display (DisplayRaw "block") ]
-        , rule ".\\32xl\\:hidden" [ display (DisplayRaw "none") ]
-        , rule ".\\32xl\\:flex" [ display (DisplayRaw "flex") ]
-        , rule ".\\32xl\\:grid" [ display (DisplayRaw "grid") ]
-        , rule ".\\32xl\\:grid-cols-4"
-            [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
-        , rule ".\\32xl\\:grid-cols-5"
-            [ gridTemplateColumns "repeat(5, minmax(0, 1fr))" ]
-        , rule ".\\32xl\\:grid-cols-6"
-            [ gridTemplateColumns "repeat(6, minmax(0, 1fr))" ]
-        , rule ".\\32xl\\:p-12" [ padding (lengthRaw "3rem") ]
-        , rule ".\\32xl\\:p-16" [ padding (lengthRaw "4rem") ]
-        , rule ".\\32xl\\:p-20" [ padding (lengthRaw "5rem") ]
-        , rule ".\\32xl\\:p-24" [ padding (lengthRaw "6rem") ]
-        , rule ".\\32xl\\:px-12" [ paddingLeft (lengthRaw "3rem") , paddingRight (lengthRaw "3rem") ]
-        , rule ".\\32xl\\:px-16" [ paddingLeft (lengthRaw "4rem") , paddingRight (lengthRaw "4rem") ]
-        , rule ".\\32xl\\:text-2xl" [ fontSize (lengthRaw "1.5rem") ]
-        , rule ".\\32xl\\:text-4xl" [ fontSize (lengthRaw "2.25rem") ]
-        , rule ".\\32xl\\:text-5xl" [ fontSize (lengthRaw "3rem") ]
-        , rule ".\\32xl\\:text-6xl" [ fontSize (lengthRaw "3.75rem") ]
-        , rule ".\\32xl\\:max-w-7xl" [ maxWidth (lengthRaw "80rem") ]
-        , rule ".\\32xl\\:gap-8" [ gap (lengthRaw "2rem") ]
-        , rule ".\\32xl\\:gap-12" [ gap (lengthRaw "3rem") ]
-        ]
+    , rule
+          ".group:hover .group-hover\\:text-white"
+          [ color (colorRaw "#ffffff") ]
+    , rule
+          ".group:hover .group-hover\\:text-gray-700"
+          [ color (colorRaw "#374151") ]
+    , rule
+          ".group:hover .group-hover\\:text-blue-600"
+          [ color (colorRaw "#2563eb") ]
+    , rule
+          ".group:hover .group-hover\\:bg-gray-100"
+          [ backgroundColor (colorRaw "#f3f4f6") ]
+    , rule
+          ".group:hover .group-hover\\:bg-blue-50"
+          [ backgroundColor (colorRaw "#eff6ff") ]
+    , rule
+          ".group:hover .group-hover\\:translate-x-1"
+          [ transform "translateX(0.25rem)" ]
+    , rule
+          ".group:hover .group-hover\\:-translate-y-1"
+          [ transform "translateY(-0.25rem)" ]
+    , rule
+          ".group:hover .group-hover\\:shadow-lg"
+          [ boxShadow
+                "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)"
+          ]
+    , rule
+          ".peer:focus ~ .peer-focus\\:text-blue-600"
+          [ color (colorRaw "#2563eb") ]
+    , rule
+          ".peer:focus ~ .peer-focus\\:border-blue-500"
+          [ borderColor (colorRaw "#3b82f6") ]
+    , rule
+          ".peer:invalid ~ .peer-invalid\\:text-red-500"
+          [ color (colorRaw "#ef4444") ]
+    , rule
+          ".peer:invalid ~ .peer-invalid\\:border-red-500"
+          [ borderColor (colorRaw "#ef4444") ]
+    , media
+          "(min-width: 640px)"
+          [ rule ".sm\\:block" [ display (DisplayRaw "block") ]
+          , rule ".sm\\:hidden" [ display (DisplayRaw "none") ]
+          , rule ".sm\\:flex" [ display (DisplayRaw "flex") ]
+          , rule ".sm\\:grid" [ display (DisplayRaw "grid") ]
+          , rule ".sm\\:inline" [ display (DisplayRaw "inline") ]
+          , rule ".sm\\:inline-block" [ display (DisplayRaw "inline-block") ]
+          , rule ".sm\\:inline-flex" [ display (DisplayRaw "inline-flex") ]
+          , rule ".sm\\:flex-row" [ flexDirection (FlexDirectionRaw "row") ]
+          , rule ".sm\\:flex-col" [ flexDirection (FlexDirectionRaw "column") ]
+          , rule ".sm\\:items-center" [ alignItems (AlignRaw "center") ]
+          , rule
+                ".sm\\:justify-between"
+                [ justifyContent (AlignRaw "space-between") ]
+          , rule ".sm\\:justify-center" [ justifyContent (AlignRaw "center") ]
+          , rule
+                ".sm\\:grid-cols-1"
+                [ gridTemplateColumns "repeat(1, minmax(0, 1fr))" ]
+          , rule
+                ".sm\\:grid-cols-2"
+                [ gridTemplateColumns "repeat(2, minmax(0, 1fr))" ]
+          , rule
+                ".sm\\:grid-cols-3"
+                [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
+          , rule
+                ".sm\\:grid-cols-4"
+                [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
+          , rule ".sm\\:p-0" [ padding (lengthRaw "0") ]
+          , rule ".sm\\:p-2" [ padding (lengthRaw "0.5rem") ]
+          , rule ".sm\\:p-4" [ padding (lengthRaw "1rem") ]
+          , rule ".sm\\:p-6" [ padding (lengthRaw "1.5rem") ]
+          , rule ".sm\\:p-8" [ padding (lengthRaw "2rem") ]
+          , rule
+                ".sm\\:px-0"
+                [ paddingLeft (lengthRaw "0"), paddingRight (lengthRaw "0") ]
+          , rule
+                ".sm\\:px-4"
+                [ paddingLeft (lengthRaw "1rem")
+                , paddingRight (lengthRaw "1rem")
+                ]
+          , rule
+                ".sm\\:px-6"
+                [ paddingLeft (lengthRaw "1.5rem")
+                , paddingRight (lengthRaw "1.5rem")
+                ]
+          , rule
+                ".sm\\:px-8"
+                [ paddingLeft (lengthRaw "2rem")
+                , paddingRight (lengthRaw "2rem")
+                ]
+          , rule
+                ".sm\\:py-0"
+                [ paddingTop (lengthRaw "0"), paddingBottom (lengthRaw "0") ]
+          , rule
+                ".sm\\:py-4"
+                [ paddingTop (lengthRaw "1rem")
+                , paddingBottom (lengthRaw "1rem")
+                ]
+          , rule
+                ".sm\\:py-6"
+                [ paddingTop (lengthRaw "1.5rem")
+                , paddingBottom (lengthRaw "1.5rem")
+                ]
+          , rule
+                ".sm\\:py-8"
+                [ paddingTop (lengthRaw "2rem")
+                , paddingBottom (lengthRaw "2rem")
+                ]
+          , rule ".sm\\:m-0" [ margin (lengthRaw "0") ]
+          , rule
+                ".sm\\:mx-auto"
+                [ marginLeft (lengthRaw "auto")
+                , marginRight (lengthRaw "auto")
+                ]
+          , rule ".sm\\:mt-0" [ marginTop (lengthRaw "0") ]
+          , rule ".sm\\:mb-0" [ marginBottom (lengthRaw "0") ]
+          , rule ".sm\\:text-xs" [ fontSize (lengthRaw "0.75rem") ]
+          , rule ".sm\\:text-sm" [ fontSize (lengthRaw "0.875rem") ]
+          , rule ".sm\\:text-base" [ fontSize (lengthRaw "1rem") ]
+          , rule ".sm\\:text-lg" [ fontSize (lengthRaw "1.125rem") ]
+          , rule ".sm\\:text-xl" [ fontSize (lengthRaw "1.25rem") ]
+          , rule ".sm\\:text-2xl" [ fontSize (lengthRaw "1.5rem") ]
+          , rule ".sm\\:text-3xl" [ fontSize (lengthRaw "1.875rem") ]
+          , rule ".sm\\:text-left" [ textAlign (TextAlignRaw "left") ]
+          , rule ".sm\\:text-center" [ textAlign (TextAlignRaw "center") ]
+          , rule ".sm\\:text-right" [ textAlign (TextAlignRaw "right") ]
+          , rule ".sm\\:w-auto" [ width (lengthRaw "auto") ]
+          , rule ".sm\\:w-full" [ width (lengthRaw "100%") ]
+          , rule ".sm\\:w-1\\/2" [ width (lengthRaw "50%") ]
+          , rule ".sm\\:w-1\\/3" [ width (lengthRaw "33.333333%") ]
+          , rule ".sm\\:w-2\\/3" [ width (lengthRaw "66.666667%") ]
+          , rule ".sm\\:max-w-sm" [ maxWidth (lengthRaw "24rem") ]
+          , rule ".sm\\:max-w-md" [ maxWidth (lengthRaw "28rem") ]
+          , rule ".sm\\:max-w-lg" [ maxWidth (lengthRaw "32rem") ]
+          , rule ".sm\\:max-w-xl" [ maxWidth (lengthRaw "36rem") ]
+          , rule ".sm\\:gap-2" [ gap (lengthRaw "0.5rem") ]
+          , rule ".sm\\:gap-4" [ gap (lengthRaw "1rem") ]
+          , rule ".sm\\:gap-6" [ gap (lengthRaw "1.5rem") ]
+          , rule ".sm\\:gap-8" [ gap (lengthRaw "2rem") ]
+          , rule ".sm\\:space-x-4 > * + *" [ marginLeft (lengthRaw "1rem") ]
+          , rule ".sm\\:space-y-0 > * + *" [ marginTop (lengthRaw "0") ]
+          , rule ".sm\\:rounded-lg" [ borderRadius (lengthRaw "0.5rem") ]
+          , rule ".sm\\:static" [ position (PositionRaw "static") ]
+          , rule ".sm\\:relative" [ position (PositionRaw "relative") ]
+          ]
+    , media
+          "(min-width: 768px)"
+          [ rule ".md\\:block" [ display (DisplayRaw "block") ]
+          , rule ".md\\:hidden" [ display (DisplayRaw "none") ]
+          , rule ".md\\:flex" [ display (DisplayRaw "flex") ]
+          , rule ".md\\:grid" [ display (DisplayRaw "grid") ]
+          , rule ".md\\:inline" [ display (DisplayRaw "inline") ]
+          , rule ".md\\:inline-block" [ display (DisplayRaw "inline-block") ]
+          , rule ".md\\:inline-flex" [ display (DisplayRaw "inline-flex") ]
+          , rule ".md\\:flex-row" [ flexDirection (FlexDirectionRaw "row") ]
+          , rule ".md\\:flex-col" [ flexDirection (FlexDirectionRaw "column") ]
+          , rule ".md\\:items-start" [ alignItems (AlignRaw "flex-start") ]
+          , rule ".md\\:items-center" [ alignItems (AlignRaw "center") ]
+          , rule ".md\\:items-end" [ alignItems (AlignRaw "flex-end") ]
+          , rule
+                ".md\\:justify-start"
+                [ justifyContent (AlignRaw "flex-start") ]
+          , rule ".md\\:justify-center" [ justifyContent (AlignRaw "center") ]
+          , rule
+                ".md\\:justify-between"
+                [ justifyContent (AlignRaw "space-between") ]
+          , rule ".md\\:justify-end" [ justifyContent (AlignRaw "flex-end") ]
+          , rule
+                ".md\\:grid-cols-1"
+                [ gridTemplateColumns "repeat(1, minmax(0, 1fr))" ]
+          , rule
+                ".md\\:grid-cols-2"
+                [ gridTemplateColumns "repeat(2, minmax(0, 1fr))" ]
+          , rule
+                ".md\\:grid-cols-3"
+                [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
+          , rule
+                ".md\\:grid-cols-4"
+                [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
+          , rule
+                ".md\\:grid-cols-5"
+                [ gridTemplateColumns "repeat(5, minmax(0, 1fr))" ]
+          , rule
+                ".md\\:grid-cols-6"
+                [ gridTemplateColumns "repeat(6, minmax(0, 1fr))" ]
+          , rule ".md\\:col-span-2" [ gridColumn "span 2 / span 2" ]
+          , rule ".md\\:col-span-3" [ gridColumn "span 3 / span 3" ]
+          , rule ".md\\:col-span-4" [ gridColumn "span 4 / span 4" ]
+          , rule ".md\\:p-0" [ padding (lengthRaw "0") ]
+          , rule ".md\\:p-4" [ padding (lengthRaw "1rem") ]
+          , rule ".md\\:p-6" [ padding (lengthRaw "1.5rem") ]
+          , rule ".md\\:p-8" [ padding (lengthRaw "2rem") ]
+          , rule ".md\\:p-10" [ padding (lengthRaw "2.5rem") ]
+          , rule ".md\\:p-12" [ padding (lengthRaw "3rem") ]
+          , rule ".md\\:p-16" [ padding (lengthRaw "4rem") ]
+          , rule
+                ".md\\:px-0"
+                [ paddingLeft (lengthRaw "0"), paddingRight (lengthRaw "0") ]
+          , rule
+                ".md\\:px-4"
+                [ paddingLeft (lengthRaw "1rem")
+                , paddingRight (lengthRaw "1rem")
+                ]
+          , rule
+                ".md\\:px-6"
+                [ paddingLeft (lengthRaw "1.5rem")
+                , paddingRight (lengthRaw "1.5rem")
+                ]
+          , rule
+                ".md\\:px-8"
+                [ paddingLeft (lengthRaw "2rem")
+                , paddingRight (lengthRaw "2rem")
+                ]
+          , rule
+                ".md\\:px-12"
+                [ paddingLeft (lengthRaw "3rem")
+                , paddingRight (lengthRaw "3rem")
+                ]
+          , rule
+                ".md\\:py-0"
+                [ paddingTop (lengthRaw "0"), paddingBottom (lengthRaw "0") ]
+          , rule
+                ".md\\:py-4"
+                [ paddingTop (lengthRaw "1rem")
+                , paddingBottom (lengthRaw "1rem")
+                ]
+          , rule
+                ".md\\:py-6"
+                [ paddingTop (lengthRaw "1.5rem")
+                , paddingBottom (lengthRaw "1.5rem")
+                ]
+          , rule
+                ".md\\:py-8"
+                [ paddingTop (lengthRaw "2rem")
+                , paddingBottom (lengthRaw "2rem")
+                ]
+          , rule
+                ".md\\:py-12"
+                [ paddingTop (lengthRaw "3rem")
+                , paddingBottom (lengthRaw "3rem")
+                ]
+          , rule ".md\\:m-0" [ margin (lengthRaw "0") ]
+          , rule
+                ".md\\:mx-auto"
+                [ marginLeft (lengthRaw "auto")
+                , marginRight (lengthRaw "auto")
+                ]
+          , rule ".md\\:mt-0" [ marginTop (lengthRaw "0") ]
+          , rule ".md\\:mb-0" [ marginBottom (lengthRaw "0") ]
+          , rule ".md\\:text-sm" [ fontSize (lengthRaw "0.875rem") ]
+          , rule ".md\\:text-base" [ fontSize (lengthRaw "1rem") ]
+          , rule ".md\\:text-lg" [ fontSize (lengthRaw "1.125rem") ]
+          , rule ".md\\:text-xl" [ fontSize (lengthRaw "1.25rem") ]
+          , rule ".md\\:text-2xl" [ fontSize (lengthRaw "1.5rem") ]
+          , rule ".md\\:text-3xl" [ fontSize (lengthRaw "1.875rem") ]
+          , rule ".md\\:text-4xl" [ fontSize (lengthRaw "2.25rem") ]
+          , rule ".md\\:text-5xl" [ fontSize (lengthRaw "3rem") ]
+          , rule ".md\\:text-left" [ textAlign (TextAlignRaw "left") ]
+          , rule ".md\\:text-center" [ textAlign (TextAlignRaw "center") ]
+          , rule ".md\\:text-right" [ textAlign (TextAlignRaw "right") ]
+          , rule ".md\\:w-auto" [ width (lengthRaw "auto") ]
+          , rule ".md\\:w-full" [ width (lengthRaw "100%") ]
+          , rule ".md\\:w-1\\/2" [ width (lengthRaw "50%") ]
+          , rule ".md\\:w-1\\/3" [ width (lengthRaw "33.333333%") ]
+          , rule ".md\\:w-2\\/3" [ width (lengthRaw "66.666667%") ]
+          , rule ".md\\:w-1\\/4" [ width (lengthRaw "25%") ]
+          , rule ".md\\:w-3\\/4" [ width (lengthRaw "75%") ]
+          , rule ".md\\:max-w-md" [ maxWidth (lengthRaw "28rem") ]
+          , rule ".md\\:max-w-lg" [ maxWidth (lengthRaw "32rem") ]
+          , rule ".md\\:max-w-xl" [ maxWidth (lengthRaw "36rem") ]
+          , rule ".md\\:max-w-2xl" [ maxWidth (lengthRaw "42rem") ]
+          , rule ".md\\:max-w-3xl" [ maxWidth (lengthRaw "48rem") ]
+          , rule ".md\\:max-w-4xl" [ maxWidth (lengthRaw "56rem") ]
+          , rule ".md\\:gap-0" [ gap (lengthRaw "0") ]
+          , rule ".md\\:gap-2" [ gap (lengthRaw "0.5rem") ]
+          , rule ".md\\:gap-4" [ gap (lengthRaw "1rem") ]
+          , rule ".md\\:gap-6" [ gap (lengthRaw "1.5rem") ]
+          , rule ".md\\:gap-8" [ gap (lengthRaw "2rem") ]
+          , rule ".md\\:gap-10" [ gap (lengthRaw "2.5rem") ]
+          , rule ".md\\:space-x-4 > * + *" [ marginLeft (lengthRaw "1rem") ]
+          , rule ".md\\:space-x-6 > * + *" [ marginLeft (lengthRaw "1.5rem") ]
+          , rule ".md\\:space-y-0 > * + *" [ marginTop (lengthRaw "0") ]
+          , rule ".md\\:order-1" [ property "order" "1" ]
+          , rule ".md\\:order-2" [ property "order" "2" ]
+          , rule ".md\\:static" [ position (PositionRaw "static") ]
+          , rule ".md\\:relative" [ position (PositionRaw "relative") ]
+          , rule ".md\\:absolute" [ position (PositionRaw "absolute") ]
+          , rule ".md\\:sticky" [ position (PositionRaw "sticky") ]
+          , rule ".md\\:rounded-lg" [ borderRadius (lengthRaw "0.5rem") ]
+          , rule ".md\\:rounded-xl" [ borderRadius (lengthRaw "0.75rem") ]
+          , rule ".md\\:overflow-visible" [ overflow (OverflowRaw "visible") ]
+          , rule ".md\\:h-auto" [ height (lengthRaw "auto") ]
+          , rule ".md\\:h-full" [ height (lengthRaw "100%") ]
+          , rule ".md\\:h-screen" [ height (lengthRaw "100vh") ]
+          ]
+    , media
+          "(min-width: 1024px)"
+          [ rule ".lg\\:block" [ display (DisplayRaw "block") ]
+          , rule ".lg\\:hidden" [ display (DisplayRaw "none") ]
+          , rule ".lg\\:flex" [ display (DisplayRaw "flex") ]
+          , rule ".lg\\:grid" [ display (DisplayRaw "grid") ]
+          , rule ".lg\\:inline" [ display (DisplayRaw "inline") ]
+          , rule ".lg\\:inline-flex" [ display (DisplayRaw "inline-flex") ]
+          , rule ".lg\\:flex-row" [ flexDirection (FlexDirectionRaw "row") ]
+          , rule ".lg\\:flex-col" [ flexDirection (FlexDirectionRaw "column") ]
+          , rule ".lg\\:items-start" [ alignItems (AlignRaw "flex-start") ]
+          , rule ".lg\\:items-center" [ alignItems (AlignRaw "center") ]
+          , rule
+                ".lg\\:justify-start"
+                [ justifyContent (AlignRaw "flex-start") ]
+          , rule ".lg\\:justify-center" [ justifyContent (AlignRaw "center") ]
+          , rule
+                ".lg\\:justify-between"
+                [ justifyContent (AlignRaw "space-between") ]
+          , rule ".lg\\:justify-end" [ justifyContent (AlignRaw "flex-end") ]
+          , rule
+                ".lg\\:grid-cols-2"
+                [ gridTemplateColumns "repeat(2, minmax(0, 1fr))" ]
+          , rule
+                ".lg\\:grid-cols-3"
+                [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
+          , rule
+                ".lg\\:grid-cols-4"
+                [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
+          , rule
+                ".lg\\:grid-cols-5"
+                [ gridTemplateColumns "repeat(5, minmax(0, 1fr))" ]
+          , rule
+                ".lg\\:grid-cols-6"
+                [ gridTemplateColumns "repeat(6, minmax(0, 1fr))" ]
+          , rule ".lg\\:col-span-2" [ gridColumn "span 2 / span 2" ]
+          , rule ".lg\\:col-span-3" [ gridColumn "span 3 / span 3" ]
+          , rule ".lg\\:col-span-4" [ gridColumn "span 4 / span 4" ]
+          , rule ".lg\\:col-span-8" [ gridColumn "span 8 / span 8" ]
+          , rule ".lg\\:p-0" [ padding (lengthRaw "0") ]
+          , rule ".lg\\:p-4" [ padding (lengthRaw "1rem") ]
+          , rule ".lg\\:p-6" [ padding (lengthRaw "1.5rem") ]
+          , rule ".lg\\:p-8" [ padding (lengthRaw "2rem") ]
+          , rule ".lg\\:p-10" [ padding (lengthRaw "2.5rem") ]
+          , rule ".lg\\:p-12" [ padding (lengthRaw "3rem") ]
+          , rule ".lg\\:p-16" [ padding (lengthRaw "4rem") ]
+          , rule ".lg\\:p-20" [ padding (lengthRaw "5rem") ]
+          , rule
+                ".lg\\:px-0"
+                [ paddingLeft (lengthRaw "0"), paddingRight (lengthRaw "0") ]
+          , rule
+                ".lg\\:px-6"
+                [ paddingLeft (lengthRaw "1.5rem")
+                , paddingRight (lengthRaw "1.5rem")
+                ]
+          , rule
+                ".lg\\:px-8"
+                [ paddingLeft (lengthRaw "2rem")
+                , paddingRight (lengthRaw "2rem")
+                ]
+          , rule
+                ".lg\\:px-12"
+                [ paddingLeft (lengthRaw "3rem")
+                , paddingRight (lengthRaw "3rem")
+                ]
+          , rule
+                ".lg\\:px-16"
+                [ paddingLeft (lengthRaw "4rem")
+                , paddingRight (lengthRaw "4rem")
+                ]
+          , rule
+                ".lg\\:py-0"
+                [ paddingTop (lengthRaw "0"), paddingBottom (lengthRaw "0") ]
+          , rule
+                ".lg\\:py-6"
+                [ paddingTop (lengthRaw "1.5rem")
+                , paddingBottom (lengthRaw "1.5rem")
+                ]
+          , rule
+                ".lg\\:py-8"
+                [ paddingTop (lengthRaw "2rem")
+                , paddingBottom (lengthRaw "2rem")
+                ]
+          , rule
+                ".lg\\:py-12"
+                [ paddingTop (lengthRaw "3rem")
+                , paddingBottom (lengthRaw "3rem")
+                ]
+          , rule ".lg\\:m-0" [ margin (lengthRaw "0") ]
+          , rule
+                ".lg\\:mx-auto"
+                [ marginLeft (lengthRaw "auto")
+                , marginRight (lengthRaw "auto")
+                ]
+          , rule ".lg\\:mt-0" [ marginTop (lengthRaw "0") ]
+          , rule ".lg\\:mb-0" [ marginBottom (lengthRaw "0") ]
+          , rule ".lg\\:text-sm" [ fontSize (lengthRaw "0.875rem") ]
+          , rule ".lg\\:text-base" [ fontSize (lengthRaw "1rem") ]
+          , rule ".lg\\:text-lg" [ fontSize (lengthRaw "1.125rem") ]
+          , rule ".lg\\:text-xl" [ fontSize (lengthRaw "1.25rem") ]
+          , rule ".lg\\:text-2xl" [ fontSize (lengthRaw "1.5rem") ]
+          , rule ".lg\\:text-3xl" [ fontSize (lengthRaw "1.875rem") ]
+          , rule ".lg\\:text-4xl" [ fontSize (lengthRaw "2.25rem") ]
+          , rule ".lg\\:text-5xl" [ fontSize (lengthRaw "3rem") ]
+          , rule ".lg\\:text-6xl" [ fontSize (lengthRaw "3.75rem") ]
+          , rule ".lg\\:text-left" [ textAlign (TextAlignRaw "left") ]
+          , rule ".lg\\:text-center" [ textAlign (TextAlignRaw "center") ]
+          , rule ".lg\\:text-right" [ textAlign (TextAlignRaw "right") ]
+          , rule ".lg\\:w-auto" [ width (lengthRaw "auto") ]
+          , rule ".lg\\:w-full" [ width (lengthRaw "100%") ]
+          , rule ".lg\\:w-1\\/2" [ width (lengthRaw "50%") ]
+          , rule ".lg\\:w-1\\/3" [ width (lengthRaw "33.333333%") ]
+          , rule ".lg\\:w-2\\/3" [ width (lengthRaw "66.666667%") ]
+          , rule ".lg\\:w-1\\/4" [ width (lengthRaw "25%") ]
+          , rule ".lg\\:w-3\\/4" [ width (lengthRaw "75%") ]
+          , rule ".lg\\:max-w-lg" [ maxWidth (lengthRaw "32rem") ]
+          , rule ".lg\\:max-w-xl" [ maxWidth (lengthRaw "36rem") ]
+          , rule ".lg\\:max-w-2xl" [ maxWidth (lengthRaw "42rem") ]
+          , rule ".lg\\:max-w-3xl" [ maxWidth (lengthRaw "48rem") ]
+          , rule ".lg\\:max-w-4xl" [ maxWidth (lengthRaw "56rem") ]
+          , rule ".lg\\:max-w-5xl" [ maxWidth (lengthRaw "64rem") ]
+          , rule ".lg\\:max-w-6xl" [ maxWidth (lengthRaw "72rem") ]
+          , rule ".lg\\:max-w-7xl" [ maxWidth (lengthRaw "80rem") ]
+          , rule ".lg\\:gap-4" [ gap (lengthRaw "1rem") ]
+          , rule ".lg\\:gap-6" [ gap (lengthRaw "1.5rem") ]
+          , rule ".lg\\:gap-8" [ gap (lengthRaw "2rem") ]
+          , rule ".lg\\:gap-10" [ gap (lengthRaw "2.5rem") ]
+          , rule ".lg\\:gap-12" [ gap (lengthRaw "3rem") ]
+          , rule ".lg\\:space-x-4 > * + *" [ marginLeft (lengthRaw "1rem") ]
+          , rule ".lg\\:space-x-6 > * + *" [ marginLeft (lengthRaw "1.5rem") ]
+          , rule ".lg\\:space-x-8 > * + *" [ marginLeft (lengthRaw "2rem") ]
+          , rule ".lg\\:space-y-0 > * + *" [ marginTop (lengthRaw "0") ]
+          , rule ".lg\\:order-1" [ property "order" "1" ]
+          , rule ".lg\\:order-2" [ property "order" "2" ]
+          , rule ".lg\\:static" [ position (PositionRaw "static") ]
+          , rule ".lg\\:sticky" [ position (PositionRaw "sticky") ]
+          , rule ".lg\\:h-auto" [ height (lengthRaw "auto") ]
+          , rule ".lg\\:h-full" [ height (lengthRaw "100%") ]
+          , rule ".lg\\:h-screen" [ height (lengthRaw "100vh") ]
+          , rule ".lg\\:rounded-lg" [ borderRadius (lengthRaw "0.5rem") ]
+          , rule ".lg\\:rounded-xl" [ borderRadius (lengthRaw "0.75rem") ]
+          ]
+    , media
+          "(min-width: 1280px)"
+          [ rule ".xl\\:block" [ display (DisplayRaw "block") ]
+          , rule ".xl\\:hidden" [ display (DisplayRaw "none") ]
+          , rule ".xl\\:flex" [ display (DisplayRaw "flex") ]
+          , rule ".xl\\:grid" [ display (DisplayRaw "grid") ]
+          , rule ".xl\\:inline-flex" [ display (DisplayRaw "inline-flex") ]
+          , rule ".xl\\:flex-row" [ flexDirection (FlexDirectionRaw "row") ]
+          , rule ".xl\\:items-center" [ alignItems (AlignRaw "center") ]
+          , rule
+                ".xl\\:justify-between"
+                [ justifyContent (AlignRaw "space-between") ]
+          , rule
+                ".xl\\:grid-cols-3"
+                [ gridTemplateColumns "repeat(3, minmax(0, 1fr))" ]
+          , rule
+                ".xl\\:grid-cols-4"
+                [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
+          , rule
+                ".xl\\:grid-cols-5"
+                [ gridTemplateColumns "repeat(5, minmax(0, 1fr))" ]
+          , rule
+                ".xl\\:grid-cols-6"
+                [ gridTemplateColumns "repeat(6, minmax(0, 1fr))" ]
+          , rule ".xl\\:col-span-2" [ gridColumn "span 2 / span 2" ]
+          , rule ".xl\\:col-span-3" [ gridColumn "span 3 / span 3" ]
+          , rule ".xl\\:col-span-4" [ gridColumn "span 4 / span 4" ]
+          , rule ".xl\\:p-8" [ padding (lengthRaw "2rem") ]
+          , rule ".xl\\:p-12" [ padding (lengthRaw "3rem") ]
+          , rule ".xl\\:p-16" [ padding (lengthRaw "4rem") ]
+          , rule ".xl\\:p-20" [ padding (lengthRaw "5rem") ]
+          , rule
+                ".xl\\:px-8"
+                [ paddingLeft (lengthRaw "2rem")
+                , paddingRight (lengthRaw "2rem")
+                ]
+          , rule
+                ".xl\\:px-12"
+                [ paddingLeft (lengthRaw "3rem")
+                , paddingRight (lengthRaw "3rem")
+                ]
+          , rule
+                ".xl\\:px-16"
+                [ paddingLeft (lengthRaw "4rem")
+                , paddingRight (lengthRaw "4rem")
+                ]
+          , rule
+                ".xl\\:py-8"
+                [ paddingTop (lengthRaw "2rem")
+                , paddingBottom (lengthRaw "2rem")
+                ]
+          , rule
+                ".xl\\:py-12"
+                [ paddingTop (lengthRaw "3rem")
+                , paddingBottom (lengthRaw "3rem")
+                ]
+          , rule ".xl\\:text-lg" [ fontSize (lengthRaw "1.125rem") ]
+          , rule ".xl\\:text-xl" [ fontSize (lengthRaw "1.25rem") ]
+          , rule ".xl\\:text-2xl" [ fontSize (lengthRaw "1.5rem") ]
+          , rule ".xl\\:text-3xl" [ fontSize (lengthRaw "1.875rem") ]
+          , rule ".xl\\:text-4xl" [ fontSize (lengthRaw "2.25rem") ]
+          , rule ".xl\\:text-5xl" [ fontSize (lengthRaw "3rem") ]
+          , rule ".xl\\:text-6xl" [ fontSize (lengthRaw "3.75rem") ]
+          , rule ".xl\\:w-auto" [ width (lengthRaw "auto") ]
+          , rule ".xl\\:w-full" [ width (lengthRaw "100%") ]
+          , rule ".xl\\:w-1\\/2" [ width (lengthRaw "50%") ]
+          , rule ".xl\\:w-1\\/3" [ width (lengthRaw "33.333333%") ]
+          , rule ".xl\\:w-1\\/4" [ width (lengthRaw "25%") ]
+          , rule ".xl\\:max-w-4xl" [ maxWidth (lengthRaw "56rem") ]
+          , rule ".xl\\:max-w-5xl" [ maxWidth (lengthRaw "64rem") ]
+          , rule ".xl\\:max-w-6xl" [ maxWidth (lengthRaw "72rem") ]
+          , rule ".xl\\:max-w-7xl" [ maxWidth (lengthRaw "80rem") ]
+          , rule ".xl\\:gap-6" [ gap (lengthRaw "1.5rem") ]
+          , rule ".xl\\:gap-8" [ gap (lengthRaw "2rem") ]
+          , rule ".xl\\:gap-10" [ gap (lengthRaw "2.5rem") ]
+          , rule ".xl\\:gap-12" [ gap (lengthRaw "3rem") ]
+          ]
+    , media
+          "(min-width: 1536px)"
+          [ rule ".\\32xl\\:block" [ display (DisplayRaw "block") ]
+          , rule ".\\32xl\\:hidden" [ display (DisplayRaw "none") ]
+          , rule ".\\32xl\\:flex" [ display (DisplayRaw "flex") ]
+          , rule ".\\32xl\\:grid" [ display (DisplayRaw "grid") ]
+          , rule
+                ".\\32xl\\:grid-cols-4"
+                [ gridTemplateColumns "repeat(4, minmax(0, 1fr))" ]
+          , rule
+                ".\\32xl\\:grid-cols-5"
+                [ gridTemplateColumns "repeat(5, minmax(0, 1fr))" ]
+          , rule
+                ".\\32xl\\:grid-cols-6"
+                [ gridTemplateColumns "repeat(6, minmax(0, 1fr))" ]
+          , rule ".\\32xl\\:p-12" [ padding (lengthRaw "3rem") ]
+          , rule ".\\32xl\\:p-16" [ padding (lengthRaw "4rem") ]
+          , rule ".\\32xl\\:p-20" [ padding (lengthRaw "5rem") ]
+          , rule ".\\32xl\\:p-24" [ padding (lengthRaw "6rem") ]
+          , rule
+                ".\\32xl\\:px-12"
+                [ paddingLeft (lengthRaw "3rem")
+                , paddingRight (lengthRaw "3rem")
+                ]
+          , rule
+                ".\\32xl\\:px-16"
+                [ paddingLeft (lengthRaw "4rem")
+                , paddingRight (lengthRaw "4rem")
+                ]
+          , rule ".\\32xl\\:text-2xl" [ fontSize (lengthRaw "1.5rem") ]
+          , rule ".\\32xl\\:text-4xl" [ fontSize (lengthRaw "2.25rem") ]
+          , rule ".\\32xl\\:text-5xl" [ fontSize (lengthRaw "3rem") ]
+          , rule ".\\32xl\\:text-6xl" [ fontSize (lengthRaw "3.75rem") ]
+          , rule ".\\32xl\\:max-w-7xl" [ maxWidth (lengthRaw "80rem") ]
+          , rule ".\\32xl\\:gap-8" [ gap (lengthRaw "2rem") ]
+          , rule ".\\32xl\\:gap-12" [ gap (lengthRaw "3rem") ]
+          ]
     ]
